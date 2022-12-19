@@ -18,6 +18,8 @@ group :jekyll_plugins do
 
   # Description/etc meta tags
   gem 'jekyll-seo-tag'
+
+  gem 'jekyll-paginate'
 end
 
 # Windows junk
