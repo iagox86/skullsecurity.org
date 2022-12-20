@@ -2,7 +2,7 @@
 id: 560
 title: 'Trusting the Browser (a ckeditor short story)'
 date: '2010-03-09T10:38:30-05:00'
-author: 'Matt Gardenghi'
+author: mtgarden
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=560'
 permalink: /2010/trusting-the-browser-a-ckeditor-short-story

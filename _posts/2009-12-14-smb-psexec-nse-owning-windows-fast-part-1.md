@@ -2,7 +2,7 @@
 id: 365
 title: 'smb-psexec.nse: owning Windows, fast (Part 1)'
 date: '2009-12-14T12:38:09-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=365'
 permalink: /2009/smb-psexec-nse-owning-windows-fast-part-1

@@ -2,7 +2,7 @@
 id: 331
 title: 'Scorched earth: Finding vulnerable SMBv2 systems with Nmap'
 date: '2009-09-14T10:44:07-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=331'
 permalink: /2009/scorched-earth-finding-vulnerable-smbv2-systems-with-nmap

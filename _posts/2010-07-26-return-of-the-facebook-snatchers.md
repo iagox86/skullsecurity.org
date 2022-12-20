@@ -2,7 +2,7 @@
 id: 887
 title: 'Return of the Facebook Snatchers'
 date: '2010-07-26T21:44:32-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=887'
 permalink: /2010/return-of-the-facebook-snatchers

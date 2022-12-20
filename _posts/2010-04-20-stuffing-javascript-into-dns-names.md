@@ -2,7 +2,7 @@
 id: 433
 title: 'Stuffing Javascript into DNS names'
 date: '2010-04-20T10:36:54-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=433'
 permalink: /2010/stuffing-javascript-into-dns-names

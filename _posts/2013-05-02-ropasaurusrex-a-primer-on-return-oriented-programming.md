@@ -2,7 +2,7 @@
 id: 1555
 title: 'ropasaurusrex: a primer on return-oriented programming'
 date: '2013-05-02T09:25:02-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1555'
 permalink: /2013/ropasaurusrex-a-primer-on-return-oriented-programming

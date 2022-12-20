@@ -2,7 +2,7 @@
 id: 882
 title: 'Information Security For College Students'
 date: '2010-07-14T11:44:39-05:00'
-author: 'Matt Gardenghi'
+author: mtgarden
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=882'
 permalink: /2010/information-security-for-college-students

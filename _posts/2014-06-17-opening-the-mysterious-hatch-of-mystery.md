@@ -2,7 +2,7 @@
 id: 1938
 title: 'Opening the mysterious hatch of mystery'
 date: '2014-06-17T13:46:21-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1938'
 permalink: /2014/opening-the-mysterious-hatch-of-mystery

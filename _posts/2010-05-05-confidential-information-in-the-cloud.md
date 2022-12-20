@@ -2,7 +2,7 @@
 id: 752
 title: 'Confidential Information in the Cloud'
 date: '2010-05-05T09:43:16-05:00'
-author: 'Matt Gardenghi'
+author: mtgarden
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=752'
 permalink: /2010/confidential-information-in-the-cloud

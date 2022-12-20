@@ -2,7 +2,7 @@
 id: 549
 title: 'The ultimate faceoff between password lists'
 date: '2010-03-11T10:51:24-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=549'
 permalink: /2010/the-ultimate-faceoff-between-password-lists

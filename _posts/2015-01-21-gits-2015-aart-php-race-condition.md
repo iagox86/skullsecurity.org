@@ -2,7 +2,7 @@
 id: 1960
 title: 'GitS 2015: aart.php (race condition)'
 date: '2015-01-21T19:08:55-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1960'
 permalink: /2015/gits-2015-aart-php-race-condition

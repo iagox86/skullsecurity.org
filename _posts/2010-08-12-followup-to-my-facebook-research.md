@@ -2,7 +2,7 @@
 id: 898
 title: 'Followup to my Facebook research'
 date: '2010-08-12T09:52:24-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=898'
 permalink: /2010/followup-to-my-facebook-research

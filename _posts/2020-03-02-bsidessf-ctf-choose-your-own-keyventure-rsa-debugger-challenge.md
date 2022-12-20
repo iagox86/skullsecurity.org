@@ -17,6 +17,9 @@ categories:
 Hey all, this is symmetric here!  I was thrilled to be once again involved in running the BSidesSF CTF with such creative teammates and skilled CTF players.
 
 My favorite challenge this year was <strong><em>rsa-debugger</em></strong> which, despite getting 12 solves, was actually quite hard.  In this post I’d like to tell you a bit about the genesis of the challenge and how to solve it.
+
+<!--more-->
+
 <h2>Curveball, but for RSA</h2>
 As I was really ramping up challenge making this year Microsoft had the great timing to release <a href="https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0601">CVE-2020-0601</a>.  As something of a "crypto nerd" I was pretty interested in the details. Fortunately Thomas Ptacek (<a href="https://twitter.com/tqbf">@tqbf</a>) wrote up a great <a href="https://news.ycombinator.com/item?id=22048619">first-take on the vulnerability on Hacker News</a> which turned out to be essentially spot-on.  tbqf also linked to <a href="https://toadstyle.org/cryptopals/61.txt">Cryptopals Exercise 61</a> which gets even further into the math behind the Curveball attack.
 
@@ -24,7 +27,6 @@ But the relevant part of that exercise was the final comment about RSA:
 <blockquote>Since RSA signing and decryption are equivalent operations, you can use this same technique for other surprising results. Try generating a random (or chosen) ciphertext and creating a key to decrypt it to a plaintext of your choice!</blockquote>
 When I read that, I <em>knew</em> I had to make a challenge that would have users do just that!
 
-<!--more-->
 <h2>Enter the rsa-debugger</h2>
 After playing around in my calculator of choice <a href="https://pari.math.u-bordeaux.fr/">GP/PARI</a> for a bit more than a week I felt like I understood the gist of the math needed to start building a challenge.  I spent a few days thinking about various story scenarios to justify the ability to generate your own key and eventually came to the idea of a satellite debugging interface.
 

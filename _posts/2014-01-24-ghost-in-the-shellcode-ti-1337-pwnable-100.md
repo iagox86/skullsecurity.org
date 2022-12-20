@@ -2,7 +2,7 @@
 id: 1742
 title: 'Ghost in the Shellcode: TI-1337 (Pwnable 100)'
 date: '2014-01-24T12:04:20-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1742'
 permalink: /2014/ghost-in-the-shellcode-ti-1337-pwnable-100

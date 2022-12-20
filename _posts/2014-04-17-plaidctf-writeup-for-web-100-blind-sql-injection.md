@@ -2,7 +2,7 @@
 id: 1873
 title: 'PlaidCTF writeup for Web-100 &#8211; PolygonShifter (blind sql injection)'
 date: '2014-04-17T12:55:06-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1873'
 permalink: /2014/plaidctf-writeup-for-web-100-blind-sql-injection

@@ -2,7 +2,7 @@
 id: 2304
 title: 'Book review: The Car Hacker&#8217;s Handbook'
 date: '2017-06-12T10:12:32-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2304'
 permalink: /2017/book-review-the-car-hackers-handbook

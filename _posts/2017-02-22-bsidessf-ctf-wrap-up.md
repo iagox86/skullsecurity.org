@@ -2,7 +2,7 @@
 id: 2296
 title: 'BSidesSF CTF wrap-up'
 date: '2017-02-22T13:04:15-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2296'
 permalink: /2017/bsidessf-ctf-wrap-up

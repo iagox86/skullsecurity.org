@@ -2,7 +2,7 @@
 id: 1459
 title: 'A padding oracle example'
 date: '2013-01-07T10:40:52-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1459'
 permalink: /2013/a-padding-oracle-example

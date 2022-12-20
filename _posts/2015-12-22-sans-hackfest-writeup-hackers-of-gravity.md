@@ -2,7 +2,7 @@
 id: 2198
 title: 'SANS Hackfest writeup: Hackers of Gravity'
 date: '2015-12-22T12:07:12-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2198'
 permalink: /2015/sans-hackfest-writeup-hackers-of-gravity

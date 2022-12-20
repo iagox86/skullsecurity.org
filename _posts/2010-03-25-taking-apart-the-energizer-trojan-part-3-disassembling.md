@@ -2,7 +2,7 @@
 id: 647
 title: 'Taking apart the Energizer trojan &#8211; Part 3: disassembling'
 date: '2010-03-25T09:45:44-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=647'
 permalink: /2010/taking-apart-the-energizer-trojan-part-3-disassembling

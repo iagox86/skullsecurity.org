@@ -2,7 +2,7 @@
 id: 1817
 title: 'Ghost in the Shellcode: fuzzy (Pwnage 301)'
 date: '2014-04-07T09:39:42-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1817'
 permalink: /2014/ghost-in-the-shellcode-fuzzy-pwnage-301

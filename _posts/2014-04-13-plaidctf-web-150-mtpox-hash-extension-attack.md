@@ -2,7 +2,7 @@
 id: 1835
 title: 'PlaidCTF writeup for Web-150 &#8211; mtpox (hash extension attack)'
 date: '2014-04-13T21:34:50-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1835'
 permalink: /2014/plaidctf-web-150-mtpox-hash-extension-attack

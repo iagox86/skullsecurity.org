@@ -2,7 +2,7 @@
 id: 611
 title: 'Weaponizing dnscat with shellcode and Metasploit'
 date: '2010-03-18T08:50:52-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=611'
 permalink: /2010/weaponizing-dnscat-with-shellcode-and-metasploit

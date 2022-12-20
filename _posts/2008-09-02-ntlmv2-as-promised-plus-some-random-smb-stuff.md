@@ -2,7 +2,7 @@
 id: 45
 title: 'NTLMv2, as promised, plus some random SMB stuff!'
 date: '2008-09-02T20:37:35-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=45'
 permalink: /2008/ntlmv2-as-promised-plus-some-random-smb-stuff

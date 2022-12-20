@@ -2,7 +2,7 @@
 id: 154
 title: 'How Pwdump6 works, and how Nmap can do it'
 date: '2009-02-09T18:39:53-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=154'
 permalink: /2009/how-pwdump6-works-and-how-nmap-can-do-it

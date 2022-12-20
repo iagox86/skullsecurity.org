@@ -2,7 +2,7 @@
 id: 309
 title: 'Two locks, one bike?'
 date: '2009-07-12T17:45:11-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=309'
 permalink: /2009/two-locks-one-bike

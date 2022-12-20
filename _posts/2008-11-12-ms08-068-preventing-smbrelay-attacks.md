@@ -2,7 +2,7 @@
 id: 110
 title: 'ms08-068 &#8212; Preventing SMBRelay Attacks'
 date: '2008-11-12T12:38:29-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=110'
 permalink: /2008/ms08-068-preventing-smbrelay-attacks

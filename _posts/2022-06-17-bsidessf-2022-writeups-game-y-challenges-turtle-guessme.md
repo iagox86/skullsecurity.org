@@ -2,7 +2,7 @@
 id: 2630
 title: 'BSidesSF 2022 Writeups: Game-y Challenges (Turtle, Guessme)'
 date: '2022-06-17T15:19:21-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2630'
 permalink: /2022/bsidessf-2022-writeups-game-y-challenges-turtle-guessme

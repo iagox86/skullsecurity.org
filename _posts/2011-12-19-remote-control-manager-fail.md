@@ -2,7 +2,7 @@
 id: 1197
 title: 'Remote control manager FAIL'
 date: '2011-12-19T10:40:59-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1197'
 permalink: /2011/remote-control-manager-fail

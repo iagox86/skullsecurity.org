@@ -2,7 +2,7 @@
 id: 2307
 title: 'Solving b-64-b-tuff: writing base64 and alphanumeric shellcode'
 date: '2017-06-13T10:33:13-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2307'
 permalink: /2017/solving-b-64-b-tuff-writing-base64-and-alphanumeric-shellcode

@@ -2,7 +2,7 @@
 id: 2508
 title: 'BSidesSF CTF 2021 Author writeup: glitter-printer, a buffer underflow where you modify the actual code'
 date: '2021-03-18T12:07:36-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2508'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-glitter-printer-a-buffer-underflow-where-you-modify-the-actual-code

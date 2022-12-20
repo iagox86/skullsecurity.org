@@ -2,7 +2,7 @@
 id: 2377
 title: 'Some crypto challenges: Author writeup from BSidesSF CTF'
 date: '2019-03-12T11:23:36-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2377'
 permalink: /2019/some-crypto-challenges-author-writeup-from-bsidessf-ctf

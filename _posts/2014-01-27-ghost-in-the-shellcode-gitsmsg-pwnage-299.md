@@ -2,7 +2,7 @@
 id: 1756
 title: 'Ghost in the Shellcode: gitsmsg (Pwnage 299)'
 date: '2014-01-27T10:57:31-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1756'
 permalink: /2014/ghost-in-the-shellcode-gitsmsg-pwnage-299

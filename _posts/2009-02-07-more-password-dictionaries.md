@@ -2,7 +2,7 @@
 id: 156
 title: 'More password dictionaries'
 date: '2009-02-07T18:44:09-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=156'
 permalink: /2009/more-password-dictionaries

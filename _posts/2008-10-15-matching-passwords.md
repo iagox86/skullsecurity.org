@@ -2,7 +2,7 @@
 id: 88
 title: 'Matching passwords'
 date: '2008-10-15T22:22:15-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=88'
 permalink: /2008/matching-passwords

@@ -2,7 +2,7 @@
 id: 1236
 title: 'Battle.net authentication misconceptions'
 date: '2012-05-24T16:22:49-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1236'
 permalink: /2012/battle-net-authentication-misconceptions

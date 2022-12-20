@@ -2,7 +2,7 @@
 id: 230
 title: 'Scanning for Conficker&#8217;s peer to peer'
 date: '2009-04-21T16:44:11-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=230'
 permalink: /2009/scanning-for-confickers-peer-to-peer

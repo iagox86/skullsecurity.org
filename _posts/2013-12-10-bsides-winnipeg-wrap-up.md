@@ -2,7 +2,7 @@
 id: 1708
 title: 'BSides Winnipeg Wrap-up'
 date: '2013-12-10T15:33:44-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://blog.skullsecurity.org/?p=1708'
 permalink: /2013/bsides-winnipeg-wrap-up

@@ -2,7 +2,7 @@
 id: 151
 title: 'Password dictionaries'
 date: '2009-01-05T14:09:46-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=151'
 permalink: /2009/password-dictionaries

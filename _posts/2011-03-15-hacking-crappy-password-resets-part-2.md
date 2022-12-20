@@ -2,7 +2,7 @@
 id: 1059
 title: 'Hacking crappy password resets (part 2)'
 date: '2011-03-15T08:09:41-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1059'
 permalink: /2011/hacking-crappy-password-resets-part-2

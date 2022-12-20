@@ -2,7 +2,7 @@
 id: 956
 title: 'Update on my life, conferences, career, etc'
 date: '2010-10-29T08:58:56-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=956'
 permalink: /2010/update-on-my-life-conferences-career-etc

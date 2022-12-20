@@ -2,7 +2,7 @@
 id: 1318
 title: 'Padding oracle attacks: in depth'
 date: '2013-01-02T11:59:43-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1318'
 permalink: /2013/padding-oracle-attacks-in-depth

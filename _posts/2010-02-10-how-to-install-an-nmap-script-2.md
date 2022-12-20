@@ -2,7 +2,7 @@
 id: 459
 title: 'How-to: install an Nmap script'
 date: '2010-02-10T19:05:31-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=459'
 permalink: /2010/how-to-install-an-nmap-script-2

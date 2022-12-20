@@ -2,7 +2,7 @@
 id: 960
 title: 'A call to arms! Web app fingerprints needed!'
 date: '2010-11-03T08:01:31-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=960'
 permalink: /2010/a-call-to-arms-web-app-fingerprints-needed

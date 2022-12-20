@@ -9,6 +9,10 @@ github_username:  iagox86
 paginate: 5
 excerpt_separator: '<!--more-->'
 
+collections:
+  authors:
+    output: true
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

@@ -2,7 +2,7 @@
 id: 793
 title: 'Five Relays and a Patch'
 date: '2010-05-26T08:57:34-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=793'
 permalink: /2010/five-relays-and-a-patch

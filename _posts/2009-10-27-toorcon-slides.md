@@ -2,7 +2,7 @@
 id: 353
 title: 'Toorcon Slides'
 date: '2009-10-27T22:01:45-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=353'
 permalink: /2009/toorcon-slides

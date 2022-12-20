@@ -2,7 +2,7 @@
 id: 582
 title: 'Are you a &#8220;Real&#8221; hacker or just a skiddie?'
 date: '2010-03-23T10:24:46-05:00'
-author: 'Matt Gardenghi'
+author: mtgarden
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=582'
 permalink: /2010/are-you-a-real-hacker-or-just-a-skiddie

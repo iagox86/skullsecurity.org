@@ -2,7 +2,7 @@
 id: 1088
 title: '(Mostly) good password resets'
 date: '2011-03-24T08:08:16-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1088'
 permalink: /2011/mostly-good-password-resets

@@ -2,7 +2,7 @@
 id: 1980
 title: 'GitS 2015: Huffy (huffman-encoded shellcode)'
 date: '2015-02-04T13:58:12-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1980'
 permalink: /2015/gits-2015-huffy-huffman-encoded-shellcode

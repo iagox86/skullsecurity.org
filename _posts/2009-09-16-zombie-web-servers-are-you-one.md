@@ -2,7 +2,7 @@
 id: 340
 title: 'Zombie Web servers: are you one?'
 date: '2009-09-16T09:37:05-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=340'
 permalink: /2009/zombie-web-servers-are-you-one

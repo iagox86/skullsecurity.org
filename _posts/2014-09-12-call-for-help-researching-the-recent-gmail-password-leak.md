@@ -2,7 +2,7 @@
 id: 1949
 title: 'Call for help: researching the recent gmail password leak'
 date: '2014-09-12T10:51:28-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1949'
 permalink: /2014/call-for-help-researching-the-recent-gmail-password-leak

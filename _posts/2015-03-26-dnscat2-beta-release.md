@@ -2,7 +2,7 @@
 id: 1986
 title: 'dnscat2 beta release!'
 date: '2015-03-26T09:26:49-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1986'
 permalink: /2015/dnscat2-beta-release

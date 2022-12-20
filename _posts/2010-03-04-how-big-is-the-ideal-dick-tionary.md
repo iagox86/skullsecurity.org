@@ -2,7 +2,7 @@
 id: 516
 title: 'How big is the ideal dick&#8230;tionary?'
 date: '2010-03-04T17:14:39-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=516'
 permalink: /2010/how-big-is-the-ideal-dick-tionary

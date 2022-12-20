@@ -2,7 +2,7 @@
 id: 876
 title: 'Call for testers: nbtool-0.05 and dnscat-0.05'
 date: '2010-07-07T09:17:34-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=876'
 permalink: /2010/call-for-testers-nbtool-0-05-and-dnscat-0-05

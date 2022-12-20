@@ -2,7 +2,7 @@
 id: 2496
 title: 'BSidesSF CTF 2021 Author writeup / shellcode primer: Runme, Runme2, and Runme3'
 date: '2021-03-14T13:48:21-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2496'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-shellcode-primer-runme-runme2-and-runme3

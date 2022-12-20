@@ -2,7 +2,7 @@
 id: 2453
 title: 'BSidesSF CTF: Easy to hard Rust reversing challenges'
 date: '2020-02-26T13:01:25-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2453'
 permalink: /2020/bsidessf-ctf-easy-to-hard-rust-reversing-challenges

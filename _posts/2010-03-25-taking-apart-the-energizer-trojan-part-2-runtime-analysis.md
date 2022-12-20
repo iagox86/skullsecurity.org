@@ -2,7 +2,7 @@
 id: 645
 title: 'Taking apart the Energizer trojan &#8211; Part 2: runtime analysis'
 date: '2010-03-25T09:17:58-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=645'
 permalink: /2010/taking-apart-the-energizer-trojan-part-2-runtime-analysis

@@ -2,7 +2,7 @@
 id: 363
 title: 'Why settle for (stealing) one password?'
 date: '2010-02-02T10:19:12-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=363'
 permalink: /2010/why-settle-for-stealing-one-password

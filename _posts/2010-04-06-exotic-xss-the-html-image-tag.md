@@ -2,7 +2,7 @@
 id: 590
 title: 'Exotic XSS: The HTML Image Tag'
 date: '2010-04-06T13:45:54-05:00'
-author: 'Matt Gardenghi'
+author: mtgarden
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=590'
 permalink: /2010/exotic-xss-the-html-image-tag

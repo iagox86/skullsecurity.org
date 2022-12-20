@@ -2,7 +2,7 @@
 id: 465
 title: 'Determine Windows version from offline image'
 date: '2010-04-08T09:08:03-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=465'
 permalink: /2010/find-the-windows-version-offline

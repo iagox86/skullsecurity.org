@@ -2,7 +2,7 @@
 id: 2455
 title: 'BSidesSF CTF: Hard reversing challenge: Chameleon'
 date: '2020-02-26T13:11:20-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2455'
 permalink: /2020/bsidessf-ctf-hard-reversing-challenge-chameleon

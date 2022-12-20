@@ -2,7 +2,7 @@
 id: 2588
 title: 'BSidesSF CTF 2021 Author writeup: log-em-all, a Pokemon-style collection game [video]'
 date: '2021-03-29T10:39:10-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2588'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-log-em-all-a-pokemon-style-collection-game-video

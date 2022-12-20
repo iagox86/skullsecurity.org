@@ -2,7 +2,7 @@
 id: 34
 title: 'LANMAN and NTLM: Not as complex as you think!'
 date: '2008-08-31T20:46:08-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=34'
 permalink: /2008/lanman-and-ntlm-not-as-complex-as-you-think

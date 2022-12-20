@@ -2,7 +2,7 @@
 id: 209
 title: 'Scanning for Conficker with Nmap'
 date: '2009-03-30T11:49:09-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=209'
 permalink: /2009/scanning-for-conficker-with-nmap

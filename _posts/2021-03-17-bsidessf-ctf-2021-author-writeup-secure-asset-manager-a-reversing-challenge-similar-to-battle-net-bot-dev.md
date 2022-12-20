@@ -2,7 +2,7 @@
 id: 2521
 title: 'BSidesSF CTF 2021 Author writeup: secure-asset-manager, a reversing challenge similar to Battle.net bot dev'
 date: '2021-03-17T10:59:18-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2521'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-secure-asset-manager-a-reversing-challenge-similar-to-battle-net-bot-dev

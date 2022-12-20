@@ -2,7 +2,7 @@
 id: 256
 title: 'Nmap 4.85beta9 released'
 date: '2009-05-15T14:00:49-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=256'
 permalink: /2009/nmap-485beta9-released

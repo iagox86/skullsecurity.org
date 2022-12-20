@@ -2,7 +2,7 @@
 id: 228
 title: 'Updated Conficker detection'
 date: '2009-04-02T07:57:37-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=228'
 permalink: /2009/updated-conficker-detection

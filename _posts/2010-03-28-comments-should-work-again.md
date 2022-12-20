@@ -2,7 +2,7 @@
 id: 713
 title: 'Comments should work again!'
 date: '2010-03-28T21:32:27-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=713'
 permalink: /2010/comments-should-work-again

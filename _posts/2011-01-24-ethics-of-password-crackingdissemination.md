@@ -2,7 +2,7 @@
 id: 1028
 title: 'Ethics of password cracking/dissemination'
 date: '2011-01-24T09:03:26-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1028'
 permalink: /2011/ethics-of-password-crackingdissemination

@@ -2,7 +2,7 @@
 id: 315
 title: 'Scanning for Microsoft FTP with Nmap'
 date: '2009-09-02T11:51:09-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=315'
 permalink: /2009/scanning-for-microsoft-ftp-with-nmap

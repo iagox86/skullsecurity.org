@@ -2,7 +2,7 @@
 id: 931
 title: 'Finding Mapped Drives with Meterpreter'
 date: '2010-09-01T09:16:20-05:00'
-author: 'Matt Gardenghi'
+author: mtgarden
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=931'
 permalink: /2010/finding-mapped-drives-with-meterpreter

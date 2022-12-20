@@ -2,7 +2,7 @@
 id: 261
 title: 'Bypassing AV over the Internet with Metasploit'
 date: '2009-05-15T14:29:48-05:00'
-author: 'Matt Gardenghi'
+author: mtgarden
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=261'
 permalink: /2009/bypassing-av-over-the-internet-with-metasploit

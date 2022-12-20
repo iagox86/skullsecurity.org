@@ -2,7 +2,7 @@
 id: 779
 title: 'Metasploit Express Beta &#8211; First Look'
 date: '2010-05-11T09:15:02-05:00'
-author: 'Matt Gardenghi'
+author: mtgarden
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=779'
 permalink: /2010/metasploit-express-beta-first-look

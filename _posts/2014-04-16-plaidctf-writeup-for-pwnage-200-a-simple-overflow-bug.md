@@ -2,7 +2,7 @@
 id: 1868
 title: 'PlaidCTF writeup for Pwn-200 (a simple overflow bug)'
 date: '2014-04-16T14:26:34-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1868'
 permalink: /2014/plaidctf-writeup-for-pwnage-200-a-simple-overflow-bug

@@ -2,7 +2,7 @@
 id: 995
 title: 'Watch out for exim!'
 date: '2010-12-15T09:24:49-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=995'
 permalink: /2010/watch-out-for-exim

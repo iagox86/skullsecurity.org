@@ -2,7 +2,7 @@
 id: 649
 title: 'Taking apart the Energizer trojan &#8211; Part 4: writing a probe'
 date: '2010-03-25T10:04:25-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=649'
 permalink: /2010/taking-apart-the-energizer-trojan-part-4-writing-a-probe

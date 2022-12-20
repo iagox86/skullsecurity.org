@@ -2,7 +2,7 @@
 id: 351
 title: 'Nmap script: enumerating iSCSI devices'
 date: '2009-10-10T20:18:43-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=351'
 permalink: /2009/nmap-script-enumerating-iscsi-devices

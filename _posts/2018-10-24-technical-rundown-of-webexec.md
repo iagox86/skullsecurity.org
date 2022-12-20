@@ -2,7 +2,7 @@
 id: 2340
 title: 'Technical Rundown of WebExec'
 date: '2018-10-24T11:18:44-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2340'
 permalink: /2018/technical-rundown-of-webexec

@@ -2,7 +2,7 @@
 id: 1512
 title: 'Epic &#8220;cnot&#8221; Writeup (highest value level from PlaidCTF)'
 date: '2013-04-25T08:35:22-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1512'
 permalink: /2013/epic-cnot-writeup-plaidctf

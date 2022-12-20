@@ -2,7 +2,7 @@
 id: 313
 title: 'Nmap 5.00 released &#8212; lots of new features!'
 date: '2009-07-16T17:04:03-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=313'
 permalink: /2009/nmap-500-released-lots-of-new-features

@@ -2,7 +2,7 @@
 id: 64
 title: 'My Scripting Experience with Nmap'
 date: '2008-09-14T16:41:06-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=64'
 permalink: /2008/scripting-with-nmap

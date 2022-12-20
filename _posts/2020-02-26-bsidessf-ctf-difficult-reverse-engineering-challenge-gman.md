@@ -2,7 +2,7 @@
 id: 2451
 title: 'BSidesSF CTF: Difficult reverse engineering challenge: Gman'
 date: '2020-02-26T12:46:30-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2451'
 permalink: /2020/bsidessf-ctf-difficult-reverse-engineering-challenge-gman

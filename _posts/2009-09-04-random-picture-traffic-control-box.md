@@ -2,7 +2,7 @@
 id: 318
 title: 'Random picture: Traffic control box'
 date: '2009-09-04T09:14:57-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=318'
 permalink: /2009/random-picture-traffic-control-box

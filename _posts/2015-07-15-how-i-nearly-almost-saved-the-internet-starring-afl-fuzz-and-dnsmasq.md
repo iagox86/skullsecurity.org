@@ -2,7 +2,7 @@
 id: 2009
 title: 'How I nearly almost saved the Internet, starring afl-fuzz and dnsmasq'
 date: '2015-07-15T10:41:49-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2009'
 permalink: /2015/how-i-nearly-almost-saved-the-internet-starring-afl-fuzz-and-dnsmasq

@@ -2,7 +2,7 @@
 id: 990
 title: 'Faking demos for fun and profit'
 date: '2010-11-27T19:03:38-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=990'
 permalink: /2010/faking-demos-for-fun-and-profit

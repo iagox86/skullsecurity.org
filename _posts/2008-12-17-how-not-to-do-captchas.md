@@ -2,7 +2,7 @@
 id: 146
 title: 'How NOT to do CAPTCHAs'
 date: '2008-12-17T10:54:50-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=146'
 permalink: /2008/how-not-to-do-captchas

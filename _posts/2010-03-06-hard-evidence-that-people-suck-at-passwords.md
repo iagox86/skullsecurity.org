@@ -2,7 +2,7 @@
 id: 538
 title: 'Hard evidence that people suck at passwords'
 date: '2010-03-06T17:26:07-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=538'
 permalink: /2010/hard-evidence-that-people-suck-at-passwords

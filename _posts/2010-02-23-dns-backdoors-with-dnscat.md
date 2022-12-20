@@ -2,7 +2,7 @@
 id: 426
 title: 'DNS Backdoors with dnscat'
 date: '2010-02-23T10:38:34-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=426'
 permalink: /2010/dns-backdoors-with-dnscat

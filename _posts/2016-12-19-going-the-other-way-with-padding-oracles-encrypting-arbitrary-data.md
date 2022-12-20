@@ -2,7 +2,7 @@
 id: 2226
 title: 'Going the other way with padding oracles: Encrypting arbitrary data!'
 date: '2016-12-19T12:51:43-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2226'
 permalink: /2016/going-the-other-way-with-padding-oracles-encrypting-arbitrary-data

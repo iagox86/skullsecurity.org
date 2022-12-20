@@ -2,7 +2,7 @@
 id: 1970
 title: 'GitS 2015: Giggles (off-by-one virtual machine)'
 date: '2015-01-28T11:49:59-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1970'
 permalink: /2015/gits-2015-giggles-off-by-one-virtual-machine

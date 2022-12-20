@@ -2,7 +2,7 @@
 id: 2627
 title: 'BSidesSF 2022 Writeups: Apache Challenges (mod_ctfauth, refresh)'
 date: '2022-06-17T15:19:18-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2627'
 permalink: /2022/bsidessf-2022-writeups-apache-challenges-mod_ctfauth-refresh

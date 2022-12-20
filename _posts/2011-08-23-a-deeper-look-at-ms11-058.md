@@ -2,7 +2,7 @@
 id: 1158
 title: 'A deeper look at ms11-058'
 date: '2011-08-23T09:10:46-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1158'
 permalink: /2011/a-deeper-look-at-ms11-058

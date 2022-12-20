@@ -2,7 +2,7 @@
 id: 1284
 title: 'Everything you need to know about hash length extension attacks'
 date: '2012-09-25T09:03:46-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1284'
 permalink: /2012/everything-you-need-to-know-about-hash-length-extension-attacks

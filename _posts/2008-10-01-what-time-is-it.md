@@ -2,7 +2,7 @@
 id: 76
 title: 'What time IS it?'
 date: '2008-10-01T10:20:25-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=76'
 permalink: /2008/what-time-is-it

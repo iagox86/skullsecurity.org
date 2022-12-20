@@ -2,7 +2,7 @@
 id: 2503
 title: 'BSidesSF CTF 2021 Author writeup: Reverseme and Reverseme2 &#8211; simpler reverse engineering challenges'
 date: '2021-03-15T11:40:00-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2503'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-reverseme-and-reverseme2-simpler-reverse-engineering-challenges

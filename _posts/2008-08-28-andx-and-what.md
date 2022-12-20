@@ -2,7 +2,7 @@
 id: 25
 title: 'ANDX&#8230; and what?'
 date: '2008-08-28T19:08:22-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=25'
 permalink: /2008/andx-and-what

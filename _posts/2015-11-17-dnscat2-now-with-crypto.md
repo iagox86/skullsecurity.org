@@ -2,7 +2,7 @@
 id: 2194
 title: 'dnscat2: now with crypto!'
 date: '2015-11-17T11:43:47-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2194'
 permalink: /2015/dnscat2-now-with-crypto

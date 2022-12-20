@@ -2,7 +2,7 @@
 id: 2034
 title: 'Defcon Quals: Access Control (simple reverse engineer)'
 date: '2015-05-21T12:30:15-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2034'
 permalink: /2015/defcon-quals-access-control-simple-reverse-engineer

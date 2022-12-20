@@ -2,7 +2,7 @@
 id: 2363
 title: 'BSidesSF CTF author writeup: genius'
 date: '2019-03-11T11:17:10-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2363'
 permalink: /2019/bsidessf-ctf-author-writeup-genius

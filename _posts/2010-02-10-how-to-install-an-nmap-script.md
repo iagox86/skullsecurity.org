@@ -2,7 +2,7 @@
 id: 436
 title: 'VM Stealing: The Nmap way (CVE-2009-3733 exploit)'
 date: '2010-02-10T14:18:33-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=436'
 permalink: /2010/how-to-install-an-nmap-script

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<hr />
+
+{% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+{% for post in filtered_posts %}
+  {% include post-blurb.html post=post %}
+{% endfor %}

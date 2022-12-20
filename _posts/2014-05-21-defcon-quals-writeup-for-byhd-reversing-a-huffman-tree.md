@@ -2,7 +2,7 @@
 id: 1913
 title: 'Defcon Quals writeup for byhd (reversing a Huffman Tree)'
 date: '2014-05-21T11:51:30-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1913'
 permalink: /2014/defcon-quals-writeup-for-byhd-reversing-a-huffman-tree

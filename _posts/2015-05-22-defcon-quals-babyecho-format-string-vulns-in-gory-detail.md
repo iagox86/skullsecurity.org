@@ -2,7 +2,7 @@
 id: 2059
 title: 'Defcon Quals: babyecho (format string vulns in gory detail)'
 date: '2015-05-22T13:38:21-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2059'
 permalink: /2015/defcon-quals-babyecho-format-string-vulns-in-gory-detail

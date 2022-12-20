@@ -2,7 +2,7 @@
 id: 452
 title: 'Watch out for evil SMB servers: MS10-006'
 date: '2010-02-14T16:04:14-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=452'
 permalink: /2010/watch-out-for-evil-smb-servers-ms10-006

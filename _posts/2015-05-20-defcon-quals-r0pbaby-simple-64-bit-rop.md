@@ -2,7 +2,7 @@
 id: 2003
 title: 'Defcon Quals: r0pbaby (simple 64-bit ROP)'
 date: '2015-05-20T11:34:06-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2003'
 permalink: /2015/defcon-quals-r0pbaby-simple-64-bit-rop

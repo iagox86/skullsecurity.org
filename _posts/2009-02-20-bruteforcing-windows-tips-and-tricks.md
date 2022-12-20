@@ -2,7 +2,7 @@
 id: 164
 title: 'Bruteforcing Windows over SMB: Tips and Tricks'
 date: '2009-02-20T11:27:20-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=164'
 permalink: /2009/bruteforcing-windows-tips-and-tricks

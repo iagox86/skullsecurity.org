@@ -2,7 +2,7 @@
 id: 1856
 title: 'PlaidCTF writeup for Web-300 &#8211; whatscat (SQL Injection via DNS)'
 date: '2014-04-16T12:29:31-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1856'
 permalink: /2014/plaidctf-writeup-for-web-300-whatscat-sql-injection-via-dns

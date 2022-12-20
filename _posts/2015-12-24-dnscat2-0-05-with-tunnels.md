@@ -2,7 +2,7 @@
 id: 2220
 title: 'dnscat2 0.05: with tunnels!'
 date: '2015-12-24T12:36:18-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2220'
 permalink: /2015/dnscat2-0-05-with-tunnels

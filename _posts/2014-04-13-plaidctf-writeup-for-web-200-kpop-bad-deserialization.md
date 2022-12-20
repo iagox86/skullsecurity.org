@@ -2,7 +2,7 @@
 id: 1847
 title: 'PlaidCTF writeup for Web-200 &#8211; kpop (bad deserialization)'
 date: '2014-04-13T22:57:39-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=1847'
 permalink: /2014/plaidctf-writeup-for-web-200-kpop-bad-deserialization

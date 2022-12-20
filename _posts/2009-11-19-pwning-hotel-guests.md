@@ -2,7 +2,7 @@
 id: 356
 title: 'Pwning hotel guests'
 date: '2009-11-19T22:22:27-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=356'
 permalink: /2009/pwning-hotel-guests

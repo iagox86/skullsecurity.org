@@ -2,7 +2,7 @@
 id: 820
 title: 'Defeating expensive lockdowns with cheap shellscripts'
 date: '2010-05-18T10:43:33-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=820'
 permalink: /2010/defeating-expensive-lockdowns-with-cheap-shellscripts

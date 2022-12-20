@@ -2,7 +2,7 @@
 id: 2117
 title: 'Defcon quals: wwtw (a series of vulns)'
 date: '2015-06-09T12:30:04-05:00'
-author: 'Ron Bowes'
+author: ron
 layout: post
 guid: 'https://blog.skullsecurity.org/?p=2117'
 permalink: /2015/defcon-quals-wwtw-a-series-of-vulns
