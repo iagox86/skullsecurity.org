@@ -10,10 +10,9 @@ categories:
     - Tools
 ---
 
-In case you haven't heard, Fyodor released Nmap 4.85beta9 this week. This is the first release in awhile that wasn't related to my code (or, most properly, mistakes :) ). It looks like the new stable version will be here soon, so give this one a shot and report your bugs. Here's the [download page](http://nmap.org/download.html).
-
-```
-From: Fyodor <fyodor_at_insecure.org>
+In case you haven't heard, Fyodor released Nmap 4.85beta9 this week. This is the first release in awhile that wasn't related to my code (or, most properly, mistakes :) ). It looks like the new stable version will be here soon, so give this one a shot and report your bugs. Here's the <a href='http://nmap.org/download.html'>download page</a>.
+<!--more-->
+<pre>From: Fyodor <fyodor_at_insecure.org>
 Date: Tue, 12 May 2009 20:44:56 -0700
 
 Hello everyone! I'm pleased to announce the first Nmap release in a
@@ -156,7 +155,8 @@ o Overhaul the NSE documentation "Usage and Examples" section and add
 o [NSE] Made hexify in nse_nsock.cc take an unsigned char * to work
   around an assertion in Visual C++ in Debug mode. The isprint,
   isalpha, etc. functions from ctype.h have an assertion that the
-  value of the character passed in is = 128, it is cast to an unsigned int, making it a
+  value of the character passed in is <= 255. If you pass a character
+  whose value is >= 128, it is cast to an unsigned int, making it a
   large positive number and failing the assertion. This is the same
   thing that was reported in
   http://seclists.org/nmap-dev/2007/q2/0257.html, in regard to
@@ -177,5 +177,4 @@ o [NSE] Fixed http.table_argument so that user-supplied HTTP headers
 
 Enjoy the new release!
 -Fyodor 
-</fyodor_at_insecure.org>
-```
+</pre>

@@ -10,10 +10,11 @@ categories:
     - 'Random picture'
 ---
 
-I was going to do a post about Nmap today, but since their svn is having some issues, you're going to get something a little more fun (in my opinion)!
+I was going to do a post about Nmap today, but since their svn is having some issues, you're going to get something a little more fun (in my opinion)! 
 
-My friend snapped this picture in Vancouver, BC near Stanley Park (the picture is geocoded, so check out the [Exif data](http://regex.info/exif.cgi) if you want to know exactly where).
+My friend snapped this picture in Vancouver, BC near Stanley Park (the picture is geocoded, so check out the <a href='http://regex.info/exif.cgi'>Exif data</a> if you want to know exactly where). 
 
-Click for a bigger version.
+Click for a bigger version. 
 
-[![](http://www.skullsecurity.org/blogdata/trafficbox.jpg)](http://www.skullsecurity.org/blogdata/trafficbox-big.jpg)
+<a href='http://www.skullsecurity.org/blogdata/trafficbox-big.jpg'><img src='http://www.skullsecurity.org/blogdata/trafficbox.jpg'></a>
+<!--more-->

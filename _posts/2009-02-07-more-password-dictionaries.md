@@ -10,16 +10,14 @@ categories:
     - Hacking
 ---
 
-Last month, I posted about some [password dictionaries](http://www.skullsecurity.org/blog/?p=151) I've collected. Well, thanks to a hacker who [compromised PHPBB's site](http://hackedphpbb.blogspot.com/2009/01/place-holder.html), I added another. There's a big caveat to this one, though -- these passwords are apparently based on ones that were cracked by the hacker, so they're only an accurate representation of weak passwords.  
-  
-That being said, weak passwords are what most pen-testers are targeting, so it can be useful.
+Last month, I posted about some <a href='http://www.skullsecurity.org/blog/?p=151'>password dictionaries</a> I've collected. Well, thanks to a hacker who <a href='http://hackedphpbb.blogspot.com/2009/01/place-holder.html'>compromised PHPBB's site</a>, I added another. There's a big caveat to this one, though -- these passwords are apparently based on ones that were cracked by the hacker, so they're only an accurate representation of weak passwords. 
+<!--more-->
+That being said, weak passwords are what most pen-testers are targeting, so it can be useful. 
 
-Feel free to take a look at the list, [with](http://www.skullsecurity.org/wiki/images/0/02/Phpbb-counts.txt) and [without](http://www.skullsecurity.org/wiki/images/e/e4/List-phpbb.txt) associated counts. I'm not going to post the list with the usernames intact, because that doesn't do any good for my purposes.
+Feel free to take a look at the list, <a href='http://www.skullsecurity.org/wiki/images/0/02/Phpbb-counts.txt'>with</a> and <a href='http://www.skullsecurity.org/wiki/images/e/e4/List-phpbb.txt'>without</a> associated counts. I'm not going to post the list with the usernames intact, because that doesn't do any good for my purposes. 
 
 For fun, I did a grep of the password list for some common passwords. Have a look:
-
-```
-$ cat phpbb-counts.txt | grep -i password
+<pre>$ cat phpbb-counts.txt | grep -i password
     609 password
      11 password1
       9 PASSWORD
@@ -49,6 +47,5 @@ $ cat phpbb-counts.txt | grep -i password
       1 forumpassword
       1 1Password!
       1 123password
-```
-
-Over 600 people used 'password' for their passwords, and 11 used 'password1'. So 60x as many people don't even \*try\* to make themselves secure. 6 people used '1password', and nearly everybody who used a 'password' variation either added or removed something from the beginning or the end. Additionally, everybody who played with case used either 1, 2, or all capitals, which supports [my theory](http://seclists.org/nmap-dev/2009/q1/0320.html) nicely.
+</pre>
+Over 600 people used 'password' for their passwords, and 11 used 'password1'. So 60x as many people don't even *try* to make themselves secure. 6 people used '1password', and nearly everybody who used a 'password' variation either added or removed something from the beginning or the end. Additionally, everybody who played with case used either 1, 2, or all capitals, which supports <a href='http://seclists.org/nmap-dev/2009/q1/0320.html'>my theory</a> nicely. 

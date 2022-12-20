@@ -13,53 +13,40 @@ categories:
 
 Hey all,
 
-With the upcoming release of Nmap 4.85, Brandon Enright [posted some comments](http://seclists.org/nmap-dev/2009/q2/0647.html) on random Nmap thoughts. One of the things he pointed out was that people hadn't heard of **nbstat.nse**! Since I love showing off what I write, this blog was in order.
-
-## How do I scan a single host?
-
+With the upcoming release of Nmap 4.85, Brandon Enright <a href='http://seclists.org/nmap-dev/2009/q2/0647.html'>posted some comments</a> on random Nmap thoughts. One of the things he pointed out was that people hadn't heard of <strong>nbstat.nse</strong>! Since I love showing off what I write, this blog was in order. 
+<!--more-->
+<h2>How do I scan a single host?</h2>
 Simply initiate an Nmap scan against a Windows or Samba target, and either run the 'default' scripts or specifically nbstat.nse. For example:
-
-```
-nmap --script=nbstat <target>
+<pre>nmap --script=nbstat &lt;target&gt;
 or
-nmap --script=default <target>
-```
+nmap --script=default &lt;target&gt;</pre>
 
 The result is simple to interpret:
+<pre>|_ nbstat: NetBIOS name: BASEWIN2K3, NetBIOS user: <unknown>, NetBIOS MAC: 00:0c:29:03:8f:64</pre>
 
-```
-|_ nbstat: NetBIOS name: BASEWIN2K3, NetBIOS user: <unknown>, NetBIOS MAC: 00:0c:29:03:8f:64</unknown>
-```
+This will run against any system that has Windows or Samba ports open (tcp/139 or tcp/445). 
 
-This will run against any system that has Windows or Samba ports open (tcp/139 or tcp/445).
+The NetBOIS name in the result is, obviously, the name given to the target machine. The NetBIOS user is the name of the user who's logged into the target's console, if it's returned (frequently, it isn't). And finally, if the MAC address is given by the host (it's always given on Windows, never on Samba), it's displayed. 
 
-The NetBOIS name in the result is, obviously, the name given to the target machine. The NetBIOS user is the name of the user who's logged into the target's console, if it's returned (frequently, it isn't). And finally, if the MAC address is given by the host (it's always given on Windows, never on Samba), it's displayed.
+This is a very quick check (a single UDP packet) and gives a decent amount of information about the host. For more information, check out the page for the very nice <a href='http://www.inetcat.net/software/nbtscan.html'>nbtscan tool</a>. 
 
-This is a very quick check (a single UDP packet) and gives a decent amount of information about the host. For more information, check out the page for the very nice [nbtscan tool](http://www.inetcat.net/software/nbtscan.html).
-
-## How to scan a large network
-
+<h2>How to scan a large network</h2>
 Thanks to Brandon Enright for providing this! It's a fast way to scan your network for Windows hosts, and run nbscan against them (note: requires a good connection, and requires Windows hosts to have port 445 open):
 
-```
-sudo nmap -T5 -PN -p 445 -sS -n --min-hostgroup 8192 --min-rtt-timeout 1000 \
---min-parallelism 4096 --script=nbstat <target>
-```
+<pre>sudo nmap -T5 -PN -p 445 -sS -n --min-hostgroup 8192 --min-rtt-timeout 1000 \
+--min-parallelism 4096 --script=nbstat &lt;target&gt;
+</pre>
 
-This scan took about 2 minutes on a /16 when Brandon tried.
+This scan took about 2 minutes on a /16 when Brandon tried. 
 
-## How does it work?
-
+<h2>How does it work?</h2>
 Talking about how my scripts work... always my favourite part! But prepare for some technical details...
 
-The easy answer is this: **nbstat.nse** sends a request to a Windows machine on port 137. It's a static request and can be hardcoded. The server responds with its name, MAC address, and other details.
+The easy answer is this: <strong>nbstat.nse</strong> sends a request to a Windows machine on port 137. It's a static request and can be hardcoded. The server responds with its name, MAC address, and other details. 
 
-### Request
-
+<h3>Request</h3>
 The header of the packet looks like this:
-
-```
-
+<pre>
   --------------------------------------------------
   |  15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0 |
   |                  NAME_TRN_ID                    |
@@ -69,47 +56,36 @@ The header of the packet looks like this:
   |                    NSCOUNT                      |
   |                    ARCOUNT                      |
   --------------------------------------------------
-```
+</pre>
+The TRN_ID, or transaction ID, is a random 2-byte value that identifies a request or response. In <strong>nbstat.nse</strong>, I use 0x1337. 
 
-The TRN\_ID, or transaction ID, is a random 2-byte value that identifies a request or response. In **nbstat.nse**, I use 0x1337.
-
-For our purposes, the flags and COUNT fields, except QDCOUNT, are unnecessary and set to 0. QDCOUNT refers to the number of questions we're asking the host. Since we're asking only a single question ("who are you?"), this is set to 1.
+For our purposes, the flags and COUNT fields, except QDCOUNT, are unnecessary and set to 0. QDCOUNT refers to the number of questions we're asking the host. Since we're asking only a single question ("who are you?"), this is set to 1. 
 
 When all's said and done, this is our encoded header:
-
-```
-13 37 00 00 00 01 00 00 00 00 00 00
-```
+<pre>13 37 00 00 00 01 00 00 00 00 00 00</pre>
 
 The body of the packet is a list of names to check for in the following format:
+<ul>
+<li>(string) encoded name</li>
+<li>(2 bytes)  query type (0x0021 = NBSTAT)</li>
+<li>(2 bytes)  query class (0x0001 = IN)</li>
+</ul>
 
-- (string) encoded name
-- (2 bytes) query type (0x0021 = NBSTAT)
-- (2 bytes) query class (0x0001 = IN)
-
-The encoded name is the name we're looking up -- '\*' in our case (matches any name). It's encoded through a somewhat complicated function that changes any arbitrary binary data to a string of uppercase characters preceded by a length byte (check out 'netbios.lua' in 'nselib', included with Nmap, if you're interested). The string '\*' translates to ' CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' (the initial space is 0x20, or 32 -- the length of the encoded string).
+The encoded name is the name we're looking up -- '*' in our case (matches any name). It's encoded through a somewhat complicated function that changes any arbitrary binary data to a string of uppercase characters preceded by a length byte (check out 'netbios.lua' in 'nselib', included with Nmap, if you're interested). The string '*' translates to ' CKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' (the initial space is 0x20, or 32 -- the length of the encoded string). 
 
 The query type and query class are constant values. The final body is:
-
-```
- 20 43 4b 41 41 41 41 41 41 41 41 41 41 41 41 41 
+<pre> 20 43 4b 41 41 41 41 41 41 41 41 41 41 41 41 41 
  41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 
- 41 00 00 21 00 01
-```
+ 41 00 00 21 00 01</pre>
 
 The full packet is this:
-
-```
-00000000 13 37 00 00 00 01 00 00 00 00 00 00 20 43 4b 41    .7.......... CKA
+<pre>00000000 13 37 00 00 00 01 00 00 00 00 00 00 20 43 4b 41    .7.......... CKA
 00000010 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41    AAAAAAAAAAAAAAAA
 00000020 41 41 41 41 41 41 41 41 41 41 41 41 41 00 00 21    AAAAAAAAAAAAA..!
-00000030 00 01                                              ..
-```
+00000030 00 01                                              ..</pre>
 
 For fun, you can send this string with netcat to any system listening on 137, and you'll probably get a good response:
-
-```
-echo -ne "\x13\x37\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x20\x43\x4b\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x00\x00\x21\x00\x01" | nc -u 192.168.200.128 137 | hexdump -C
+<pre>echo -ne "\x13\x37\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x20\x43\x4b\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x41\x00\x00\x21\x00\x01" | nc -u 192.168.200.128 137 | hexdump -C
 00000000  13 37 84 00 00 00 00 01  00 00 00 00 20 43 4b 41  |.7.......... CKA|
 00000010  41 41 41 41 41 41 41 41  41 41 41 41 41 41 41 41  |AAAAAAAAAAAAAAAA|
 00000020  41 41 41 41 41 41 41 41  41 41 41 41 41 00 00 21  |AAAAAAAAAAAAA..!|
@@ -122,28 +98,30 @@ echo -ne "\x13\x37\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x20\x43\x4b\x41\x41\x
 00000090  1d 04 00 01 02 5f 5f 4d  53 42 52 4f 57 53 45 5f  |.....__MSBROWSE_|
 000000a0  5f 02 01 84 00 00 0c 29  03 8f 64 00 00 00 00 00  |_......)..d.....|
 000000b0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
-```
+</pre>
 
-Note the list of names in the response, and also note the MAC address toward the end (00:0C:29:03:8F:64).
+Note the list of names in the response, and also note the MAC address toward the end (00:0C:29:03:8F:64). 
 
-### Response
-
+<h3>Response</h3>
 The response has the identical header, except it sets the first flag (0x8000), and sets ANCOUNT to 1 instead of QDCOUNT (an answer instead of a question). The format of the answer is:
 
-- (string) requested name, encoded
-- (2 bytes) query type
-- (2 bytes) query class
-- (2 bytes) time to live
-- (2 bytes) record length
-- (1 byte) number of names
-- \[for each name\]
-- (16 bytes) padded name, with a 1-byte suffix (not encoded)
-- (2 bytes) flags
+<ul>
+<li>(string) requested name, encoded</li>
+<li>(2 bytes)  query type</li>
+<li>(2 bytes)  query class</li>
+<li>(2 bytes)  time to live</li>
+<li>(2 bytes)  record length</li>
+<li>(1 byte)   number of names</li>
+<li>[for each name]</li>
+<ul>
+<li>(16 bytes) padded name, with a 1-byte suffix (not encoded)</li>
+<li>(2 bytes)  flags</li>
+</ul>
+<li>(variable) statistics (usually mac address)</li>
+</ul>
 
-- (variable) statistics (usually mac address)
+Basically, a list of the host's names are returned, with some flags. The last byte in the name, which I call the 'suffix', represents the type of name. I don't know what all the types represent, just that 0x20 represents the server's name and 0x03 represents the current user. 
 
-Basically, a list of the host's names are returned, with some flags. The last byte in the name, which I call the 'suffix', represents the type of name. I don't know what all the types represent, just that 0x20 represents the server's name and 0x03 represents the current user.
-
-So there you have it -- performing an nbstat call is actually very simple: build (or just hardcode) the static packet, send it on UDP/137, and parse the response.
+So there you have it -- performing an nbstat call is actually very simple: build (or just hardcode) the static packet, send it on UDP/137, and parse the response. 
 
 Happy hacking! :)

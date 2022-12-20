@@ -10,13 +10,14 @@ categories:
     - Humour
 ---
 
-![](/blogdata/dumbcaptcha.png)
+<img src="/blogdata/dumbcaptcha.png">
 
-Yes, this is a real CAPTCHA that I ran across.  
-  
+Yes, this is a real CAPTCHA that I ran across. 
+<!--more-->
 In case it isn't obvious from the picture, or you can't read that small, the text in the CAPTCHA matches the filename, therefore making it trivial to determine what the text says. Further, I tried specifying 6 random characters for the filename and it didn't work, which leads to two possibilities:
+<ol>
+<li>The CAPTCHA images are generated and saved in the root Web directory</li>
+<li>There are a limited number of generated CAPTCHA images</li>
+</ol>
 
-1. The CAPTCHA images are generated and saved in the root Web directory
-2. There are a limited number of generated CAPTCHA images
-
-I can't easily tell which one is actually happening, but in both cases there's a serious issue. And funny, too!
+I can't easily tell which one is actually happening, but in both cases there's a serious issue. And funny, too! 

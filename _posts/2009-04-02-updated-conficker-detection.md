@@ -11,14 +11,12 @@ categories:
     - NetBIOS/SMB
 ---
 
-Morning, all!
+Morning, all! 
 
-Last night Fyodor and crew rolled out [Nmap 4.85beta7](http://insecure.org/). This was because some folks from the Honeynet Project discovered a false negative (showed no infection where an infection was present), which was then confirmed by Tenable. We decided to be on the safe side, and updated our checks.  
-  
+Last night Fyodor and crew rolled out <a href='http://insecure.org/'>Nmap 4.85beta7</a>. This was because some folks from the Honeynet Project discovered a false negative (showed no infection where an infection was present), which was then confirmed by Tenable. We decided to be on the safe side, and updated our checks. 
+<!--more-->
 4.85 also contains several bugfixes and enhancements, such as improved error messages. We tried to find the biggest issues people were having and solve them. Here are the full release notes from Fyodor:
-
-```
-Nmap 4.85BETA7 [2009-04-1]
+<pre>Nmap 4.85BETA7 [2009-04-1]
 
 o Improvements to the Conficker detection script (smb-check-vulns):
   o Treat any NetPathCanonicalize()return code of 0x57 as indicative
@@ -58,22 +56,20 @@ o Declare a couple msrpc.lua variables as local to avoid a potential
   deadlock between smb-server-stats.nse instances. [Ron]
 
 Enjoy!
--Fyodor
-```
+-Fyodor</pre>
 
-If you have any other issues, please let us know (either here or, better, on the nmap-dev mailing list), and we'll do our best to fix them.
+If you have any other issues, please let us know (either here or, better, on the nmap-dev mailing list), and we'll do our best to fix them. 
 
-## How does this check work?
+<h2>How does this check work?</h2>
+Some of you are probably wondering how this check works. Since I prefer to write technical details anyways (I'd make a bad magician ;) ), let's find out! 
 
-Some of you are probably wondering how this check works. Since I prefer to write technical details anyways (I'd make a bad magician ;) ), let's find out!
+There's a remote Windows function called NetPathCanonicalize() that can be accessed through the BROWSER service. It takes a path as a parameter, attempts to canonicalize it, and returns the canonicalized version. This function was the target of the notorious MS08-067 patch -- certain parameters could corrupt memory and crash it. 
 
-There's a remote Windows function called NetPathCanonicalize() that can be accessed through the BROWSER service. It takes a path as a parameter, attempts to canonicalize it, and returns the canonicalized version. This function was the target of the notorious MS08-067 patch -- certain parameters could corrupt memory and crash it.
+One of Conficker's primary propagation methods was this exact vulnerability -- MS08-067. In an attempt to prevent other infections, Conficker hooks NetPathCanonicalize() and effectively patches the function itself. 
 
-One of Conficker's primary propagation methods was this exact vulnerability -- MS08-067. In an attempt to prevent other infections, Conficker hooks NetPathCanonicalize() and effectively patches the function itself.
+Before Microsoft released their patch, the function would either return an attempted canonicalization and no error code, or it would crash and not return at all (those are the checks I do in smb-check-vulns.nse if safechecks are disabled). After MS08-067 was applied, the evil-looking strings would return NT_STATUS_WERR_INVALID_NAME (0x7b or 123) as an error code. Conficker's patch, however, returns 0x57 -- an invalid error code -- and a distinct signature. 
 
-Before Microsoft released their patch, the function would either return an attempted canonicalization and no error code, or it would crash and not return at all (those are the checks I do in smb-check-vulns.nse if safechecks are disabled). After MS08-067 was applied, the evil-looking strings would return NT\_STATUS\_WERR\_INVALID\_NAME (0x7b or 123) as an error code. Conficker's patch, however, returns 0x57 -- an invalid error code -- and a distinct signature.
-
-So what's this mean? It means we can send an invalid path to NetPathCanonicalize() and check the return value -- no error (or timeout) means unpatched, 0x7b means patched, and 0x57 means Conficker.
+So what's this mean? It means we can send an invalid path to NetPathCanonicalize() and check the return value -- no error (or timeout) means unpatched, 0x7b means patched, and 0x57 means Conficker. 
 
 And it's as simple as that :)
 

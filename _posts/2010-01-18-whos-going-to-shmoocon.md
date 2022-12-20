@@ -14,6 +14,7 @@ Hey everybody,
 
 I'm heading to Shmoocon on Feb 4 - 8, so two things:
 
-a) Who wants to meet up? I have plans on the Saturday, but not much else yet.
+a) Who wants to meet up? I have plans on the Saturday, but not much else yet. 
 
 b) Please don't hack me while I'm gone. ;)
+<!--more-->

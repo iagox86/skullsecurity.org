@@ -12,23 +12,20 @@ categories:
     - Video
 ---
 
-This is a video walkthrough of Log 'em All, a difficult Hacking / Reverse Engineering challenge based on a classic bug in Pokemon Red. You can view the video below, or [directly on Youtube](https://www.youtube.com/watch?v=sY5V-vvipK4).
+This is a video walkthrough of Log 'em All, a difficult Hacking / Reverse Engineering challenge based on a classic bug in Pokemon Red. You can view the video below, or <a href="https://www.youtube.com/watch?v=sY5V-vvipK4">directly on Youtube</a>.
 
 I've never done a video-based writeup before, so I'd love feedback!
 
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube-nocookie.com/embed/sY5V-vvipK4" title="YouTube video player" width="560"></iframe>
+<!--more-->
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sY5V-vvipK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 If you want to run this yourself, from a Linux computer with Docker (and a user in the appropriate group), run:
-
-```
-$ git clone https://github.com/BSidesSF/ctf-2021-...​
+<pre>$ git clone https://github.com/BSidesSF/ctf-2021-...​
 $ cd ctf-2021-release/logemall/challenge
 $ docker build . -t test
 $ docker run -p666:666 --rm -ti test
-```
-
+</pre>
 (Then in another window)
-
-```
-$ nc -v localhost 666
-```
+<pre>$ nc -v localhost 666
+</pre>
