@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=356'
 permalink: /2009/pwning-hotel-guests
 categories:
-    - Hacking
-    - NetBIOS/SMB
-    - Tools
+    - hacking
+    - smb
+    - tools
 ---
 
 Greetings everybody! 

@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1555'
 permalink: /2013/ropasaurusrex-a-primer-on-return-oriented-programming
 categories:
-    - Hacking
-    - 'PlaidCTF 2013'
-    - 'Reverse Engineering'
+    - hacking
+    - plaidctf-2013
+    - re
 ---
 
 One of the worst feelings when playing a capture-the-flag challenge is the <a href="http://knowyourmeme.com/memes/captain-hindsight">hindsight</a> problem. You spend a few hours on a level&mdash;nothing like the amount of time I spent on <a href="/blog/2013/epic-cnot-writeup-plaidctf">cnot</a>, not by a fraction&mdash;and realize that it was actually pretty easy. But also a brainfuck. That's what ROP's all about, after all!

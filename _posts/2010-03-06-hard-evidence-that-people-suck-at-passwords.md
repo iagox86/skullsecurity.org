@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=538'
 permalink: /2010/hard-evidence-that-people-suck-at-passwords
 categories:
-    - Passwords
+    - passwords
 ---
 
 Hey everybody! 

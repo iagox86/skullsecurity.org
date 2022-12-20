@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=307'
 permalink: /2009/my-sans-gold-paper-nmap-smb-scripts
 categories:
-    - NetBIOS/SMB
+    - smb
 ---
 
 Hey all,

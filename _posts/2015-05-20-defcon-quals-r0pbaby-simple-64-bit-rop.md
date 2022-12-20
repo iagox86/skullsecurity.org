@@ -7,7 +7,7 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2003'
 permalink: /2015/defcon-quals-r0pbaby-simple-64-bit-rop
 categories:
-    - 'Defcon Quals 2015'
+    - defcon-quals-2015
 ---
 
 This past weekend I competed in the <a href='https://2015.legitbs.net/'>Defcon CTF Qualifiers</a> from the <a href='https://legitbs.net/'>Legit Business Syndicate</a>. In the past it's been one of my favourite competitions, and this year was no exception!

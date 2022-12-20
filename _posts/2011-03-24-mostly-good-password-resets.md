@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1088'
 permalink: /2011/mostly-good-password-resets
 categories:
-    - Hacking
-    - Passwords
+    - hacking
+    - passwords
 ---
 
 Hey everybody!

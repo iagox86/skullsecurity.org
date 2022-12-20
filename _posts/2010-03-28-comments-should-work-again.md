@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=713'
 permalink: /2010/comments-should-work-again
 categories:
-    - Default
+    - meta
 ---
 
 So, I realized that the reCAPTCHA plugin for Wordpress <s>sucks</s> was marking a lot of comments as spam, when it was actually working and not getting timeout errors (thanks to my egress filtering). I decided to toss it out and go with a math-based CAPTCHA for posts, so you should once again be able to post comments reliably! I'm hoping that by customizing the math CAPTCHA to use different field names/numbers, it should eliminate the same amount of spam that reCAPTCHA did. 

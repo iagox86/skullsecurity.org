@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=363'
 permalink: /2010/why-settle-for-stealing-one-password
 categories:
-    - Hacking
+    - hacking
 ---
 
 This is just a quick thought I had at work today -- actually, I had it in November, but just got around to posting it now. Common story, but eh?

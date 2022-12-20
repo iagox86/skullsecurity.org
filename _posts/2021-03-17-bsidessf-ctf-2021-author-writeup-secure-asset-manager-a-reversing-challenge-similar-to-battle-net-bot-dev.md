@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2521'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-secure-asset-manager-a-reversing-challenge-similar-to-battle-net-bot-dev
 categories:
-    - CTFs
-    - Hacking
-    - 'Reverse Engineering'
+    - ctfs
+    - hacking
+    - re
 ---
 
 Hi Everybody!

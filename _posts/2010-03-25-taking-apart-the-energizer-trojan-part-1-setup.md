@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=627'
 permalink: /2010/taking-apart-the-energizer-trojan-part-1-setup
 categories:
-    - Malware
-    - Nmap
-    - 'Reverse Engineering'
+    - malware
+    - nmap
+    - re
 ---
 
 Hey all,

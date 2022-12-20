@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1873'
 permalink: /2014/plaidctf-writeup-for-web-100-blind-sql-injection
 categories:
-    - Hacking
-    - 'PlaidCTF 2014'
-    - Tools
+    - hacking
+    - plaidctf-2014
+    - tools
 ---
 
 Hey folks,

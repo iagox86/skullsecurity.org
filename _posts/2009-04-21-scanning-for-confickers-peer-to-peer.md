@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=230'
 permalink: /2009/scanning-for-confickers-peer-to-peer
 categories:
-    - Malware
-    - Tools
+    - malware
+    - tools
 ---
 
 Hi everybody,

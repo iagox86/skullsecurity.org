@@ -7,10 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2511'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-hangman-battle-royale-where-you-defeat-1023-ai-players
 categories:
-    - Crypto
-    - CTFs
-    - Default
-    - Random
+    - crypto
+    - ctfs
+    - random
 ---
 
 Hi Everybody!

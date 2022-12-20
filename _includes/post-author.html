@@ -1,0 +1,9 @@
+<span class="author-link vcard">
+  {% assign author = site.authors | where: 'short_name', include.short_name %}
+
+  {% if author and author.size != 0 %}
+    <a href="{{ author[0].url }}">{{ author[0].name }}</a>
+  {% else %}
+    Unknown author: {{ include.short_name }}
+  {% endif %}
+</span>

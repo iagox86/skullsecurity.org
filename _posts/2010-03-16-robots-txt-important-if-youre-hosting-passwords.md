@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=327'
 permalink: /2010/robots-txt-important-if-youre-hosting-passwords
 categories:
-    - Passwords
+    - passwords
 ---
 
 This is going to be a fun post that's related to some of my password work. Some of the text may not be PG13, so parental discretion is advised. 

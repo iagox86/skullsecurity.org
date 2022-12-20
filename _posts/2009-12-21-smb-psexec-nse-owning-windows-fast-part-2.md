@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=379'
 permalink: /2009/smb-psexec-nse-owning-windows-fast-part-2
 categories:
-    - Hacking
-    - NetBIOS/SMB
-    - Nmap
+    - hacking
+    - smb
+    - nmap
 ---
 
 Posts in this series (I'll add links as they're written):

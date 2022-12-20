@@ -7,10 +7,10 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2455'
 permalink: /2020/bsidessf-ctf-hard-reversing-challenge-chameleon
 categories:
-    - Conferences
-    - Crypto
-    - CTFs
-    - 'Reverse Engineering'
+    - conferences
+    - crypto
+    - ctfs
+    - re
 ---
 
 For my third and final blog post about the BSidesSF CTF, I wanted to cover the solution to Chameleon. Chameleon is loosely based on a <a href="https://2019.kringlecon.com/">KringleCon challenge I wrote</a> (<a href="https://www.youtube.com/watch?v=obJdpKDpFBA">video guide</a>), which is loosely based on a real-world penetration test from a long time ago. Except that Chameleon is much, much harder than either.

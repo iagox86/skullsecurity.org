@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2009'
 permalink: /2015/how-i-nearly-almost-saved-the-internet-starring-afl-fuzz-and-dnsmasq
 categories:
-    - DNS
-    - Hacking
-    - Tools
+    - dns
+    - hacking
+    - tools
 ---
 
 If you know me, you know that <a href='https://github.com/iagox86/dnscat2'>I love DNS</a>. I'm not exactly sure how that happened, but I suspect that <a href='https://twitter.com/edskoudis'>Ed Skoudis</a> is at least partly to blame.

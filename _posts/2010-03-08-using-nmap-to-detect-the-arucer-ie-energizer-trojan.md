@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=563'
 permalink: /2010/using-nmap-to-detect-the-arucer-ie-energizer-trojan
 categories:
-    - Malware
-    - Nmap
+    - malware
+    - nmap
 ---
 
 Hey,

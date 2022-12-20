@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1236'
 permalink: /2012/battle-net-authentication-misconceptions
 categories:
-    - Passwords
-    - 'Reverse Engineering'
+    - passwords
+    - re
 ---
 
 Hey everybody,

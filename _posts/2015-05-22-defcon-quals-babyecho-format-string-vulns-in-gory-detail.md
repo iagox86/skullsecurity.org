@@ -7,7 +7,7 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2059'
 permalink: /2015/defcon-quals-babyecho-format-string-vulns-in-gory-detail
 categories:
-    - 'Defcon Quals 2015'
+    - defcon-quals-2015
 ---
 
 Welcome to the third (and penultimate) blog post about the 2015 <a href='https://legitbs.net'>Defcon Qualification CTF</a>! This is going to be a writeup of the "babyecho" level, as well as a thorough overview of format-string vulnerabilities! I really like format string vulnerabilities - they're essentially a "read or write anywhere" primitive - so I'm excited to finally write about them!

@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=426'
 permalink: /2010/dns-backdoors-with-dnscat
 categories:
-    - DNS
-    - Hacking
-    - Tools
+    - dns
+    - hacking
+    - tools
 ---
 
 Hey all,

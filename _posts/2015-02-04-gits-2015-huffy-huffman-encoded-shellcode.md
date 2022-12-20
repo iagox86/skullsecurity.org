@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1980'
 permalink: /2015/gits-2015-huffy-huffman-encoded-shellcode
 categories:
-    - GITS2015
-    - 'Reverse Engineering'
+    - gits-2015
+    - re
 ---
 
 Welcome to my fourth and final writeup from Ghost in the Shellcode 2015! This one is about the one and only reversing level, called "<a href='http://blogdata.skullsecurity.org/huffy'>huffy</a>", that was released right near the end.

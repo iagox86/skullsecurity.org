@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=611'
 permalink: /2010/weaponizing-dnscat-with-shellcode-and-metasploit
 categories:
-    - DNS
-    - Hacking
-    - Tools
+    - dns
+    - hacking
+    - tools
 ---
 
 Hey all,

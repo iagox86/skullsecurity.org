@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1817'
 permalink: /2014/ghost-in-the-shellcode-fuzzy-pwnage-301
 categories:
-    - GITS2014
-    - Hacking
-    - 'Reverse Engineering'
+    - gits-2014
+    - hacking
+    - re
 ---
 
 Hey folks,

@@ -7,7 +7,7 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1949'
 permalink: /2014/call-for-help-researching-the-recent-gmail-password-leak
 categories:
-    - Passwords
+    - passwords
 ---
 
 Hey folks,

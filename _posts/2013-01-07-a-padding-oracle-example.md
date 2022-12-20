@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1459'
 permalink: /2013/a-padding-oracle-example
 categories:
-    - Crypto
-    - Hacking
+    - crypto
+    - hacking
 ---
 
 Early last week, I <a href='http://www.skullsecurity.org/blog/2013/padding-oracle-attacks-in-depth'>posted a blog</a> about padding oracle attacks. I explained them in detail, as simply as I could (without making diagrams, I suck at diagrams). I asked on Reddit about how I could make it easier to understand, and <a href='http://www.reddit.com/r/crypto/comments/15u0to/an_indepth_look_at_padding_oracle_attacks_for/c7q3636'>JoseJimeniz suggested working through an example</a>. I thought that was a neat idea, and working through a padding oracle attack by hand seems like a fun exercise!

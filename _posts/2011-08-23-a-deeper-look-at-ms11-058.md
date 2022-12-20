@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1158'
 permalink: /2011/a-deeper-look-at-ms11-058
 categories:
-    - DNS
-    - Hacking
-    - 'Reverse Engineering'
+    - dns
+    - hacking
+    - re
 ---
 
 Hey everybody,

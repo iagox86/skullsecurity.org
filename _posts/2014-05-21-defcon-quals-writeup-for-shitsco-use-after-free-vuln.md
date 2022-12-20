@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1909'
 permalink: /2014/defcon-quals-writeup-for-shitsco-use-after-free-vuln
 categories:
-    - 'Defcon Quals 2014'
-    - Hacking
+    - defcon-quals-2014
+    - hacking
 ---
 
 Hey folks,

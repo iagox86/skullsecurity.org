@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=154'
 permalink: /2009/how-pwdump6-works-and-how-nmap-can-do-it
 categories:
-    - Hacking
-    - NetBIOS/SMB
+    - hacking
+    - smb
 ---
 
 Today I want to discuss how the <a href='http://foofus.net/fizzgig/pwdump/'>pwdump6</a> and <a href='http://foofus.net/fizzgig/fgdump/'>fgdump</a> tools work, in detail, and how I was able to integrate pwdump6 into my Nmap scripts. Is this integration useful? Maybe or maybe not, but it was definitely an interesting problem. 

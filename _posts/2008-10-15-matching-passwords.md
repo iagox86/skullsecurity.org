@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=88'
 permalink: /2008/matching-passwords
 categories:
-    - Humour
+    - humour
 ---
 
 Sometimes, I can't help but laugh...

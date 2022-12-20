@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=407'
 permalink: /2010/whos-going-to-shmoocon
 categories:
-    - Conferences
+    - conferences
 ---
 
 Hey everybody,

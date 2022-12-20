@@ -7,7 +7,7 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2442'
 permalink: /2019/how-do-i-start-picking-locks
 categories:
-    - Lockpicking
+    - lockpicking
 ---
 
 Hey folks,

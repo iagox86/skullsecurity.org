@@ -7,10 +7,10 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=779'
 permalink: /2010/metasploit-express-beta-first-look
 categories:
-    - Hacking
-    - Tools
+    - hacking
+    - tools
 tags:
-    - Hacking
+    - hacking
     - Metasploit
     - 'Metasploit Express'
     - PenTesting

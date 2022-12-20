@@ -7,10 +7,10 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2194'
 permalink: /2015/dnscat2-now-with-crypto
 categories:
-    - Conferences
-    - DNS
-    - Hacking
-    - Tools
+    - conferences
+    - dns
+    - hacking
+    - tools
 ---
 
 Hey everybody,

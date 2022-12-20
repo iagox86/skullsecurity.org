@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=340'
 permalink: /2009/zombie-web-servers-are-you-one
 categories:
-    - Malware
-    - Nmap
-    - Tools
+    - malware
+    - nmap
+    - tools
 ---
 
 Greetings! 

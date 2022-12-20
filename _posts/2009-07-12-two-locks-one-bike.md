@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=309'
 permalink: /2009/two-locks-one-bike
 categories:
-    - Humour
+    - humour
 ---
 
 <p>Hi all,</p>

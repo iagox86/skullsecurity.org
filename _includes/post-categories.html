@@ -1,0 +1,15 @@
+<span class="category-links">
+  {% assign categories = '' | split:':' %}
+
+  <ul class="entry-categories">
+  {% for category in include.categories %}
+    {% assign obj_category = site.categories | where: 'short_name', category %}
+
+    {% if obj_category and obj_category.size != 0 %}
+      <li><a href="{{ obj_category[0].url }}">{{ obj_category[0].name }}</a></li>
+    {% else %}
+      <li>Unknown category: {{ category }}</li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</span>

@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=898'
 permalink: /2010/followup-to-my-facebook-research
 categories:
-    - Passwords
+    - passwords
 ---
 
 Hey all,

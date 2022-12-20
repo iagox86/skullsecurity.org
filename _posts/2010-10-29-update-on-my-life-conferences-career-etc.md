@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=956'
 permalink: /2010/update-on-my-life-conferences-career-etc
 categories:
-    - Conferences
+    - conferences
 ---
 
 Hey all! 

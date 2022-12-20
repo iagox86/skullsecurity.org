@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2588'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-log-em-all-a-pokemon-style-collection-game-video
 categories:
-    - CTFs
-    - 'Reverse Engineering'
-    - Video
+    - ctfs
+    - re
+    - video
 ---
 
 This is a video walkthrough of Log 'em All, a difficult Hacking / Reverse Engineering challenge based on a classic bug in Pokemon Red. You can view the video below, or <a href="https://www.youtube.com/watch?v=sY5V-vvipK4">directly on Youtube</a>.

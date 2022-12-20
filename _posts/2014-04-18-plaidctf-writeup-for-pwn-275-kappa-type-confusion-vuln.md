@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1879'
 permalink: /2014/plaidctf-writeup-for-pwn-275-kappa-type-confusion-vuln
 categories:
-    - Hacking
-    - 'PlaidCTF 2014'
-    - 'Reverse Engineering'
+    - hacking
+    - plaidctf-2014
+    - re
 ---
 
 Hey folks,

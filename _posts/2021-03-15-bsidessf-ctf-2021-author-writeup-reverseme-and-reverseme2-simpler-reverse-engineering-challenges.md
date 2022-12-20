@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2503'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-reverseme-and-reverseme2-simpler-reverse-engineering-challenges
 categories:
-    - CTFs
-    - 'Reverse Engineering'
+    - ctfs
+    - re
 ---
 
 This is going to be a writeup for the Reverseme challenges (<a href="https://github.com/BSidesSF/ctf-2021-release/tree/main/reverseme">reverseme</a> and <a href="https://github.com/BSidesSF/ctf-2021-release/tree/main/reverseme2">reverseme2</a> from <a href="https://ctftime.org/event/1299">BSides San Francisco 2021</a>.

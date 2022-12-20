@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=331'
 permalink: /2009/scorched-earth-finding-vulnerable-smbv2-systems-with-nmap
 categories:
-    - NetBIOS/SMB
-    - Nmap
-    - Tools
+    - smb
+    - nmap
+    - tools
 ---
 
 Hello once again! 

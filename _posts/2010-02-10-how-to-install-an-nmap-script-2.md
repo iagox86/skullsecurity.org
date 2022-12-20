@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=459'
 permalink: /2010/how-to-install-an-nmap-script-2
 categories:
-    - Nmap
+    - nmap
 ---
 
 Hey all,

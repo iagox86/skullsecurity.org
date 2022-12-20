@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=146'
 permalink: /2008/how-not-to-do-captchas
 categories:
-    - Humour
+    - humour
 ---
 
 <img src="/blogdata/dumbcaptcha.png">

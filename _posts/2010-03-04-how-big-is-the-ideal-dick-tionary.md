@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=516'
 permalink: /2010/how-big-is-the-ideal-dick-tionary
 categories:
-    - Hacking
+    - hacking
 ---
 
 Hey all,

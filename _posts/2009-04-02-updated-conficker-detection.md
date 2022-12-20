@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=228'
 permalink: /2009/updated-conficker-detection
 categories:
-    - Malware
-    - NetBIOS/SMB
+    - malware
+    - smb
 ---
 
 Morning, all! 

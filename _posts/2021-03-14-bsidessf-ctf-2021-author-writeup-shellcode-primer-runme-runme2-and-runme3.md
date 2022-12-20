@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2496'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-shellcode-primer-runme-runme2-and-runme3
 categories:
-    - CTFs
-    - Hacking
+    - ctfs
+    - hacking
 ---
 
 Hi Everybody!

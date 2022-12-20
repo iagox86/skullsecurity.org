@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=209'
 permalink: /2009/scanning-for-conficker-with-nmap
 categories:
-    - Malware
-    - NetBIOS/SMB
+    - malware
+    - smb
 ---
 
 Using Nmap to scan for the famous Conficker worm. 

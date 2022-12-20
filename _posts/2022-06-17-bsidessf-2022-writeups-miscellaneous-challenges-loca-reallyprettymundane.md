@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2632'
 permalink: /2022/bsidessf-2022-writeups-miscellaneous-challenges-loca-reallyprettymundane
 categories:
-    - 'BSidesSF 2022'
-    - CTFs
+    - bsidessf-2022
+    - ctfs
 ---
 
 <p>Hey folks,</p>

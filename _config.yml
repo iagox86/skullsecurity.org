@@ -12,6 +12,8 @@ excerpt_separator: '<!--more-->'
 collections:
   authors:
     output: true
+  categories:
+    output: true
 
 plugins:
   - jekyll-feed

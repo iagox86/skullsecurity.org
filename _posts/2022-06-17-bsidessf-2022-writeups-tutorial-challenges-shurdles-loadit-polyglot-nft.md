@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2624'
 permalink: /2022/bsidessf-2022-writeups-tutorial-challenges-shurdles-loadit-polyglot-nft
 categories:
-    - 'BSidesSF 2022'
-    - CTFs
+    - bsidessf-2022
+    - ctfs
 ---
 
 <p>Hey folks,</p>

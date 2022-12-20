@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2451'
 permalink: /2020/bsidessf-ctf-difficult-reverse-engineering-challenge-gman
 categories:
-    - Conferences
-    - CTFs
+    - conferences
+    - ctfs
 ---
 
 Once again, it was my distinct privilege to be a BSidesSF CTF organizer! As somebody who played CTFs for years, it really means a lot to me to organize one, and watch folks struggle through our challenges. And more importantly, each person that comes up to us and either thanks us or tells us they learned something is a huge bonus!

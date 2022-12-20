@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=723'
 permalink: /2010/nmap-script-to-generate-custom-license-plates
 categories:
-    - 'April Fools'
-    - Humour
-    - Nmap
+    - april-fools
+    - humour
+    - nmap
 ---
 
 Hey all,

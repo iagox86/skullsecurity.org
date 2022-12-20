@@ -7,12 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=931'
 permalink: /2010/finding-mapped-drives-with-meterpreter
 categories:
-    - Hacking
-tags:
-    - Hacking
-    - Instructions
-    - 'Matt Gardenghi'
-    - Metasploit
+    - hacking
 ---
 
 This post written by <a href='https://twitter.com/matt_gardenghi'>Matt Gardenghi</a>

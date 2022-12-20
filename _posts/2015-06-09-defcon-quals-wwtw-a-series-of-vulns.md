@@ -7,7 +7,7 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2117'
 permalink: /2015/defcon-quals-wwtw-a-series-of-vulns
 categories:
-    - 'Defcon Quals 2015'
+    - defcon-quals-2015
 ---
 
 Hey folks,

@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1054'
 permalink: /2011/hacking-crappy-password-resets-part-1
 categories:
-    - Hacking
-    - Passwords
-    - Tools
+    - hacking
+    - passwords
+    - tools
 ---
 
 Greetings, all!

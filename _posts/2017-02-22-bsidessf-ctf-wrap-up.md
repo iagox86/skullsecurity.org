@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2296'
 permalink: /2017/bsidessf-ctf-wrap-up
 categories:
-    - Conferences
-    - CTFs
+    - conferences
+    - ctfs
 ---
 
 Welcome!

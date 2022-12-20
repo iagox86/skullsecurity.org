@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1271'
 permalink: /2012/using-git-clone-to-get-pwn3d
 categories:
-    - Hacking
-    - Nmap
-    - Tools
+    - hacking
+    - nmap
+    - tools
 ---
 
 Hey everybody!

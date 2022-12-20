@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2453'
 permalink: /2020/bsidessf-ctf-easy-to-hard-rust-reversing-challenges
 categories:
-    - Conferences
-    - CTFs
-    - 'Reverse Engineering'
+    - conferences
+    - ctfs
+    - re
 ---
 
 As mentioned in a previous post, I was honoured to once again help run BSidesSF CTF!

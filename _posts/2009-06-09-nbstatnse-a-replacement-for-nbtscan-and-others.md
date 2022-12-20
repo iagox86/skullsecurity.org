@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=298'
 permalink: /2009/nbstatnse-a-replacement-for-nbtscan-and-others
 categories:
-    - NetBIOS/SMB
-    - Tools
+    - smb
+    - tools
 ---
 
 Hey all,

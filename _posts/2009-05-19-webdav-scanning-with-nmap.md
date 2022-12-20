@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=271'
 permalink: /2009/webdav-scanning-with-nmap
 categories:
-    - Hacking
-    - Tools
+    - hacking
+    - tools
 ---
 
 Greetings!

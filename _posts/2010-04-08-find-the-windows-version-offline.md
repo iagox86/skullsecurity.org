@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=465'
 permalink: /2010/find-the-windows-version-offline
 categories:
-    - Forensics
+    - forensics
 ---
 
 I am not a forensics expert, nor do I play one on TV. I do, however, play one at work from time to time and I own some of the key tools: a magnifying glass and a 10baseT hub. Oh, and a Sherlock Holmes hat -- that's the key. Unfortunately, these weren't much help when I was handed a pile of drives and was asked to find out which version of Windows they had been running. I wasn't allowed to boot them, and I couldn't really find the full answer of how to get the version after a lot of googling, so I figured it out the hard way. Hopefully I can save you guys some time by explaining it in detail. 

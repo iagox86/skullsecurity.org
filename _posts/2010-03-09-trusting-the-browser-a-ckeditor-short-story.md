@@ -7,12 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=560'
 permalink: /2010/trusting-the-browser-a-ckeditor-short-story
 categories:
-    - Hacking
-tags:
-    - Hacking
-    - 'Matt Gardenghi'
-    - Proxies
-    - 'Web 2.0'
+    - hacking
 ---
 
 My name is Matt Gardenghi.  Ron seems to think it important that this post be  clearly attributed to someone else (this fact might worry me).  I'm an occasional contributor here (see: <a title="Bypassing AV" href="http://www.skullsecurity.org/blog/?p=261" target="_blank">Bypassing AV</a>).  I handle  security at Bob Jones University and also perform pentests on the side.   (So if you need someone to do work, here's my shameless plug.)  I have  acquired the oddly despised CISSP and the more respectable GCFA, GPEN,  and GWAPT.

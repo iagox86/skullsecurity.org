@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2226'
 permalink: /2016/going-the-other-way-with-padding-oracles-encrypting-arbitrary-data
 categories:
-    - Crypto
-    - Hacking
-    - Tools
+    - crypto
+    - hacking
+    - tools
 ---
 
 A long time ago, I wrote a <a href='https://blog.skullsecurity.org/2013/padding-oracle-attacks-in-depth'>couple</a> <a href='https://blog.skullsecurity.org/2013/a-padding-oracle-example'>blogs</a> that went into a lot of detail on how to use padding oracle vulnerabilities to decrypt an encrypted string of data. It's pretty important to understand to use a padding oracle vulnerability for decryption before reading this, so I'd suggest going there for a refresher.

@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=164'
 permalink: /2009/bruteforcing-windows-tips-and-tricks
 categories:
-    - Hacking
-    - NetBIOS/SMB
+    - hacking
+    - smb
 ---
 
 Today, I'm going to share some knowledge and techniques on bruteforcing Windows passwords. Hopefully, some of you have thought about this and can give me even more advice. If you know anything, post it! 

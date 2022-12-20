@@ -7,10 +7,10 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2377'
 permalink: /2019/some-crypto-challenges-author-writeup-from-bsidessf-ctf
 categories:
-    - Conferences
-    - Crypto
-    - Passwords
-    - Tools
+    - conferences
+    - crypto
+    - passwords
+    - tools
 ---
 
 Hey everybody,

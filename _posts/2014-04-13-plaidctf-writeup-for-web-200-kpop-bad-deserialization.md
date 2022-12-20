@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1847'
 permalink: /2014/plaidctf-writeup-for-web-200-kpop-bad-deserialization
 categories:
-    - Hacking
-    - 'PlaidCTF 2014'
+    - hacking
+    - plaidctf-2014
 ---
 
 Hello again!

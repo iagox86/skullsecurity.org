@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=92'
 permalink: /2008/calling-rpc-functions-over-smb
 categories:
-    - NetBIOS/SMB
+    - smb
 ---
 
 Hi everybody! 

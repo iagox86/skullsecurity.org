@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1913'
 permalink: /2014/defcon-quals-writeup-for-byhd-reversing-a-huffman-tree
 categories:
-    - 'Defcon Quals 2014'
-    - Hacking
-    - 'Reverse Engineering'
+    - defcon-quals-2014
+    - hacking
+    - re
 ---
 
 This is my writeup for byhd, a 2-point challenge from the Defcon Qualifier CTF. You can get the files, including my annotated assembly file, <a href='https://github.com/iagox86/defcon-ctf-2014/tree/master/byhd'>here</a>. This is my second (and final) writeup for the Defcon Qualifiers, you can find the writeup for shitsco <a href='/2014/defcon-quals-writeup-for-shitsco-use-after-free-vuln'>here</a>.

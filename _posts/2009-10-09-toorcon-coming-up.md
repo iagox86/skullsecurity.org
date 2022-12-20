@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=349'
 permalink: /2009/toorcon-coming-up
 categories:
-    - Conferences
-    - Hacking
+    - conferences
+    - hacking
 ---
 
 Hey all,

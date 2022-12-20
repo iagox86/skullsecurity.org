@@ -1,0 +1,12 @@
+---
+layout: default
+title: Categories
+---
+<h1>Categories</h1>
+
+<ul class='categories'>
+{% for category in site.categories %}
+  {% assign filtered_posts = site.posts | where_exp: "post", "post.categories contains category.short_name" %}
+  <li><a href="{{ category.url }}">{{ category.name }} ({{ filtered_posts.size }} posts)</a></li>
+{% endfor %}
+</ul>

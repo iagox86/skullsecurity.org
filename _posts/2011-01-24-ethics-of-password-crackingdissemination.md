@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1028'
 permalink: /2011/ethics-of-password-crackingdissemination
 categories:
-    - Conferences
-    - Hacking
-    - Passwords
+    - conferences
+    - hacking
+    - passwords
 ---
 
 It's rare these days for me to write blogs that I have to put a lot of thought into. Most of my writing is technical, which comes pretty naturally, but I haven't written an argument since I minored in philosophy. So, if my old Ethics or Philosophy profs are reading this, I'm sorry! 

@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=876'
 permalink: /2010/call-for-testers-nbtool-0-05-and-dnscat-0-05
 categories:
-    - DNS
-    - Tools
+    - dns
+    - tools
 ---
 
 Hey all,

@@ -7,7 +7,7 @@ layout: post
 guid: 'http://blog.skullsecurity.org/?p=1708'
 permalink: /2013/bsides-winnipeg-wrap-up
 categories:
-    - Conferences
+    - conferences
 ---
 
 For those of you who are close to me, you'll know that my life has been crazy lately. Between teaching courses, changing jobs (<s>here I come, Google!</s>recently started at Google! (I'm slow at posting these :) )), and organizing BSides Winnipeg, I've barely had time to breathe!

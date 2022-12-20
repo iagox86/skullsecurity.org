@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1134'
 permalink: /2011/locks-that-can-re-key-themselves
 categories:
-    - 'Reverse Engineering'
+    - re
 ---
 
 Hey everybody,

@@ -7,7 +7,7 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1938'
 permalink: /2014/opening-the-mysterious-hatch-of-mystery
 categories:
-    - Random
+    - random
 ---
 
 Every once in awhile, I like to post something <a href='/2009/two-locks-one-bike'>random</a> here. This is another one of those times. If you want some real security info, move along now. :)

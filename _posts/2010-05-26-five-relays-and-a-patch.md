@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=793'
 permalink: /2010/five-relays-and-a-patch
 categories:
-    - Hacking
-    - Tools
+    - hacking
+    - tools
 ---
 
 Hey all,

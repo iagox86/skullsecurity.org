@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1197'
 permalink: /2011/remote-control-manager-fail
 categories:
-    - Hacking
-    - 'Reverse Engineering'
+    - hacking
+    - re
 ---
 
 Hey guys,

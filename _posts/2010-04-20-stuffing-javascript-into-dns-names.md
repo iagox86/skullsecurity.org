@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=433'
 permalink: /2010/stuffing-javascript-into-dns-names
 categories:
-    - DNS
-    - Hacking
-    - Tools
+    - dns
+    - hacking
+    - tools
 ---
 
 Greetings! 

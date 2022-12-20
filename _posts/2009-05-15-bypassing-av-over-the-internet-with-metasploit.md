@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=261'
 permalink: /2009/bypassing-av-over-the-internet-with-metasploit
 categories:
-    - Hacking
-    - Tools
+    - hacking
+    - tools
 tags:
     - antivirus
     - Metasploit

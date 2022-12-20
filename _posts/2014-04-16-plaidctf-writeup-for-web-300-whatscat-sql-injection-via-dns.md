@@ -7,10 +7,10 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1856'
 permalink: /2014/plaidctf-writeup-for-web-300-whatscat-sql-injection-via-dns
 categories:
-    - DNS
-    - Hacking
-    - 'PlaidCTF 2014'
-    - Tools
+    - dns
+    - hacking
+    - plaidctf-2014
+    - tools
 ---
 
 Hey folks,

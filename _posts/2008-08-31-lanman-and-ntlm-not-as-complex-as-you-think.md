@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=34'
 permalink: /2008/lanman-and-ntlm-not-as-complex-as-you-think
 categories:
-    - NetBIOS/SMB
+    - smb
 ---
 
 As I'm sure you've noticed with my first two posts, my NetBIOS/SMB project is taking up most of my time. I hit a bump this weekend, and almost got to the point where the only valid answer was throwing things; luckily, however, I figured it out. I did make a new enemy, though: signed data types! The devil's datatype. 

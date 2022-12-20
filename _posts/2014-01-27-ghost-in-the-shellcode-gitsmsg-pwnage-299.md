@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1756'
 permalink: /2014/ghost-in-the-shellcode-gitsmsg-pwnage-299
 categories:
-    - GITS2014
-    - Hacking
-    - 'Reverse Engineering'
+    - gits-2014
+    - hacking
+    - re
 ---
 
 "It's Saturday night; I have no date, a 2L bottle of Shasta, and my all-rush mix tape. Let's rock!"

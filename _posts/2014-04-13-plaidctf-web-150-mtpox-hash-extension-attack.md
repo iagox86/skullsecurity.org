@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1835'
 permalink: /2014/plaidctf-web-150-mtpox-hash-extension-attack
 categories:
-    - Hacking
-    - 'PlaidCTF 2014'
-    - Tools
+    - hacking
+    - plaidctf-2014
+    - tools
 ---
 
 Hey folks,

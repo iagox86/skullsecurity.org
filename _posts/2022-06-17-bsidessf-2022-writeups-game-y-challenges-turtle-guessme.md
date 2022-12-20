@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2630'
 permalink: /2022/bsidessf-2022-writeups-game-y-challenges-turtle-guessme
 categories:
-    - 'BSidesSF 2022'
-    - CTFs
+    - bsidessf-2022
+    - ctfs
 ---
 
 <p>Hey folks,</p>

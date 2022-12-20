@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1986'
 permalink: /2015/dnscat2-beta-release
 categories:
-    - DNS
-    - Tools
+    - dns
+    - tools
 ---
 
 As I promised during my 2014 Derbycon talk (amongst other places), this is an initial release of my complete re-write/re-design of the dnscat service / protocol. It's now a standalone tool instead of being bundled with nbtool, among other changes. :)

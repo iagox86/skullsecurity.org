@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=25'
 permalink: /2008/andx-and-what
 categories:
-    - NetBIOS/SMB
+    - smb
 ---
 
 My current project, as you can see by my last post, is to learn how to work in Microsoft's networking protocols (NetBIOS, SMB, CIFS, etc). This is obviously difficult due to the lack of standards and documentation, but there are two things that are seriously making my life difficult:

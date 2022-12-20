@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=315'
 permalink: /2009/scanning-for-microsoft-ftp-with-nmap
 categories:
-    - Nmap
-    - Tools
+    - nmap
+    - tools
 ---
 
 Hi all,

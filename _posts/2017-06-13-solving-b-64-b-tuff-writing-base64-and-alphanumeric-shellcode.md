@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2307'
 permalink: /2017/solving-b-64-b-tuff-writing-base64-and-alphanumeric-shellcode
 categories:
-    - CTFs
-    - Hacking
+    - ctfs
+    - hacking
 ---
 
 Hey everybody,

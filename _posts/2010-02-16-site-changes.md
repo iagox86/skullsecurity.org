@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=499'
 permalink: /2010/site-changes
 categories:
-    - Default
+    - meta
 ---
 
 Hey all,

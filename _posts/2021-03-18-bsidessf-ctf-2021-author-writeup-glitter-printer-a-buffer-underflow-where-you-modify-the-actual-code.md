@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2508'
 permalink: /2021/bsidessf-ctf-2021-author-writeup-glitter-printer-a-buffer-underflow-where-you-modify-the-actual-code
 categories:
-    - CTFs
-    - Hacking
-    - 'Reverse Engineering'
+    - ctfs
+    - hacking
+    - re
 ---
 
 Hi Everybody!

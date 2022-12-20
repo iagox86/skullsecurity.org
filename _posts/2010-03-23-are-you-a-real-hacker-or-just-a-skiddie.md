@@ -7,12 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=582'
 permalink: /2010/are-you-a-real-hacker-or-just-a-skiddie
 categories:
-    - Hacking
-tags:
-    - Hackers
-    - 'Matt Gardenghi'
-    - 'script kiddies'
-    - Skiddies
+    - hacking
 ---
 
 This is yet another guest post from our good friend <a href='http://twitter.com/matt_gardenghi'>Matt Gardenghi</a>! If you enjoy this one, don't forget to check his last one: <a href='/blog/?p=560'>Trusting the Browser (a ckeditor short story)</a>.

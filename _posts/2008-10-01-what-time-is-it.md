@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=76'
 permalink: /2008/what-time-is-it
 categories:
-    - Hacking
-    - NetBIOS/SMB
+    - hacking
+    - smb
 ---
 
 How synced up are the clocks on your servers? Ignoring your system times may give an important clue to attackers. Read on to find out more!

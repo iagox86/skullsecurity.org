@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1970'
 permalink: /2015/gits-2015-giggles-off-by-one-virtual-machine
 categories:
-    - GITS2015
-    - Hacking
+    - gits-2015
+    - hacking
 ---
 
 Welcome to part 3 of my Ghost in the Shellcode writeup! Sorry for the delay, I actually just moved to Seattle. On a sidenote, if there are any Seattle hackers out there reading this, hit me up and let's get a drink!

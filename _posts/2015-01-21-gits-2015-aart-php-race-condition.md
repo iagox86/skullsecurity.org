@@ -7,8 +7,8 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1960'
 permalink: /2015/gits-2015-aart-php-race-condition
 categories:
-    - GITS2015
-    - Hacking
+    - gits-2015
+    - hacking
 ---
 
 Welcome to my second writeup for Ghost in the Shellcode 2015! This writeup is for the one and only Web level, "aart" (<a href="https://blogdata.skullsecurity.org/aart.tgz">download it</a>). I wanted to do a writeup for this one specifically because, even though the level isn't super exciting, the solution was actually a pretty obscure vulnerability type that you don't generally see in CTFs: a race condition!

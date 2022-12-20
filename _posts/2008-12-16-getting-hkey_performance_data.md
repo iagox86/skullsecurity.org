@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=127'
 permalink: /2008/getting-hkey_performance_data
 categories:
-    - NetBIOS/SMB
+    - smb
 ---
 
 Hi everybody,

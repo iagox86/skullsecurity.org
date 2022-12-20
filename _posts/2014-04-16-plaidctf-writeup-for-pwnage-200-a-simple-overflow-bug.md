@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=1868'
 permalink: /2014/plaidctf-writeup-for-pwnage-200-a-simple-overflow-bug
 categories:
-    - Hacking
-    - 'PlaidCTF 2014'
-    - 'Reverse Engineering'
+    - hacking
+    - plaidctf-2014
+    - re
 ---
 
 I know what you're thinking of: what's with all the Web levels!?

@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=649'
 permalink: /2010/taking-apart-the-energizer-trojan-part-4-writing-a-probe
 categories:
-    - Malware
-    - Nmap
-    - 'Reverse Engineering'
+    - malware
+    - nmap
+    - re
 ---
 
 Now that we know what we need to send and receive, and how it's encoded, let's generate the actual packet. Then, once we're sure it's working, we'll convert it into an Nmap probe! In most of this section, I assume you're running Linux, Mac, or some other operating system with a built-in compiler and useful tools (gcc, hexdump, etc). If you're on Windows, you'll probably just have to follow along until I generate the probe.

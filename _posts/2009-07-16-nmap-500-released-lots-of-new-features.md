@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=313'
 permalink: /2009/nmap-500-released-lots-of-new-features
 categories:
-    - Hacking
-    - Tools
+    - hacking
+    - tools
 ---
 
 <a href='http://tech.slashdot.org/article.pl?sid=09/07/16/1924232'>View my post on Slashdot</a>

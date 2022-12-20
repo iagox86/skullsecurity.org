@@ -7,14 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=752'
 permalink: /2010/confidential-information-in-the-cloud
 categories:
-    - Hacking
-tags:
-    - Cloud
-    - exploitation
-    - 'Matt Gardenghi'
-    - SaaS
-    - Security
-    - VMWare
+    - hacking
 ---
 
 <em>This is another special blog written by <a href='http://twitter.com/matt_gardenghi'>Matt Gardenghi</a>!</em> 

@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=887'
 permalink: /2010/return-of-the-facebook-snatchers
 categories:
-    - Hacking
-    - Passwords
+    - hacking
+    - passwords
 ---
 
 First and foremost: if you want to cut to the chase, just download the <a href='/blogdata/fbdata.torrent'>torrent</a>. If you want the full story, please read on....

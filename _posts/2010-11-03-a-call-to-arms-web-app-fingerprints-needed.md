@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=960'
 permalink: /2010/a-call-to-arms-web-app-fingerprints-needed
 categories:
-    - Hacking
-    - Nmap
-    - Tools
+    - hacking
+    - nmap
+    - tools
 ---
 
 Hey all,

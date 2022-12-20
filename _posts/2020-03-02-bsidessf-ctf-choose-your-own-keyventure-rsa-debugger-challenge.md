@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2467'
 permalink: /2020/bsidessf-ctf-choose-your-own-keyventure-rsa-debugger-challenge
 categories:
-    - Conferences
-    - Crypto
-    - CTFs
+    - conferences
+    - crypto
+    - ctfs
 ---
 
 <em>Thanks to <strong><a href="https://twitter.com/bmenrigh">symmetric</a></strong> (aka Brandon Enright) for this wonderful guest post! I tried to proofread it, but holy math Batman!! --Ron / @iagox86</em>

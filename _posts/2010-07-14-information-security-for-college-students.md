@@ -7,11 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=882'
 permalink: /2010/information-security-for-college-students
 categories:
-    - Default
-tags:
-    - Class
-    - 'Matt Gardenghi'
-    - Security
+    - hacking
 ---
 
 I've thought about this off and on over the last few years.  Today I noticed that Kees Leune (<a title="post" href="http://www.leune.org/blog/kees/2010/07/teaching-agai.html" target="_blank">http://www.leune.org/blog/kees/2010/07/teaching-agai.html</a>) is going to be teaching a class this school year.  He was asking for comments and so here's mine....

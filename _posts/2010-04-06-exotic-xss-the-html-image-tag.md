@@ -7,12 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=590'
 permalink: /2010/exotic-xss-the-html-image-tag
 categories:
-    - Hacking
-tags:
-    - Exploits
-    - Hacking
-    - 'Matt Gardenghi'
-    - XSS
+    - hacking
 ---
 
 There are the usual XSS tests.  And then there are the fun ones.  This is a story about a more exotic approach to testing XSS....

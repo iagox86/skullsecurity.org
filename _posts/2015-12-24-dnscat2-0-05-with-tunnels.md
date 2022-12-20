@@ -7,9 +7,9 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2220'
 permalink: /2015/dnscat2-0-05-with-tunnels
 categories:
-    - DNS
-    - Hacking
-    - Tools
+    - dns
+    - hacking
+    - tools
 ---
 
 Greetings, and I hope you're all having a great holiday!

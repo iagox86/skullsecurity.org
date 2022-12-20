@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=1309'
 permalink: /2012/current-and-future-challenges-of-the-hackerspace-i-founded
 categories:
-    - Default
+    - meta
 ---
 
 Hey everybody,

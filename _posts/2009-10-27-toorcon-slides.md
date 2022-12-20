@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=353'
 permalink: /2009/toorcon-slides
 categories:
-    - Conferences
+    - conferences
 ---
 
 Hey all,

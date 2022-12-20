@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=995'
 permalink: /2010/watch-out-for-exim
 categories:
-    - Hacking
-    - 'Reverse Engineering'
-    - Tools
+    - hacking
+    - re
+    - tools
 ---
 
 Hey everybody,

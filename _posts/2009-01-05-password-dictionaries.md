@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=151'
 permalink: /2009/password-dictionaries
 categories:
-    - Hacking
+    - hacking
 ---
 
 Greetings from 2009! 

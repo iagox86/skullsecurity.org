@@ -7,7 +7,7 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2034'
 permalink: /2015/defcon-quals-access-control-simple-reverse-engineer
 categories:
-    - 'Defcon Quals 2015'
+    - defcon-quals-2015
 ---
 
 Hello all,

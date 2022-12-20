@@ -7,7 +7,7 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=45'
 permalink: /2008/ntlmv2-as-promised-plus-some-random-smb-stuff
 categories:
-    - NetBIOS/SMB
+    - smb
 ---
 
 Last post, I promised I'd post about NTLMv2 once I got it implemented. And, here we are. 

@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=549'
 permalink: /2010/the-ultimate-faceoff-between-password-lists
 categories:
-    - Nmap
-    - Passwords
+    - nmap
+    - passwords
 ---
 
 Yes, I'm still working on making the ultimate password list. And I don't mean the 16gb one I made by taking pretty much every word or word-looking string on the Internet when I was a kid; that was called ultimat<em>er</em> dictionary. No; I mean one that is streamlined, sorted, and will make Nmap the bruteforce tool of the future! 

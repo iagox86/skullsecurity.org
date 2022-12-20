@@ -7,10 +7,10 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2363'
 permalink: /2019/bsidessf-ctf-author-writeup-genius
 categories:
-    - Conferences
-    - CTFs
-    - Hacking
-    - 'Reverse Engineering'
+    - conferences
+    - ctfs
+    - hacking
+    - re
 ---
 
 Hey all,

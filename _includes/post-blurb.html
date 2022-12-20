@@ -1,19 +1,11 @@
 <h2 class="entry-title"><a href="{{ include.post.url }}">{{ include.post.title }}</a></h1>
-<div class="entry-content">
-  {{ include.post.excerpt }}
-</div>
+
+{% include post-excerpt.html post=include.post %}
+
 <div class="entry-meta">
-  <span class="date-link">
-    <time class="entry-date" datetime="{{ include.post.date }}">{{ include.post.date | date: "%Y-%m-%d" }}</time>
-  </span>
+  {% include post-date.html date=post.date %}
 
-  <span class="author-link vcard">
-    {% assign author = site.authors | where: 'short_name', include.post.author %}
+  {% include post-categories.html categories=include.post.categories %}
 
-    {% if author and author.size != 0 %}
-      <a href="{{ author[0].url }}">{{ author[0].name }}</a>
-    {% else %}
-      Unknown author: {{ include.post.author }}
-    {% endif %}
-  </span>
+  {% include post-author.html short_name=include.post.author %}
 </div>

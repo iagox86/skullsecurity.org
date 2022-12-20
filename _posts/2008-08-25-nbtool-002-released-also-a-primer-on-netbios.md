@@ -7,8 +7,8 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=6'
 permalink: /2008/nbtool-002-released-also-a-primer-on-netbios
 categories:
-    - NetBIOS/SMB
-    - Tools
+    - smb
+    - tools
 ---
 
 All right, maybe 0.02 doesn't sound so impressive, but I've put a lot of work into it so eh?

@@ -7,9 +7,9 @@ layout: post
 guid: 'http://www.skullsecurity.org/blog/?p=365'
 permalink: /2009/smb-psexec-nse-owning-windows-fast-part-1
 categories:
-    - Hacking
-    - NetBIOS/SMB
-    - Nmap
+    - hacking
+    - smb
+    - nmap
 ---
 
 Posts in this series (I'll add links as they're written):
@@ -33,7 +33,7 @@ I'll get deeper into some of these points in later blog postings, but for now he
 <ul>
 <li>Multi-platform -- smb-psexec.nse, including its required SMB/MSRPC libraries, is implemented from scratch in Lua, and therefore can run on any operating system that Nmap runs on. That means it'll run on nearly ever platform, including Linux, Windows, BSD, OSX, etc.</li>
 <li>Multiple executables -- While other tools are designed to run a single remote service, smb-psexec, is designed to run any number of executables in a single execution.</li>
-<li>Multiple targets -- Nmap's scanning capabilities are leveraged here; with Nmap scanning, a wide range of hosts is as easy as scanning a single host.</li>
+<li>Multiple targets -- nmap's scanning capabilities are leveraged here; with Nmap scanning, a wide range of hosts is as easy as scanning a single host.</li>
 <li>Local or remote executables -- The executable files can be stored locally on the attacker system (say, fgdump.exe) or can already be on the target system (say, ping.exe or tracert.exe). </li>
 <li>Configuration-based -- Each scan uses a configuration file to set its options. As a result, scans are easily configurable and repeatable.</li>
 <li>Output formatting -- The configuration files make it easy to format the output from each remote process, allowing you to filter out excess output.</li>
@@ -61,7 +61,7 @@ But, if you either don't know the username/password, or you have many machines w
 Obviously, when you're performing a bruteforce, there's the possibility of locking out accounts. For that reason, only do that on machine(s) that either you own, or you know the policies on!
 
 <h3>Ports</h3>
-The second requirement is that TCP port 139 or 445 has to be open. These ports are functionally equivalent for our purposes, so it doesn't matter which one is open; TCP/445 is raw SMB, and TCP/139 is SMB over NetBIOS -- Nmap will autodetect and function accordingly. For what it's worth, TCP/445 is preferred because it has less overhead.
+The second requirement is that TCP port 139 or 445 has to be open. These ports are functionally equivalent for our purposes, so it doesn't matter which one is open; TCP/445 is raw SMB, and TCP/139 is SMB over NetBIOS -- nmap will autodetect and function accordingly. For what it's worth, TCP/445 is preferred because it has less overhead.
 
 Anyway, as I'm sure you all know, modern versions of Windows (Windows XP SP2, Windows 2003 SP1, Windows Vista, etc) enable the Windows firewall by default. Likewise, many organizations have software firewalls, hardware firewalls, or both. These will obviously block your SMB traffic, and rightly so. Would you want an external entity running smb-psexec.nse?
 

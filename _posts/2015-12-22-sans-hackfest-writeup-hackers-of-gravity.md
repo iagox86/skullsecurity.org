@@ -7,7 +7,7 @@ layout: post
 guid: 'https://blog.skullsecurity.org/?p=2198'
 permalink: /2015/sans-hackfest-writeup-hackers-of-gravity
 categories:
-    - Conferences
+    - conferences
 ---
 
 <s>Last week</s>A few weeks ago, SANS hosted a private event at the Smithsonian's Air and Space Museum as part of SANS Hackfest. An evening in the Air and Space Museum just for us! And to sweeten the deal, they set up a scavenger hunt called "Hackers of Gravity" to work on while we were there!
