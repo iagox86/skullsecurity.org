@@ -5,6 +5,7 @@ description: Adventures In Security
 url: "https://blog.skullsecurity.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: iagox86
 github_username:  iagox86
+logo: /assets/skullsecurity.jpg
 
 paginate: 20
 excerpt_separator: '<!--more-->'
