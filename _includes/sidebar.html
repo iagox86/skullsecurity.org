@@ -1,0 +1,7 @@
+{% for widget in site.widgets %}
+  <aside id="{{ widget.short_name }}" class="widget">
+    <h3 class="widget-title">{{ widget.name }}</h3>
+
+    {{ widget.content | markdownify }}
+  </aside>
+{% endfor %}
