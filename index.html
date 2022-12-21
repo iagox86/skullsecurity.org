@@ -11,7 +11,7 @@ header: full
 
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
-  {%include post-blurb.html post=post%}
+  {% include post-blurb.html post=post %}
 {% endfor %}
 
 <!-- Pagination links -->

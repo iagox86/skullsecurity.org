@@ -1,9 +1,5 @@
-{% assign widgetsSorted = site.widgets | sort: 'index' %}
+{% include sidebar-author.html %}
 
-{% for widget in widgetsSorted %}
-  <aside id="{{ widget.short_name }}" class="widget">
-    <h3 class="widget-title">{{ widget.name }}</h3>
+{% include sidebar-featured.html %}
 
-    <div class="widget widget-{{ widget.short_name }}">{{ widget.content }}</div>
-  </aside>
-{% endfor %}
+{% include sidebar-categories.html %}

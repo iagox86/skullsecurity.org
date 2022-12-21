@@ -16,6 +16,8 @@ collections:
     output: true
   widgets:
     output: true
+  posts:
+    output: true
 
 plugins:
   - jekyll-feed

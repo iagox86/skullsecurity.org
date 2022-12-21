@@ -1,0 +1,11 @@
+<aside id="widget-categories" class="widget">
+  <h3 class="widget-title">Categories</h3>
+
+  <div class="widget-body widget-categories">
+    <ul>
+    {% for category in site.categories %}
+      <li><a href="{{ category.url }}">{{ category.name }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</aside>
