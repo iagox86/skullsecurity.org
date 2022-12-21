@@ -6,7 +6,7 @@ url: "https://blog.skullsecurity.org" # the base hostname & protocol for your si
 twitter_username: iagox86
 github_username:  iagox86
 
-paginate: 5
+paginate: 20
 excerpt_separator: '<!--more-->'
 
 collections:

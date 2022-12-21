@@ -7,11 +7,15 @@
 
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+    <div id="main" class="wrapper">
+      <div id="primary" class="site-content" aria-label="Content">
         {{ content }}
       </div>
-    </main>
+
+      <div id="secondary" class="widget-area" role="complementary">
+        Sidebar area!
+      </div>
+    </div>
   </body>
 
 </html>

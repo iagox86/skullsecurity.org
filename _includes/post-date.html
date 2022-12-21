@@ -1,3 +1,3 @@
 <span class="date-link">
-  <time class="entry-date" datetime="{{ include.date }}" title="{{ include.date | date_to_rfc822 }}">{{ include.date | date_to_long_string }}</time>
+  <time class="entry-date dt-published" datetime="{{ include.date | date_to_xmlschema }}" title="{{ include.date | date_to_rfc822 }}">{{ include.date | date_to_long_string }}</time>
 </span>
