@@ -1,6 +1,7 @@
 ---
 id: 2442
 title: 'How do I start picking locks?'
+featured: true
 date: '2019-12-16T12:27:33-05:00'
 author: ron
 layout: post

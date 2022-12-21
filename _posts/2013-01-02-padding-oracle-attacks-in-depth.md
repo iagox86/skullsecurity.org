@@ -1,6 +1,7 @@
 ---
 id: 1318
 title: 'Padding oracle attacks: in depth'
+featured: true
 date: '2013-01-02T11:59:43-05:00'
 author: ron
 layout: post

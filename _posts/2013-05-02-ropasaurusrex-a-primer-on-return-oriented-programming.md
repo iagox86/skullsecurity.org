@@ -1,6 +1,7 @@
 ---
 id: 1555
 title: 'ropasaurusrex: a primer on return-oriented programming'
+featured: true
 date: '2013-05-02T09:25:02-05:00'
 author: ron
 layout: post

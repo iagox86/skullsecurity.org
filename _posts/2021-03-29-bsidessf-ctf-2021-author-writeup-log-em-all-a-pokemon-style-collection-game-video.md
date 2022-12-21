@@ -1,6 +1,7 @@
 ---
 id: 2588
 title: 'BSidesSF CTF 2021 Author writeup: log-em-all, a Pokemon-style collection game [video]'
+featured: true
 date: '2021-03-29T10:39:10-05:00'
 author: ron
 layout: post

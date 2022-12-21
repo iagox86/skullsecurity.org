@@ -1,6 +1,7 @@
 ---
 id: 2340
 title: 'Technical Rundown of WebExec'
+featured: true
 date: '2018-10-24T11:18:44-05:00'
 author: ron
 layout: post

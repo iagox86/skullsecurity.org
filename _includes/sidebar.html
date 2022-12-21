@@ -1,7 +1,9 @@
-{% for widget in site.widgets %}
+{% assign widgetsSorted = site.widgets | sort: 'index' %}
+
+{% for widget in widgetsSorted %}
   <aside id="{{ widget.short_name }}" class="widget">
     <h3 class="widget-title">{{ widget.name }}</h3>
 
-    {{ widget.content | markdownify }}
+    <div class="widget widget-{{ widget.short_name }}">{{ widget.content }}</div>
   </aside>
 {% endfor %}

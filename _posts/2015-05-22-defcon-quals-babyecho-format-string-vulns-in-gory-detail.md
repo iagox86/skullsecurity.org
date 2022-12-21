@@ -1,6 +1,7 @@
 ---
 id: 2059
 title: 'Defcon Quals: babyecho (format string vulns in gory detail)'
+featured: true
 date: '2015-05-22T13:38:21-05:00'
 author: ron
 layout: post

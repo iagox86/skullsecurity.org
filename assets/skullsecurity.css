@@ -880,7 +880,7 @@ html {
 .entry-meta {
   color: #bbd1df;
   font: 400 0.875em/1.5 "Source Sans Pro", sans-serif;
-  margin: 15px 0px 10px 10px; }
+  margin: 15px 0px 30px 10px; }
   .post.sticky .entry-meta, .sticky.page .entry-meta, .sticky.nav-below .entry-meta, .sticky.nav-single .entry-meta, li.sticky.comment .entry-meta, .sticky.comment-nav-below .entry-meta, .sticky.nocomments .entry-meta, .sticky#respond .entry-meta, .sticky#disqus_thread .entry-meta {
     margin-bottom: 0; }
 

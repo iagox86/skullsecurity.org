@@ -1,6 +1,7 @@
 ---
 id: 2451
 title: 'BSidesSF CTF: Difficult reverse engineering challenge: Gman'
+featured: true
 date: '2020-02-26T12:46:30-05:00'
 author: ron
 layout: post

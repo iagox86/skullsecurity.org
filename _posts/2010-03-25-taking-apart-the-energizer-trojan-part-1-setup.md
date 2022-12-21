@@ -1,6 +1,7 @@
 ---
 id: 627
 title: 'Taking apart the Energizer trojan &#8211; Part 1: setup'
+featured: true
 date: '2010-03-25T09:13:24-05:00'
 author: ron
 layout: post
