@@ -4,4 +4,7 @@ name: Matt Gardenghi
 layout: author
 ---
 
-Matt contributed many years ago, I wonder what happened to him?
+Matt contributed a bunch of SkullSecurity blogs in the old, old days when we
+met during a SANS class.
+
+This space will be for his profile, if he wants one!
