@@ -1,0 +1,118 @@
+<!-- Comments from https://yidhra.farm/tech/jekyll/2022/01/03/mastodon-comments-for-jekyll.html -->
+<div id="comments" class="comments-area">
+  <h2 class="comments-title">Comments</h2>
+
+  <p>Reply to this post via <a class="link" href="https://{{ page.comments.host }}/@{{ page.comments.username }}/{{ page.comments.id }}">this Mastodon post</a>!</p>
+
+  <ol class="commentlist" id="comment-list">
+    Loading comments...
+  </ol>
+
+  <noscript><p>You need JavaScript to view the comments.</p></noscript>
+
+  <script src="/assets/js/purify.min.js"></script>
+  <script type="text/javascript">
+    function escapeHtml(unsafe) {
+      return unsafe
+           .replace(/&/g, "&amp;")
+           .replace(/</g, "&lt;")
+           .replace(/>/g, "&gt;")
+           .replace(/"/g, "&quot;")
+           .replace(/'/g, "&#039;");
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    })
+
+    fetch('https://{{ page.comments.host }}/api/v1/statuses/{{ page.comments.id }}/context')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log(data);
+
+        if(!data['descendants'] || data['descendants'].length === 0) {
+          document.getElementById("comment-list").textContent = "No comments";
+          return;
+        }
+
+        document.getElementById('comment-list').innerHTML = "";
+
+        // TODO:
+        // emojis
+        // threading
+        // reply link
+        // timezone
+        // likes/retoots
+
+        var even_odd = "odd";
+        data['descendants'].forEach((reply) => {
+          var account_display_name = reply.account.display_name;
+          var account_url = reply.account.url;
+          var account_avatar = reply.account.avatar_static;
+          var reply_uri = reply.uri;
+
+          // This might eventually stop working, but for now we can remove the @skullsecurity part of the reply
+          var reply_content = reply.content.replace("@<span>{{page.comments.username}}</span>", "");
+
+          var reply_date = Date.parse(reply.created_at);
+          console.log(reply_date);
+
+          var li = document.createElement("li");
+          li.className = "comment " + even_odd + " thread-" + even_odd + " depth-1";
+          document.getElementById("comment-list").appendChild(li);
+
+          var poster = document.createElement("header");
+          poster.className = "comment-meta comment-author vcard";
+          li.append(poster);
+
+          var avatar = document.createElement("img");
+          avatar.src = reply.account.avatar_static;
+          avatar.srcset = reply.account.avatar_static;
+          avatar.alt = "Avatar";
+          avatar.className = "avatar avatar-40 photo";
+          avatar.height = 40;
+          avatar.width = 40;
+          avatar.loading = "lazy";
+          poster.append(avatar);
+
+          var cite = document.createElement("cite");
+          cite.className = "fn comment-author";
+          cite.textContent = reply.account.display_name;
+          poster.append(cite);
+
+          var comment_link = document.createElement("a");
+          comment_link.href = reply.uri;
+          poster.append(comment_link);
+
+          var time = document.createElement("time");
+          time.dateTime = reply.created_at;
+          time.className = "comment-time";
+          time.textContent = new Date(reply_date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"});
+          time.title = reply.created_at;
+          comment_link.append(time);
+
+          var contentElement = document.createElement("section")
+          contentElement.className = "comment-content comment"
+          contentElement.innerHTML = reply_content;
+          li.appendChild(contentElement);
+
+          if(even_odd === "odd") {
+            even_odd = "even";
+          } else {
+            even_odd = "odd";
+          }
+
+          // TODO: Emojis
+          // console.log(reply.account.emojis);
+ //         <li class="comment even thread-even depth-1" id="comment-41973">
+ //             <header class="comment-meta comment-author vcard">
+ //             <img alt="" src="***avatar***" srcset="***avatar***" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async" />
+ //               <time datetime="2015-05-23T03:34:26-05:00" class="comment-time">2015-05-23 at 03:34</time>
+ //             </header>
+ //         </li>
+        });
+      });
+  </script>
+</div>
+

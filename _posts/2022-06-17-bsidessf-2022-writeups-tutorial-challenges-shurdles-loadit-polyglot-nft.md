@@ -9,6 +9,10 @@ permalink: /2022/bsidessf-2022-writeups-tutorial-challenges-shurdles-loadit-poly
 categories:
     - bsidessf-2022
     - ctfs
+comments:
+  host: infosec.exchange
+  username: skullsecurity 
+  id: 109554139841172904 
 ---
 
 <p>Hey folks,</p>
