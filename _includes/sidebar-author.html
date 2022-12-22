@@ -28,7 +28,7 @@
       <p>Recent posts from {{ author[0].name }}:</p>
 
       <ul>
-        {% assign recentPosts = site.posts | where: 'author', page.author %}
+        {% assign recentPosts = site.posts | where: 'author', author[0].short_name %}
         {% for post in recentPosts limit: 3 %}
           <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
