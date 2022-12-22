@@ -2,7 +2,7 @@
 <div id="comments" class="comments-area">
   <h2 class="comments-title">Comments</h2>
 
-  <p>Reply to this post via <a class="link" href="https://{{ page.comments.host }}/@{{ page.comments.username }}/{{ page.comments.id }}">this Mastodon post</a>!</p>
+  <p>Join the conversation in <a class="link" href="https://{{ page.comments.host }}/@{{ page.comments.username }}/{{ page.comments.id }}">this Mastodon post</a>!</p>
 
   <ol class="commentlist" id="comment-list">
     Loading comments...
@@ -35,7 +35,6 @@
           document.getElementById('comment-list').innerHTML = "";
 
           // TODO:
-          // reply link
           // timezone
           // likes/retoots
           // Move some config settings into site-wide config
@@ -52,7 +51,6 @@
 
             var account_display_name = do_mastodon_emojis(reply.account.display_name, reply.account.emojis);
             //var account_url = reply.account.url;
-            //var reply_uri = reply.uri;
             var cw;
             if(reply.spoiler_text) {
               cw = do_mastodon_emojis(reply.spoiler_text, reply.emojis);
@@ -74,8 +72,9 @@
             var replyLink = document.createElement("a");
             replyLink.rel = "nofollow";
             replyLink.className = "comment-reply-link";
-            replyLink.href = "https://google.com"; // TODO
+            replyLink.href = reply.uri;
             replyLink.textContent = "Reply";
+            replyLink.target = "_blank";
             replyParagraph.append(replyLink);
 
             var poster = document.createElement("header");
@@ -92,13 +91,19 @@
             avatar.loading = "lazy";
             poster.append(avatar);
 
+            var user_link = document.createElement("a");
+            user_link.href = reply.account.url;
+            user_link.target = "_blank";
+            poster.append(user_link);
+
             var cite = document.createElement("cite");
             cite.className = "fn comment-author";
             cite.innerHTML = DOMPurify.sanitize(account_display_name, { USE_PROFILES: { html: true } });
-            poster.append(cite);
+            user_link.append(cite);
 
             var comment_link = document.createElement("a");
             comment_link.href = reply.uri;
+            comment_link.target = "_blank";
             poster.append(comment_link);
 
             var time = document.createElement("time");
