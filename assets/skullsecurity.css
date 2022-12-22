@@ -1057,7 +1057,7 @@ span.bypostauthor {
      vertical-align: middle;
 }
 .comment-content, .comment-awaiting-moderation {
-     padding-left: 48px;
+     padding-left: 72px;
 }
 .comment-content p, .comment-awaiting-moderation p {
      margin: 20px 0;
@@ -1215,4 +1215,12 @@ span.bypostauthor {
 .comment-reply-link {
   color: #bbd1df;
   text-decoration: none;
+}
+
+.likes-retoots-pair {
+  margin-right: 5px;
+}
+
+.likes-retoots {
+  padding-bottom: 10px;
 }

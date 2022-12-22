@@ -11,7 +11,7 @@
       <div id="primary" class="site-content" aria-label="Content">
         {{ content }}
 
-        {%- if page.comments -%}
+        {%- if page.comments_id and site.comments -%}
             {%- include mastodon-comments.html -%}
         {%- endif -%}
       </div>
