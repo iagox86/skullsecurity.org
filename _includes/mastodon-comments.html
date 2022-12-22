@@ -12,108 +12,140 @@
 
   <script src="/assets/js/purify.min.js"></script>
   <script type="text/javascript">
-    function escapeHtml(unsafe) {
-      return unsafe
-           .replace(/&/g, "&amp;")
-           .replace(/</g, "&lt;")
-           .replace(/>/g, "&gt;")
-           .replace(/"/g, "&quot;")
-           .replace(/'/g, "&#039;");
+    function do_mastodon_emojis(text, emojis) {
+      emojis.forEach(({shortcode, static_url}) => {
+        text = text.replaceAll(`:${ shortcode }:`, `<img src="${ static_url }" title="${ shortcode }" class="mastodon-emoji" />`)
+      })
+      return text;
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-    })
+      fetch('https://{{ page.comments.host }}/api/v1/statuses/{{ page.comments.id }}/context')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          console.log(data);
 
-    fetch('https://{{ page.comments.host }}/api/v1/statuses/{{ page.comments.id }}/context')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        console.log(data);
-
-        if(!data['descendants'] || data['descendants'].length === 0) {
-          document.getElementById("comment-list").textContent = "No comments";
-          return;
-        }
-
-        document.getElementById('comment-list').innerHTML = "";
-
-        // TODO:
-        // emojis
-        // threading
-        // reply link
-        // timezone
-        // likes/retoots
-        // Move some config settings into site-wide config
-
-        var even_odd = "odd";
-        data['descendants'].forEach((reply) => {
-          var account_display_name = reply.account.display_name;
-          var account_url = reply.account.url;
-          var account_avatar = reply.account.avatar_static;
-          var reply_uri = reply.uri;
-
-          // This might eventually stop working, but for now we can remove the @skullsecurity part of the reply
-          var reply_content = reply.content.replace("@<span>{{page.comments.username}}</span>", "");
-
-          var reply_date = Date.parse(reply.created_at);
-          console.log(reply_date);
-
-          var li = document.createElement("li");
-          li.className = "comment " + even_odd + " thread-" + even_odd + " depth-1";
-          document.getElementById("comment-list").appendChild(li);
-
-          var poster = document.createElement("header");
-          poster.className = "comment-meta comment-author vcard";
-          li.append(poster);
-
-          var avatar = document.createElement("img");
-          avatar.src = reply.account.avatar_static;
-          avatar.srcset = reply.account.avatar_static;
-          avatar.alt = "Avatar";
-          avatar.className = "avatar avatar-40 photo";
-          avatar.height = 40;
-          avatar.width = 40;
-          avatar.loading = "lazy";
-          poster.append(avatar);
-
-          var cite = document.createElement("cite");
-          cite.className = "fn comment-author";
-          cite.textContent = reply.account.display_name;
-          poster.append(cite);
-
-          var comment_link = document.createElement("a");
-          comment_link.href = reply.uri;
-          poster.append(comment_link);
-
-          var time = document.createElement("time");
-          time.dateTime = reply.created_at;
-          time.className = "comment-time";
-          time.textContent = new Date(reply_date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"});
-          time.title = reply.created_at;
-          comment_link.append(time);
-
-          var contentElement = document.createElement("section")
-          contentElement.className = "comment-content comment"
-          contentElement.innerHTML = reply_content;
-          li.appendChild(contentElement);
-
-          if(even_odd === "odd") {
-            even_odd = "even";
-          } else {
-            even_odd = "odd";
+          if(!data['descendants'] || data['descendants'].length === 0) {
+            document.getElementById("comment-list").textContent = "No comments";
+            return;
           }
 
-          // TODO: Emojis
-          // console.log(reply.account.emojis);
- //         <li class="comment even thread-even depth-1" id="comment-41973">
- //             <header class="comment-meta comment-author vcard">
- //             <img alt="" src="***avatar***" srcset="***avatar***" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async" />
- //               <time datetime="2015-05-23T03:34:26-05:00" class="comment-time">2015-05-23 at 03:34</time>
- //             </header>
- //         </li>
+          document.getElementById('comment-list').innerHTML = "";
+
+          // TODO:
+          // reply link
+          // timezone
+          // likes/retoots
+          // Move some config settings into site-wide config
+
+          var even_odd = "odd";
+          var depths = {};
+          data['descendants'].forEach((reply) => {
+            // Figure out the depth
+            var depth = 1;
+            if(reply.in_reply_to_id && depths[reply.in_reply_to_id]) {
+              depth = depths[reply.in_reply_to_id] + 1;
+            }
+            depths[reply.id] = depth;
+
+            var account_display_name = do_mastodon_emojis(reply.account.display_name, reply.account.emojis);
+            //var account_url = reply.account.url;
+            //var reply_uri = reply.uri;
+            var cw;
+            if(reply.spoiler_text) {
+              cw = do_mastodon_emojis(reply.spoiler_text, reply.emojis);
+            }
+
+            // This might eventually stop working, but for now we can remove the @skullsecurity part of the reply
+            var reply_content = do_mastodon_emojis(reply.content.replaceAll("@<span>{{page.comments.username}}</span>", ""), reply.emojis);
+
+            var reply_date = Date.parse(reply.created_at);
+
+            var li = document.createElement("li");
+            li.className = `comment ${ even_odd } thread-${ even_odd } depth-${ depth }`;
+            document.getElementById("comment-list").appendChild(li);
+
+            var replyParagraph = document.createElement("p");
+            replyParagraph.className = "comment-reply";
+            li.append(replyParagraph);
+
+            var replyLink = document.createElement("a");
+            replyLink.rel = "nofollow";
+            replyLink.className = "comment-reply-link";
+            replyLink.href = "https://google.com"; // TODO
+            replyLink.textContent = "Reply";
+            replyParagraph.append(replyLink);
+
+            var poster = document.createElement("header");
+            poster.className = "comment-meta comment-author vcard";
+            li.append(poster);
+
+            var avatar = document.createElement("img");
+            avatar.src = reply.account.avatar_static;
+            avatar.srcset = reply.account.avatar_static;
+            avatar.alt = "Avatar";
+            avatar.className = "avatar avatar-40 photo";
+            avatar.height = 40;
+            avatar.width = 40;
+            avatar.loading = "lazy";
+            poster.append(avatar);
+
+            var cite = document.createElement("cite");
+            cite.className = "fn comment-author";
+            cite.innerHTML = DOMPurify.sanitize(account_display_name, { USE_PROFILES: { html: true } });
+            poster.append(cite);
+
+            var comment_link = document.createElement("a");
+            comment_link.href = reply.uri;
+            poster.append(comment_link);
+
+            var time = document.createElement("time");
+            time.dateTime = reply.created_at;
+            time.className = "comment-time";
+            time.textContent = new Date(reply_date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"});
+            time.title = reply.created_at;
+            comment_link.append(time);
+
+            // Needs to go above the cwElement
+            var contentElement = document.createElement("section")
+
+            if(cw) {
+              var cwElement = document.createElement("section");
+
+              cwElement.className = "cw comment-content comment"
+              cwElement.innerHTML = `CW: ${ DOMPurify.sanitize(cw, { USE_PROFILES: { html: true } } ) } (click to reveal)`;
+              cwElement.addEventListener("click", () => {
+                contentElement.style.display = "Block";
+              });
+              li.appendChild(cwElement);
+            }
+
+            contentElement.className = "comment-content comment"
+            contentElement.innerHTML = DOMPurify.sanitize(reply_content, { USE_PROFILES: { html: true } });
+            if(cw) {
+              contentElement.style.display = "None";
+            }
+            li.appendChild(contentElement);
+
+            if(even_odd === "odd") {
+              even_odd = "even";
+            } else {
+              even_odd = "odd";
+            }
+
+            // TODO: Emojis
+            // console.log(reply.account.emojis);
+   //         <li class="comment even thread-even depth-1" id="comment-41973">
+   //             <header class="comment-meta comment-author vcard">
+   //             <img alt="" src="***avatar***" srcset="***avatar***" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async" />
+   //               <time datetime="2015-05-23T03:34:26-05:00" class="comment-time">2015-05-23 at 03:34</time>
+   //             </header>
+   //         </li>
+          });
         });
-      });
+    })
   </script>
 </div>
 

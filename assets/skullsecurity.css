@@ -1021,7 +1021,7 @@ li.pingback, li.trackback {
      padding: 20px 0 0 0;
      margin: 20px 0;
 }
-.comment-meta img {
+.comment-meta .avatar {
      border-radius: 5px;
      -webkit-border-radius: 5px;
      -ms-border-radius: 5px;
@@ -1187,10 +1187,10 @@ span.bypostauthor {
      content: "";
 }
 .avatar {
-     max-width: 150px;
-     max-height: 150px;
-     margin-left: 30px;
-     margin-bottom: 20px;
+   max-width: 150px;
+   max-height: 150px;
+   margin-left: 30px;
+   margin-bottom: 20px;
 }
 .social-link a {
   text-decoration: none;
@@ -1198,4 +1198,21 @@ span.bypostauthor {
 }
 .social-link {
   padding-bottom: 30px;
+}
+
+.mastodon-emoji {
+  width: 20px;
+  height: 20px;
+  margin: -3px 0 0;
+  vertical-align: middle;
+}
+
+.cw {
+  color: #bbd1df;
+  cursor: pointer;
+}
+
+.comment-reply-link {
+  color: #bbd1df;
+  text-decoration: none;
 }
