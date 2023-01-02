@@ -1,0 +1,16 @@
+---
+title: 'Posts'
+layout: default
+
+header: full
+---
+
+<h1 class="entry-title">Posts</h1>
+
+<div class="entry-content">
+  <ul>
+  {% for post in site.posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>

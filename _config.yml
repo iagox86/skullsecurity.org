@@ -27,3 +27,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
+
+feed:
+  path: /feed
