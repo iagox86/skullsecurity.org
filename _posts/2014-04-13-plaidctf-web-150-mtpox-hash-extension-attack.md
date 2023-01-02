@@ -21,7 +21,7 @@ My first writeup is for a 150-point Web level called mtpox. I chose this one to 
 (Actually, there's another level that I wrote a less popular tool for. I'll talk about that one in my next post. :) )
 <!--more-->
 Just for fun, here's an activity graph on github for the weekend:
-<img src='https://blogdata.skullsecurity.org/hash_extender_downloads.png'>
+<img src='/blogdata/hash_extender_downloads.png'>
 
 Lots of traffic!
 

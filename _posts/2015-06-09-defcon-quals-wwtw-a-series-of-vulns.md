@@ -18,7 +18,7 @@ I'm not going to spend much time on the theory of format-string vulnerabilities 
 
 And by the way, I'll be building the solution in Python as we go, because the first part was solved by one of my teammates, and he's a Python guy. As much as I hated working with Python (which has become my life lately), I didn't want to re-write the first part and it was too complex to do on the shell, so I sucked it up and used his code.
 
-You can download the binary <a href='https://blogdata.skullsecurity.org/wwtw'>here</a>, and you can get the exploit and other files involved on <a href='https://github.com/iagox86/defcon-quals-2015/tree/master/wwtw'>my github page</a>.
+You can download the binary <a href='/blogdata/wwtw'>here</a>, and you can get the exploit and other files involved on <a href='https://github.com/iagox86/defcon-quals-2015/tree/master/wwtw'>my github page</a>.
 <!--more--><style>.in { color: #dc322f; font-weight: bold; }</style>
 <h2>Part 1: The game</h2>
 

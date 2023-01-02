@@ -84,4 +84,4 @@ Anyone know how to get my code to re-execute?  i.e. become sticky?  I guess, I
 
 Comments, suggestions, improvements?
 
-<a href="http://www.skullsecurity.org/blogdata/mtgarden/bypassing%20AV.txt" target="_blank">My cheat sheet</a>.
+<a href="/blogdata/mtgarden/bypassing%20AV.txt" target="_blank">My cheat sheet</a>.

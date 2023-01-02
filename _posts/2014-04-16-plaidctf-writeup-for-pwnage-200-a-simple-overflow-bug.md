@@ -14,7 +14,7 @@ categories:
 
 I know what you're thinking of: what's with all the Web levels!?
 
-Well, I was saving the exploitation levels for last! This post will be about Pwnable-200 (ezhp), and the next one will be Pwnable-275 (kappa). You can get the binary for ezhp <a href='https://blogdata.skullsecurity.org/ezhp'>here</a>, and I <em>highly</em> recommend poking at this if you're interested in exploitation&mdash;it's actually one of the easiest exploitation levels you'll find!
+Well, I was saving the exploitation levels for last! This post will be about Pwnable-200 (ezhp), and the next one will be Pwnable-275 (kappa). You can get the binary for ezhp <a href='/blogdata/ezhp'>here</a>, and I <em>highly</em> recommend poking at this if you're interested in exploitation&mdash;it's actually one of the easiest exploitation levels you'll find!
 <!--more-->
 Basically, ezhp was a simple note-writing system. When you run it, it looks like this:
 
@@ -293,7 +293,7 @@ Basically, we have 16 bytes of padding, then the address of the shellcode (the v
 
 puts() immediately gets called, and the shellcode runs. I chose shellcode I found online, it's nothing special.
 
-<a href='https://blogdata.skullsecurity.org/ezhp-sploit.rb'>Here's the full exploit</a>
+<a href='/blogdata/ezhp-sploit.rb'>Here's the full exploit</a>
 
 <h2>Conclusion</h2>
 

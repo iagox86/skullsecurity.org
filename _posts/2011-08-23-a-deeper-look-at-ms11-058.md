@@ -65,10 +65,10 @@ Remember those definitions - they're going to be important.
 
 <h2>You will need...</h2>
 All right, if you plan to follow along, you're going to definitely need the vulnerable version of dns.exe. Grab c:\windows\system32\dns.exe off an unpatched Windows Server 2008 x86 (32-bit) host. If you want to take a look at the patched version, grab the executable from a patched host. I usually name them something obvious:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-00-files.png'>
+<img src='/blogdata/ms11-058-00-files.png'>
 
 Right-click on the files and select 'properties' and pick the 'details' tab to ensure you're working from the same version as me:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-01-versions.png'>
+<img src='/blogdata/ms11-058-01-versions.png'>
 
 You will also need IDA, Patchdiff2, and Windbg. And a Windows Server 2008 32-bit box with DNS installed and recursion enabled. If you want to get all that going, you're on your own. :)
 
@@ -76,10 +76,10 @@ You'll also need a NAPTR server. You can use my nbtool program for that - see be
 
 <h2>Disassemble</h2>
 Load up both files in their own instances of IDA, hit 'Ok' or 'Next' until it disassembles them, and press 'space' when the graph view comes up to go back to the list view. Then close and save the patched one. In the vulnerable version, run <a href='http://code.google.com/p/patchdiff2/'>patchdiff2</a>:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-05-patchdiff2.png'>
+<img src='/blogdata/ms11-058-05-patchdiff2.png'>
 
 And pick the .idb file belonging to the patched version of dns.exe. After processing, you should get output something like this:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-06-patchdiff2-output.png'>
+<img src='/blogdata/ms11-058-06-patchdiff2-output.png'>
 
 There are two things to note here. First, at the bottom, in the status pane, you get a listing of the functions that are "identical", matched, and unmatched. Identical functions are ones that patchdiff2 has decided are unchanged (even when that's not true, as we'll see shortly); matched functions are ones that patchdiff2 thinks are the same function in both files, but have changed in a significant way; and unmatched functions are ones that patchdiff2 can't find a match for. 
 
@@ -92,10 +92,10 @@ The obvious function in this bunch to take a closer look at is NaptrWireRead(). 
 At this point, I closed IDA and re-opened the .exe files rather than leaving patchdiff2 running. 
 
 So, go ahead now and bring up NaptrWireRead() in both the unpatched and patched versions. You can use shift-F4 to bring up the 'Names' window and find it there. It should look like this:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-07-comparison.png'>
+<img src='/blogdata/ms11-058-07-comparison.png'>
 
 Scroll around and see you can see where these functions vary. It's not as easy as you'd think! There's only one line different, and I actually missed it the first time:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-08-difference.png'>
+<img src='/blogdata/ms11-058-08-difference.png'>
 
 Line 0x01038b38 and 0x01038bd8 are different! One uses movsx and one uses movzx. Hmm! What's that mean?
 
@@ -158,14 +158,14 @@ It's not pretty, but it did the trick. After that, I compile it and run it. At t
 Now, we fire up Windbg. If you ever use Windbg for debugging, make sure you check out <a href='http://Windbg.info'>Windbg.info</a> - it's an amazing resource. 
 
 When Windbg loads, we hit F6 (or go to file-&gt;attach to process). We find dns.exe in the list and select it:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-11-attach.png'>
+<img src='/blogdata/ms11-058-11-attach.png'>
 
 Once that's fired up, I run !peb to get the base address of the process (there are, of course, other ways to do this). The command should look like this:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-12-base-address.png'>
+<img src='/blogdata/ms11-058-12-base-address.png'>
 
 Back in IDA, rebase the program by using edit-&gt;segments-&gt;rebase program, and set the image base address to 0x00ea0000:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-13-change-base-address.png'>
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-14-change-base-address-2.png'>
+<img src='/blogdata/ms11-058-13-change-base-address.png'>
+<img src='/blogdata/ms11-058-14-change-base-address-2.png'>
 
 This way, the addresses in Windbg and IDA will match up properly. Now, go back to that movsx we were looking at earlier - it should now be at 0x00ed8b38 in the vulnerable version. Throw a breakpoint on that address in Windbg with 'bp' and start the process with 'g' (or press F5):
 <pre>
@@ -181,7 +181,7 @@ Then perform a lookup on the target server (in my case I'm doing this from a Lin
 (the +time=60 ensures that it doesn't time out right away)
 
 In Windbg, the breakpoint should fire:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-16-dig.png'>
+<img src='/blogdata/ms11-058-16-dig.png'>
 
 Now, recall that the vulnerable command is this:
 <pre>
@@ -189,7 +189,7 @@ Now, recall that the vulnerable command is this:
 </pre>
 
 So we'd naturally like to find out what's in ebx. We do this with the windbg command 'db ebx' (meaning display bytes at ebx):
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-18-bytes.png'>
+<img src='/blogdata/ms11-058-18-bytes.png'>
 
 Beautiful! ebx points to the length byte for 'flags'. In our case, we set the flags to the string 'flags', which is represented as the character string "\x05flags" (where "\x05" is the byte '5', the string's size). If we hit 'g' or press 'F5' again, it'll break a second time. This time, if you run 'db ebx' you'll see it sitting on "\x07service". If you hit F5 again, not surprisingly, you'll end up on "\x3ethis is a really really long ...". And finally, if you hit F5 one more time, the program will keep running and, if you did this in under 60 seconds, dig will get its response.
 
@@ -216,18 +216,18 @@ All right, now that we know what's going on, this should be pretty easy to break
 Then compile it, start the service again, and send our NAPTR lookup with dig, exactly as before. Don't forget to clear your breakpoints in Windbg, too, using 'bc *' (breakpoint clear, all). 
 
 After the lookup, the dns.exe service should crash:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-22-crash.png'>
+<img src='/blogdata/ms11-058-22-crash.png'>
 
 Woohoo! It crashed in a 'rep movs' call, which is in memcpy(). No surprise there, since we were expecting to pass a huge integer (0x90 became 0xFFFFFF90, which is around 4.2 billion) to a memcpy function. 
 
 If we check out edi (the destination of the copy), we'll find it's unallocated memory, which is what caused the crash. If we check out ecx, the size of the copy, we'll see that it's 0x3fffff6e - way too big:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-23-crash-reason.png'> 
+<img src='/blogdata/ms11-058-23-crash-reason.png'> 
 
 Restart the DNS service, re-attach the debugger, and let's move on to something interesting... 
 
 <h2>The good part</h2>
 Now we can crash the process. Kinda cool, but whatever. This is as far as others investigating this issue seemed to go. But, they missed something very important:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-24-plus-one.png'>
+<img src='/blogdata/ms11-058-24-plus-one.png'>
 
 See there? Line 0x00ed8b3b? lea eax, [edi + 1]. edi is the size, and eax is the value passed to memcpy. See what's happening? It's adding 1 to the size! That means that if we pass a size of 0xFF ("-1" represented as one byte), it'll get extended to 0xFFFFFFFF ("-1" represented as 4 bytes), and then, on that line, eax becomes -1 + 1, or 0. Then the memcpy copies 0 bytes. 
 
@@ -250,26 +250,26 @@ Let's reconfigure out NAPTR server again to return exactly 0xFF bytes:
 </pre>
 
 Then run it as before. This time, when we do our dig, the server doesn't crash! Instead, we get a weird response:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-26-test-run.png'>
+<img src='/blogdata/ms11-058-26-test-run.png'>
 
 We get an answer back, but not a valid NAPTR answer! The answer has the flags of "\x03\x02my\x04test\x03com", but no service, regex, or replace. Weird! 
 
 Now, at this point, we have enough for a vulnerability check, but I wanted to go further, and to find out how exactly this was returning such a weird result (and, more importantly, whether we can assume that it'll be consistent)! 
 
 So, let's take a look at the vulnerable code again. Go back to NaptrPtrRead() and find the vulnerable movsx:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-27-vuln-loop.png'>
+<img src='/blogdata/ms11-058-27-vuln-loop.png'>
 
 You can quickly see that this is a simple loop. var_10C is a counter set to 3, the size at [ebx] (the length of the flags) is read, that many bytes is copied from ebx (the incoming packet) to esi (the place where the answer is stored). Then the counter is decremented, and both the source and destination are moved forward by that many bytes plus one (for the length), and it repeats twice - once for service, and once for regex. 
 
 If we set the length of flags to 0xFF, then 0 bytes are copied and the source and destination don't change. So esi, the answer, remains an empty buffer. 
 
 Just below that, you'll see this:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-28-next-part.png'>
+<img src='/blogdata/ms11-058-28-next-part.png'>
 
 The source and destination are the same as before, and they call a function called _Name_CopyCountName(). That's actually a fairly complicated function, and I didn't reverse it much. I just observed how it worked. One thing that was obvious is that it read the fourth and final string in the NAPTR record - the one called "replacement", which is a domain name rather than a length-prefixed string like the rest. 
 
 Essentially, it'd set esi to a string that looked like this:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-29-memory.png'>
+<img src='/blogdata/ms11-058-29-memory.png'>
 
 the 0x0d at the start is obviously the length of the string; the 0x03 following is the number of fields coming ("my", "test", and "com" = 3 fields), and the rest of the string is the domain name formatted as it usually is - the size of each field followed by the field. 
 
@@ -285,19 +285,19 @@ The response is sent to the server with the 'flags' value set to the 'replacemen
 I thought I understood this vulnerability completely now. It was interesting, fairly trivial to check for, and impossible to exploit (beyond a denial of service). The perfect vulnerability! I wrote the Nessus check and tested it again Windows 2008 x86, Windows 2008 x64, and Windows 2008 R2 x64. Against Windows 2008 x64, the result was different - it was "\x03\x02my\x04test\x03com\x00\x00\x00\x00". That was weird. I tried changing the domain name from "my.test.com" to "my.test.com.a". It returned the string I expected. Then I set it to "my.test.com.a.b.c", and it returned a big block of memory including disk information (the drive c: label). Wtf? I tried a few more domain names, and none of them, including "my.test.com.a.b.c", returned anything unusual. I couldn't replicate it! Now I *knew* that something was up! 
 
 To demonstrate this reliably, I can set the 'replacement' value of the response to 'my.test.com.aaaaaaaaaaaaa' and get the proper response:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-30-weird-results-1.png'>
+<img src='/blogdata/ms11-058-30-weird-results-1.png'>
 
 And then set it to 'my.test.com.aaaaaaa' and get a weird response:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-33-weird-results-4.png'>
+<img src='/blogdata/ms11-058-33-weird-results-4.png'>
 
 Rather than just the simple string we usually get back, we got the simple string, the 7 'a' bytes that we added, then a null, then 11 more 'a' values and 0x59 "\x00" bytes. So, that's proof that something strange is happening, but what?
 
 <h2>The investigation</h2>
 If you head back to the NaprWireRead function and go to line 0xed8b61, you'll see the call to _Name_CopyCountName():
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-34-read.png'>
+<img src='/blogdata/ms11-058-34-read.png'>
 
 That's where the string is copied into the buffer - esi. What we want to do is track down where that value is read back out of the buffer, because there's obviously something gone amiss there. So, we put a breakpoint at 0xed8b66 - the line after the name is copied to memory - using the 'bp' command in Windbg:
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-35-break.png'>
+<img src='/blogdata/ms11-058-35-break.png'>
 
 Then we run it, and make a NAPTR request. It doesn't matter what the request is, this time - we just want to find out where the message is read. When it breaks, as shown above, we check what the value at esi is. As expected, it's the encoded 'replacement' string - the length, the number of fields, and the replacement (domain-name) value. 
 
@@ -306,17 +306,17 @@ We run 'ba r4 esi' - this sets a breakpoint on access when esi (or the three byt
 Immediately, it'll break again - this time, at 0xed5935 - in NaptrWireWrite()! Since the packet is read in NaptrWireRead(), it makes sense that it's sent back out in NaptrWireWrite. Awesome! 
 
 The code powering NaptrWireWrite() is actually really simple. This is all the relevant code (don't worry too much about the colours - I just like colouring code as I figure things out :) ):
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-37-write_loop.png'>
+<img src='/blogdata/ms11-058-37-write_loop.png'>
 
 Here, it reads the length of the first field from [esi] - which, in our 'attack', is the length of the 'replacement' value, not the flags value like it ought to be. It uses memcpy to copy that into a buffer, using the user-controlled length. then it loops. The second time, it's going to read the null byte (\x00) that's immediately after the 'replacement' value. The third time, it's going to read the byte following that null byte. What's there? We'll get to that in a second. 
 
 Then, after it loops three times, it calls _Name_WriteCountNameToPacketEx(), passing it the remainder of the buffer. Again, what's that value?
 
 Let's stick a breakpoint on 0xed5935 - the memcpy - and see what the three values are. First, for 'my.test.com.aaaaaaa':
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-38-my.test.com.aaaaaaaaaaa.png'>
+<img src='/blogdata/ms11-058-38-my.test.com.aaaaaaaaaaa.png'>
 
 As we can see, the first field is, as expected, the 'replacement' value - my.test.com.aaaaaaaaaaa. The second value is blank, and the third value is blank. The result is going to be the usual "\x03\x02my\x04test\x03com". No problem! Now let's do a lookup for "my.test.com.a":
-<img src='http://www.skullsecurity.org/blogdata/ms11-058-39-badmemory.png'>
+<img src='/blogdata/ms11-058-39-badmemory.png'>
 
 The first one is, as usual, the 'replacement' value. The second memcpy starts with the 0x00 byte at the end, and copies 0 bytes. But the third one starts on 0x61 - that's one of the 'a' values from the previous packet! - and copies 0x61 bytes into the buffer. Then _Name_WriteCountNameToPacketEx() is called 0x61 bytes after on whatever happens to be there. 
 

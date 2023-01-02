@@ -57,7 +57,7 @@ That looks just about right! But if you count the characters, you'll see that we
 ron@ankh:~$ </pre>
 
 There we go! Now we need make a proper probe out of our string. Recall the string we found earlier:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-52-string.png'>
+<img src='/blogdata/usbcharger-52-string.png'>
 
 As we know, it's 0x27 bytes long including the null terminator (that's what was passed to strcmpi()). So, we echo the string, with the 4-byte length in front and the 1-byte terminator at the end:
 <pre>echo -ne "\x27\x00\x00\x00{E2AC5089-3820-43fe-8A4D-A7028FAD8C28}\x00"</pre>

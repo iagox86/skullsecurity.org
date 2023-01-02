@@ -20,7 +20,7 @@ Ultimately, this issue came down to a type-confusion bug that let us read memory
 <!--more-->
 <h2>The setup</h2>
 
-When you run <a href='https://blogdata.skullsecurity.org/kappa'>Kappa</a>, you get a Pokemon interface:
+When you run <a href='/blogdata/kappa'>Kappa</a>, you get a Pokemon interface:
 
 <pre>
 Thank you for helping test CTF plays Pokemon! Keep in mind that this is currently in alpha which means that we will only support one person playing at a time. You will be provided with several options once the game begins, as well as several hidden options for those true CTF Plays Pokemon fans ;). We hope to expand this in the coming months to include even more features!  Enjoy! :)

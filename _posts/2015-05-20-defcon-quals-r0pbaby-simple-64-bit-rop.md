@@ -14,7 +14,7 @@ This past weekend I competed in the <a href='https://2015.legitbs.net/'>Defcon C
 
 Unfortunately, I got stuck for quite a long time on a 2-point problem ("wwtw") and spent most of my weekend on it. But I did do a few others - r0pbaby included - and am excited to write about them, as well!
 
-<a href='https://blogdata.skullsecurity.org/r0pbaby'>r0pbaby</a> is neat, because it's an absolute bare-bones ROP (return-oriented programming) level. Quite honestly, when it makes sense, I actually prefer using a ROP chain to using shellcode. Much of the time, it's actually easier! You can see the binary, my solution, and other stuff I used on <a href='https://github.com/iagox86/defcon-quals-2015/tree/master/r0pbaby'>this github repo</a>.
+<a href='/blogdata/r0pbaby'>r0pbaby</a> is neat, because it's an absolute bare-bones ROP (return-oriented programming) level. Quite honestly, when it makes sense, I actually prefer using a ROP chain to using shellcode. Much of the time, it's actually easier! You can see the binary, my solution, and other stuff I used on <a href='https://github.com/iagox86/defcon-quals-2015/tree/master/r0pbaby'>this github repo</a>.
 
 It might make sense to read <a href='/2013/ropasaurusrex-a-primer-on-return-oriented-programming'>a post I made in 2013</a> about a level in PlaidCTF called ropasaurusrex. But it's not really necessary - I'm going to explain the same stuff again with two years more experience!
 <!--more-->
@@ -197,7 +197,7 @@ Aha! It's a pointer to the <em>actual</em> base address! It seems a little odd t
 
 If there's one thing I hate, it's attacking a level blind. Based on the output so far, it's pretty clear that they're going to want us to call a libc function, but they don't actually give us a copy of libc.so! While it's not strictly necessary, having a copy of libc.so makes this far easier.
 
-I'll post more details about how and why to steal libc in a future post, but for now, suffice to stay: if you can, beat the easiest 64-bit level first (like babycmd) and liberate a copy of libc.so. Also snag a 32-bit version of libc if you can find one. Believe me, you'll be thankful for it later! To make it possible to follow the rest of this post, <a href='https://blogdata.skullsecurity.org/libc-babycmd-x64.so'>here's libc-2.19.so from babycmd</a> and <a href='https://blogdata.skullsecurity.org/libc-ron-x64.so'>here's libc-2.20.so from my box</a>, which is the one I'll use for this writeup.
+I'll post more details about how and why to steal libc in a future post, but for now, suffice to stay: if you can, beat the easiest 64-bit level first (like babycmd) and liberate a copy of libc.so. Also snag a 32-bit version of libc if you can find one. Believe me, you'll be thankful for it later! To make it possible to follow the rest of this post, <a href='/blogdata/libc-babycmd-x64.so'>here's libc-2.19.so from babycmd</a> and <a href='/blogdata/libc-ron-x64.so'>here's libc-2.20.so from my box</a>, which is the one I'll use for this writeup.
 
 You might be wondering how to verify whether or not that actually IS the right library. For now, let's consider that to be homework. I'll be writing more about that in the future, I promise!
 

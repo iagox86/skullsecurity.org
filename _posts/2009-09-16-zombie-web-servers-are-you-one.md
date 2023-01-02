@@ -44,4 +44,4 @@ of-zombie-web-servers/
 
 I highly recommend double-checking your servers for this infection! 
 
-&lt;UPDATE&gt; You can download the current version of the scrit (as of Sept 17, 2009) <a href='http://www.skullsecurity.org/blogdata/http-malware-host.nse'>here</a>. That version won't be kept up to date, though. 
+&lt;UPDATE&gt; You can download the current version of the scrit (as of Sept 17, 2009) <a href='/blogdata/http-malware-host.nse'>here</a>. That version won't be kept up to date, though. 

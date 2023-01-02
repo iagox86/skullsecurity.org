@@ -19,7 +19,7 @@ This is going to be an author's writeup of the BSidesSF 2019 CTF challenge: <tt>
 
 <tt>genius</tt> is probably my favourite challenge from the year, and I'm thrilled that it was solved by 6 teams! It was inspired by a few other challenges I wrote in the past, including <a href='http://karabut.com/bsides-ctf-2017-nibbler-writeup.html'>Nibbler</a>. You can grab the sourcecode, solution, and everything needed to run it yourself <a href='https://github.com/BSidesSF/ctf-2019-release/tree/master/challenges/genius'>on our Github release</a>!
 
-It is actually implemented as a pair of programs: <a href='https://blogdata.skullsecurity.org/loader.bz2'>loader</a> and <a href='https://blogdata.skullsecurity.org/genius.bz2'>genius</a>. I only provide the binaries to the players, so it's up to the player to reverse engineer them. Fortunately, for this writeup, we'll have source to reference as needed!
+It is actually implemented as a pair of programs: <a href='/blogdata/loader.bz2'>loader</a> and <a href='/blogdata/genius.bz2'>genius</a>. I only provide the binaries to the players, so it's up to the player to reverse engineer them. Fortunately, for this writeup, we'll have source to reference as needed!
 <!--more-->
 Ultimately, the player is expected to gain code execution by tricking <tt>genius</tt> into running <tt>system("sh;");</tt>, with the help of <tt>loader</tt> (at least, that's how I solved it and that's how others I talked to solved it). A hint to that is given when the game is initially started:
 

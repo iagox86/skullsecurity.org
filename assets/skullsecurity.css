@@ -909,6 +909,12 @@ html {
      max-width: 100%;
      height: auto;
 }
+.entry-content img {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .page-links, .comments-page-links {
      margin: 10px 0 25px 0;
 }

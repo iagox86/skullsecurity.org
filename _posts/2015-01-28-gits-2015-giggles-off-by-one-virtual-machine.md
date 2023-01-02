@@ -13,9 +13,9 @@ categories:
 
 Welcome to part 3 of my Ghost in the Shellcode writeup! Sorry for the delay, I actually just moved to Seattle. On a sidenote, if there are any Seattle hackers out there reading this, hit me up and let's get a drink!
 
-Now, down to business: this writeup is about one of the Pwnage 300 levels; specifically, Giggles, which implements a very simple and very vulnerable virtual machine. You can download the binary <a href='https://blogdata.skullsecurity.org/giggles'>here</a>, the source code <a href='https://blogdata.skullsecurity.org/giggles.c'>here</a> (<a href='https://blogdata.skullsecurity.org/giggles-commented.c'>with my comments</a> - I put XXX near most of the vulnerabilities and bad practices I noticed), and my exploit <a href='https://blogdata.skullsecurity.org/giggles-sploit.rb'>here</a>.
+Now, down to business: this writeup is about one of the Pwnage 300 levels; specifically, Giggles, which implements a very simple and very vulnerable virtual machine. You can download the binary <a href='/blogdata/giggles'>here</a>, the source code <a href='/blogdata/giggles.c'>here</a> (<a href='/blogdata/giggles-commented.c'>with my comments</a> - I put XXX near most of the vulnerabilities and bad practices I noticed), and my exploit <a href='/blogdata/giggles-sploit.rb'>here</a>.
 
-One really cool aspect of this level was that they gave source code, a binary with symbols, and even a <a href='https://blogdata.skullsecurity.org/giggles-client.py'>client</a> (that's the last time I'll mention their client, since I dislike Python :) )! That means we could focus on exploitation and not reversing!
+One really cool aspect of this level was that they gave source code, a binary with symbols, and even a <a href='/blogdata/giggles-client.py'>client</a> (that's the last time I'll mention their client, since I dislike Python :) )! That means we could focus on exploitation and not reversing!
 <!--more--><style>.smaller { font-size: 10; }</style>
 
 <h2>The virtual machine</h2>
@@ -161,7 +161,7 @@ Notice how it checks every operation? It checks if the index is greater than the
 
 <h2>Information leak</h2>
 
-There are actually a lot of small issues in this code. The first good one I noticed was actually that you can output one extra register. Here's what I mean (grab my <a href='https://blogdata.skullsecurity.org/giggles-sploit.rb'>exploit</a> if you want to understand the API):
+There are actually a lot of small issues in this code. The first good one I noticed was actually that you can output one extra register. Here's what I mean (grab my <a href='/blogdata/giggles-sploit.rb'>exploit</a> if you want to understand the API):
 
 <pre>
 <span class="rubyDefine">def</span> <span class="Identifier">demo</span>()

@@ -11,7 +11,7 @@ categories:
     - re
 ---
 
-Welcome to my fourth and final writeup from Ghost in the Shellcode 2015! This one is about the one and only reversing level, called "<a href='http://blogdata.skullsecurity.org/huffy'>huffy</a>", that was released right near the end.
+Welcome to my fourth and final writeup from Ghost in the Shellcode 2015! This one is about the one and only reversing level, called "<a href='/blogdata/huffy'>huffy</a>", that was released right near the end.
 
 Unfortunately, while I thought I was solving it a half hour before the game ended, I had messed up some timezones and was finishing it a half hour after the game ended. So I didn't do the final exploitation step.
 
@@ -246,7 +246,7 @@ The exploit now is just a matter of...
   <li>Padding the shellcode till you have the same number of each nibble</li>
 </ol>
 
-That's all pretty straight forward! Check out <a href='https://blogdata.skullsecurity.org/huffy-sploit.rb'>my full exploit</a>, or piece it together from the snippits below :)
+That's all pretty straight forward! Check out <a href='/blogdata/huffy-sploit.rb'>my full exploit</a>, or piece it together from the snippits below :)
 
 First, create a table (I did this by hand):
 

@@ -27,7 +27,7 @@ A SMB Relay attack is a type of man-in-the-middle attack where the attacker asks
 </ul>
 
 And here's the scenario (see the image at the right for a diagram):
-<img src='http://www.skullsecurity.org/blogdata/ms08-068-1.png' style='float: right;' />
+<img src='/blogdata/ms08-068-1.png' style='float: right;' />
 <ol>
 <li>Attacker tricks the victim into connecting to him; this is easy, I'll explain how later</li>
 <li>Attacker establishes connection to the target, receives the 8-byte challenge</li>
@@ -55,7 +55,7 @@ The second problem is that the victim needs to have access to the target. This o
 </ul>
 
 That third point is the interesting one -- this can be used to exploit the computer itself! So, in that scenario, here are the modified steps (see the image at the right, although I think it's probably more confusing :) ):
-<img src='http://www.skullsecurity.org/blogdata/ms08-068-2.png' style='float: right;' />
+<img src='/blogdata/ms08-068-2.png' style='float: right;' />
 <ol>
 <li>Attacker tricks the victim into connecting to him</li>
 <li>Attacker establishes connection back to the victim, receives the 8-byte challenge</li>

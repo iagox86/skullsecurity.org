@@ -24,10 +24,12 @@ I'm not going to talk too much about the advisory, but I'll just say this: it wa
 One of the obvious places to start is to load up the .exe file into IDA (disassembler) and look at the networking functions. Another - easier - option is load up a debugger (WinDbg) and throw a breakpoint on winsock32!recv or ws2_32!recv, then send data to the program to see where it breaks. That's normally the first thing I try if the protocol is unknown (and sometimes even if it's a known protocol). 
 
 By putting a breakpoint on recv, sending it data with netcat, and using the 'gu' command to step out of the receive function, I wound up looking at this code in IDA:
-<img src='http://www.skullsecurity.org/blogdata/01-remoteexec-recvloop.png'>
+
+<img src='/blogdata/01-remoteexec-recvloop.png'>
 
 Basically, it calls recv with a length of '1' and stores the results in a local buffer. Then it jumps to this bit of code:
-<img src='http://www.skullsecurity.org/blogdata/02-remoteexec-recvend.png'>
+
+<img src='/blogdata/02-remoteexec-recvend.png'>
 
 Essentially, it's checking if the value byte it just received is '0' (the null byte, "\0"). If it is, it falls through, does some logging, then returns (not shown). 
 
@@ -81,7 +83,8 @@ XXXXXXXX+0x4074:
 It breaks at 404074! That means that line is where the buffer is read from memory (actually, it's read the line before - the break happens after the read, not before it)
 
 Going back to IDA, here's what the code looks like:
-<img src='http://www.skullsecurity.org/blogdata/08-remoteexec-digits.png'>
+
+<img src='/blogdata/08-remoteexec-digits.png'>
 
 I circled the points where the buffer is read in red. First, it reads each character from a local variable that I named 'buffer' - [ebp+ecx+buffer] - into edx as a signed value (when you see a buffer being read with 'movsx' - move sign extend - that often leads to sign-extension vulnerabilities, though not in this case). It checks if it's null - which would mean it's at the end of the string - and exits the loop if it is.
 
@@ -89,7 +92,8 @@ A few lines later, the second time the buffer is read, it's read into ecx. Each 
 
 <h2>Connect back</h2>
 If we scroll down in IDA a little bit, and find where the function ends after successfully reading a port number, here's the code we find:
-<img src='http://www.skullsecurity.org/blogdata/09-remoteexec-connectback.png'>
+
+<img src='/blogdata/09-remoteexec-connectback.png'>
 
 There's some logging here - I love logging! - that says the value we just received is called the 'return socket'. Then a function is called that basically connects back to the client on the port number just received. I'm not going to go any deeper because the code isn't interesting or useful to us. I never did figure out what this second connection is used for, but the program doesn't seem to care if it fails.
 
@@ -202,11 +206,12 @@ xxxxxxxx+0x4465:
 00404465 83c408          add     esp,8</pre>
 
 Finally, at 404465, I see this code:
-<img src='http://skullsecurity.org/blogdata/14-remoteexec-steppedout.png'>
+
+<img src='/blogdata/14-remoteexec-steppedout.png'>
 
 "Getting password"! It looks like I ran into some authentication code! If I scroll down further, I find this code:
 
-<img src='http://skullsecurity.org/blogdata/17-remoteexec-receive-cmd.png'>
+<img src='/blogdata/17-remoteexec-receive-cmd.png'>
 
 "Getting command", followed by a call to read_from_socket(), which is the function that basically does recv(). Sweet! 
 
@@ -276,7 +281,8 @@ xxxxxxxx+0xb964:
 0040b964 898558bdffff    mov     dword ptr [ebp-42A8h],eax ss:0023:00a29cb8=7ffdd000</pre>
 
 And find myself at 40b964. Loading up that address in IDA, here's what it looks like (the call is circled in red):
-<img src='http://skullsecurity.org/blogdata/27-remoteexec-createprocess-ida.png'>
+
+<img src='/blogdata/27-remoteexec-createprocess-ida.png'>
 
 I'd like to verify the command that's being sent to CreateProcessA, to see if it's something I can manipulate easily. So I put a breakpoint at 40b95e:
 <pre>0:001> bc *
@@ -301,7 +307,8 @@ xxxxxxxx+0xb95e:
 00a2db68  6d 79 63 6f 6d 6d 61 6e-64 20 00 00 00 00 00 00  mycommand ......</pre>
 
 Aha! It's prepending the path to the program's folder to our command and passing it to CreateProcessA! The natural thing to do is to use '../' to escape this folder and run something else, but that doesn't work. I never actually figured out why - and it seemed to kinda work - but it was doing some sort of filtering that would give me bad results. Eventually, I had an idea - which programs are stored in that folder anyways?
-<img src='http://skullsecurity.org/blogdata/31-remoteexec-programs.png'>
+
+<img src='/blogdata/31-remoteexec-programs.png'>
 
 execute.exe? hide.exe? runasuser.exe? Could it BE that simple?
 
@@ -313,7 +320,8 @@ I fire up netcat again:
 </pre>
 
 And check the process list:
-<img src='http://skullsecurity.org/blogdata/33-remoteexec-calc-running.png'>
+
+<img src='/blogdata/33-remoteexec-calc-running.png'>
 
 And ho-ly crap! We have command execution! Unauthenticated! As SYSTEM!! Game over, I win! 
 
@@ -328,7 +336,8 @@ It occurred to me that this particular application also has a Web server built i
 </pre>
 
 And check the file:
-<img src='http://skullsecurity.org/blogdata/36-remoteexec-success.png'>
+
+<img src='/blogdata/36-remoteexec-success.png'>
 
 Yup, works like a charm! (Don't mind the bad ip address - I took some of these screenshots at different times than others)
 

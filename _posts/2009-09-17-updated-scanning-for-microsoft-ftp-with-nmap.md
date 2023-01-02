@@ -24,7 +24,7 @@ $ ./configure && make
 $ nmap -d -p21 --script=ftp-capabilities <target>
 </pre>
 
-Or you can download the current version (as of September 17, 2009) at <a href='http://www.skullsecurity.org/blogdata/ftp-capabilities.nse'>http://www.skullsecurity.org/blogdata/ftp-capabilities.nse</a> (note that that version won't be updated). 
+Or you can download the current version (as of September 17, 2009) at <a href='/blogdata/ftp-capabilities.nse'>/blogdata/ftp-capabilities.nse</a> (note that that version won't be updated). 
 
 The output will simply tell you whether or not it's Windows FTP, and whether or not MKDIR is permitted. It doesn't tell you "vulnerable" or "not vulnerable", because it isn't actually checking for an exploit. Of course, if you let anonymous call MKDIR, you probably have other issues. :)
 

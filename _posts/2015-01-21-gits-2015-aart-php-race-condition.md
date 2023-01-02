@@ -11,7 +11,7 @@ categories:
     - hacking
 ---
 
-Welcome to my second writeup for Ghost in the Shellcode 2015! This writeup is for the one and only Web level, "aart" (<a href="https://blogdata.skullsecurity.org/aart.tgz">download it</a>). I wanted to do a writeup for this one specifically because, even though the level isn't super exciting, the solution was actually a pretty obscure vulnerability type that you don't generally see in CTFs: a race condition!
+Welcome to my second writeup for Ghost in the Shellcode 2015! This writeup is for the one and only Web level, "aart" (<a href="/blogdata/aart.tgz">download it</a>). I wanted to do a writeup for this one specifically because, even though the level isn't super exciting, the solution was actually a pretty obscure vulnerability type that you don't generally see in CTFs: a race condition!
 
 But we'll get to that after, first I want to talk about a wrong path that I spent a lot of time on. :)
 <!--more-->
@@ -142,7 +142,7 @@ I first noticed there's a similar vulnerability in the code that inserts the acc
 
 That was my reasoning, anyways (I don't think that's actually true, but that turned out not to matter). However, on login, only the first account is actually retrieved from the database! My thought was, if you could get those two SQL statements to run concurrently, so they run intertwined between two processes, it might just put things in the right order for an exploit!
 
-Sorry if that's confusing to you&mdash;that logic is flawed in like every way imaginable, I realized afterwards, but I implemented the code anyways. Here's the main part (you can grab the full exploit <a href='https://blogdata.skullsecurity.org/aarp-sploit.rb'>here</a>):
+Sorry if that's confusing to you&mdash;that logic is flawed in like every way imaginable, I realized afterwards, but I implemented the code anyways. Here's the main part (you can grab the full exploit <a href='/blogdata/aarp-sploit.rb'>here</a>):
 
 <pre id='vimCodeElement'>
 <span class="PreProc">require</span> <span class="Special">'</span><span class="Constant">httparty</span><span class="Special">'</span>

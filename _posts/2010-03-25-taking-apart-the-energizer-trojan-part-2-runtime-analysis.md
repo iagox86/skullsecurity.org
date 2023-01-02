@@ -29,34 +29,34 @@ This tutorial was getting far too long for a single page, so I broke it into fou
 
 <h2>Runtime Analysis</h2>
 Run "windbg"; then, under the "File" menu, choose "Attach to a Process" (or press F6):
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-05-attach.png'>
+<img src='/blogdata/usbcharger-05-attach.png'>
 
 Navigate the list and find "rundll32.exe":
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-06-rundll32.png'>
+<img src='/blogdata/usbcharger-06-rundll32.png'>
 
 If you aren't sure if it's the right one, expand it with the "+" and validate that it's running "Arucer.dll":
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-07-arucer.dll.png'>
+<img src='/blogdata/usbcharger-07-arucer.dll.png'>
 
 Once you hit "OK", the debugger will attach to the Trojan process and suspend it, waiting for your actions. It'll look something like this:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-08-windbg.png'>
+<img src='/blogdata/usbcharger-08-windbg.png'>
 
 All we want to do is add a breakpoint on the "recv" function. "recv" is a function in Winsock that reads data from the network. Since this Trojan is listening on a port, it'll likely try to receive data from anything that connects to it. In the command window of Windbg, type "bp recv":
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-09-bp_recv.png'>
+<img src='/blogdata/usbcharger-09-bp_recv.png'>
 
 To validate that the breakpoint was successfully created, you can run the "bl" command ("breakpoint list"), which will print all breakpoints that have been set on this process:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-10-bl.png'>
+<img src='/blogdata/usbcharger-10-bl.png'>
 
 Now that we've set a breakpoint on recv() and verified that it exists, resume the Trojan process by clicking the "Resume" button (or press F5, or type "g&lt;enter&gt;"):
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-11-g.png'>
+<img src='/blogdata/usbcharger-11-g.png'>
 
 You'll note that nothing happens right away. And unless something tries to connect to the host on port 7777, nothing is going to happen. The reason is that the Trojan is sitting on the accept() call, waiting for a connection. Obviously, if we want to trigger the recv() call, we have to connect to it. So, open up a new command prompt ("cmd.exe") and telnet to localhost port 7777:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-12-telnet.png'>
+<img src='/blogdata/usbcharger-12-telnet.png'>
 
 As soon as you do that, the accept() call finishes and the Trojan attempts to receive some data, hitting our breakpoint:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-13-break.png'>
+<img src='/blogdata/usbcharger-13-break.png'>
 
 The process is once again suspended and waiting for us to do something.  You can have some fun at this point and poke around, but first run the "k" command, which is short for "call stack" -- it'll tell us who called recv(), who called that function, and so on:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-14-stack.png'>
+<img src='/blogdata/usbcharger-14-stack.png'>
 
 Make note of the two addresses here -- 0x100011aa and 0x10001624 -- we'll be using those later. 0x100011aa is the place where recv() was called, and 0x10001624 is the place where that function was called.
 
@@ -65,9 +65,9 @@ That brings us to the end of the runtime analysis. We now know the call path tha
 At this point, feel free to play around in the debugger and see what you can learn. The first thing I usually do is tell the recv() function to return using Debug-&gt;Step Out and look at how it processes the data -- make sure you type something in the console for it to receive first.
 
 When you're all done, restart the process so we can test later:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-54-restart.png'>
+<img src='/blogdata/usbcharger-54-restart.png'>
 
 Then run it:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-55-go.png'>
+<img src='/blogdata/usbcharger-55-go.png'>
 
 In the next section, <a href='/blog/?p=647'>Part 3: disassembling</a>, we'll look at the code that makes the Trojan tick. 

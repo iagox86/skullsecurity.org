@@ -18,7 +18,7 @@ Anyway, somebody in the audience asked if there was a Nessus or Nmap script to d
 
 <strong>Requires:</strong> Nmap 5.10BETA1 or higher (<a href='http://nmap.org/dist/?C=M&O=D'>download directory</a>)
 
-<strong>Script:</strong> <a href='http://www.skullsecurity.org/blogdata/http-vmware-path-vuln.nse'>http://www.skullsecurity.org/blogdata/http-vmware-path-vuln.nse</a>
+<strong>Script:</strong> <a href='/blogdata/http-vmware-path-vuln.nse'>/blogdata/http-vmware-path-vuln.nse</a>
 
 <strong>Instructions:</strong> <a href='http://www.skullsecurity.org/blog/?p=459'>http://www.skullsecurity.org/blog/?p=459</a>
 

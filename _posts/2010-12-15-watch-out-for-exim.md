@@ -187,7 +187,7 @@ Here are the top 10 versions returned (I removed the versions that Nmap didn't r
      19 25/tcp open  smtp    syn-ack Cisco PIX sanitized smtpd
      18 25/tcp open  smtp    syn-ack Sendmail 8.13.8/8.13.8
 </pre>
-Based on those numbers, I think it's safe to say that Exim smtpd 4.69 is the second most popular SMTP server in the universe. <a href='http://www.skullsecurity.org/blogdata/smtp-versions-count.txt'>Here's a complete listing</a>. I considered posting the full Nmap log, but I was worried that one of the servers' owners might notice and be upset at Bob. And I don't want to make any extra trouble for him! 
+Based on those numbers, I think it's safe to say that Exim smtpd 4.69 is the second most popular SMTP server in the universe. <a href='/blogdata/smtp-versions-count.txt'>Here's a complete listing</a>. I considered posting the full Nmap log, but I was worried that one of the servers' owners might notice and be upset at Bob. And I don't want to make any extra trouble for him! 
 
 <h2>Conclusion</h2>
 The conclusion to this is simple: To all those people running vulnerable (or potentially vulnerable) versions of exim: patch! Patch now! This is an incredibly easy exploit to pull off, and there are public versions everywhere. Protect yourself! 

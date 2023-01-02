@@ -49,14 +49,14 @@ Strictly speaking, this isn't necessary. You can do a fine job understanding thi
 
 If you're good and sure this is what you really want to do, grab the file <a href='http://downloads.skullsecurity.org/MALWARE/EnergizerTrojan-MALWARE.zip'>here</a>:
 
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-01-download.png'>
+<img src='/blogdata/usbcharger-01-download.png'>
 
 Then extract the installation file, <strong>UsbCharger_setup_v1_1_1.exe</strong> (<strong>arucer.dll</strong> isn't necessary yet). The password for the zip archive is "infected", and by typing it in you promise to understand the risks of dealing with malware:
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-02-infected.png'>
+<img src='/blogdata/usbcharger-02-infected.png'>
 
 Naturally, make sure you turn off antivirus software before extracting it. In fact you shouldn't even be running antivirus because your system shouldn't even be connected to the network!
 
 Perform a typical install (ie, hit 'next' till it stops asking you questions). Once you've finished the installation, verify that the backdoor is listening on port 7777 by running "cmd.exe" and running "netstat -an":
-<img src='http://www.skullsecurity.org/blogdata/usbcharger-04-netstat.png'>
+<img src='/blogdata/usbcharger-04-netstat.png'>
 
 Congratulations! Your system is now backdoored. To continue reading, go to <a href='/blog/?p=645'>Part 2: runtime analysis</a>

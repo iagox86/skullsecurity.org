@@ -16,5 +16,5 @@ My friend snapped this picture in Vancouver, BC near Stanley Park (the picture i
 
 Click for a bigger version. 
 
-<a href='http://www.skullsecurity.org/blogdata/trafficbox-big.jpg'><img src='http://www.skullsecurity.org/blogdata/trafficbox.jpg'></a>
+<a href='/blogdata/trafficbox-big.jpg'><img src='/blogdata/trafficbox.jpg'></a>
 <!--more-->

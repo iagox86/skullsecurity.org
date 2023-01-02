@@ -68,12 +68,12 @@ $ ./nmap --script=smb-check-vulns --script-args=safe=1 -p445 -d &lt;target&gt;</
 If you're on Windows, or don't want to compile from source, you can install the three datafiles. 
 
 First, make sure you're running Nmap 4.85beta4. That's the latest beta version. Then, download this file:
-<ul><li><a href='http://www.skullsecurity.org/blogdata/smb-check-vulns.nse'>http://www.skullsecurity.org/blogdata/smb-check-vulns.nse</a></li></ul>
+<ul><li><a href='/blogdata/smb-check-vulns.nse'>/blogdata/smb-check-vulns.nse</a></li></ul>
 And place it in the "scripts" folder (see below).
 
 Then, download these files:
-<ul><li>http://www.skullsecurity.org/blogdata/msrpc.lua</li>
-<li>http://www.skullsecurity.org/blogdata/smb.lua</li></ul>
+<ul><li>/blogdata/msrpc.lua</li>
+<li>/blogdata/smb.lua</li></ul>
 And place them in the "nselib" folder (see below). 
 
 <h3>Where are the folders?</h3>

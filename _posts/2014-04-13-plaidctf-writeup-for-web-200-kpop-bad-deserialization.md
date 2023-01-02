@@ -13,7 +13,7 @@ categories:
 
 Hello again!
 
-This is my second writeup from <a href='http://www.plaidctf.com'>PlaidCTF</a> this past weekend! It's for the Web level called kpop, and is about how to shoot yourself in the foot by misusing serialization (<a href='https://blogdata.skullsecurity.org/kpop.tar.bz2'>download the files</a>). There are at least three levels I either solved or worked on that involved serialization attacks (<a href='/2014/plaidctf-web-150-mtpox-hash-extension-attack'>mtpox</a>, reeekeeeeee, and this one), which is awesome because this is a seriously undersung attack. Good on the PPP!
+This is my second writeup from <a href='http://www.plaidctf.com'>PlaidCTF</a> this past weekend! It's for the Web level called kpop, and is about how to shoot yourself in the foot by misusing serialization (<a href='/blogdata/kpop.tar.bz2'>download the files</a>). There are at least three levels I either solved or worked on that involved serialization attacks (<a href='/2014/plaidctf-web-150-mtpox-hash-extension-attack'>mtpox</a>, reeekeeeeee, and this one), which is awesome because this is a seriously undersung attack. Good on the PPP!
 <!--more-->
 <h2>Bad serialization</h2>
 
@@ -27,7 +27,7 @@ In the case of PHP, you can't serialize functions, so it's harder to shoot yours
 
 There were so many classes with interdepencies, I got quickly overloaded. I'm really bad at visualizing programs. I ended up grabbing a whiteboard and going outside, where I produced this:
 
-<img src='https://blogdata.skullsecurity.org/kpop-whiteboard.jpg' />
+<img src='/blogdata/kpop-whiteboard.jpg' />
 
 In retrospect, that was way overkill, but it was nice to get some fresh air.
 

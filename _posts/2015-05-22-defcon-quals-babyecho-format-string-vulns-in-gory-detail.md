@@ -13,7 +13,7 @@ categories:
 
 Welcome to the third (and penultimate) blog post about the 2015 <a href='https://legitbs.net'>Defcon Qualification CTF</a>! This is going to be a writeup of the "babyecho" level, as well as a thorough overview of format-string vulnerabilities! I really like format string vulnerabilities - they're essentially a "read or write anywhere" primitive - so I'm excited to finally write about them!
 
-You can grab the binary <a href='https://blogdata.skullsecurity.org/babyecho'>here</a>, and you can get my exploit and some other files on <a href='https://github.com/iagox86/defcon-quals-2015/tree/master/babyecho'>this Github repo</a>.
+You can grab the binary <a href='/blogdata/babyecho'>here</a>, and you can get my exploit and some other files on <a href='https://github.com/iagox86/defcon-quals-2015/tree/master/babyecho'>this Github repo</a>.
 <!--more--><style>.in { color: #dc322f; font-weight: bold; }</style>
 <h2>How printf works</h2>
 
@@ -272,7 +272,7 @@ $ <span class='in'>objdump -D -M intel test</span>
 
 <h2>printf() - the important bits</h2>
 
-We've seen how to read off the stack with a format-string vulnerability. What else can we do? At this point, we'll switch to the <a href='https://blogdata.skullsecurity.org/babyecho'>binary from the game</a> for the remainder of the testing.
+We've seen how to read off the stack with a format-string vulnerability. What else can we do? At this point, we'll switch to the <a href='/blogdata/babyecho'>binary from the game</a> for the remainder of the testing.
 
 The game binary is really easy.. it's a pretty standard format string vulnerability:
 

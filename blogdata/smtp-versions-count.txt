@@ -1,0 +1,143 @@
+    663 25/tcp open  smtp?   syn-ack
+    240 25/tcp open  smtp    syn-ack Postfix smtpd
+    206 25/tcp open  smtp    syn-ack Exim smtpd 4.69
+    174 25/tcp open  tcpwrapped syn-ack
+    151 25/tcp open  smtp    syn-ack
+     96 25/tcp open  smtp    syn-ack Microsoft ESMTP 6.0.3790.4675
+     78 25/tcp open  smtp    syn-ack qmail smtpd
+     77 25/tcp open  smtp    syn-ack netqmail smtpd 1.04
+     40 25/tcp open  smtp    syn-ack BorderWare firewall smtpd
+     22 25/tcp open  smtp    syn-ack Microsoft ESMTP
+     21 25/tcp open  smtp    syn-ack Microsoft ESMTP 6.0.3790.3959
+     19 25/tcp open  smtp    syn-ack Cisco PIX sanitized smtpd
+     18 25/tcp open  smtp    syn-ack Sendmail 8.13.8/8.13.8
+     14 25/tcp open  smtp    syn-ack Access Remote PC smtpd
+     13 25/tcp open  smtp    syn-ack Exim smtpd 4.72
+     11 25/tcp open  smtp    syn-ack hMailServer smtpd
+     11 25/tcp open  smtp    syn-ack Exim smtpd 4.63
+     10 25/tcp open  smtp    syn-ack Exim smtpd
+      9 25/tcp open  smtp    syn-ack Exim smtpd 4.X
+      8 25/tcp open  smtp    syn-ack Sendmail 8.13.1/8.13.1
+      8 25/tcp open  smtp    syn-ack Sendmail (Not accepting mail)
+      8 25/tcp open  smtp    syn-ack Exim smtpd 4.67
+      7 25/tcp open  smtp    syn-ack Sendmail 8.9.3/8.9.3
+      6 25/tcp open  smtp    syn-ack Sendmail 8.14.3/8.14.3
+      6 25/tcp open  smtp    syn-ack Microsoft ESMTP 6.0.2600.5949
+      6 25/tcp open  smtp    syn-ack Microsoft ESMTP 5.0.2195.7381
+      6 25/tcp open  smtp    syn-ack Microsoft ESMTP 5.0.2195.5329
+      5 25/tcp open  smtp    syn-ack IronPort smtpd
+      5 25/tcp open  smtp    syn-ack Barracuda Networks Spam Firewall smtpd
+      4 25/tcp open  smtp-proxy syn-ack ESET NOD32 anti-virus smtp proxy
+      4 25/tcp open  smtp    syn-ack Sendmail 8.13.6/8.13.1
+      4 25/tcp open  smtp    syn-ack Sendmail 8.12.6/8.12.6
+      4 25/tcp open  smtp    syn-ack Sendmail 8.11.6
+      4 25/tcp open  smtp    syn-ack Microsoft ESMTP 6.0.3790.1830
+      4 25/tcp open  smtp    syn-ack MailEnable smptd 1.986--
+      3 25/tcp open  smtp    syn-ack Sendmail 8.14.4/8.14.4
+      3 25/tcp open  smtp    syn-ack Sendmail 8.12.11/8.12.11
+      3 25/tcp open  smtp    syn-ack Sendmail 8.12.11.20060308/8.12.11
+      3 25/tcp open  smtp    syn-ack Microsoft ESMTP 7.0.6002.18222
+      3 25/tcp open  smtp    syn-ack Microsoft ESMTP 5.0.2195.6713
+      3 25/tcp open  smtp    syn-ack Exim smtpd 4.71
+      3 25/tcp open  smtp    syn-ack Exim
+      2 25/tcp open  smtp-proxy syn-ack spamd smtpd
+      2 25/tcp open  smtp    syn-ack SonicWALL Email Security smtpd 7.2.1.2841
+      2 25/tcp open  smtp    syn-ack SmarterMail smtpd
+      2 25/tcp open  smtp    syn-ack Sendmail 8.14.4/8.14.3
+      2 25/tcp open  smtp    syn-ack Sendmail 8.14.2/8.14.2
+      2 25/tcp open  smtp    syn-ack Sendmail 8.13.8/8.13.1
+      2 25/tcp open  smtp    syn-ack Sendmail 8.13.7/8.13.7
+      2 25/tcp open  smtp    syn-ack Sendmail 8.13.6/8.13.6
+      2 25/tcp open  smtp    syn-ack Sendmail 8.12.11.20060614
+      2 25/tcp open  smtp    syn-ack Sendmail 8.12.10/8.12.10
+      2 25/tcp open  smtp    syn-ack Sendmail 8.11.6/8.11.6
+      2 25/tcp open  smtp    syn-ack Microsoft Exchange (disabled)
+      2 25/tcp open  smtp    syn-ack Microsoft ESMTP 7.5.7600.16385
+      2 25/tcp open  smtp    syn-ack Mercury/32 smtpd (Mail server account Maiser)
+      2 25/tcp open  smtp    syn-ack MailEnable smptd 1.981--
+      2 25/tcp open  smtp    syn-ack MailEnable smptd 1.9--
+      2 25/tcp open  smtp    syn-ack MailEnable smptd 0-3.63-
+      2 25/tcp open  smtp    syn-ack Exim smtpd 4.68
+      2 25/tcp open  smtp    syn-ack Checkpoint FireWall-1 smtpd
+      2 25/tcp open  chat    syn-ack AIM or ICQ server
+      1 25/tcp open  smtp-proxy syn-ack WatchGuard smtp proxy
+      1 25/tcp open  smtp-proxy syn-ack IronMail CipherTrust SMTP Proxy
+      1 25/tcp open  smtp-proxy syn-ack Genua smtprelay
+      1 25/tcp open  smtp    syn-ack mailfront smtpd
+      1 25/tcp open  smtp    syn-ack hMailServer
+      1 25/tcp open  smtp    syn-ack XWall smtpd 3.46
+      1 25/tcp open  smtp    syn-ack Winmail smtpd
+      1 25/tcp open  smtp    syn-ack WinWebMail smtpd 3.8.1.1
+      1 25/tcp open  smtp    syn-ack WinWebMail smtpd 3.8.0.1
+      1 25/tcp open  smtp    syn-ack Surgemail smtpd 3.7b8-8
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.4/8.14.1
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.4/8.14
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.4/8.13.1
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.4/8.12.2
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.4/8
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.3/8.13.8
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.2
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.1
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.0/8.14.0
+      1 25/tcp open  smtp    syn-ack Sendmail 8.14.0/8.13.8
+      1 25/tcp open  smtp    syn-ack Sendmail 8.13.8+Sun/8.13.8
+      1 25/tcp open  smtp    syn-ack Sendmail 8.13.6/8.12.9
+      1 25/tcp open  smtp    syn-ack Sendmail 8.13.5.20060614/8.13.3
+      1 25/tcp open  smtp    syn-ack Sendmail 8.13.4/8.11.6
+      1 25/tcp open  smtp    syn-ack Sendmail 8.13.1
+      1 25/tcp open  smtp    syn-ack Sendmail 8.12.8/8.12.8
+      1 25/tcp open  smtp    syn-ack Sendmail 8.12.5/8.12.5
+      1 25/tcp open  smtp    syn-ack Sendmail 8.11.6/8
+      1 25/tcp open  smtp    syn-ack Sendmail 8.1
+      1 25/tcp open  smtp    syn-ack Rockliffe MailSite 9.0.1.5
+      1 25/tcp open  smtp    syn-ack Postfix smtpd (ispCP OMEGA 1.0.2)
+      1 25/tcp open  smtp    syn-ack Postfix
+      1 25/tcp open  smtp    syn-ack Network Box smtpd
+      1 25/tcp open  smtp    syn-ack Mirapoint Messaging Server MOS smtpd 4.1.9-GA Queueing
+      1 25/tcp open  smtp    syn-ack Microsoft ESMTP 7.5.7600.16601
+      1 25/tcp open  smtp    syn-ack Microsoft ESMTP 7.5.7600.16544
+      1 25/tcp open  smtp    syn-ack Microsoft ESMTP 6.0.3790.211
+      1 25/tcp open  smtp    syn-ack Microsoft ESMTP 6.0.2600.5512
+      1 25/tcp open  smtp    syn-ack Microsoft ESMTP 6.0.2600.3680
+      1 25/tcp open  smtp    syn-ack MailMarshal 6.8.3.9481
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 4.26--4.26
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 4.26--
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 4.23--
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 4.22--4.22
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 4.17--
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 3.62--
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 0-4.26-
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 0-4.25-
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 0-4.0-
+      1 25/tcp open  smtp    syn-ack MailEnable smptd 0-3.11-3.04
+      1 25/tcp open  smtp    syn-ack MailEnable smptd --3.63
+      1 25/tcp open  smtp    syn-ack MAILsweeper SMTP proxy
+      1 25/tcp open  smtp    syn-ack Lyris ListManager smtpd
+      1 25/tcp open  smtp    syn-ack Lotus Domino smtpd 8.5.2
+      1 25/tcp open  smtp    syn-ack Lotus Domino smtpd 8.5 HF1086
+      1 25/tcp open  smtp    syn-ack Linuxmagic qmail-based smtpd (with Anti-Spam)
+      1 25/tcp open  smtp    syn-ack JAMES smtpd 2.3.2
+      1 25/tcp open  smtp    syn-ack IceWarp smtpd 10.0.8
+      1 25/tcp open  smtp    syn-ack IceWarp smtpd 10.0.7
+      1 25/tcp open  smtp    syn-ack IMail NT-ESMTP 9.21 137016-1
+      1 25/tcp open  smtp    syn-ack IMail NT-ESMTP 8.22 123846-3
+      1 25/tcp open  smtp    syn-ack IMail NT-ESMTP 11.02 19-1
+      1 25/tcp open  smtp    syn-ack IMail NT-ESMTP 11.01 7292-1
+      1 25/tcp open  smtp    syn-ack IA Mailserver smtpd
+      1 25/tcp open  smtp    syn-ack Exim smtpd 4.62
+      1 25/tcp open  smtp    syn-ack Exim smtpd 4.42
+      1 25/tcp open  smtp    syn-ack Communigate Pro SMTP 5.2.20
+      1 25/tcp open  smtp    syn-ack Code-Crafters Ability smtpd 2.63
+      1 25/tcp open  smtp    syn-ack ArGoSoft Mail Server Pro 1.8.8.7
+      1 25/tcp open  smtp    syn-ack ArGoSoft Freeware smtpd 1.8.8.8
+      1 25/tcp open  smtp    syn-ack Alt-N MDaemon mail server 9.6.2
+      1 25/tcp open  smtp    syn-ack Alt-N MDaemon mail server 9.5.6
+      1 25/tcp open  smtp    syn-ack Alt-N MDaemon mail server 9.0.7
+      1 25/tcp open  smtp    syn-ack Alt-N MDaemon mail server 8.1.4
+      1 25/tcp open  smtp    syn-ack Alt-N MDaemon mail server 11.0.3
+      1 25/tcp open  smtp    syn-ack Alt-N MDaemon mail server 11.0.2
+      1 25/tcp open  smtp    syn-ack Alt-N MDaemon mail server 11.0.0
+      1 25/tcp open  smtp    syn-ack Alt-N MDaemon mail server 10.0.0
+      1 25/tcp open  smtp    syn-ack (Relay not authorized)
+      1 25/tcp open  nagios-nsca syn-ack Nagios NSCA
+      1 25/tcp open  jdwp    syn-ack

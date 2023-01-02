@@ -16,7 +16,7 @@ Today's post will be another write-up from the <a href='https://legitbs.net'>Def
 
 Having just finished another level (<a href='/2015/defcon-quals-r0pbaby-simple-64-bit-rop'>r0pbaby</a>, I think), and having about an hour left in the competition, I wanted something I could finish quickly. There were two one-point reverse engineering challenges open that we hadn't solved: one was 64-bit and written in C++, whereas this one was 32-bit and C and only had a few short functions. The choice was easy. :)
 
-I downloaded <a href='https://blogdata.skullsecurity.org/client'>the binary</a> and had a look at its strings. Lots of text-based stuff, such as "list users", "print key", and "connection id:", which I saw as a good sign!
+I downloaded <a href='/blogdata/client'>the binary</a> and had a look at its strings. Lots of text-based stuff, such as "list users", "print key", and "connection id:", which I saw as a good sign!
 <!--more-->
 <h2>Running it</h2>
 
@@ -29,7 +29,7 @@ $ ./client
 need IP
 </pre>
 
-The competition gives you a target, so that's easy (note that most of this is based on my own server.rb, not the real one, which I re-created from <a href='https://blogdata.skullsecurity.org/client.pcapng'>packet captures</a>:
+The competition gives you a target, so that's easy (note that most of this is based on my own server.rb, not the real one, which I re-created from <a href='/blogdata/client.pcapng'>packet captures</a>:
 
 <pre>
 $ ./client 52.74.123.29
@@ -89,7 +89,7 @@ hello grumpy, what would you like to do?
 
 Then it just sits there.
 
-I logged the traffic with Wireshark and it looks like this (blue = incoming, red = outgoing, or you can just <a href="https://blogdata.skullsecurity.org/access.pcap">download my pcap</a>):
+I logged the traffic with Wireshark and it looks like this (blue = incoming, red = outgoing, or you can just <a href="/blogdata/access.pcap">download my pcap</a>):
 
 <pre>
 <span style="color: blue">connection ID: Je@/b9~A&gt;Xa'R-</span>

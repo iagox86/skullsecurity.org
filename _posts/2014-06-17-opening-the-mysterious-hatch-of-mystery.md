@@ -22,9 +22,9 @@ But this story isn't about the pillars. It's about a hatch in the ground. In the
 
 I visited the place 2 or 3 times when I was younger. At one point, I found a metal hatch in the ground:
 
-<img src='https://blogdata.skullsecurity.org/hole2.jpg' />
+<img src='/blogdata/hole2.jpg' />
 
-<img src='https://blogdata.skullsecurity.org/hole3.jpg' />
+<img src='/blogdata/hole3.jpg' />
 
 
 Finally, on one particularly dark night, I met up with a couple friends and we drove out there. This was probably a year ago now, although I waited until just recently to take the photos. I didn't bring my camera at the time. Luckily, I left it unlocked, not that shockingly, nobody else had touched it.
@@ -33,7 +33,7 @@ Armed with lockpicks, we were gonna get this damn thing open! Unfortunately, the
 
 Eventually, we found it and broke out the lockpicks. It had a shitty Master Lock on it:
 
-<img src='https://blogdata.skullsecurity.org/hole4.jpg' />
+<img src='/blogdata/hole4.jpg' />
 
 I figured it'd be no problem, since I own and have picked like a dozen of these, but this one was rusty! Plus, it was dark, we were laying in wet tick-infested grass, and there were mosquitoes everywhere. But, we really wanted to get this done!
 
@@ -45,19 +45,19 @@ Back to picking. Picking and picking and picking... At some point, I passed it b
 
 So now, the lock was open (you can also see the bolts we tried to take out):
 
-<img src='https://blogdata.skullsecurity.org/hole5.jpg' />
+<img src='/blogdata/hole5.jpg' />
 
 And I could life the hatch...
 
-<img src='https://blogdata.skullsecurity.org/hole6.jpg' />
+<img src='/blogdata/hole6.jpg' />
 
 After putting a lot of muscle into it - it had clearly been a *long* time since it had been opened - it finally came open!
 
-<img src='https://blogdata.skullsecurity.org/hole7.jpg' />
+<img src='/blogdata/hole7.jpg' />
 
 You can imagine my excitement! Was it treasure? A lost city?
 
-I'll hotlink the two pictures of the inside so you don't <a href='https://blogdata.skullsecurity.org/hole8.jpg'>accidentally</a> spoil <a href='https://blogdata.skullsecurity.org/hole9.jpg'>then</a>. :)
+I'll hotlink the two pictures of the inside so you don't <a href='/blogdata/hole8.jpg'>accidentally</a> spoil <a href='/blogdata/hole9.jpg'>then</a>. :)
 
 So there you have it... a concrete cylinder with a bolt on it. That's it. THAT'S IT!
 

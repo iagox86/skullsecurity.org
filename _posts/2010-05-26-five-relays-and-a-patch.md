@@ -14,7 +14,7 @@ categories:
 Hey all,
 
 We hired a new pair of <a href="http://coop.cs.umanitoba.ca">co-op students</a> recently. They're both in their last academic terms, and are looking for a good challenge and to learn a lot. So, for a challenge, I set up a scenario that forced them to use a series of netcat relays to compromise a target host and bring a meterpreter session back. Here is what the network looked like:
-<img style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; display: block; margin-left: auto; margin-right: auto; " title="Firewall Rules" src="http://www.skullsecurity.org/blogdata/fiverelays-1.png" alt="" width="236" height="494" />
+<img style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; display: block; margin-left: auto; margin-right: auto; " title="Firewall Rules" src="/blogdata/fiverelays-1.png" alt="" width="236" height="494" />
 To describe in text:
 <ul>
 	<li>They have already compromised a Web server with a non-root account</li>

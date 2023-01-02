@@ -114,7 +114,7 @@ Then I set Burp Suite to use a 'Cluster Bomb' style of attack, which means that 
 
 Then I let it run, filtered for 'Hello', and got the following results:
 
-<img src='https://blogdata.skullsecurity.org/polygonshifter-solution.png'>
+<img src='/blogdata/polygonshifter-solution.png'>
 
 Boom! Arrange those properly and you have your password. :)
 

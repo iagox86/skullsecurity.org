@@ -19,7 +19,7 @@ This is my writeup for Whatscat, just about the easiest 300-point Web level I've
 <!--more-->
 <h2>The set up</h2>
 
-Whatscat is a php application where people can post photos of cats and comment on them (<a href='https://blogdata.skullsecurity.org/whatscat.tar.bz2'>Here's a copy of the source</a>).
+Whatscat is a php application where people can post photos of cats and comment on them (<a href='/blogdata/whatscat.tar.bz2'>Here's a copy of the source</a>).
 
 The vulnerable code is in the password-reset code, in login.php, which looks like this:
 

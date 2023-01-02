@@ -263,7 +263,7 @@ I let this run overnight, specifically to re-create the crashes for this blog. I
   <li>93 crashes starting from "hello"</li>
 </ul>
 
-You can download the base cases and results <a href='https://blogdata.skullsecurity.org/fuzz_dnsmasq.tar.bz2'>here</a>, if you want.
+You can download the base cases and results <a href='/blogdata/fuzz_dnsmasq.tar.bz2'>here</a>, if you want.
 
 <h3>Triage</h3>
 
@@ -464,7 +464,7 @@ $ <span class='in'>./dnsmasq -d --randomize-port --client-fuzz=./crash.bin</span
 Segmentation fault
 </pre>
 
-However, there are two termination conditions: it'll only loop a grand total of 255 times, and it stops after <tt>namelen</tt> reaches 1024 (non-period) bytes. So coming up with the best possible balance to overwrite what you want is actually pretty tricky - possibly even requires a bit of calculus (or, if you're an engineer, <a href='https://blogdata.skullsecurity.org/dnsmasq-partial-sploit.rb'>a program that can optimize it for you</a> :) ). 
+However, there are two termination conditions: it'll only loop a grand total of 255 times, and it stops after <tt>namelen</tt> reaches 1024 (non-period) bytes. So coming up with the best possible balance to overwrite what you want is actually pretty tricky - possibly even requires a bit of calculus (or, if you're an engineer, <a href='/blogdata/dnsmasq-partial-sploit.rb'>a program that can optimize it for you</a> :) ). 
 
 I should also mention: the reason the "\xc0\x0c" is needed in the first place is that it's impossible to have a name string in that's 1024 bytes - somewhere along the line, it runs afoul of a length check. The "\xc0\x0c" method lets us repeat stuff over and over, sort of like decompressing a small string into memory, overflowing the buffer.
 
@@ -653,7 +653,7 @@ But..... I'm concerned about the whole idea of building a string and tracking th
 
 I started writing an exploit for it. Before I stopped, I basically found a way to brute-force build a string that would overwrite an arbitrary number of bytes by adding the right amount of padding and the right number of periods. That turned out to be a fairly difficult job, because there are various things you have to juggle (the padding at the front of the string and the size of the repeated field). It turns out, the maximum length you can get is 1368 bytes put into a 1024-byte buffer.
 
-You can download it <a href='https://blogdata.skullsecurity.org/dnsmasq-partial-sploit.rb'>here</a>.
+You can download it <a href='/blogdata/dnsmasq-partial-sploit.rb'>here</a>.
 
 <h2>...why it never got famous</h2>
 

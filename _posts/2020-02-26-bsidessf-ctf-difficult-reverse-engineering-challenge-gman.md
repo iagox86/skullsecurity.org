@@ -18,7 +18,7 @@ But this week, I want to post writeups for some of the challenges I wrote. I'm s
 <!--more-->
 Gman is a clone of Pacman. I tried hard to make it pretty, though it doesn't seem like it looks great in most terminals, which is kind of sad. But here's what it's supposed to look like:
 
-<img src="https://blogdata.skullsecurity.org/gman-1.png" />
+<img src="/blogdata/gman-1.png" />
 
 The trick to solving it was two-fold:
 
@@ -100,7 +100,7 @@ The code above works out to level 101, and there are 100 initialized levels. The
 
 If you go to level 101, it's going to look a bit different depending on your operating system, libraries, etc. But this is what it looks like on mine:
 
-<img src="https://blogdata.skullsecurity.org/gman-2.png" />
+<img src="/blogdata/gman-2.png" />
 
 The two important values are <a href="https://github.com/BSidesSF/ctf-2020-release/blob/master/gman/challenge/src/gman.c#L800">at the start of <tt>instructions()</tt></a>:
 
@@ -122,11 +122,11 @@ NAME: 0x08041140 => 01000000000100010000010000001000
 
 On the actual game board, that looks like:
 
-<img src="https://blogdata.skullsecurity.org/gman-3.png" />
+<img src="/blogdata/gman-3.png" />
 
 If you eat those bits, then either die or press 'q', you'll get the flag instead of the highscores:
 
-<img src="https://blogdata.skullsecurity.org/gman-4.png" />
+<img src="/blogdata/gman-4.png" />
 
 And that's it!
 
@@ -134,6 +134,6 @@ And that's it!
 
 One small bug that was unintentionally but turned out be really helpful: the "ghosts" can't turn 180 degrees, which means if a ghost ends up wandering into a square with only one way out, it gets stuck - ghost D and B are stuck in the same square here:
 
-<img src="https://blogdata.skullsecurity.org/gman-3.png" />
+<img src="/blogdata/gman-3.png" />
 
 Originally it caused an infinite loop looking for a direction to go. I actually found it really helpful while testing to get all the ghosts stuck, so I decided not to fix it completely - now if they get stuck, they just give up and you can roam freely!

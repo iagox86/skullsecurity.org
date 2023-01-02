@@ -14,7 +14,7 @@ categories:
 
 Hi Everybody!
 
-This is going to be a challenge-author writeup for the <a href="https://blogdata.skullsecurity.org/bsidessf2020/glitter-printer">Glitter Printer</a> challenge from <a href="https://ctftime.org/event/1299">BSides San Francisco 2021</a>.
+This is going to be a challenge-author writeup for the <a href="/blogdata/bsidessf2020/glitter-printer">Glitter Printer</a> challenge from <a href="https://ctftime.org/event/1299">BSides San Francisco 2021</a>.
 
 First, a bit of history: the original idea I had behind Glitter Printer was to make a video game challenge involving cartridge-swap, where I'd write a handful of simple video games in 100% x86 code with no imports or anything (like an old fashioned cartridge game), and the player could swap between them without memory being re-initialized. Folks used to do this sorta thing on NES, and maybe I'll use it in a future challenge, but I decided to make this a bit simpler.
 
