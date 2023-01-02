@@ -99,7 +99,7 @@ Let's say you have a function called func_a(). func_a() might look like this:
 When func_a() is called by another function, in assembly, it'll look like this:
 
 <pre id='vimCodeElement'>
-<span class='Comment'>; In C --&gt; func_a(1000, 10);
+<span class='Comment'>; In C --&gt; func_a(1000, 10);</span>
 <span class="Identifier">push</span> <span class="Constant">10</span>
 <span class="Identifier">push</span> <span class="Constant">1000</span>
 <span class="Identifier">call</span> <span class="Identifier">func_a</span>

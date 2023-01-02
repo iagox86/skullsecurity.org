@@ -1,0 +1,16 @@
+<nav class="nav-single">
+  <h3 class="assistive-text">Post Navigation</h3>
+
+  {% if include.previous.url %}
+    <div class="nav-previous alignleft">
+      <a href="{{ include.previous.url }}" rel="prev">{{ include.previous.title }}</a>
+    </div>
+  {% endif %}
+
+  {% if include.next.url %}
+    <div class="nav-next alignright">
+      <a href="{{ include.next.url }}" rel="next">{{ include.next.title }}</a>
+    </div>
+  {% endif %}
+  <div class="clear-fix"></div>
+</nav>

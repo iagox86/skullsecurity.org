@@ -2,7 +2,7 @@
 
 {% if author and author[0] %}
   <aside id="widget-author" class="widget">
-    <h3 class="widget-title">Written by {{ author[0].name }}</h3>
+    <h3 class="widget-title"><a href="{{ author[0].url }}">{{ author[0].name }}</a></h3>
 
     <div class="widget-body widget-author">
       {% if author[0].email %}

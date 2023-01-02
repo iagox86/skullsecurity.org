@@ -855,14 +855,14 @@ html {
      font: 700 2.5em/1 Bitter, serif;
 }
 .post, .page, .nav-below, .nav-single, li.comment, .comment-nav-below, .nocomments, #respond, #disqus_thread {
-     border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+     /* border-bottom: 2px solid rgba(255, 255, 255, 0.08);*/
      margin: 20px 0 25px 0;
 }
 .post:first-child, .page:first-child, .nav-below:first-child, .nav-single:first-child, li.comment:first-child, .comment-nav-below:first-child, .nocomments:first-child, #respond:first-child, #disqus_thread:first-child {
      margin-top: 0;
 }
 .post.sticky, .sticky.page, .sticky.nav-below, .sticky.nav-single, li.sticky.comment, .sticky.comment-nav-below, .sticky.nocomments, .sticky#respond, .sticky#disqus_thread {
-     border: 2px solid rgba(255, 255, 255, 0.08);
+     /* border: 2px solid rgba(255, 255, 255, 0.08); */
      padding: 1em;
 }
 .post.format-image a, .format-image.page a, .format-image.nav-below a, .format-image.nav-single a, li.format-image.comment a, .format-image.comment-nav-below a, .format-image.nocomments a, .format-image#respond a, .format-image#disqus_thread a {
@@ -877,11 +877,22 @@ html {
 }
 .entry-title a {
      text-decoration: none;
+     color: #dbf1ff;
 }
 .entry-title a:hover {
      text-decoration: underline;
 }
 .entry-title a:hover:after {
+     content: " ↩";
+}
+.widget-title a {
+     text-decoration: none;
+     border-bottom-style: none;
+}
+.widget-title a:hover {
+     text-decoration: underline;
+}
+.widget-title a:hover:after {
      content: " ↩";
 }
 .comments-link {
@@ -985,6 +996,14 @@ a .page-link:hover, a .comments-page-links .page-numbers:hover, .comments-page-l
 .nav-below .nav-previous {
      font-size: 1.5em;
 }
+
+.nav-previous a:before {
+  content: "← ";
+}
+.nav-next a:after {
+  content: " →";
+}
+
 .nav-below .nav-next a {
      margin-top: 1.5em;
      margin-bottom: 1.5em;
@@ -1122,7 +1141,7 @@ span.bypostauthor {
 .widget li {
      margin-right: 2.57em;
 }
-.widget a {
+.widget-body a {
      border-bottom-style: dotted;
 }
 .widget:last-child {

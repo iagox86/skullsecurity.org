@@ -98,7 +98,7 @@ I logged the traffic with Wireshark and it looks like this (blue = incoming, red
 <span style="color: blue">*** Welcome to the ACME data retrieval service ***</span>
 <span style="color: blue">what version is your client?</span>
 <span style="color: red">version 3.11.54</span>
-<span style="color: blue">hello...who is this?<span><span style="color: red">grumpy</span>
+<span style="color: blue">hello...who is this?</span><span style="color: red">grumpy</span>
 <span style="color: blue"></span>
 <span style="color: blue">enter user password</span>
 <span style="color: red">H0L31</span>

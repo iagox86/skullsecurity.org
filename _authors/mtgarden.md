@@ -1,10 +1,8 @@
 ---
 short_name: mtgarden
+author: mtgarden
 name: Matt Gardenghi
 layout: author
 ---
 
-Matt contributed a bunch of SkullSecurity blogs in the old, old days when we
-met during a SANS class.
-
-This space will be for his profile, if he wants one!
+Matt took a SANS class with Ron back in like 2005, and used to hang out with us in IRC. He contributed a couple of cool blogs way back then!

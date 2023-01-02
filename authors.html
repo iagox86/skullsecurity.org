@@ -2,12 +2,14 @@
 layout: default
 title: Authors
 ---
-<h1>Authors</h1>
+<h1 class="entry-title">Authors</h1>
 
-{% for author in site.authors %}
+{% assign authors = site.authors | sort: "name" %}
+
+{% for author in authors %}
   <h2 class="entry-title"><a href="{{ author.url }}">{{ author.name }}</a></h2>
 
   <div class="entry-content">
-    {{ author.content | markdownify }}
+    {{ author.excerpt }}
   </div>
 {% endfor %}

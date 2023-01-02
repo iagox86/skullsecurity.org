@@ -2,9 +2,15 @@
 layout: default
 ---
 
-<h1 class="entry-title">{{ page.name }}</h1>
+<a href="/authors.html">Back to authors</a>
 
-{{ content }}
+<header class="entry-header">
+  <h1 class="entry-title">{{ page.name }}</h1>
+</header>
+
+<div class="entry-content" itemprop="articleBody">
+  {{ content }}
+</div>
 
 <hr />
 

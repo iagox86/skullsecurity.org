@@ -948,7 +948,9 @@ s.write(<span class="Special">&quot;</span><span class="Constant">cat /home/r0pb
 <span class="Statement">end</span>
 </pre>
 
-<a name='update1'></a><h2>[update] Or... do it the easy way</h2>
+<a name='update1'></a>
+
+<h2>[update] Or... do it the easy way</h2>
 
 After I posted this, I got a tweet from <a href='https://twitter.com/gaasedelen'>@gaasedelen</a> informing me that libc has a "magic" address that will literally call exec() with "/bin/sh", making much of this unnecessary for this particular level. You can find it by seeing where the "/bin/sh" string is referenced. You can return to that address and a shell pops.
 
