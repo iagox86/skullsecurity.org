@@ -25,7 +25,7 @@ First, I tried to use <tt>git clone</tt> to download the source. That failed, an
 Next, I wanted to download the /.git folder. Since directory listings were turned on, this was extremely easy:
 <pre>$ mkdir git-test
 $ cd git-test
-$ wget --mirror --include-directories=/.git http://www.target.com/.git</pre>
+$ wget --mirror --include-directories=/.git http://www.target.com/.git
 </pre>
 
 That'll take some time, depending on the size of the repository. When it's all done, go into the folder that wget created and use git --reset:

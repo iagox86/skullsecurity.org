@@ -99,17 +99,17 @@ And there's your flag!
 
 I wanted rusty1 (<a href="https://github.com/BSidesSF/ctf-2020-release/blob/master/rusty1/challenge/src/src/main.rs">source</a> - which was provided) to be a gentle introduction to Rust reversing, as well as preparation (and a reference) for rusty2. It's actually based 95% on <a href="https://github.com/iagox86/game-docker-wrapper">game-docker-wrapper</a>, which is a wrapper for running a Terraria server in Docker (with clean shutdown) that I wrote for my boyfriend. I just changed it to run <tt>/bin/bash</tt> instead of the Terraria server, removed all the flags, and added a bit of obfuscation.
 
-They key lines are in <tt>input_task</tt> and <tt>output_task</tt>:
+The key lines are in <tt>input_task</tt> and <tt>output_task</tt>:
 
-<pre>
+```
   // Encode
   let mut bytes: Vec<u8> = line.into_bytes().into_iter().map(|b| b - 1).collect();
-</pre>
+```
 
-<pre>
+```
   // Output
   let mut bytes: Vec<u8> = line.into_bytes().into_iter().map(|b| b - 1).collect();
-</pre>
+```
 
 That shifts each byte of the line by 1, meaning that you have to encode your payloads, and decode responses. <tt>cat /home/ctf/flag.txt</tt> becomes <tt>dbu!0ipnf0dug0gmbh/uyu</tt>. If you send that to the server, you get an encoded response:
 

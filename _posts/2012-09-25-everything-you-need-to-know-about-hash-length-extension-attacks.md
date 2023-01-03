@@ -293,7 +293,7 @@ categories:
 
 <p>Here's the help page for reference:</p>
 
-<pre>
+```
 --------------------------------------------------------------------------------
 HASH EXTENDER
 --------------------------------------------------------------------------------
@@ -351,7 +351,7 @@ OTHER OPTIONS
 -q --quiet
       Only output what's absolutely necessary (the output string and the
       signature)
-</pre>
+```
 
 <h2>Defense</h2>
 
