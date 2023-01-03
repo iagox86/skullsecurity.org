@@ -4,11 +4,13 @@ title: 'BSidesSF 2022 Writeups: Miscellaneous Challenges (loca, reallyprettymund
 date: '2022-06-17T15:19:23-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2632'
-permalink: /2022/bsidessf-2022-writeups-miscellaneous-challenges-loca-reallyprettymundane
+guid: https://blog.skullsecurity.org/?p=2632
+permalink: "/2022/bsidessf-2022-writeups-miscellaneous-challenges-loca-reallyprettymundane"
 categories:
-    - bsidessf-2022
-    - ctfs
+- bsidessf-2022
+- ctfs
+comments_id: '109627675540354728'
+
 ---
 
 <p>Hey folks,</p>

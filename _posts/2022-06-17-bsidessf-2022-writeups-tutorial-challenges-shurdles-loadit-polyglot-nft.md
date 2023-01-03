@@ -4,12 +4,13 @@ title: 'BSidesSF 2022 Writeups: Tutorial Challenges (Shurdles, Loadit, Polyglot,
 date: '2022-06-17T15:19:14-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2624'
-permalink: /2022/bsidessf-2022-writeups-tutorial-challenges-shurdles-loadit-polyglot-nft
+guid: https://blog.skullsecurity.org/?p=2624
+permalink: "/2022/bsidessf-2022-writeups-tutorial-challenges-shurdles-loadit-polyglot-nft"
 categories:
-    - bsidessf-2022
-    - ctfs
-comments_id: 109554139841172904 
+- bsidessf-2022
+- ctfs
+comments_id: '109627675947134918'
+
 ---
 
 <p>Hey folks,</p>
