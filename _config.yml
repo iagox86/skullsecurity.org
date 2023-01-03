@@ -2,7 +2,7 @@ name: SkullSecurity
 title: SkullSecurity Blog
 email: your-email@example.com
 description: Adventures In Security
-url: "https://blog.skullsecurity.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://jekyll.skullsecurity.org" # the base hostname & protocol for your site, e.g. http://example.com
 logo: /assets/skullsecurity.jpg
 
 defaults:
