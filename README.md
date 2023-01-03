@@ -1,27 +1,20 @@
-Adding this to assist my bad memory, for now :)
+Powers https://blog.skullsecurity.org
 
-* `_layouts/default`
-  * includes head.html, header.html and footer.html
+A pretty simple fork of Jekyll's default theme, combined with my theme from SkullSecurity
 
-* `_layouts/home`
-  * layout: default
-  * List of posts
+# Usage
 
-* `_layouts/page`
-  * layout: default
-  * Title + page content
+I very much doubt anybody else will need this, but I need this for myself :)
 
-* `_layouts/post`
-  * layout: default
-  * Title + page + disqus_comments
+To write a new post:
 
-* `_includes/disqus_comments`
+* Copy `templates/post.md` to `_posts`
+* Fill in the metadata and the post - probably in Markdown
+* Use `jekyll serve` to test locally
 
-* `_includes/footer.html`
-  * Site author / description / etc
+Probably I'd work in a branch, but /shrug
 
-* `_includes/head.html`
-  * Includes `<head>` tag, as well as stylesheet, seo, and analytics
-
-* `_includes/header.html`
-  * Visible header
+* When it's ready to post, run `ruby tooling/post.rb _posts/<post>` - that'll fill out the metadata then wait to send a Mastodon post
+* Commit + push the new post
+* Press `<enter>` on the `post.rb`, which will toot on Mastodon
+* Commit + push again to enable comments

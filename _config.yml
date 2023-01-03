@@ -8,6 +8,14 @@ logo: /assets/skullsecurity.jpg
 paginate: 20
 excerpt_separator: '<!--more-->'
 
+exclude:
+  - 'hooks/'
+  - '*.sh'
+  - 'README.md'
+  - 'TODO.md'
+  - 'templates/'
+  - 'tooling/'
+
 # Mastodon comment settings
 comments:
   host: infosec.exchange
