@@ -1,5 +1,6 @@
-# Updates the metadata and creates a Mastodon post
-
+# Like post.rb, creates a Mastodon post but this doesn't touch the permalink
+# or anything, simply generate the thread
+require 'date'
 require 'time'
 require 'mastodon'
 require 'yaml'
@@ -47,37 +48,21 @@ end
 
 puts "Original Metadata:"
 pp metadata
-
-metadata['date'] = Time.now.iso8601
-permalink_name = metadata['title'].downcase.gsub(/[^0-9a-zA-Z_.-]/, '-')
-metadata['permalink'] = "/#{ Time.now.year }/#{ permalink_name }"
-
-# Remove the comments_id for now
-metadata.delete('comments_id')
-File.write(POST, "#{ metadata.to_yaml }\n---\n#{ post.join("\n") }\n")
-
 puts
-puts "Updated Metadata:"
-pp metadata
-
-# At this point, we have done everything we possibly can before creating the post
-puts
-puts "You should probably post it now (`git push`), then press <enter> to create the post and fill out the comments_id"
-
-$stdin.flush
-$stdin.gets
 
 # Load the Mastodon config and connect
 CONFIG = YAML::load_file(File.join(ENV['HOME'], '.skullsecurity.yaml'))
 MAS_CLIENT = Mastodon::REST::Client.new(base_url: CONFIG['server'], bearer_token: CONFIG['token'])
 
+date = DateTime.parse(metadata['date']).strftime("%A, %B %d, %Y @ %H:%M:%S")
+
 # Create a post
 puts
 puts "Creating a Mastodon post..."
 STATUS = MAS_CLIENT.create_status(
-  "New blog post on SkullSecurity by #{ CONFIG['author'] }: #{ metadata['title'] } by #{ metadata['author'] }, filed under #{ metadata['categories'].join(', ') }\n\n" +
+  "This is a comment thread for the archive SkullSecurity post \"#{ metadata['title'] }\" by #{ metadata['author'] }, posted on #{ date } and filed under #{ metadata['categories'].join(', ') }\n\n" +
   "https://blog.skullsecurity.org#{ metadata['permalink'] }\n\n" +
-  "(Replies here will show up on the blog post)",
+  "(Replies here will show up on the blog post; please ping #{ CONFIG['author'] } if there are formatting issues!)",
 
   visibility: 'unlisted',
 )
