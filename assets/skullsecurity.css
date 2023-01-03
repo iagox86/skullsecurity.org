@@ -488,10 +488,10 @@ a:focus {
 .cobalt-content p, .entry-content p, .entry-summary p, .comment-content p, .comment-awaiting-moderation p, .widget p {
      margin: 10px 0 25px 0;
 }
-.cobalt-content code, .entry-content code, .entry-summary code, .comment-content code, .comment-awaiting-moderation code, .widget code, .cobalt-content kbd, .entry-content kbd, .entry-summary kbd, .comment-content kbd, .comment-awaiting-moderation kbd, .widget kbd, .cobalt-content pre, .entry-content pre, .entry-summary pre, .comment-content pre, .comment-awaiting-moderation pre, .widget pre, .cobalt-content tt, .entry-content tt, .entry-summary tt, .comment-content tt, .comment-awaiting-moderation tt, .widget tt {
-     background: #121f27;
-     font: 400 1em "Droid Sans Mono", monospace;
-}
+/* .cobalt-content code, .entry-content code, .entry-summary code, .comment-content code, .comment-awaiting-moderation code, .widget code, .cobalt-content kbd, .entry-content kbd, .entry-summary kbd, .comment-content kbd, .comment-awaiting-moderation kbd, .widget kbd, .cobalt-content pre, .entry-content pre, .entry-summary pre, .comment-content pre, .comment-awaiting-moderation pre, .widget pre, .cobalt-content tt, .entry-content tt, .entry-summary tt, .comment-content tt, .comment-awaiting-moderation tt, .widget tt { */
+/*      background: #121f27; */
+/*      font: 400 1em "Droid Sans Mono", monospace; */
+/* } */
 .cobalt-content code, .entry-content code, .entry-summary code, .comment-content code, .comment-awaiting-moderation code, .widget code {
      padding: 0 0.2em;
 }
