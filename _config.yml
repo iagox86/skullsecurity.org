@@ -5,6 +5,16 @@ description: Adventures In Security
 url: "https://blog.skullsecurity.org" # the base hostname & protocol for your site, e.g. http://example.com
 logo: /assets/skullsecurity.jpg
 
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      image:
+        path: /assets/skullsecurity.jpg
+        height: 100
+        width: 100
+
 paginate: 20
 excerpt_separator: '<!--more-->'
 
