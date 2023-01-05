@@ -1,4 +1,4 @@
-Powers https://blog.skullsecurity.org
+Powers https://www.skullsecurity.org
 
 A pretty simple fork of Jekyll's default theme, combined with my theme from SkullSecurity
 

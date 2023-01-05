@@ -76,7 +76,7 @@ puts
 puts "Creating a Mastodon post..."
 STATUS = MAS_CLIENT.create_status(
   "New blog post on SkullSecurity by #{ CONFIG['author'] }: #{ metadata['title'] } by #{ metadata['author'] }, filed under #{ metadata['categories'].join(', ') }\n\n" +
-  "https://blog.skullsecurity.org#{ metadata['permalink'] }\n\n" +
+  "https://www.skullsecurity.org#{ metadata['permalink'] }\n\n" +
   "(Replies here will show up on the blog post)",
 
   visibility: 'unlisted',
