@@ -2,7 +2,7 @@
 <div id="comments" class="comments-area">
   <h2 class="comments-title">Comments</h2>
 
-  <p>Join the conversation in <a class="link" href="https://{{ site.comments.host }}/@{{ site.comments.username }}/{{ page.comments_id }}">this Mastodon post</a>!</p>
+  <p>Join the conversation on <a class="link" href="https://{{ site.comments.host }}/@{{ site.comments.username }}/{{ page.comments_id }}">this Mastodon post</a> (replies will appear below)!</p>
 
   <ol class="commentlist" id="comment-list">
     Loading comments...
@@ -60,13 +60,14 @@
             replyParagraph.className = 'comment-reply';
             li.append(replyParagraph);
 
-            var replyLink = document.createElement('a');
-            replyLink.rel = 'nofollow';
-            replyLink.className = 'comment-reply-link';
-            replyLink.href = reply.uri;
-            replyLink.textContent = 'Reply';
-            replyLink.target = '_blank';
-            replyParagraph.append(replyLink);
+            // This reply link was confusing
+            // var replyLink = document.createElement('a');
+            // replyLink.rel = 'nofollow';
+            // replyLink.className = 'comment-reply-link';
+            // replyLink.href = reply.uri;
+            // replyLink.textContent = 'Reply';
+            // replyLink.target = '_blank';
+            // replyParagraph.append(replyLink);
 
             var poster = document.createElement('header');
             poster.className = 'comment-meta comment-author vcard';
