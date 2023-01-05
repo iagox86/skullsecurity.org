@@ -1,13 +1,15 @@
 ---
 id: 1134
-title: 'Locks that can re-key themselves?'
+title: Locks that can re-key themselves?
 date: '2011-04-20T08:56:55-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1134'
-permalink: /2011/locks-that-can-re-key-themselves
+guid: http://www.skullsecurity.org/blog/?p=1134
+permalink: "/2011/locks-that-can-re-key-themselves"
 categories:
-    - re
+- re
+comments_id: '109638358222606596'
+
 ---
 
 Hey everybody,

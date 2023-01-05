@@ -1,13 +1,15 @@
 ---
 id: 256
-title: 'Nmap 4.85beta9 released'
+title: Nmap 4.85beta9 released
 date: '2009-05-15T14:00:49-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=256'
-permalink: /2009/nmap-485beta9-released
+guid: http://www.skullsecurity.org/blog/?p=256
+permalink: "/2009/nmap-485beta9-released"
 categories:
-    - tools
+- tools
+comments_id: '109638333885976993'
+
 ---
 
 In case you haven't heard, Fyodor released Nmap 4.85beta9 this week. This is the first release in awhile that wasn't related to my code (or, most properly, mistakes :) ). It looks like the new stable version will be here soon, so give this one a shot and report your bugs. Here's the <a href='http://nmap.org/download.html'>download page</a>.

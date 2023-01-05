@@ -1,13 +1,15 @@
 ---
 id: 1708
-title: 'BSides Winnipeg Wrap-up'
+title: BSides Winnipeg Wrap-up
 date: '2013-12-10T15:33:44-05:00'
 author: ron
 layout: post
-guid: 'http://blog.skullsecurity.org/?p=1708'
-permalink: /2013/bsides-winnipeg-wrap-up
+guid: http://blog.skullsecurity.org/?p=1708
+permalink: "/2013/bsides-winnipeg-wrap-up"
 categories:
-    - conferences
+- conferences
+comments_id: '109638362722134637'
+
 ---
 
 For those of you who are close to me, you'll know that my life has been crazy lately. Between teaching courses, changing jobs (<s>here I come, Google!</s>recently started at Google! (I'm slow at posting these :) )), and organizing BSides Winnipeg, I've barely had time to breathe!

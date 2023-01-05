@@ -1,13 +1,15 @@
 ---
 id: 752
-title: 'Confidential Information in the Cloud'
+title: Confidential Information in the Cloud
 date: '2010-05-05T09:43:16-05:00'
 author: mtgarden
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=752'
-permalink: /2010/confidential-information-in-the-cloud
+guid: http://www.skullsecurity.org/blog/?p=752
+permalink: "/2010/confidential-information-in-the-cloud"
 categories:
-    - hacking
+- hacking
+comments_id: '109638351301574075'
+
 ---
 
 <em>This is another special blog written by <a href='http://twitter.com/matt_gardenghi'>Matt Gardenghi</a>!</em> 

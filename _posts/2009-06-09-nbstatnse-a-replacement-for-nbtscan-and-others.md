@@ -4,11 +4,13 @@ title: 'nbstat.nse: just like nbtscan'
 date: '2009-06-09T21:10:36-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=298'
-permalink: /2009/nbstatnse-a-replacement-for-nbtscan-and-others
+guid: http://www.skullsecurity.org/blog/?p=298
+permalink: "/2009/nbstatnse-a-replacement-for-nbtscan-and-others"
 categories:
-    - smb
-    - tools
+- smb
+- tools
+comments_id: '109638335102039727'
+
 ---
 
 Hey all,

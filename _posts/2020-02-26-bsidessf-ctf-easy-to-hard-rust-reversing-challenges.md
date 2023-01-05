@@ -4,12 +4,14 @@ title: 'BSidesSF CTF: Easy to hard Rust reversing challenges'
 date: '2020-02-26T13:01:25-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2453'
-permalink: /2020/bsidessf-ctf-easy-to-hard-rust-reversing-challenges
+guid: https://blog.skullsecurity.org/?p=2453
+permalink: "/2020/bsidessf-ctf-easy-to-hard-rust-reversing-challenges"
 categories:
-    - conferences
-    - ctfs
-    - re
+- conferences
+- ctfs
+- re
+comments_id: '109638378475777924'
+
 ---
 
 As mentioned in a previous post, I was honoured to once again help run BSidesSF CTF!

@@ -1,15 +1,17 @@
 ---
 id: 1868
-title: 'PlaidCTF writeup for Pwn-200 (a simple overflow bug)'
+title: PlaidCTF writeup for Pwn-200 (a simple overflow bug)
 date: '2014-04-16T14:26:34-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1868'
-permalink: /2014/plaidctf-writeup-for-pwnage-200-a-simple-overflow-bug
+guid: https://blog.skullsecurity.org/?p=1868
+permalink: "/2014/plaidctf-writeup-for-pwnage-200-a-simple-overflow-bug"
 categories:
-    - hacking
-    - plaidctf-2014
-    - re
+- hacking
+- plaidctf-2014
+- re
+comments_id: '109638365552129765'
+
 ---
 
 I know what you're thinking of: what's with all the Web levels!?

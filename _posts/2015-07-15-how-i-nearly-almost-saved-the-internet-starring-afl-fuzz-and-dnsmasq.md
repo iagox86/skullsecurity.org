@@ -1,15 +1,17 @@
 ---
 id: 2009
-title: 'How I nearly almost saved the Internet, starring afl-fuzz and dnsmasq'
+title: How I nearly almost saved the Internet, starring afl-fuzz and dnsmasq
 date: '2015-07-15T10:41:49-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2009'
-permalink: /2015/how-i-nearly-almost-saved-the-internet-starring-afl-fuzz-and-dnsmasq
+guid: https://blog.skullsecurity.org/?p=2009
+permalink: "/2015/how-i-nearly-almost-saved-the-internet-starring-afl-fuzz-and-dnsmasq"
 categories:
-    - dns
-    - hacking
-    - tools
+- dns
+- hacking
+- tools
+comments_id: '109638372418774928'
+
 ---
 
 If you know me, you know that <a href='https://github.com/iagox86/dnscat2'>I love DNS</a>. I'm not exactly sure how that happened, but I suspect that <a href='https://twitter.com/edskoudis'>Ed Skoudis</a> is at least partly to blame.

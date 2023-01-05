@@ -1,13 +1,15 @@
 ---
 id: 363
-title: 'Why settle for (stealing) one password?'
+title: Why settle for (stealing) one password?
 date: '2010-02-02T10:19:12-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=363'
-permalink: /2010/why-settle-for-stealing-one-password
+guid: http://www.skullsecurity.org/blog/?p=363
+permalink: "/2010/why-settle-for-stealing-one-password"
 categories:
-    - hacking
+- hacking
+comments_id: '109638341986325567'
+
 ---
 
 This is just a quick thought I had at work today -- actually, I had it in November, but just got around to posting it now. Common story, but eh?

@@ -1,14 +1,16 @@
 ---
 id: 228
-title: 'Updated Conficker detection'
+title: Updated Conficker detection
 date: '2009-04-02T07:57:37-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=228'
-permalink: /2009/updated-conficker-detection
+guid: http://www.skullsecurity.org/blog/?p=228
+permalink: "/2009/updated-conficker-detection"
 categories:
-    - malware
-    - smb
+- malware
+- smb
+comments_id: '109638332671442472'
+
 ---
 
 Morning, all! 

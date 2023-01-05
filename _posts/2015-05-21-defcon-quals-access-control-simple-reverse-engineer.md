@@ -4,10 +4,12 @@ title: 'Defcon Quals: Access Control (simple reverse engineer)'
 date: '2015-05-21T12:30:15-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2034'
-permalink: /2015/defcon-quals-access-control-simple-reverse-engineer
+guid: https://blog.skullsecurity.org/?p=2034
+permalink: "/2015/defcon-quals-access-control-simple-reverse-engineer"
 categories:
-    - defcon-quals-2015
+- defcon-quals-2015
+comments_id: '109638371207106169'
+
 ---
 
 Hello all,

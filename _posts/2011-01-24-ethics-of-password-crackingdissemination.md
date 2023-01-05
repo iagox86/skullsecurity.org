@@ -1,15 +1,17 @@
 ---
 id: 1028
-title: 'Ethics of password cracking/dissemination'
+title: Ethics of password cracking/dissemination
 date: '2011-01-24T09:03:26-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1028'
-permalink: /2011/ethics-of-password-crackingdissemination
+guid: http://www.skullsecurity.org/blog/?p=1028
+permalink: "/2011/ethics-of-password-crackingdissemination"
 categories:
-    - conferences
-    - hacking
-    - passwords
+- conferences
+- hacking
+- passwords
+comments_id: '109638356607373958'
+
 ---
 
 It's rare these days for me to write blogs that I have to put a lot of thought into. Most of my writing is technical, which comes pretty naturally, but I haven't written an argument since I minored in philosophy. So, if my old Ethics or Philosophy profs are reading this, I'm sorry! 

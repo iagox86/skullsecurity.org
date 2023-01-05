@@ -1,14 +1,16 @@
 ---
 id: 549
-title: 'The ultimate faceoff between password lists'
+title: The ultimate faceoff between password lists
 date: '2010-03-11T10:51:24-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=549'
-permalink: /2010/the-ultimate-faceoff-between-password-lists
+guid: http://www.skullsecurity.org/blog/?p=549
+permalink: "/2010/the-ultimate-faceoff-between-password-lists"
 categories:
-    - nmap
-    - passwords
+- nmap
+- passwords
+comments_id: '109638346034769030'
+
 ---
 
 Yes, I'm still working on making the ultimate password list. And I don't mean the 16gb one I made by taking pretty much every word or word-looking string on the Internet when I was a kid; that was called ultimat<em>er</em> dictionary. No; I mean one that is streamlined, sorted, and will make Nmap the bruteforce tool of the future! 

@@ -4,11 +4,13 @@ title: 'BSidesSF CTF 2021 Author writeup / shellcode primer: Runme, Runme2, and 
 date: '2021-03-14T13:48:21-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2496'
-permalink: /2021/bsidessf-ctf-2021-author-writeup-shellcode-primer-runme-runme2-and-runme3
+guid: https://blog.skullsecurity.org/?p=2496
+permalink: "/2021/bsidessf-ctf-2021-author-writeup-shellcode-primer-runme-runme2-and-runme3"
 categories:
-    - ctfs
-    - hacking
+- ctfs
+- hacking
+comments_id: '109638379690586981'
+
 ---
 
 Hi Everybody!

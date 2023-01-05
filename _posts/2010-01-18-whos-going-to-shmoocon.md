@@ -1,13 +1,15 @@
 ---
 id: 407
-title: 'Who&#8217;s going to Shmoocon?'
+title: Who&#8217;s going to Shmoocon?
 date: '2010-01-18T15:53:12-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=407'
-permalink: /2010/whos-going-to-shmoocon
+guid: http://www.skullsecurity.org/blog/?p=407
+permalink: "/2010/whos-going-to-shmoocon"
 categories:
-    - conferences
+- conferences
+comments_id: '109638341178192478'
+
 ---
 
 Hey everybody,

@@ -4,11 +4,13 @@ title: 'Updated: Scanning for Microsoft FTP with Nmap'
 date: '2009-09-17T14:30:06-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=345'
-permalink: /2009/updated-scanning-for-microsoft-ftp-with-nmap
+guid: http://www.skullsecurity.org/blog/?p=345
+permalink: "/2009/updated-scanning-for-microsoft-ftp-with-nmap"
 categories:
-    - nmap
-    - tools
+- nmap
+- tools
+comments_id: '109638338343103008'
+
 ---
 
 Hi all,

@@ -1,15 +1,17 @@
 ---
 id: 1873
-title: 'PlaidCTF writeup for Web-100 &#8211; PolygonShifter (blind sql injection)'
+title: PlaidCTF writeup for Web-100 &#8211; PolygonShifter (blind sql injection)
 date: '2014-04-17T12:55:06-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1873'
-permalink: /2014/plaidctf-writeup-for-web-100-blind-sql-injection
+guid: https://blog.skullsecurity.org/?p=1873
+permalink: "/2014/plaidctf-writeup-for-web-100-blind-sql-injection"
 categories:
-    - hacking
-    - plaidctf-2014
-    - tools
+- hacking
+- plaidctf-2014
+- tools
+comments_id: '109638366359431060'
+
 ---
 
 Hey folks,
@@ -117,4 +119,3 @@ Then I let it run, filtered for 'Hello', and got the following results:
 <img src='/blogdata/polygonshifter-solution.png'>
 
 Boom! Arrange those properly and you have your password. :)
-

@@ -4,10 +4,12 @@ title: 'Call for help: researching the recent gmail password leak'
 date: '2014-09-12T10:51:28-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1949'
-permalink: /2014/call-for-help-researching-the-recent-gmail-password-leak
+guid: https://blog.skullsecurity.org/?p=1949
+permalink: "/2014/call-for-help-researching-the-recent-gmail-password-leak"
 categories:
-    - passwords
+- passwords
+comments_id: '109638368380504051'
+
 ---
 
 Hey folks,

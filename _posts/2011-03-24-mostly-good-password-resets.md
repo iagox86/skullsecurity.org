@@ -1,14 +1,16 @@
 ---
 id: 1088
-title: '(Mostly) good password resets'
+title: "(Mostly) good password resets"
 date: '2011-03-24T08:08:16-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1088'
-permalink: /2011/mostly-good-password-resets
+guid: http://www.skullsecurity.org/blog/?p=1088
+permalink: "/2011/mostly-good-password-resets"
 categories:
-    - hacking
-    - passwords
+- hacking
+- passwords
+comments_id: '109638357819617642'
+
 ---
 
 Hey everybody!

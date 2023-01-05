@@ -1,15 +1,17 @@
 ---
 id: 1158
-title: 'A deeper look at ms11-058'
+title: A deeper look at ms11-058
 date: '2011-08-23T09:10:46-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1158'
-permalink: /2011/a-deeper-look-at-ms11-058
+guid: http://www.skullsecurity.org/blog/?p=1158
+permalink: "/2011/a-deeper-look-at-ms11-058"
 categories:
-    - dns
-    - hacking
-    - re
+- dns
+- hacking
+- re
+comments_id: '109638358639381971'
+
 ---
 
 Hey everybody,
@@ -331,4 +333,3 @@ So, is this exploitable? I'm not sure. Is it definitely NOT exploitable? I would
 
 <h2>Conclusion</h2>
 I hope you were able to follow along, and I hope that the real exploit devs out there read this and can take it a step further. I'd be very interested in whether this vulnerability can be taken to the next level! 
-

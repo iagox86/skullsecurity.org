@@ -4,11 +4,13 @@ title: 'GitS 2015: Giggles (off-by-one virtual machine)'
 date: '2015-01-28T11:49:59-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1970'
-permalink: /2015/gits-2015-giggles-off-by-one-virtual-machine
+guid: https://blog.skullsecurity.org/?p=1970
+permalink: "/2015/gits-2015-giggles-off-by-one-virtual-machine"
 categories:
-    - gits-2015
-    - hacking
+- gits-2015
+- hacking
+comments_id: '109638369592068363'
+
 ---
 
 Welcome to part 3 of my Ghost in the Shellcode writeup! Sorry for the delay, I actually just moved to Seattle. On a sidenote, if there are any Seattle hackers out there reading this, hit me up and let's get a drink!

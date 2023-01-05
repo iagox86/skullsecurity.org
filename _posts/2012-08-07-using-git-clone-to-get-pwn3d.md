@@ -1,15 +1,17 @@
 ---
 id: 1271
-title: 'Using &#8220;Git Clone&#8221; to get Pwn3D'
+title: Using &#8220;Git Clone&#8221; to get Pwn3D
 date: '2012-08-07T08:40:42-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1271'
-permalink: /2012/using-git-clone-to-get-pwn3d
+guid: http://www.skullsecurity.org/blog/?p=1271
+permalink: "/2012/using-git-clone-to-get-pwn3d"
 categories:
-    - hacking
-    - nmap
-    - tools
+- hacking
+- nmap
+- tools
+comments_id: '109638359872796867'
+
 ---
 
 Hey everybody!

@@ -4,13 +4,15 @@ title: 'dnscat2: now with crypto!'
 date: '2015-11-17T11:43:47-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2194'
-permalink: /2015/dnscat2-now-with-crypto
+guid: https://blog.skullsecurity.org/?p=2194
+permalink: "/2015/dnscat2-now-with-crypto"
 categories:
-    - conferences
-    - dns
-    - hacking
-    - tools
+- conferences
+- dns
+- hacking
+- tools
+comments_id: '109638373226532540'
+
 ---
 
 Hey everybody,

@@ -4,11 +4,13 @@ title: 'Watch out for evil SMB servers: MS10-006'
 date: '2010-02-14T16:04:14-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=452'
-permalink: /2010/watch-out-for-evil-smb-servers-ms10-006
+guid: http://www.skullsecurity.org/blog/?p=452
+permalink: "/2010/watch-out-for-evil-smb-servers-ms10-006"
 categories:
-    - hacking
-    - smb
+- hacking
+- smb
+comments_id: '109638343203104202'
+
 ---
 
 Thanks to a <a href='http://www.google.ca/alerts'>Google Alert</a> on my name, I recently found <a href='http://g-laurent.blogspot.com/'>Laurent Gaffié's</a> blog post about <a href='http://g-laurent.blogspot.com/2010/02/more-details-on-ms10-006.html'>MS10-006</a> (<a href='http://blogs.technet.com/srd/archive/2010/02/09/ms10-006-and-ms10-012-smb-security-bulletins.aspx'>Microsoft Technet link</a>). 

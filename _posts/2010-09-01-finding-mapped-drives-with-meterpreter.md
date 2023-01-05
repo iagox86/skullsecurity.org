@@ -1,13 +1,15 @@
 ---
 id: 931
-title: 'Finding Mapped Drives with Meterpreter'
+title: Finding Mapped Drives with Meterpreter
 date: '2010-09-01T09:16:20-05:00'
 author: mtgarden
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=931'
-permalink: /2010/finding-mapped-drives-with-meterpreter
+guid: http://www.skullsecurity.org/blog/?p=931
+permalink: "/2010/finding-mapped-drives-with-meterpreter"
 categories:
-    - hacking
+- hacking
+comments_id: '109638354573036282'
+
 ---
 
 This post written by <a href='https://twitter.com/matt_gardenghi'>Matt Gardenghi</a>

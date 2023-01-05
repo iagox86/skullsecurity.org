@@ -1,13 +1,15 @@
 ---
 id: 151
-title: 'Password dictionaries'
+title: Password dictionaries
 date: '2009-01-05T14:09:46-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=151'
-permalink: /2009/password-dictionaries
+guid: http://www.skullsecurity.org/blog/?p=151
+permalink: "/2009/password-dictionaries"
 categories:
-    - hacking
+- hacking
+comments_id: '109638330234948963'
+
 ---
 
 Greetings from 2009! 

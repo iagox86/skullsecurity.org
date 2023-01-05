@@ -4,11 +4,13 @@ title: 'Call for testers: nbtool-0.05 and dnscat-0.05'
 date: '2010-07-07T09:17:34-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=876'
-permalink: /2010/call-for-testers-nbtool-0-05-and-dnscat-0-05
+guid: http://www.skullsecurity.org/blog/?p=876
+permalink: "/2010/call-for-testers-nbtool-0-05-and-dnscat-0-05"
 categories:
-    - dns
-    - tools
+- dns
+- tools
+comments_id: '109638352922956438'
+
 ---
 
 Hey all,

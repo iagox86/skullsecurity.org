@@ -9,7 +9,7 @@ permalink: "/2022/bsidessf-2022-writeups-miscellaneous-challenges-loca-reallypre
 categories:
 - bsidessf-2022
 - ctfs
-comments_id: '109627675540354728'
+comments_id: '109638382936917271'
 
 ---
 

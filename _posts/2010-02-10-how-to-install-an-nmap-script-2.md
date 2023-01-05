@@ -4,10 +4,12 @@ title: 'How-to: install an Nmap script'
 date: '2010-02-10T19:05:31-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=459'
-permalink: /2010/how-to-install-an-nmap-script-2
+guid: http://www.skullsecurity.org/blog/?p=459
+permalink: "/2010/how-to-install-an-nmap-script-2"
 categories:
-    - nmap
+- nmap
+comments_id: '109638342391157849'
+
 ---
 
 Hey all,

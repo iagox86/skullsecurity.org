@@ -9,7 +9,7 @@ permalink: "/2022/bsidessf-2022-writeups-tutorial-challenges-shurdles-loadit-pol
 categories:
 - bsidessf-2022
 - ctfs
-comments_id: '109627675947134918'
+comments_id: '109638383343300957'
 
 ---
 

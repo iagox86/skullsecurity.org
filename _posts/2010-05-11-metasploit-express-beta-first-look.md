@@ -1,20 +1,22 @@
 ---
 id: 779
-title: 'Metasploit Express Beta &#8211; First Look'
+title: Metasploit Express Beta &#8211; First Look
 date: '2010-05-11T09:15:02-05:00'
 author: mtgarden
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=779'
-permalink: /2010/metasploit-express-beta-first-look
+guid: http://www.skullsecurity.org/blog/?p=779
+permalink: "/2010/metasploit-express-beta-first-look"
 categories:
-    - hacking
-    - tools
+- hacking
+- tools
 tags:
-    - hacking
-    - Metasploit
-    - 'Metasploit Express'
-    - PenTesting
-    - Rapid7
+- hacking
+- Metasploit
+- Metasploit Express
+- PenTesting
+- Rapid7
+comments_id: '109638351705437261'
+
 ---
 
 <em>This post was written by <a href='http://www.twitter.com/matt_gardenghi'>Matt Gardenghi</a></em>

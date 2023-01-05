@@ -1,15 +1,18 @@
 ---
 id: 2508
-title: 'BSidesSF CTF 2021 Author writeup: glitter-printer, a buffer underflow where you modify the actual code'
+title: 'BSidesSF CTF 2021 Author writeup: glitter-printer, a buffer underflow where
+  you modify the actual code'
 date: '2021-03-18T12:07:36-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2508'
-permalink: /2021/bsidessf-ctf-2021-author-writeup-glitter-printer-a-buffer-underflow-where-you-modify-the-actual-code
+guid: https://blog.skullsecurity.org/?p=2508
+permalink: "/2021/bsidessf-ctf-2021-author-writeup-glitter-printer-a-buffer-underflow-where-you-modify-the-actual-code"
 categories:
-    - ctfs
-    - hacking
-    - re
+- ctfs
+- hacking
+- re
+comments_id: '109638381316539032'
+
 ---
 
 Hi Everybody!

@@ -1,14 +1,16 @@
 ---
 id: 1197
-title: 'Remote control manager FAIL'
+title: Remote control manager FAIL
 date: '2011-12-19T10:40:59-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1197'
-permalink: /2011/remote-control-manager-fail
+guid: http://www.skullsecurity.org/blog/?p=1197
+permalink: "/2011/remote-control-manager-fail"
 categories:
-    - hacking
-    - re
+- hacking
+- re
+comments_id: '109638359048485691'
+
 ---
 
 Hey guys,

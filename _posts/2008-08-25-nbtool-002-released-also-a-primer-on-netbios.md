@@ -1,14 +1,16 @@
 ---
 id: 6
-title: 'nbtool 0.02 released! (also, a primer on NetBIOS)'
+title: nbtool 0.02 released! (also, a primer on NetBIOS)
 date: '2008-08-25T21:03:05-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=6'
-permalink: /2008/nbtool-002-released-also-a-primer-on-netbios
+guid: http://www.skullsecurity.org/blog/?p=6
+permalink: "/2008/nbtool-002-released-also-a-primer-on-netbios"
 categories:
-    - smb
-    - tools
+- smb
+- tools
+comments_id: '109638325358660119'
+
 ---
 
 All right, maybe 0.02 doesn't sound so impressive, but I've put a lot of work into it so eh?

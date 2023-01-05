@@ -1,13 +1,15 @@
 ---
 id: 92
-title: 'Calling RPC functions over SMB'
+title: Calling RPC functions over SMB
 date: '2008-10-30T22:45:19-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=92'
-permalink: /2008/calling-rpc-functions-over-smb
+guid: http://www.skullsecurity.org/blog/?p=92
+permalink: "/2008/calling-rpc-functions-over-smb"
 categories:
-    - smb
+- smb
+comments_id: '109638328608094885'
+
 ---
 
 Hi everybody! 

@@ -1,14 +1,16 @@
 ---
 id: 563
-title: 'Using Nmap to detect the Arucer (ie, Energizer) Trojan'
+title: Using Nmap to detect the Arucer (ie, Energizer) Trojan
 date: '2010-03-08T13:43:43-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=563'
-permalink: /2010/using-nmap-to-detect-the-arucer-ie-energizer-trojan
+guid: http://www.skullsecurity.org/blog/?p=563
+permalink: "/2010/using-nmap-to-detect-the-arucer-ie-energizer-trojan"
 categories:
-    - malware
-    - nmap
+- malware
+- nmap
+comments_id: '109638345224464052'
+
 ---
 
 Hey,

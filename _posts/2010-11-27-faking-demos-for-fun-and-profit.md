@@ -1,17 +1,19 @@
 ---
 id: 990
-title: 'Faking demos for fun and profit'
+title: Faking demos for fun and profit
 date: '2010-11-27T19:03:38-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=990'
-permalink: /2010/faking-demos-for-fun-and-profit
+guid: http://www.skullsecurity.org/blog/?p=990
+permalink: "/2010/faking-demos-for-fun-and-profit"
 categories:
-    - conferences
-    - dns
-    - hacking
-    - nmap
-    - tools
+- conferences
+- dns
+- hacking
+- nmap
+- tools
+comments_id: '109638355786116131'
+
 ---
 
 <s>This week</s> <s>Last week</s> <s>Earlier this month</s> <s>Last month</s> Last year (if this intro doesn't work, I give up trying to post this :) ), I presented at <a href='http://www.securitybsides.com/w/page/26807426/BSidesOttawa'>B-Sides Ottawa</a>, which was put on by <a href='http://www.andrewhay.ca/'>Andrew Hay</a> and others (and sorry I waited so long before posting this... I kept revising it and not publishing). I got to give a well received talk, meet a lot of great folks, see Ottawa for the first time, and learn that I am a good solid Security D-lister. w00t! 

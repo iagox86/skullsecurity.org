@@ -1,13 +1,15 @@
 ---
 id: 898
-title: 'Followup to my Facebook research'
+title: Followup to my Facebook research
 date: '2010-08-12T09:52:24-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=898'
-permalink: /2010/followup-to-my-facebook-research
+guid: http://www.skullsecurity.org/blog/?p=898
+permalink: "/2010/followup-to-my-facebook-research"
 categories:
-    - passwords
+- passwords
+comments_id: '109638354137103659'
+
 ---
 
 Hey all,
@@ -74,5 +76,3 @@ I've had several email (and real-world) discussions with various people, all of 
 So, those are some ideas to expand this research, some of which are actually being worked on right now. And don't get me wrong, those are good ideas, but I'd really like to get some more. Why should we, whether we're security researchers, media, academics, etc, care about having a list of 170,000,000 names and URLs? What can we get from aggregating this data that we didn't have before? What can a good person do with it? What about an evil person?
 
 I'd love to hear most opinions! 
-
-

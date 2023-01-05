@@ -1,15 +1,18 @@
 ---
 id: 2511
-title: 'BSidesSF CTF 2021 Author writeup: Hangman Battle Royale, where you defeat 1023 AI players!'
+title: 'BSidesSF CTF 2021 Author writeup: Hangman Battle Royale, where you defeat
+  1023 AI players!'
 date: '2021-03-16T11:32:50-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2511'
-permalink: /2021/bsidessf-ctf-2021-author-writeup-hangman-battle-royale-where-you-defeat-1023-ai-players
+guid: https://blog.skullsecurity.org/?p=2511
+permalink: "/2021/bsidessf-ctf-2021-author-writeup-hangman-battle-royale-where-you-defeat-1023-ai-players"
 categories:
-    - crypto
-    - ctfs
-    - random
+- crypto
+- ctfs
+- random
+comments_id: '109638380500972129'
+
 ---
 
 Hi Everybody!

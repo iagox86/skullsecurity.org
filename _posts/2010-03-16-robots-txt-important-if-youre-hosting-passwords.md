@@ -4,10 +4,12 @@ title: 'robots.txt: important if you&#8217;re hosting passwords'
 date: '2010-03-16T10:53:08-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=327'
-permalink: /2010/robots-txt-important-if-youre-hosting-passwords
+guid: http://www.skullsecurity.org/blog/?p=327
+permalink: "/2010/robots-txt-important-if-youre-hosting-passwords"
 categories:
-    - passwords
+- passwords
+comments_id: '109638346441760271'
+
 ---
 
 This is going to be a fun post that's related to some of my password work. Some of the text may not be PG13, so parental discretion is advised. 

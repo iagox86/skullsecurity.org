@@ -5,13 +5,15 @@ featured: true
 date: '2013-01-02T11:59:43-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1318'
-permalink: /2013/padding-oracle-attacks-in-depth
+guid: http://www.skullsecurity.org/blog/?p=1318
+permalink: "/2013/padding-oracle-attacks-in-depth"
 categories:
-    - conferences
-    - crypto
-    - hacking
-    - tools
+- conferences
+- crypto
+- hacking
+- tools
+comments_id: '109638361106766707'
+
 ---
 
 This post is about padding oracle vulnerabilities and the tool for attacking them - "Poracle" I'm officially releasing right now. <strong>You can grab the Poracle tool on <a href="https://www.github.com/iagox86/Poracle">Github</a>!</strong>

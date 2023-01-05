@@ -1,14 +1,16 @@
 ---
 id: 230
-title: 'Scanning for Conficker&#8217;s peer to peer'
+title: Scanning for Conficker&#8217;s peer to peer
 date: '2009-04-21T16:44:11-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=230'
-permalink: /2009/scanning-for-confickers-peer-to-peer
+guid: http://www.skullsecurity.org/blog/?p=230
+permalink: "/2009/scanning-for-confickers-peer-to-peer"
 categories:
-    - malware
-    - tools
+- malware
+- tools
+comments_id: '109638333076116053'
+
 ---
 
 Hi everybody,
@@ -112,4 +114,3 @@ Hopefully the script helps you out! And, as usual, don't hesitate to contact me 
 <li>Email me (ron --- skullsecurity.org)</li>
 <li>#nmap on FreeNode (I don't look at that so often, though)</li>
 </ul>
-

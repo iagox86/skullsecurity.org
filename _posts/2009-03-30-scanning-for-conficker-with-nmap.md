@@ -1,14 +1,16 @@
 ---
 id: 209
-title: 'Scanning for Conficker with Nmap'
+title: Scanning for Conficker with Nmap
 date: '2009-03-30T11:49:09-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=209'
-permalink: /2009/scanning-for-conficker-with-nmap
+guid: http://www.skullsecurity.org/blog/?p=209
+permalink: "/2009/scanning-for-conficker-with-nmap"
 categories:
-    - malware
-    - smb
+- malware
+- smb
+comments_id: '109638331859536294'
+
 ---
 
 Using Nmap to scan for the famous Conficker worm. 

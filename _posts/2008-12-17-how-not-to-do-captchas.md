@@ -1,13 +1,15 @@
 ---
 id: 146
-title: 'How NOT to do CAPTCHAs'
+title: How NOT to do CAPTCHAs
 date: '2008-12-17T10:54:50-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=146'
-permalink: /2008/how-not-to-do-captchas
+guid: http://www.skullsecurity.org/blog/?p=146
+permalink: "/2008/how-not-to-do-captchas"
 categories:
-    - humour
+- humour
+comments_id: '109638329827481666'
+
 ---
 
 <img src="/blogdata/dumbcaptcha.png">

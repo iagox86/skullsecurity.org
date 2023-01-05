@@ -4,10 +4,12 @@ title: 'Defcon Quals: r0pbaby (simple 64-bit ROP)'
 date: '2015-05-20T11:34:06-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2003'
-permalink: /2015/defcon-quals-r0pbaby-simple-64-bit-rop
+guid: https://blog.skullsecurity.org/?p=2003
+permalink: "/2015/defcon-quals-r0pbaby-simple-64-bit-rop"
 categories:
-    - defcon-quals-2015
+- defcon-quals-2015
+comments_id: '109638370803109728'
+
 ---
 
 This past weekend I competed in the <a href='https://2015.legitbs.net/'>Defcon CTF Qualifiers</a> from the <a href='https://legitbs.net/'>Legit Business Syndicate</a>. In the past it's been one of my favourite competitions, and this year was no exception!

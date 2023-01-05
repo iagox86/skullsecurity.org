@@ -1,14 +1,16 @@
 ---
 id: 1847
-title: 'PlaidCTF writeup for Web-200 &#8211; kpop (bad deserialization)'
+title: PlaidCTF writeup for Web-200 &#8211; kpop (bad deserialization)
 date: '2014-04-13T22:57:39-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1847'
-permalink: /2014/plaidctf-writeup-for-web-200-kpop-bad-deserialization
+guid: https://blog.skullsecurity.org/?p=1847
+permalink: "/2014/plaidctf-writeup-for-web-200-kpop-bad-deserialization"
 categories:
-    - hacking
-    - plaidctf-2014
+- hacking
+- plaidctf-2014
+comments_id: '109638365146432727'
+
 ---
 
 Hello again!

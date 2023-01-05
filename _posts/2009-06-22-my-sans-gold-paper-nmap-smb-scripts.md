@@ -4,10 +4,12 @@ title: 'My SANS Gold Paper: Nmap SMB Scripts'
 date: '2009-06-22T20:29:58-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=307'
-permalink: /2009/my-sans-gold-paper-nmap-smb-scripts
+guid: http://www.skullsecurity.org/blog/?p=307
+permalink: "/2009/my-sans-gold-paper-nmap-smb-scripts"
 categories:
-    - smb
+- smb
+comments_id: '109638335506608348'
+
 ---
 
 Hey all,

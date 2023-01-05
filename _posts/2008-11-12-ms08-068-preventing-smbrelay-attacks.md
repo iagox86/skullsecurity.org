@@ -1,14 +1,16 @@
 ---
 id: 110
-title: 'ms08-068 &#8212; Preventing SMBRelay Attacks'
+title: ms08-068 &#8212; Preventing SMBRelay Attacks
 date: '2008-11-12T12:38:29-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=110'
-permalink: /2008/ms08-068-preventing-smbrelay-attacks
+guid: http://www.skullsecurity.org/blog/?p=110
+permalink: "/2008/ms08-068-preventing-smbrelay-attacks"
 categories:
-    - hacking
-    - smb
+- hacking
+- smb
+comments_id: '109638329014031096'
+
 ---
 
 Microsoft released ms08-068 this week, which fixes a vulnerability that's been present and documented since 2001. I'm going to write a quick overview of it here, although you'll probably get a better one by reading <a href='http://blog.metasploit.com/2008/11/ms08-067-metasploit-and-smb-relay.html'>The Metasploit Blog</a>. 

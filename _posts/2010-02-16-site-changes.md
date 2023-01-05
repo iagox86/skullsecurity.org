@@ -1,13 +1,15 @@
 ---
 id: 499
-title: 'Site changes'
+title: Site changes
 date: '2010-02-16T15:34:01-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=499'
-permalink: /2010/site-changes
+guid: http://www.skullsecurity.org/blog/?p=499
+permalink: "/2010/site-changes"
 categories:
-    - meta
+- meta
+comments_id: '109638343607561492'
+
 ---
 
 Hey all,

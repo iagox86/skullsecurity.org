@@ -4,11 +4,13 @@ title: 'GitS 2015: Huffy (huffman-encoded shellcode)'
 date: '2015-02-04T13:58:12-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1980'
-permalink: /2015/gits-2015-huffy-huffman-encoded-shellcode
+guid: https://blog.skullsecurity.org/?p=1980
+permalink: "/2015/gits-2015-huffy-huffman-encoded-shellcode"
 categories:
-    - gits-2015
-    - re
+- gits-2015
+- re
+comments_id: '109638369995719911'
+
 ---
 
 Welcome to my fourth and final writeup from Ghost in the Shellcode 2015! This one is about the one and only reversing level, called "<a href='/blogdata/huffy'>huffy</a>", that was released right near the end.

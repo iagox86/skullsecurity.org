@@ -1,13 +1,15 @@
 ---
 id: 25
-title: 'ANDX&#8230; and what?'
+title: ANDX&#8230; and what?
 date: '2008-08-28T19:08:22-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=25'
-permalink: /2008/andx-and-what
+guid: http://www.skullsecurity.org/blog/?p=25
+permalink: "/2008/andx-and-what"
 categories:
-    - smb
+- smb
+comments_id: '109638325764061674'
+
 ---
 
 My current project, as you can see by my last post, is to learn how to work in Microsoft's networking protocols (NetBIOS, SMB, CIFS, etc). This is obviously difficult due to the lack of standards and documentation, but there are two things that are seriously making my life difficult:
@@ -84,4 +86,3 @@ Maybe this isn't a big deal to some, but this type of thing makes me go crazy!
 You might be wondering what the point of this post was. There wasn't any, unless you count me wanting to give readers a bit of insight into how all this behind-the-scenes stuff works. :)
 
 Ron
-

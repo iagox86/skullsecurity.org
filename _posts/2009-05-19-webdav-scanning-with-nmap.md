@@ -1,14 +1,16 @@
 ---
 id: 271
-title: 'WebDAV Scanning with Nmap'
+title: WebDAV Scanning with Nmap
 date: '2009-05-19T18:48:32-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=271'
-permalink: /2009/webdav-scanning-with-nmap
+guid: http://www.skullsecurity.org/blog/?p=271
+permalink: "/2009/webdav-scanning-with-nmap"
 categories:
-    - hacking
-    - tools
+- hacking
+- tools
+comments_id: '109638334292308880'
+
 ---
 
 Greetings!

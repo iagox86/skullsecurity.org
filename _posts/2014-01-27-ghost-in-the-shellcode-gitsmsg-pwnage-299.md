@@ -4,12 +4,14 @@ title: 'Ghost in the Shellcode: gitsmsg (Pwnage 299)'
 date: '2014-01-27T10:57:31-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1756'
-permalink: /2014/ghost-in-the-shellcode-gitsmsg-pwnage-299
+guid: https://blog.skullsecurity.org/?p=1756
+permalink: "/2014/ghost-in-the-shellcode-gitsmsg-pwnage-299"
 categories:
-    - gits-2014
-    - hacking
-    - re
+- gits-2014
+- hacking
+- re
+comments_id: '109638363933598070'
+
 ---
 
 "It's Saturday night; I have no date, a 2L bottle of Shasta, and my all-rush mix tape. Let's rock!"

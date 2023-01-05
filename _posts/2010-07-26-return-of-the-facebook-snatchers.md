@@ -1,14 +1,16 @@
 ---
 id: 887
-title: 'Return of the Facebook Snatchers'
+title: Return of the Facebook Snatchers
 date: '2010-07-26T21:44:32-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=887'
-permalink: /2010/return-of-the-facebook-snatchers
+guid: http://www.skullsecurity.org/blog/?p=887
+permalink: "/2010/return-of-the-facebook-snatchers"
 categories:
-    - hacking
-    - passwords
+- hacking
+- passwords
+comments_id: '109638353732630633'
+
 ---
 
 First and foremost: if you want to cut to the chase, just download the <a href='/blogdata/fbdata.torrent'>torrent</a>. If you want the full story, please read on....

@@ -1,13 +1,15 @@
 ---
 id: 1309
-title: 'What&#8217;s going on with SkullSpace (our hackerspace)?'
+title: What&#8217;s going on with SkullSpace (our hackerspace)?
 date: '2012-11-05T13:30:48-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1309'
-permalink: /2012/current-and-future-challenges-of-the-hackerspace-i-founded
+guid: http://www.skullsecurity.org/blog/?p=1309
+permalink: "/2012/current-and-future-challenges-of-the-hackerspace-i-founded"
 categories:
-    - meta
+- meta
+comments_id: '109638360703004670'
+
 ---
 
 Hey everybody,

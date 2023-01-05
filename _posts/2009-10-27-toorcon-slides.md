@@ -1,13 +1,15 @@
 ---
 id: 353
-title: 'Toorcon Slides'
+title: Toorcon Slides
 date: '2009-10-27T22:01:45-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=353'
-permalink: /2009/toorcon-slides
+guid: http://www.skullsecurity.org/blog/?p=353
+permalink: "/2009/toorcon-slides"
 categories:
-    - conferences
+- conferences
+comments_id: '109638339556628975'
+
 ---
 
 Hey all,

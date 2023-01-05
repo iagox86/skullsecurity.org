@@ -4,12 +4,14 @@ title: 'Taking apart the Energizer trojan &#8211; Part 4: writing a probe'
 date: '2010-03-25T10:04:25-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=649'
-permalink: /2010/taking-apart-the-energizer-trojan-part-4-writing-a-probe
+guid: http://www.skullsecurity.org/blog/?p=649
+permalink: "/2010/taking-apart-the-energizer-trojan-part-4-writing-a-probe"
 categories:
-    - malware
-    - nmap
-    - re
+- malware
+- nmap
+- re
+comments_id: '109638348873574722'
+
 ---
 
 Now that we know what we need to send and receive, and how it's encoded, let's generate the actual packet. Then, once we're sure it's working, we'll convert it into an Nmap probe! In most of this section, I assume you're running Linux, Mac, or some other operating system with a built-in compiler and useful tools (gcc, hexdump, etc). If you're on Windows, you'll probably just have to follow along until I generate the probe.

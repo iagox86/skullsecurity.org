@@ -4,12 +4,14 @@ title: 'smb-psexec.nse: owning Windows, fast (Part 3)'
 date: '2010-01-19T15:23:11-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=404'
-permalink: /2010/smb-psexec-nse-owning-windows-fast-part-3
+guid: http://www.skullsecurity.org/blog/?p=404
+permalink: "/2010/smb-psexec-nse-owning-windows-fast-part-3"
 categories:
-    - hacking
-    - smb
-    - nmap
+- hacking
+- smb
+- nmap
+comments_id: '109638341582735284'
+
 ---
 
 Posts in this series (I'll add links as they're written):

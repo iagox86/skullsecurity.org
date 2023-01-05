@@ -1,16 +1,18 @@
 ---
 id: 2340
-title: 'Technical Rundown of WebExec'
+title: Technical Rundown of WebExec
 featured: true
 date: '2018-10-24T11:18:44-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2340'
-permalink: /2018/technical-rundown-of-webexec
+guid: https://blog.skullsecurity.org/?p=2340
+permalink: "/2018/technical-rundown-of-webexec"
 categories:
-    - hacking
-    - smb
-    - re
+- hacking
+- smb
+- re
+comments_id: '109638376054786923'
+
 ---
 
 This is a technical rundown of a vulnerability that we've dubbed "WebExec". The summary is: a flaw in WebEx's WebexUpdateService allows anyone with a login to the Windows system where WebEx is installed to run SYSTEM-level code remotely. That's right: this client-side application that doesn't listen on any ports is actually vulnerable to remote code execution! A local or domain account will work, making this a powerful way to pivot through networks until it's patched.

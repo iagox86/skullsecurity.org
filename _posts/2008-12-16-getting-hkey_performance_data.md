@@ -1,13 +1,15 @@
 ---
 id: 127
-title: 'Getting HKEY_PERFORMANCE_DATA'
+title: Getting HKEY_PERFORMANCE_DATA
 date: '2008-12-16T16:41:14-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=127'
-permalink: /2008/getting-hkey_performance_data
+guid: http://www.skullsecurity.org/blog/?p=127
+permalink: "/2008/getting-hkey_performance_data"
 categories:
-    - smb
+- smb
+comments_id: '109638329420618205'
+
 ---
 
 Hi everybody,
@@ -221,4 +223,3 @@ So, when all's said and done, this is the kind of information we can pull from j
 </pre>
 
 The most interesting thing, in my opinion, is that it's completely generic. You query for the title database, then for objects from the title database, and you get counters for those objects. The counters tell you their units (I skipped over that) and names, and what level of experience is required to understand them, in addition to their values. All this can be done in a totally generic way. 
-

@@ -4,10 +4,12 @@ title: 'Exotic XSS: The HTML Image Tag'
 date: '2010-04-06T13:45:54-05:00'
 author: mtgarden
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=590'
-permalink: /2010/exotic-xss-the-html-image-tag
+guid: http://www.skullsecurity.org/blog/?p=590
+permalink: "/2010/exotic-xss-the-html-image-tag"
 categories:
-    - hacking
+- hacking
+comments_id: '109638350087514606'
+
 ---
 
 There are the usual XSS tests.  And then there are the fun ones.  This is a story about a more exotic approach to testing XSS....

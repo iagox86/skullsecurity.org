@@ -1,13 +1,15 @@
 ---
 id: 156
-title: 'More password dictionaries'
+title: More password dictionaries
 date: '2009-02-07T18:44:09-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=156'
-permalink: /2009/more-password-dictionaries
+guid: http://www.skullsecurity.org/blog/?p=156
+permalink: "/2009/more-password-dictionaries"
 categories:
-    - hacking
+- hacking
+comments_id: '109638330640756372'
+
 ---
 
 Last month, I posted about some <a href='http://www.skullsecurity.org/blog/?p=151'>password dictionaries</a> I've collected. Well, thanks to a hacker who <a href='http://hackedphpbb.blogspot.com/2009/01/place-holder.html'>compromised PHPBB's site</a>, I added another. There's a big caveat to this one, though -- these passwords are apparently based on ones that were cracked by the hacker, so they're only an accurate representation of weak passwords. 

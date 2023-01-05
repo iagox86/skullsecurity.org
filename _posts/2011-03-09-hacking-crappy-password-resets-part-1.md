@@ -1,15 +1,17 @@
 ---
 id: 1054
-title: 'Hacking crappy password resets (part 1)'
+title: Hacking crappy password resets (part 1)
 date: '2011-03-09T09:14:05-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1054'
-permalink: /2011/hacking-crappy-password-resets-part-1
+guid: http://www.skullsecurity.org/blog/?p=1054
+permalink: "/2011/hacking-crappy-password-resets-part-1"
 categories:
-    - hacking
-    - passwords
-    - tools
+- hacking
+- passwords
+- tools
+comments_id: '109638357011976479'
+
 ---
 
 Greetings, all!

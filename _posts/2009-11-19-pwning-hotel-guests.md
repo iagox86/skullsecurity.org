@@ -1,15 +1,17 @@
 ---
 id: 356
-title: 'Pwning hotel guests'
+title: Pwning hotel guests
 date: '2009-11-19T22:22:27-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=356'
-permalink: /2009/pwning-hotel-guests
+guid: http://www.skullsecurity.org/blog/?p=356
+permalink: "/2009/pwning-hotel-guests"
 categories:
-    - hacking
-    - smb
-    - tools
+- hacking
+- smb
+- tools
+comments_id: '109638339961134133'
+
 ---
 
 Greetings everybody! 

@@ -1,13 +1,15 @@
 ---
 id: 309
-title: 'Two locks, one bike?'
+title: Two locks, one bike?
 date: '2009-07-12T17:45:11-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=309'
-permalink: /2009/two-locks-one-bike
+guid: http://www.skullsecurity.org/blog/?p=309
+permalink: "/2009/two-locks-one-bike"
 categories:
-    - humour
+- humour
+comments_id: '109638335911257829'
+
 ---
 
 <p>Hi all,</p>

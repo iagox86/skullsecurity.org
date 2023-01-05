@@ -1,15 +1,17 @@
 ---
 id: 433
-title: 'Stuffing Javascript into DNS names'
+title: Stuffing Javascript into DNS names
 date: '2010-04-20T10:36:54-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=433'
-permalink: /2010/stuffing-javascript-into-dns-names
+guid: http://www.skullsecurity.org/blog/?p=433
+permalink: "/2010/stuffing-javascript-into-dns-names"
 categories:
-    - dns
-    - hacking
-    - tools
+- dns
+- hacking
+- tools
+comments_id: '109638350896495957'
+
 ---
 
 Greetings! 

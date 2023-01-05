@@ -1,14 +1,16 @@
 ---
 id: 313
-title: 'Nmap 5.00 released &#8212; lots of new features!'
+title: Nmap 5.00 released &#8212; lots of new features!
 date: '2009-07-16T17:04:03-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=313'
-permalink: /2009/nmap-500-released-lots-of-new-features
+guid: http://www.skullsecurity.org/blog/?p=313
+permalink: "/2009/nmap-500-released-lots-of-new-features"
 categories:
-    - hacking
-    - tools
+- hacking
+- tools
+comments_id: '109638336316268360'
+
 ---
 
 <a href='http://tech.slashdot.org/article.pl?sid=09/07/16/1924232'>View my post on Slashdot</a>

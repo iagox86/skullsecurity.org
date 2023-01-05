@@ -4,12 +4,14 @@ title: 'Zombie Web servers: are you one?'
 date: '2009-09-16T09:37:05-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=340'
-permalink: /2009/zombie-web-servers-are-you-one
+guid: http://www.skullsecurity.org/blog/?p=340
+permalink: "/2009/zombie-web-servers-are-you-one"
 categories:
-    - malware
-    - nmap
-    - tools
+- malware
+- nmap
+- tools
+comments_id: '109638337937049525'
+
 ---
 
 Greetings! 

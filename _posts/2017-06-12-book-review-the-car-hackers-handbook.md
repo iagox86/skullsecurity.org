@@ -4,10 +4,12 @@ title: 'Book review: The Car Hacker&#8217;s Handbook'
 date: '2017-06-12T10:12:32-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2304'
-permalink: /2017/book-review-the-car-hackers-handbook
+guid: https://blog.skullsecurity.org/?p=2304
+permalink: "/2017/book-review-the-car-hackers-handbook"
 categories:
-    - reviews
+- reviews
+comments_id: '109638375246980051'
+
 ---
 
 So, this is going to be a bit of an unusual blog for me. I usually focus on technical stuff, exploitation, hacking, etc. But this post will be a mixture of a book review, some discussion on my security review process, and <a href='https://xkcd.com/722/'>whatever asides fall out of my keyboard when I hit it for long enough</a>. But, don't fear! I have a nice heavy technical blog ready to go for tomorrow!

@@ -4,10 +4,12 @@ title: 'Defcon quals: wwtw (a series of vulns)'
 date: '2015-06-09T12:30:04-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2117'
-permalink: /2015/defcon-quals-wwtw-a-series-of-vulns
+guid: https://blog.skullsecurity.org/?p=2117
+permalink: "/2015/defcon-quals-wwtw-a-series-of-vulns"
 categories:
-    - defcon-quals-2015
+- defcon-quals-2015
+comments_id: '109638372013683191'
+
 ---
 
 Hey folks,

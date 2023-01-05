@@ -1,15 +1,17 @@
 ---
 id: 426
-title: 'DNS Backdoors with dnscat'
+title: DNS Backdoors with dnscat
 date: '2010-02-23T10:38:34-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=426'
-permalink: /2010/dns-backdoors-with-dnscat
+guid: http://www.skullsecurity.org/blog/?p=426
+permalink: "/2010/dns-backdoors-with-dnscat"
 categories:
-    - dns
-    - hacking
-    - tools
+- dns
+- hacking
+- tools
+comments_id: '109638344011202747'
+
 ---
 
 Hey all,

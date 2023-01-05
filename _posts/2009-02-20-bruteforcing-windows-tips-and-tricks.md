@@ -4,11 +4,13 @@ title: 'Bruteforcing Windows over SMB: Tips and Tricks'
 date: '2009-02-20T11:27:20-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=164'
-permalink: /2009/bruteforcing-windows-tips-and-tricks
+guid: http://www.skullsecurity.org/blog/?p=164
+permalink: "/2009/bruteforcing-windows-tips-and-tricks"
 categories:
-    - hacking
-    - smb
+- hacking
+- smb
+comments_id: '109638331453549964'
+
 ---
 
 Today, I'm going to share some knowledge and techniques on bruteforcing Windows passwords. Hopefully, some of you have thought about this and can give me even more advice. If you know anything, post it! 

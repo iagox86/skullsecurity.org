@@ -1,15 +1,17 @@
 ---
 id: 1512
-title: 'Epic &#8220;cnot&#8221; Writeup (highest value level from PlaidCTF)'
+title: Epic &#8220;cnot&#8221; Writeup (highest value level from PlaidCTF)
 date: '2013-04-25T08:35:22-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1512'
-permalink: /2013/epic-cnot-writeup-plaidctf
+guid: http://www.skullsecurity.org/blog/?p=1512
+permalink: "/2013/epic-cnot-writeup-plaidctf"
 categories:
-    - hacking
-    - plaidctf-2013
-    - re
+- hacking
+- plaidctf-2013
+- re
+comments_id: '109638361914799858'
+
 ---
 
 When I was at Shmoocon, I saw a talk about how to write an effective capture-the-flag contest. One of their suggestions was to have a tar-pit challenge that would waste all the time of the best player, by giving him a complicated challenge he won't be able to resist. In my opinion, in <a href='http://www.plaidctf.com/'>PlaidCTF</a>, I suspected that "cnot" was that challenge. And I was the sucker, even though I knew it all the way...

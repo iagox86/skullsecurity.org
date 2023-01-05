@@ -5,12 +5,14 @@ featured: true
 date: '2010-03-25T09:13:24-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=627'
-permalink: /2010/taking-apart-the-energizer-trojan-part-1-setup
+guid: http://www.skullsecurity.org/blog/?p=627
+permalink: "/2010/taking-apart-the-energizer-trojan-part-1-setup"
 categories:
-    - malware
-    - nmap
-    - re
+- malware
+- nmap
+- re
+comments_id: '109638347658633231'
+
 ---
 
 Hey all,

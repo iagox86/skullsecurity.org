@@ -1,13 +1,15 @@
 ---
 id: 882
-title: 'Information Security For College Students'
+title: Information Security For College Students
 date: '2010-07-14T11:44:39-05:00'
 author: mtgarden
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=882'
-permalink: /2010/information-security-for-college-students
+guid: http://www.skullsecurity.org/blog/?p=882
+permalink: "/2010/information-security-for-college-students"
 categories:
-    - hacking
+- hacking
+comments_id: '109638353327864984'
+
 ---
 
 I've thought about this off and on over the last few years.  Today I noticed that Kees Leune (<a title="post" href="http://www.leune.org/blog/kees/2010/07/teaching-agai.html" target="_blank">http://www.leune.org/blog/kees/2010/07/teaching-agai.html</a>) is going to be teaching a class this school year.  He was asking for comments and so here's mine....

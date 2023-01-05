@@ -4,12 +4,14 @@ title: 'Taking apart the Energizer trojan &#8211; Part 3: disassembling'
 date: '2010-03-25T09:45:44-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=647'
-permalink: /2010/taking-apart-the-energizer-trojan-part-3-disassembling
+guid: http://www.skullsecurity.org/blog/?p=647
+permalink: "/2010/taking-apart-the-energizer-trojan-part-3-disassembling"
 categories:
-    - malware
-    - nmap
-    - re
+- malware
+- nmap
+- re
+comments_id: '109638348468208936'
+
 ---
 
 In <a href='/blog/?p=645'>Part 2: runtime analysis</a>, we discovered some important addresses in the Energizer Trojan -- specifically, the addresses that make the call to recv() data. Be sure to read that section before reading this one. 

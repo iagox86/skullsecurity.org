@@ -1,13 +1,15 @@
 ---
 id: 582
-title: 'Are you a &#8220;Real&#8221; hacker or just a skiddie?'
+title: Are you a &#8220;Real&#8221; hacker or just a skiddie?
 date: '2010-03-23T10:24:46-05:00'
 author: mtgarden
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=582'
-permalink: /2010/are-you-a-real-hacker-or-just-a-skiddie
+guid: http://www.skullsecurity.org/blog/?p=582
+permalink: "/2010/are-you-a-real-hacker-or-just-a-skiddie"
 categories:
-    - hacking
+- hacking
+comments_id: '109638347250610018'
+
 ---
 
 This is yet another guest post from our good friend <a href='http://twitter.com/matt_gardenghi'>Matt Gardenghi</a>! If you enjoy this one, don't forget to check his last one: <a href='/blog/?p=560'>Trusting the Browser (a ckeditor short story)</a>.

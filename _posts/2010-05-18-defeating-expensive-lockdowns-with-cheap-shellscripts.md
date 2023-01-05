@@ -1,13 +1,15 @@
 ---
 id: 820
-title: 'Defeating expensive lockdowns with cheap shellscripts'
+title: Defeating expensive lockdowns with cheap shellscripts
 date: '2010-05-18T10:43:33-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=820'
-permalink: /2010/defeating-expensive-lockdowns-with-cheap-shellscripts
+guid: http://www.skullsecurity.org/blog/?p=820
+permalink: "/2010/defeating-expensive-lockdowns-with-cheap-shellscripts"
 categories:
-    - hacking
+- hacking
+comments_id: '109638352111636433'
+
 ---
 
 Recently, I was given the opportunity to work with an embedded Linux OS that was locked down to prevent unauthorized access. I was able to obtain a shell fairly quickly, but then I ran into a number of security mechanisms. Fortunately, I found creative ways to overcome each of them. 

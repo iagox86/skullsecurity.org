@@ -4,12 +4,14 @@ title: 'dnscat2 0.05: with tunnels!'
 date: '2015-12-24T12:36:18-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2220'
-permalink: /2015/dnscat2-0-05-with-tunnels
+guid: https://blog.skullsecurity.org/?p=2220
+permalink: "/2015/dnscat2-0-05-with-tunnels"
 categories:
-    - dns
-    - hacking
-    - tools
+- dns
+- hacking
+- tools
+comments_id: '109638374034329955'
+
 ---
 
 Greetings, and I hope you're all having a great holiday!

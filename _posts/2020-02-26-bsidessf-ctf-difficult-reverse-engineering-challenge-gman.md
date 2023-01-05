@@ -5,11 +5,13 @@ featured: true
 date: '2020-02-26T12:46:30-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2451'
-permalink: /2020/bsidessf-ctf-difficult-reverse-engineering-challenge-gman
+guid: https://blog.skullsecurity.org/?p=2451
+permalink: "/2020/bsidessf-ctf-difficult-reverse-engineering-challenge-gman"
 categories:
-    - conferences
-    - ctfs
+- conferences
+- ctfs
+comments_id: '109638378071132165'
+
 ---
 
 Once again, it was my distinct privilege to be a BSidesSF CTF organizer! As somebody who played CTFs for years, it really means a lot to me to organize one, and watch folks struggle through our challenges. And more importantly, each person that comes up to us and either thanks us or tells us they learned something is a huge bonus!

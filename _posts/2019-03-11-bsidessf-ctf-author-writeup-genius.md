@@ -4,13 +4,15 @@ title: 'BSidesSF CTF author writeup: genius'
 date: '2019-03-11T11:17:10-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2363'
-permalink: /2019/bsidessf-ctf-author-writeup-genius
+guid: https://blog.skullsecurity.org/?p=2363
+permalink: "/2019/bsidessf-ctf-author-writeup-genius"
 categories:
-    - conferences
-    - ctfs
-    - hacking
-    - re
+- conferences
+- ctfs
+- hacking
+- re
+comments_id: '109638376458744009'
+
 ---
 
 Hey all,

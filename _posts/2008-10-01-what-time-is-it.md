@@ -1,14 +1,16 @@
 ---
 id: 76
-title: 'What time IS it?'
+title: What time IS it?
 date: '2008-10-01T10:20:25-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=76'
-permalink: /2008/what-time-is-it
+guid: http://www.skullsecurity.org/blog/?p=76
+permalink: "/2008/what-time-is-it"
 categories:
-    - hacking
-    - smb
+- hacking
+- smb
+comments_id: '109638327390934749'
+
 ---
 
 How synced up are the clocks on your servers? Ignoring your system times may give an important clue to attackers. Read on to find out more!

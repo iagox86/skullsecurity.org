@@ -1,15 +1,17 @@
 ---
 id: 995
-title: 'Watch out for exim!'
+title: Watch out for exim!
 date: '2010-12-15T09:24:49-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=995'
-permalink: /2010/watch-out-for-exim
+guid: http://www.skullsecurity.org/blog/?p=995
+permalink: "/2010/watch-out-for-exim"
 categories:
-    - hacking
-    - re
-    - tools
+- hacking
+- re
+- tools
+comments_id: '109638356200783784'
+
 ---
 
 Hey everybody,

@@ -4,12 +4,14 @@ title: 'Scorched earth: Finding vulnerable SMBv2 systems with Nmap'
 date: '2009-09-14T10:44:07-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=331'
-permalink: /2009/scorched-earth-finding-vulnerable-smbv2-systems-with-nmap
+guid: http://www.skullsecurity.org/blog/?p=331
+permalink: "/2009/scorched-earth-finding-vulnerable-smbv2-systems-with-nmap"
 categories:
-    - smb
-    - nmap
-    - tools
+- smb
+- nmap
+- tools
+comments_id: '109638337533345568'
+
 ---
 
 Hello once again! 

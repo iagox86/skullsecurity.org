@@ -4,12 +4,14 @@ title: 'Ghost in the Shellcode: fuzzy (Pwnage 301)'
 date: '2014-04-07T09:39:42-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1817'
-permalink: /2014/ghost-in-the-shellcode-fuzzy-pwnage-301
+guid: https://blog.skullsecurity.org/?p=1817
+permalink: "/2014/ghost-in-the-shellcode-fuzzy-pwnage-301"
 categories:
-    - gits-2014
-    - hacking
-    - re
+- gits-2014
+- hacking
+- re
+comments_id: '109638364337708773'
+
 ---
 
 Hey folks,

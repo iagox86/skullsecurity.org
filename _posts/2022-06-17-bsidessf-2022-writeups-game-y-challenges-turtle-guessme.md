@@ -9,7 +9,7 @@ permalink: "/2022/bsidessf-2022-writeups-game-y-challenges-turtle-guessme"
 categories:
 - bsidessf-2022
 - ctfs
-comments_id: '109627675136562329'
+comments_id: '109638382533809854'
 
 ---
 

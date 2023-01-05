@@ -1,13 +1,15 @@
 ---
 id: 88
-title: 'Matching passwords'
+title: Matching passwords
 date: '2008-10-15T22:22:15-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=88'
-permalink: /2008/matching-passwords
+guid: http://www.skullsecurity.org/blog/?p=88
+permalink: "/2008/matching-passwords"
 categories:
-    - humour
+- humour
+comments_id: '109638328203790768'
+
 ---
 
 Sometimes, I can't help but laugh...

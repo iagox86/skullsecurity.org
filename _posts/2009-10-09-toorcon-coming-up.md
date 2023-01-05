@@ -1,14 +1,16 @@
 ---
 id: 349
-title: 'Toorcon coming up!'
+title: Toorcon coming up!
 date: '2009-10-09T09:15:23-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=349'
-permalink: /2009/toorcon-coming-up
+guid: http://www.skullsecurity.org/blog/?p=349
+permalink: "/2009/toorcon-coming-up"
 categories:
-    - conferences
-    - hacking
+- conferences
+- hacking
+comments_id: '109638338747861895'
+
 ---
 
 Hey all,

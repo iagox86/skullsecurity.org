@@ -1,14 +1,16 @@
 ---
 id: 1986
-title: 'dnscat2 beta release!'
+title: dnscat2 beta release!
 date: '2015-03-26T09:26:49-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1986'
-permalink: /2015/dnscat2-beta-release
+guid: https://blog.skullsecurity.org/?p=1986
+permalink: "/2015/dnscat2-beta-release"
 categories:
-    - dns
-    - tools
+- dns
+- tools
+comments_id: '109638370398842045'
+
 ---
 
 As I promised during my 2014 Derbycon talk (amongst other places), this is an initial release of my complete re-write/re-design of the dnscat service / protocol. It's now a standalone tool instead of being bundled with nbtool, among other changes. :)

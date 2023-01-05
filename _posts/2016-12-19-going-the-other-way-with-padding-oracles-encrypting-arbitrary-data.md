@@ -4,12 +4,14 @@ title: 'Going the other way with padding oracles: Encrypting arbitrary data!'
 date: '2016-12-19T12:51:43-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2226'
-permalink: /2016/going-the-other-way-with-padding-oracles-encrypting-arbitrary-data
+guid: https://blog.skullsecurity.org/?p=2226
+permalink: "/2016/going-the-other-way-with-padding-oracles-encrypting-arbitrary-data"
 categories:
-    - crypto
-    - hacking
-    - tools
+- crypto
+- hacking
+- tools
+comments_id: '109638374438234072'
+
 ---
 
 A long time ago, I wrote a <a href='https://blog.skullsecurity.org/2013/padding-oracle-attacks-in-depth'>couple</a> <a href='https://blog.skullsecurity.org/2013/a-padding-oracle-example'>blogs</a> that went into a lot of detail on how to use padding oracle vulnerabilities to decrypt an encrypted string of data. It's pretty important to understand to use a padding oracle vulnerability for decryption before reading this, so I'd suggest going there for a refresher.

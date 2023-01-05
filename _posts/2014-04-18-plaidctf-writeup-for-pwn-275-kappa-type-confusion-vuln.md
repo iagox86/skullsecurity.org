@@ -1,15 +1,17 @@
 ---
 id: 1879
-title: 'PlaidCTF writeup for Pwn-275 &#8211; Kappa (type confusion vuln)'
+title: PlaidCTF writeup for Pwn-275 &#8211; Kappa (type confusion vuln)
 date: '2014-04-18T16:27:59-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1879'
-permalink: /2014/plaidctf-writeup-for-pwn-275-kappa-type-confusion-vuln
+guid: https://blog.skullsecurity.org/?p=1879
+permalink: "/2014/plaidctf-writeup-for-pwn-275-kappa-type-confusion-vuln"
 categories:
-    - hacking
-    - plaidctf-2014
-    - re
+- hacking
+- plaidctf-2014
+- re
+comments_id: '109638366763243867'
+
 ---
 
 Hey folks,

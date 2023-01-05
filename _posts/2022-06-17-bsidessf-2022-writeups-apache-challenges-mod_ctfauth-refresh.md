@@ -9,7 +9,7 @@ permalink: "/2022/bsidessf-2022-writeups-apache-challenges-mod_ctfauth-refresh"
 categories:
 - bsidessf-2022
 - ctfs
-comments_id: '109627674732788086'
+comments_id: '109638382128754961'
 
 ---
 

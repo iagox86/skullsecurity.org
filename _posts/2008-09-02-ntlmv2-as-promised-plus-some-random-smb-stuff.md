@@ -1,13 +1,15 @@
 ---
 id: 45
-title: 'NTLMv2, as promised, plus some random SMB stuff!'
+title: NTLMv2, as promised, plus some random SMB stuff!
 date: '2008-09-02T20:37:35-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=45'
-permalink: /2008/ntlmv2-as-promised-plus-some-random-smb-stuff
+guid: http://www.skullsecurity.org/blog/?p=45
+permalink: "/2008/ntlmv2-as-promised-plus-some-random-smb-stuff"
 categories:
-    - smb
+- smb
+comments_id: '109638326578510486'
+
 ---
 
 Last post, I promised I'd post about NTLMv2 once I got it implemented. And, here we are. 

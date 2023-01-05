@@ -1,15 +1,17 @@
 ---
 id: 723
-title: 'Nmap script to generate custom license plates'
+title: Nmap script to generate custom license plates
 date: '2010-04-01T08:47:30-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=723'
-permalink: /2010/nmap-script-to-generate-custom-license-plates
+guid: http://www.skullsecurity.org/blog/?p=723
+permalink: "/2010/nmap-script-to-generate-custom-license-plates"
 categories:
-    - april-fools
-    - humour
-    - nmap
+- april-fools
+- humour
+- nmap
+comments_id: '109638349684157193'
+
 ---
 
 Hey all,

@@ -1,14 +1,16 @@
 ---
 id: 2296
-title: 'BSidesSF CTF wrap-up'
+title: BSidesSF CTF wrap-up
 date: '2017-02-22T13:04:15-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2296'
-permalink: /2017/bsidessf-ctf-wrap-up
+guid: https://blog.skullsecurity.org/?p=2296
+permalink: "/2017/bsidessf-ctf-wrap-up"
 categories:
-    - conferences
-    - ctfs
+- conferences
+- ctfs
+comments_id: '109638374842319978'
+
 ---
 
 Welcome!

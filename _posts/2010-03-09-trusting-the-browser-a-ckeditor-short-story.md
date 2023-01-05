@@ -1,13 +1,15 @@
 ---
 id: 560
-title: 'Trusting the Browser (a ckeditor short story)'
+title: Trusting the Browser (a ckeditor short story)
 date: '2010-03-09T10:38:30-05:00'
 author: mtgarden
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=560'
-permalink: /2010/trusting-the-browser-a-ckeditor-short-story
+guid: http://www.skullsecurity.org/blog/?p=560
+permalink: "/2010/trusting-the-browser-a-ckeditor-short-story"
 categories:
-    - hacking
+- hacking
+comments_id: '109638345628932200'
+
 ---
 
 My name is Matt Gardenghi.  Ron seems to think it important that this post be  clearly attributed to someone else (this fact might worry me).  I'm an occasional contributor here (see: <a title="Bypassing AV" href="http://www.skullsecurity.org/blog/?p=261" target="_blank">Bypassing AV</a>).  I handle  security at Bob Jones University and also perform pentests on the side.   (So if you need someone to do work, here's my shameless plug.)  I have  acquired the oddly despised CISSP and the more respectable GCFA, GPEN,  and GWAPT.
@@ -34,4 +36,3 @@ Ensure that your devs recognize the threat  and how it can be exploited.  Educ
 Next time you see a WYSIWYG editor, try manipulating the POST parameters and see if they are checking the results on the server.  Let me know how it goes in the comments below or on twitter: @matt_gardenghi or email me at mtgarden -at- gmail.
 
 Enjoy.
-

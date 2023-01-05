@@ -1,14 +1,16 @@
 ---
 id: 1909
-title: 'Defcon Quals writeup for Shitsco (use-after-free vuln)'
+title: Defcon Quals writeup for Shitsco (use-after-free vuln)
 date: '2014-05-21T11:33:27-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=1909'
-permalink: /2014/defcon-quals-writeup-for-shitsco-use-after-free-vuln
+guid: https://blog.skullsecurity.org/?p=1909
+permalink: "/2014/defcon-quals-writeup-for-shitsco-use-after-free-vuln"
 categories:
-    - defcon-quals-2014
-    - hacking
+- defcon-quals-2014
+- hacking
+comments_id: '109638367570353952'
+
 ---
 
 Hey folks,

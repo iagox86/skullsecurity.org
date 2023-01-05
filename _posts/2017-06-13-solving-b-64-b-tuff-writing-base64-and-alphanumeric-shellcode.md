@@ -4,11 +4,13 @@ title: 'Solving b-64-b-tuff: writing base64 and alphanumeric shellcode'
 date: '2017-06-13T10:33:13-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2307'
-permalink: /2017/solving-b-64-b-tuff-writing-base64-and-alphanumeric-shellcode
+guid: https://blog.skullsecurity.org/?p=2307
+permalink: "/2017/solving-b-64-b-tuff-writing-base64-and-alphanumeric-shellcode"
 categories:
-    - ctfs
-    - hacking
+- ctfs
+- hacking
+comments_id: '109638375650620417'
+
 ---
 
 Hey everybody,

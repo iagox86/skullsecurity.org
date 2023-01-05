@@ -4,12 +4,14 @@ title: 'Taking apart the Energizer trojan &#8211; Part 2: runtime analysis'
 date: '2010-03-25T09:17:58-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=645'
-permalink: /2010/taking-apart-the-energizer-trojan-part-2-runtime-analysis
+guid: http://www.skullsecurity.org/blog/?p=645
+permalink: "/2010/taking-apart-the-energizer-trojan-part-2-runtime-analysis"
 categories:
-    - malware
-    - nmap
-    - re
+- malware
+- nmap
+- re
+comments_id: '109638348064279027'
+
 ---
 
 In <a href='/blog/?p=627'>Part 1: setup</a>, we infected the system with the Trojan. It should still be running on the victim machine. If you haven't read that section, I strongly recommend you go back and read it. 

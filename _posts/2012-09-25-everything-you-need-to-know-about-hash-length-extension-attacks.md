@@ -1,16 +1,18 @@
 ---
 id: 1284
-title: 'Everything you need to know about hash length extension attacks'
+title: Everything you need to know about hash length extension attacks
 featured: true
 date: '2012-09-25T09:03:46-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=1284'
-permalink: /2012/everything-you-need-to-know-about-hash-length-extension-attacks
+guid: http://www.skullsecurity.org/blog/?p=1284
+permalink: "/2012/everything-you-need-to-know-about-hash-length-extension-attacks"
 categories:
-    - crypto
-    - hacking
-    - tools
+- crypto
+- hacking
+- tools
+comments_id: '109638360276235025'
+
 ---
 
 <p><strong>You can grab the hash_extender tool on <a href='https://github.com/iagox86/hash_extender'>Github</a>!</strong></p>

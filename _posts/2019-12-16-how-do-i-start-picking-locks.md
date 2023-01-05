@@ -1,14 +1,16 @@
 ---
 id: 2442
-title: 'How do I start picking locks?'
+title: How do I start picking locks?
 featured: true
 date: '2019-12-16T12:27:33-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2442'
-permalink: /2019/how-do-i-start-picking-locks
+guid: https://blog.skullsecurity.org/?p=2442
+permalink: "/2019/how-do-i-start-picking-locks"
 categories:
-    - lockpicking
+- lockpicking
+comments_id: '109638377669262778'
+
 ---
 
 Hey folks,

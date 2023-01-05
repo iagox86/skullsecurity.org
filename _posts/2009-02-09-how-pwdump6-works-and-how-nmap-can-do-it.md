@@ -1,14 +1,16 @@
 ---
 id: 154
-title: 'How Pwdump6 works, and how Nmap can do it'
+title: How Pwdump6 works, and how Nmap can do it
 date: '2009-02-09T18:39:53-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=154'
-permalink: /2009/how-pwdump6-works-and-how-nmap-can-do-it
+guid: http://www.skullsecurity.org/blog/?p=154
+permalink: "/2009/how-pwdump6-works-and-how-nmap-can-do-it"
 categories:
-    - hacking
-    - smb
+- hacking
+- smb
+comments_id: '109638331046710880'
+
 ---
 
 Today I want to discuss how the <a href='http://foofus.net/fizzgig/pwdump/'>pwdump6</a> and <a href='http://foofus.net/fizzgig/fgdump/'>fgdump</a> tools work, in detail, and how I was able to integrate pwdump6 into my Nmap scripts. Is this integration useful? Maybe or maybe not, but it was definitely an interesting problem. 
@@ -65,4 +67,3 @@ When I wrote the Nmap script, I focused more on cleanup than anything else. Befo
 For me, this script was written mostly as an academic exercise, and to highlight Nmap's growing potential as a pentesting tool. It compliments the smb-brute.nse script, also written by me, because smb-brute.nse can find weak administrator passwords, then smb-pwdump.nse can use those passwords to dump hashes. Those hashes can then be cracked and added to the password list for more brute forcing. The hashes themselves can also be added to Nmap's password list, since smb-brute.nse understands how to use hashes. Future plans include automatically using discovered hashes against other systems.
 
 So that's smb-pwdump.nse! Let me know what you think (or if you even read my blog :P) in a comment! 
-

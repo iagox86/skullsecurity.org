@@ -4,13 +4,15 @@ title: 'Some crypto challenges: Author writeup from BSidesSF CTF'
 date: '2019-03-12T11:23:36-05:00'
 author: ron
 layout: post
-guid: 'https://blog.skullsecurity.org/?p=2377'
-permalink: /2019/some-crypto-challenges-author-writeup-from-bsidessf-ctf
+guid: https://blog.skullsecurity.org/?p=2377
+permalink: "/2019/some-crypto-challenges-author-writeup-from-bsidessf-ctf"
 categories:
-    - conferences
-    - crypto
-    - passwords
-    - tools
+- conferences
+- crypto
+- passwords
+- tools
+comments_id: '109638376862667516'
+
 ---
 
 Hey everybody,

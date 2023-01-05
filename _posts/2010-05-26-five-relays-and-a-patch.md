@@ -1,14 +1,16 @@
 ---
 id: 793
-title: 'Five Relays and a Patch'
+title: Five Relays and a Patch
 date: '2010-05-26T08:57:34-05:00'
 author: ron
 layout: post
-guid: 'http://www.skullsecurity.org/blog/?p=793'
-permalink: /2010/five-relays-and-a-patch
+guid: http://www.skullsecurity.org/blog/?p=793
+permalink: "/2010/five-relays-and-a-patch"
 categories:
-    - hacking
-    - tools
+- hacking
+- tools
+comments_id: '109638352517822602'
+
 ---
 
 Hey all,
