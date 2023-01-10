@@ -6,6 +6,7 @@ categories:
 layout: post
 date: '2023-01-10T10:02:16-08:00'
 permalink: "/2023/gdb-tricks--tricking-the-application-into-generating-test-data"
+comments_id: '109666231140971395'
 
 ---
 
