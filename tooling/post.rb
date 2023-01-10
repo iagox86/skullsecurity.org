@@ -5,6 +5,8 @@ require 'mastodon'
 require 'yaml'
 require 'pp'
 
+BASE_URL = "https://www.skullsecurity.org/"
+
 POST = ARGV[0]
 
 if POST.nil?
@@ -75,8 +77,8 @@ MAS_CLIENT = Mastodon::REST::Client.new(base_url: CONFIG['server'], bearer_token
 puts
 puts "Creating a Mastodon post..."
 STATUS = MAS_CLIENT.create_status(
-  "New blog post on SkullSecurity by #{ CONFIG['author'] }: #{ metadata['title'] } by #{ metadata['author'] }, filed under #{ metadata['categories'].join(', ') }\n\n" +
-  "https://www.skullsecurity.org#{ metadata['permalink'] }\n\n" +
+  "New #security #blog post on #SkullSecurity by #{ CONFIG['author'] }: #{ metadata['title'] } by #{ metadata['author'] }, filed under #{ metadata['categories'].join(', ') }\n\n" +
+  "#{BASE_DOMAIN}#{ metadata['permalink'] }\n\n" +
   "(Replies here will show up on the blog post)",
 
   visibility: 'unlisted',
