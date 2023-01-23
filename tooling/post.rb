@@ -5,7 +5,7 @@ require 'mastodon'
 require 'yaml'
 require 'pp'
 
-BASE_URL = "https://www.skullsecurity.org/"
+BASE_URL = "https://www.skullsecurity.org"
 
 POST = ARGV[0]
 
