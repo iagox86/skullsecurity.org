@@ -1249,3 +1249,39 @@ span.bypostauthor {
 .likes-retoots {
   padding-bottom: 10px;
 }
+
+li.navigation-entry {
+  display: block;
+  float: left;
+  margin: 0px 5px 0px 5px;
+}
+
+li.navigation-entry a {
+  display: block;
+  text-align: center;
+  padding: 7px 8px;
+  text-decoration: none;
+
+  color: #dbf1ff;
+  background-color: #1e3442;
+  border-radius: 10px;
+}
+
+li.navigation-entry-current a {
+  filter: brightness(200%);
+}
+
+/* Change the link color to #111 (black) on hover */
+li.navigation-entry a:hover {
+  background-color: #a0c0d3;
+  color: #375f78;
+}
+
+ul.navigation {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  justify-content: center;
+  margin: 20px;
+}

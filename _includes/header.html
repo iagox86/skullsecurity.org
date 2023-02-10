@@ -6,6 +6,8 @@
 
     <div class="site-name"><a href="/">SkullSecurity</a></div>
     <div class="site-description">Adventures In Security</div>
+
+    {% include navigation.html %}
   </header>
 {% else %}
   <header class="site-header site-header-small" role="banner" style="display: flex; align-items: center">
@@ -14,6 +16,7 @@
     </div>
 
     <div class="site-name" style="padding-left: 20px"><a href="/">SkullSecurity</a></div>
-    </div>
+
+    {% include navigation.html %}
   </header>
 {% endif %}

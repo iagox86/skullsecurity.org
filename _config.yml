@@ -18,6 +18,9 @@ defaults:
 paginate: 20
 excerpt_separator: '<!--more-->'
 
+include:
+  - '_pages/'
+
 exclude:
   - 'hooks/'
   - '*.sh'
