@@ -136,12 +136,12 @@ We'll see!
 * 2016-01 [Evil DNS Tricks](https://docs.google.com/presentation/d/1ZRgO_JPUMWuydNvisIwxo6ZZAUt6boetB-uJs7fakIQ/edit?usp=share_link) @ Shmoocon Firetalk
 * 2015-11 [Pentesting with DNS](https://docs.google.com/presentation/d/1Jxh6PPO9JbUqXwOCTQFyA00uQoFMDBh-1PedDOp1Z0Y/edit?usp=share_link) @ SANS Pentest Summit
 * 2015-06 [The Anatomy of a Vulnerability](https://docs.google.com/presentation/d/1UYECUf45zd_PDZarXwIOlxlB89oM-zjYpbXJVC69qKw/edit?usp=share_link) @ Sharkfest
-* 2014-11 [Vulnreability War Stories](https://docs.google.com/presentation/d/1dXvqw84HB00axpzMYmcTdMo_0LNIVPoJZfXrhvbwRe8/edit?usp=share_link) @ UofM Comp Sci
+* 2014-11 [Vulnerability War Stories](https://docs.google.com/presentation/d/1dXvqw84HB00axpzMYmcTdMo_0LNIVPoJZfXrhvbwRe8/edit?usp=share_link) @ UofM Comp Sci
 * 2014-09 [DNS: More than Just Names](https://docs.google.com/presentation/d/1HfXVJyXElzBshZ9SYNjBwJf_4MBaho6UcATTFwApfXw/edit?usp=share_link) @ Derbycon
 * 2014-06 [DNS](https://docs.google.com/presentation/d/1t_lfO1jC0GsCzjc847iyrZCS4zbLo3ReppXlpU7bURc/edit?usp=share_link) @ BSides Quebec
 * 2013-06 [Why is Crypto so Hard?](https://docs.google.com/presentation/d/1N3LOUnDl3pK-VTkOtY1i4FAfKvRtPWKrIRkr3Nnl45Y/edit?usp=share_link) @ Sharkfest
 * 2013-02 [Crypto: You're Doing it Wrong](https://docs.google.com/presentation/d/15S68RziN0fgK9Mb3TFy3E0kWt2UTy2Twcz03WbkNyFw/edit?usp=share_link) @ Shmoocon
-* 2012-06 [Secrets of Vulnreability Scanning](https://docs.google.com/presentation/d/1BkQeF0p6XXk47ni7VmWlsqZbtaWg917EGAH-gUwf8zA/edit?usp=sharing) @ Sharkfest
+* 2012-06 [Secrets of Vulnerability Scanning](https://docs.google.com/presentation/d/1BkQeF0p6XXk47ni7VmWlsqZbtaWg917EGAH-gUwf8zA/edit?usp=sharing) @ Sharkfest
 * 2012-02 [Introduction to SkullSpace and Hackerspaces](https://docs.google.com/presentation/d/1Uq40bBuh_htE2NeON2UvbclApYFUnyiKW7G58a_os1g/edit?usp=share_link) @ Winnipeg Code Camp
 * 2011-11 [Introduction to SkullSpace and Hackerspaces](https://docs.google.com/presentation/d/1tzFHSeJNxzUPzx2rpX4MTvKTFn2dWZA1zzCZ_Xj1OVc/edit?usp=share_link) @ SkullSpace
 * 2011-11 [Introduction to SkullSpace and Hackerspaces](https://docs.google.com/presentation/d/1K50dkposXyQ5VSMFIvFArdw6_pa7OfIXlzQgQZEjtg8/edit?usp=share_link) @ IPAM
