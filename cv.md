@@ -1,9 +1,9 @@
 ---
-title: "Ron's Portfolio"
+title: "Ron's CV"
 date: '2023-02-11T15:30:00-05:00'
 author: ron
 layout: page
-permalink: "/portfolio"
+permalink: "/cv"
 ---
 
 In 2022, I started doing enough public work that I decided I'd start keeping track of it all in one place. Here you go!
