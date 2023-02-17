@@ -1,5 +1,3 @@
-# Updates the metadata and creates a Mastodon post
-
 require 'time'
 require 'mastodon'
 require 'yaml'
@@ -10,7 +8,7 @@ BASE_URL = "https://www.skullsecurity.org"
 POST = ARGV[0]
 
 if POST.nil?
-  $stderr.puts "Usage: ruby post.rb <post file>"
+  $stderr.puts "Usage: ruby #{ $1 } <post file> [force]"
   exit 1
 end
 
@@ -50,22 +48,17 @@ end
 puts "Original Metadata:"
 pp metadata
 
-metadata['date'] = Time.now.iso8601
-permalink_name = metadata['title'].downcase.gsub(/[^0-9a-zA-Z_.-]/, '-')
-metadata['permalink'] = "/#{ Time.now.year }/#{ permalink_name }"
+if metadata['comments_id'] && ARGV[1] != '1'
+  puts "Post already has a comments_id: #{ metadata['comments_id'] }"
+  puts
+  puts "To update it anyways, set the second arg to '1'"
+  exit
+end
 
 # Remove the comments_id for now
 metadata.delete('comments_id')
-File.write(POST, "#{ metadata.to_yaml }\n---\n#{ post.join("\n") }\n")
 
-puts
-puts "Updated Metadata:"
-pp metadata
-
-# At this point, we have done everything we possibly can before creating the post
-puts
-puts "You should probably post it now (`git push`), then press <enter> to create the post and fill out the comments_id"
-
+puts "Press <enter> if you're sure!"
 $stdin.flush
 $stdin.gets
 
@@ -92,5 +85,5 @@ metadata['comments_id'] = STATUS.id
 File.write(POST, "#{ metadata.to_yaml }\n---\n#{ post.join("\n") }\n")
 
 puts
-puts "Updated UPDATED metadata:"
+puts "Updated metadata:"
 pp metadata
