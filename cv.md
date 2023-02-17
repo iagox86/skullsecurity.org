@@ -22,7 +22,7 @@ We'll see!
 *These are writeups / analyses / PoCs I wrote based on publicly known bugs, public proof of concepts, patch diffing, vendor advisories, forum posts, etc. The core vulnerabilities are not my original work.*
 
 * CVE-2023-0669 - Remote code execution in Fortra GoAnywhere MFC via unsafe deserialization (and hardcoded crypto keys) - [AttackerKB analysis](https://attackerkb.com/topics/mg883Nbeva/cve-2023-0669/rapid7-analysis?referrer=activityFeed) / [Metasploit module](https://github.com/rapid7/metasploit-framework/pull/17607)
-  * Media: [DARKReading](https://www.darkreading.com/endpoint/massive-goanywhere-rce-exploit)
+  * Media: [Dark Reading](https://www.darkreading.com/endpoint/massive-goanywhere-rce-exploit)
 * CVE-2022-47966 - Remote code execution in multiple ManageEngine products, including ADSelfService Plus, due to unsafe deserialization in an outdated XML library - [AttackerKB](https://attackerkb.com/topics/gvs0Gv8BID/cve-2022-47966/rapid7-analysis)
 * CVE-2022-47986 - Ruby deserialization vulnerability in IBM Aspera Faspex server - [AttackerKB](https://attackerkb.com/topics/jadqVo21Ub/cve-2022-47986/rapid7-analysis)
 
