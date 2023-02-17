@@ -1,11 +1,12 @@
 ---
 id: 2
-title: 'About me (Ron)'
-date: '2008-08-22T09:19:23-05:00'
+title: About me (Ron)
+date: '2023-02-17T17:28:39-05:00'
 author: admin
 layout: page
 permalink: "/about"
-guid: 'http://www.skullsecurity.org/wordpress/?page_id=2'
+guid: http://www.skullsecurity.org/wordpress/?page_id=2
+
 ---
 
 Welcome to SkullSecurity! This "about" page was last updated February 9, 2023.
