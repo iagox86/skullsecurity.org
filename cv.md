@@ -15,7 +15,7 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 
 ## Vulnerabilities I Discovered
 
-* Multiple vulnerabilities in Rocket Software UniData nd UniVerse - [analysis blog](https://www.rapid7.com/blog/post/2023/03/29/multiple-vulnerabilities-in-rocket-software-unirpc-server-fixed/)
+* Multiple vulnerabilities in Rocket Software UniData and UniVerse - [analysis blog](https://www.rapid7.com/blog/post/2023/03/29/multiple-vulnerabilities-in-rocket-software-unirpc-server-fixed/)
   * [Protocol implementation](https://github.com/rbowes-r7/libneptune)
   * [Metasploit modules](https://github.com/rapid7/metasploit-framework/pull/17832) for CVE-2023-28502 and CVE-2023-28503
   * Vulnerabilities:
