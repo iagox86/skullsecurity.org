@@ -15,7 +15,19 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 
 ## Vulnerabilities I Discovered
 
-We'll see!
+* Multiple vulnerabilities in Rocket Software UniData nd UniVerse - [analysis blog](https://www.rapid7.com/blog/post/2023/03/29/multiple-vulnerabilities-in-rocket-software-unirpc-server-fixed/)
+  * [Protocol implementation](https://github.com/rbowes-r7/libneptune)
+  * [Metasploit modules](https://github.com/rapid7/metasploit-framework/pull/17832) for CVE-2023-28502 and CVE-2023-28503
+  * Vulnerabilities:
+    * CVE-2023-28501: Pre-authentication heap buffer overflow in `unirpcd` service
+    * CVE-2023-28502: Pre-authentication stack buffer overflow in `udadmin_server` service
+    * CVE-2023-28503: Authentication bypass in `libunidata.so`'s `do_log_on_user()` function
+    * CVE-2023-28504: Pre-authentication stack buffer overflow in `libunidata.so`'s `U_rep_rpc_server_submain()`
+    * CVE-2023-28505: Post-authentication buffer overflow in `libunidata.so`'s `U_get_string_value()` function
+    * CVE-2023-28506: Post-authentication stack buffer overflow in `udapi_slave` executable
+    * CVE-2023-28507: Pre-authentication memory exhaustion in LZ4 decompression in `unirpcd` service
+    * CVE-2023-28508: Post-authentication heap overflow in `udsub` service
+    * CVE-2023-28509: Weak protocol encryption
 
 ## N-day analyses
 
