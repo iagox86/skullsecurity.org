@@ -1,36 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.1)
-      public_suffix (>= 2.0.2, < 6.0)
-    buftok (0.3.0)
-    domain_name (0.5.20190701)
-      unf (>= 0.0.5, < 1.0.0)
-    http (3.3.0)
-      addressable (~> 2.3)
-      http-cookie (~> 1.0)
-      http-form_data (~> 2.0)
-      http_parser.rb (~> 0.6.0)
-    http-cookie (1.0.5)
-      domain_name (~> 0.5)
-    http-form_data (2.3.0)
-    http_parser.rb (0.6.0)
-    mastodon-api (2.0.0)
-      addressable (~> 2.6)
-      buftok (~> 0)
-      http (~> 3.3)
-      oj (~> 3.7)
-    oj (3.13.23)
-    public_suffix (5.0.1)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.8.2)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
+    mini_mime (1.1.2)
+    multi_xml (0.6.0)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  mastodon-api
+  httparty
 
 BUNDLED WITH
    2.3.26

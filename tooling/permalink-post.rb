@@ -52,7 +52,7 @@ if metadata['permalink'] && ARGV[1] != '1'
   exit
 end
 
-permalink_name = metadata['title'].downcase.gsub(/[^0-9a-zA-Z_.-]/, '-')
+permalink_name = metadata['title'].chomp.downcase.gsub(/[^0-9a-zA-Z_.-]/, '-').gsub(/-+/, '-')
 metadata['permalink'] = "/#{ Time.now.year }/#{ permalink_name }"
 
 File.write(POST, "#{ metadata.to_yaml }\n---\n#{ post.join("\n") }\n")

@@ -2,6 +2,7 @@ require 'time'
 require 'mastodon'
 require 'yaml'
 require 'pp'
+require 'httparty'
 
 BASE_URL = "https://www.skullsecurity.org"
 
@@ -58,32 +59,55 @@ end
 # Remove the comments_id for now
 metadata.delete('comments_id')
 
+# Load the Mastodon config
+CONFIG = YAML::load_file(File.join(ENV['HOME'], '.skullsecurity.yaml'))
+
+# Generate the status
+STATUS = "New #security #blog post on #SkullSecurity by #{ CONFIG['author'] }: #{ metadata['title'] }, filed under #{ metadata['categories'].map { |s| "\##{s}" }.join(', ') }\n\n" +
+  "#{BASE_URL}#{ metadata['permalink'] }\n\n" +
+  "(Replies here will show up on the blog post)"
+
+puts "Here's what the post will look like:"
+puts
+puts '---'
+puts STATUS
+puts '---'
+puts
+
 puts "Press <enter> if you're sure!"
 $stdin.flush
 $stdin.gets
 
-# Load the Mastodon config and connect
-CONFIG = YAML::load_file(File.join(ENV['HOME'], '.skullsecurity.yaml'))
-MAS_CLIENT = Mastodon::REST::Client.new(base_url: CONFIG['server'], bearer_token: CONFIG['token'])
 
-# Create a post
-puts
 puts "Creating a Mastodon post..."
-STATUS = MAS_CLIENT.create_status(
-  "New #security #blog post on #SkullSecurity by #{ CONFIG['author'] }: #{ metadata['title'] } by #{ metadata['author'] }, filed under #{ metadata['categories'].join(', ') }\n\n" +
-  "#{BASE_URL}#{ metadata['permalink'] }\n\n" +
-  "(Replies here will show up on the blog post)",
-
-  visibility: 'unlisted',
+RESPONSE = HTTParty.post(
+  "#{ CONFIG['server'] }/api/v1/statuses",
+  :body => {
+    :status => STATUS,
+    :visibility => 'unlisted',
+  }.to_json,
+  :headers => {
+    'Authorization' => "Bearer " + CONFIG['token'],
+    'Content-Type' => 'application/json',
+  },
 )
 
-# Finish filling out the metadata with the status id
-puts "Done! Status = #{ STATUS.id }!"
-metadata['comments_id'] = STATUS.id
+if RESPONSE.success?
+  puts "Status successfully posted!"
 
-# Write back to the file
-File.write(POST, "#{ metadata.to_yaml }\n---\n#{ post.join("\n") }\n")
+  BODY = RESPONSE.parsed_response
 
-puts
-puts "Updated metadata:"
-pp metadata
+  # Finish filling out the metadata with the status id
+  puts "Done! Status = #{ BODY['id'] }!"
+  metadata['comments_id'] = BODY['id']
+
+  File.write(POST, "#{ metadata.to_yaml }\n---\n#{ post.join("\n") }\n")
+
+  puts
+  puts "Updated metadata:"
+  pp metadata
+else
+  puts "Something went wrong!"
+
+  pp RESPONSE
+end
