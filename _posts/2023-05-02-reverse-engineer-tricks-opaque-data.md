@@ -6,6 +6,7 @@ categories:
 - re
 permalink: "/2023/reverse-engineering-tricks-identifying-opaque-network-protocols"
 date: '2023-05-02T15:37:26-07:00'
+comments_id: '110301492052499173'
 
 ---
 
