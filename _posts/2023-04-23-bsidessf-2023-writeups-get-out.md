@@ -7,6 +7,7 @@ categories:
 - ctfs
 permalink: "/2023/bsidessf-2023-writeups--get-out--difficult-reverse-engineering---exploitation-"
 date: '2023-04-23T17:08:44-07:00'
+comments_id: '110301420016577735'
 
 ---
 
