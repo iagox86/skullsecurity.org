@@ -493,7 +493,7 @@ a:focus {
 /*      font: 400 1em "Droid Sans Mono", monospace; */
 /* } */
 .cobalt-content code, .entry-content code, .entry-summary code, .comment-content code, .comment-awaiting-moderation code, .widget code {
-     padding: 0 0.2em;
+     /*padding: 0 0.2em;*/
 }
 .cobalt-content pre, .entry-content pre, .entry-summary pre, .comment-content pre, .comment-awaiting-moderation pre, .widget pre {
      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
