@@ -39,6 +39,7 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
   * Media: [The Hacker News](https://thehackernews.com/2023/01/zoho-manageengine-poc-exploit-to-be.html) / [Bleeping Computer](https://www.bleepingcomputer.com/news/security/critical-manageengine-rce-bug-now-exploited-to-open-reverse-shells/) / [Security Week](https://www.securityweek.com/wild-exploitation-recent-manageengine-vulnerability-commences/)
 * CVE-2022-47986 - Ruby deserialization vulnerability in IBM Aspera Faspex server - [AttackerKB](https://attackerkb.com/topics/jadqVo21Ub/cve-2022-47986/rapid7-analysis)
   * Media: [Help Net Security](https://www.helpnetsecurity.com/2023/03/30/exploiting-cve-2022-47986/) / [Ars Technica](https://arstechnica.com/information-technology/2023/03/ransomware-crooks-are-exploiting-ibm-file-exchange-bug-with-a-9-8-severity/) / [SC Media](https://www.scmagazine.com/news/ransomware/unpatched-ibm-aspera-faspex-file-transfer-service-under-active-attack)
+* CVE-2023-25690 - Request smuggling in Apache's `mod_rewrite` - [AtackerKB](https://attackerkb.com/topics/0Uka1VHsPO/cve-2023-25690/rapid7-analysis)
 
 # 2022
 
@@ -140,6 +141,7 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 
 *I've saved basically every talk I ever gave! A bunch of these weren't public, and now they are. The older ones look soooo bad. But, enjoy!*
 
+* 2023-05 [UniData UniRPC Vulnerabilities](https://docs.google.com/presentation/d/1O-Bphmo8q64O9NSt7vmYUQ8Zevez5f6MLhcimyBv36s/edit?usp=sharing) @ NorthSec Montreal
 * 2022-12 [F5 BIG-IP Vulnerabilities](https://docs.google.com/presentation/d/1CeWI7IIIVJEmrtPkFPnUIUHns2S7gZnchmlTo3ozhEA/edit?usp=share_link) @ Hushcon Seattle
 * 2022-08 [From Vuln to CTF](https://docs.google.com/presentation/d/1-z8PFYhQGkuqjSN7Io_uxZYmGG95EZmx1fRden8UsW8/edit?usp=share_link) @ BSides Las Vegas
 * 2022-02 [HHC Shellcode Primre](https://docs.google.com/presentation/d/1Fpohp1kyzwmF--kvnfp2NR-E5R-B3OAHFLFBukj3UW4/edit?usp=share_link) @ Montrehack - largely a walkthrough of a challenge from Holiday Hack Challenge
@@ -157,7 +159,7 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 * 2014-09 [DNS: More than Just Names](https://docs.google.com/presentation/d/1HfXVJyXElzBshZ9SYNjBwJf_4MBaho6UcATTFwApfXw/edit?usp=share_link) @ Derbycon
 * 2014-06 [DNS](https://docs.google.com/presentation/d/1t_lfO1jC0GsCzjc847iyrZCS4zbLo3ReppXlpU7bURc/edit?usp=share_link) @ BSides Quebec
 * 2013-06 [Why is Crypto so Hard?](https://docs.google.com/presentation/d/1N3LOUnDl3pK-VTkOtY1i4FAfKvRtPWKrIRkr3Nnl45Y/edit?usp=share_link) @ Sharkfest
-* 2013-02 [Crypto: You're Doing it Wrong](https://docs.google.com/presentation/d/15S68RziN0fgK9Mb3TFy3E0kWt2UTy2Twcz03WbkNyFw/edit?usp=share_link) @ Shmoocon
+* 2013-02 [Crypto: You're Doing it Wrong](https://docs.google.com/presentation/d/15S68RziN0fgK9Mb3TFy3E0kWt2UTy2Twcz03WbkNyFw/edit?usp=share_link) @ Shmoocon [[video](https://www.youtube.com/watch?v=im-Z6ni9jc4)]
 * 2012-06 [Secrets of Vulnerability Scanning](https://docs.google.com/presentation/d/1BkQeF0p6XXk47ni7VmWlsqZbtaWg917EGAH-gUwf8zA/edit?usp=sharing) @ Sharkfest
 * 2012-02 [Introduction to SkullSpace and Hackerspaces](https://docs.google.com/presentation/d/1Uq40bBuh_htE2NeON2UvbclApYFUnyiKW7G58a_os1g/edit?usp=share_link) @ Winnipeg Code Camp
 * 2011-11 [Introduction to SkullSpace and Hackerspaces](https://docs.google.com/presentation/d/1tzFHSeJNxzUPzx2rpX4MTvKTFn2dWZA1zzCZ_Xj1OVc/edit?usp=share_link) @ SkullSpace
