@@ -28,6 +28,13 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
     * CVE-2023-28507: Pre-authentication memory exhaustion in LZ4 decompression in `unirpcd` service
     * CVE-2023-28508: Post-authentication heap overflow in `udsub` service
     * CVE-2023-28509: Weak protocol encryption
+* Multiple vulnerabilities in Globalscape EFT - [analysis blog](https://www.rapid7.com/blog/post/2023/06/22/multiple-vulnerabilities-in-fortra-globalscape-eft-administration-server-fixed/)
+  * [Protocol implementation + proofs of concept](https://github.com/rbowes-r7/gestalt)
+  * Vulnerabilities:
+    * CVE-2023-2989 - Authentication bypass via out-of-bounds memory read ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11586/Is-EFT-susceptible-to-the-Authentication-Bypass-via-Outofbounds-Memory-Read-vulnerability))
+    * CVE-2023-2990 - Denial of service due to recursive DeflateStream ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11588/Is-EFT-susceptible-to-the-Denial-of-service-via-recursive-Deflate-Stream-vulnerability))
+    * CVE-2023-2991 - Remote hard drive serial number disclosure ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11589/Is-EFT-susceptible-to-the-Remotely-obtain-HDD-serial-number-vulnerability)) (not currently fixed)
+    * Additional issue - Password leak due to insecure default configuration ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11587/Is-EFT-susceptible-to-the-Password-Leak-Due-to-Insecure-Defaults-vulnerability))
 
 ## N-day analyses
 
@@ -39,7 +46,8 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
   * Media: [The Hacker News](https://thehackernews.com/2023/01/zoho-manageengine-poc-exploit-to-be.html) / [Bleeping Computer](https://www.bleepingcomputer.com/news/security/critical-manageengine-rce-bug-now-exploited-to-open-reverse-shells/) / [Security Week](https://www.securityweek.com/wild-exploitation-recent-manageengine-vulnerability-commences/)
 * CVE-2022-47986 - Ruby deserialization vulnerability in IBM Aspera Faspex server - [AttackerKB](https://attackerkb.com/topics/jadqVo21Ub/cve-2022-47986/rapid7-analysis)
   * Media: [Help Net Security](https://www.helpnetsecurity.com/2023/03/30/exploiting-cve-2022-47986/) / [Ars Technica](https://arstechnica.com/information-technology/2023/03/ransomware-crooks-are-exploiting-ibm-file-exchange-bug-with-a-9-8-severity/) / [SC Media](https://www.scmagazine.com/news/ransomware/unpatched-ibm-aspera-faspex-file-transfer-service-under-active-attack)
-* CVE-2023-25690 - Request smuggling in Apache's `mod_rewrite` - [AtackerKB](https://attackerkb.com/topics/0Uka1VHsPO/cve-2023-25690/rapid7-analysis)
+* CVE-2023-25690 - Request smuggling in Apache's `mod_rewrite` - [AttackerKB](https://attackerkb.com/topics/0Uka1VHsPO/cve-2023-25690/rapid7-analysis)
+* CVE-2023-34362 - SQL injection, header smuggling, session injection, and .net deserialization issues in MOVEit file transfer - [AttackerKB](https://attackerkb.com/topics/mXmV0YpC3W/cve-2023-34362/rapid7-analysis)
 
 # 2022
 
