@@ -6,3 +6,8 @@
 
 - title: "Ron's CV"
   url: /cv
+
+- title: "Mastodon"
+  url: "https://infosec.exchange/@iagox86"
+  is_me: true
+  is_external: true

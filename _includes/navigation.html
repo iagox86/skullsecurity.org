@@ -1,3 +1,4 @@
+<!-- Get the current page -->
 {% for entry in site.data.navigation %}
 {% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
     {% if fullurl == page.url %}
@@ -13,7 +14,10 @@
     <ul class="navigation">
       {% for entry in site.data.navigation %}
         <li class="navigation-entry {% if entry.url == current_page %}navigation-entry-current{% endif %}">
-          <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+          <a href="{{ entry.url }}" {% if entry.is_me %}rel="me"{% endif %} {% if entry.is_external %}target="_blank"{% endif %}>
+            {{ entry.title }}
+            {% if entry.is_external %}<span class="genericon genericon-reply"></span>{% endif %}
+          </a>
         </li>
       {% endfor %}
     </ul>
