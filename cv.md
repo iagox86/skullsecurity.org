@@ -49,6 +49,7 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 * CVE-2023-25690 - Request smuggling in Apache's `mod_rewrite` - [AttackerKB](https://attackerkb.com/topics/0Uka1VHsPO/cve-2023-25690/rapid7-analysis)
 * CVE-2023-34362 - SQL injection, header smuggling, session injection, and .net deserialization issues in MOVEit file transfer - [AttackerKB](https://attackerkb.com/topics/mXmV0YpC3W/cve-2023-34362/rapid7-analysis)
 * CVE-2023-20887 - Command injection in VMware Aria Operations for Newtorks - [AttackerKB](https://attackerkb.com/topics/gxz1cUyFh2/cve-2023-20887/rapid7-analysis)
+* CVE-2023-3519 - Stack-based buffer overflow in Citrix ADC - [AttackerKB](https://attackerkb.com/topics/si09VNJhHh/cve-2023-3519/rapid7-analysis)
 
 # 2022
 
