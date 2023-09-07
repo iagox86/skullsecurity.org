@@ -35,6 +35,7 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
     * CVE-2023-2990 - Denial of service due to recursive DeflateStream ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11588/Is-EFT-susceptible-to-the-Denial-of-service-via-recursive-Deflate-Stream-vulnerability))
     * CVE-2023-2991 - Remote hard drive serial number disclosure ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11589/Is-EFT-susceptible-to-the-Remotely-obtain-HDD-serial-number-vulnerability)) (not currently fixed)
     * Additional issue - Password leak due to insecure default configuration ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11587/Is-EFT-susceptible-to-the-Password-Leak-Due-to-Insecure-Defaults-vulnerability))
+* CVE-2023-4528 - Deserialization JSCAPE MFT leading to RCE (part of an ongoing file transfer project) ([disclosure blog](https://www.rapid7.com/blog/post/2023/09/07/cve-2023-4528-java-deserialization-vulnerability-in-jscape-mft-fixed/) / [vendor advisory](https://www.jscape.com/blog/binary-management-service-patch-cve-2023-4528))
 
 ## N-day analyses
 
