@@ -53,6 +53,7 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 * CVE-2023-3519 - Stack-based buffer overflow in Citrix ADC - [AttackerKB](https://attackerkb.com/topics/si09VNJhHh/cve-2023-3519/rapid7-analysis)
 * CVE-2023-34124 / CVE-2023-34133 / CVE-2023-34132 / CVE-2023-34127 - Multiple vulnerabilities culminating in RCE in SonicWall Global Management System (GMS) - [AttackerKB](https://attackerkb.com/topics/Vof5fWs4rx/cve-2023-34127/rapid7-analysis) / [Metasploit module](https://github.com/rapid7/metasploit-framework/pull/18302)
 * CVE-2023-36845 / CVE-2023-36846 / CVE-2023-36844 / CVE-2023-36847 - Multiple vulnerabilities in Juniper J-Web culminating in RCE as root - [AttackerKB](https://attackerkb.com/topics/1PKX0CCXkX/cve-2023-36844/rapid7-analysis) / [Rapid7 ETR blog](https://www.rapid7.com/blog/post/2023/08/31/etr-exploitation-of-juniper-networks-srx-series-and-ex-series-devices/)
+  * Media: [infoRisk Today](https://www.inforisktoday.com/experts-urge-immediate-juniper-firewall-switch-patching-a-22988)
 
 # 2022
 
