@@ -36,6 +36,14 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
     * CVE-2023-2991 - Remote hard drive serial number disclosure ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11589/Is-EFT-susceptible-to-the-Remotely-obtain-HDD-serial-number-vulnerability)) (not currently fixed)
     * Additional issue - Password leak due to insecure default configuration ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11587/Is-EFT-susceptible-to-the-Password-Leak-Due-to-Insecure-Defaults-vulnerability))
 * CVE-2023-4528 - Deserialization JSCAPE MFT leading to RCE (part of an ongoing file transfer project) ([disclosure blog](https://www.rapid7.com/blog/post/2023/09/07/cve-2023-4528-java-deserialization-vulnerability-in-jscape-mft-fixed/) / [vendor advisory](https://www.jscape.com/blog/binary-management-service-patch-cve-2023-4528))
+* Multiple vulnerabilities in Titan MFT and Titan SFTP - [disclosure blog](https://www.rapid7.com/blog/post/2023/10/16/multiple-vulnerabilities-in-south-river-technologies-titan-mft-and-titan-sftp-fixed/) / [vendor advisory](https://helpdesk.southrivertech.com/portal/en/kb/articles/security-patch-for-issues-cve-2023-45685-through-cve-2023-45690) / [tooling](https://github.com/rbowes-r7/librhea)
+  * CVE-2023-45685: Authenticated remote code execution via "zip slip"
+  * CVE-2023-45686: Authenticated remote code execution via WebDAV path traversal
+  * CVE-2023-45687: Session fixation on Remote Administration Server
+  * CVE-2023-45688: Information disclosure via path traversal on FTP
+  * CVE-2023-45689: Information disclosure via path traversal in admin interface
+  * CVE-2023-45690: Information leak via world-readable database + logs
+
 
 ## N-day analyses
 
