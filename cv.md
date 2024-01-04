@@ -65,6 +65,8 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 * OwnCloud vulnerabilities
   * CVE-2023-49103 - information disclosure - [high-level write-up](https://www.greynoise.io/blog/cve-2023-49103-owncloud-critical-vulnerability-quickly-exploited-in-the-wild) / [technical write-up](https://www.labs.greynoise.io//grimoire/2023-11-29-owncloud-redux/)
   * CVE-2023-49105 - auth bypass - [high-level write-up](https://www.greynoise.io/blog/cve-2023-49105-webdav-api-authentication-bypass-in-owncloud) / [technical write-up](https://www.labs.greynoise.io//grimoire/2023-12-05-owncloud-again-again/)
+* CVE-2022-1471 - SnakeYAML Deserialization - [technical
+  write-up](https://www.labs.greynoise.io//grimoire/2024-01-03-snakeyaml-deserialization/)
 
 # 2022
 
