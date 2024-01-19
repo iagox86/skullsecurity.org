@@ -11,6 +11,12 @@ In 2022, I started doing enough public work that I decided I'd start keeping tra
 
 I'm going to update this from time to time, on a best-effort basis. I probably also missed stuff.
 
+# 2024
+
+## Vulnerabilities I Analyzed
+
+* Ivanti Connect Secure (ICS) Command Injection - [analysis](https://www.greynoise.io/blog/ivanti-connect-secure-exploited-to-install-cryptominers)
+
 # 2023
 
 ## Vulnerabilities I Discovered
