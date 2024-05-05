@@ -1,0 +1,56 @@
+---
+id: 539
+title: 'How do people choose passwords?'
+date: '2010-03-06T17:23:33-05:00'
+author: 'Ron Bowes'
+layout: revision
+guid: 'http://www.skullsecurity.org/blog/?p=539'
+permalink: '/?p=539'
+---
+
+This will be a quick one, but I hope it's interesting!
+
+As you probably know, I've been working hard on generating an evaluating passwords. [My last post](http://www.skullsecurity.org/blog/?p=516) was all about Rockyou.com's passwords; next post will (probably) be about different groups of passwords from my [password dictionaries page](http://www.skullsecurity.org/wiki/index.php/Passwords). This will be a little different, though.
+
+So, we all know that people frequently choose stupid passwords like 'password', '123456', etc. I'm sure a good part of the reason is that they just don't care. My mother, who isn't a tech savvy person and who rarely uses computers, was trying to get new games for her iPod today. When it prompted her for a password, we went through the semi-annual tradition of trying to figure out what we set. Since her credit card is linked to this account, it's a fairly important one.
+
+I personally use the password 'password' or 'Password1' on a fairly regular basis when I create throwaway accounts. Lots of sites make you create accounts to download por... err, software (vmware comes to mind). Normally, if [Bugmenot](http://www.bugmenot.com/) doesn't have the proper password, I'll just fill out the forms with garbage info, a fake email, and a lazy password. And I'm sure I'm not the only one -- I wouldn't be surprised if that's where a lot of the really awful passwords came from.
+
+Besides the common stupid passwords, people will often use the name of the site. [ (WARNING: big download) 8th most popular password is 'rockyou', ](http://downloads.skullsecurity.org/passwords/rockyou-withcount.txt>Rockyou.com)[ 3rd most popular password is 'phpbb', and ](http://downloads.skullsecurity.org/passwords/phpbb-withcount.txt>phpbb)[faithwriters'](http://downloads.skullsecurity.org/passwords/faithwriters-withcount.txt) 10th most popular password is 'faithwriters' (the second most popular is 'writer', which narrowly edges out 'jesus1'). My point is, if you're trying to protect your site, protect your user's by using a [On the topic of 'jesus1' being Faithwriters' second most common password, people tend to use passwords related to their hobbies, interests, etc. Ed Skoudis, Kevin Johnson, and others have spoken at length about harvesting passwords from social networking sites, and I don't doubt that you'll have amazing success if you do it. Just look at this comparison between the top 10 passwords on a fairly neutral site (phpbb.com ([list](http://downloads.skullsecurity.org/passwords/phpbb-withcount.txt)), a religious site (faithwriters.com [list](http://downloads.skullsecurity.org/passwords/faithwriters-withcount.txt)), and a technical site (elite-hackers.com [list](http://downloads.skullsecurity.org/passwords/elitehacker-withcount.txt)):](http://downloads.skullsecurity.org/passwords/twitter-banned.txt>blacklist like Twitter</a>. And, of course, if you)
+
+|  | **phpbb** |  | **Faithwriters** |  | **Elite hackers** |  |
+|---|-----------|---|------------------|---|-------------------|---|
+|  | 1. 123456
+2. password
+3. phpbb
+4. qwerty
+5. 12345
+6. 12345678
+7. letmein
+8. 111111
+9. 1234
+10. 123456789 |  | 1. 123456
+2. writer
+3. jesus1
+4. christ
+5. blessed
+6. john316
+7. jesuschrist
+8. password
+9. heaven
+10. faithwriters |  | 1. 123456
+2. password
+3. 12345
+4. passport
+5. diablo
+6. alpha
+7. 12345678
+8. 1
+9. zxcvbnm
+10. trustno1 |  |
+
+So, some trends are pretty obvious here. phpbb, a fairly neutral site in terms of its userbase, has a list of 10 pretty lame passwords (including 'phpbb', as we discussed).
+
+Faithwriters has a bunch of passwords that are strangely religious sounding. Besides 'writer' and 'faithwriters', we see 'jesus1', 'christ', 'blessed', 'john316', etc. In fact, 6 of the top 10 passwords are religious in nature, and 8 of the top 10 passwords are ones you wouldn't expect to see anywhere else. And that's really the key here -- the majority if the passwords will \*not\* be found with a standard password dictionary, but \*will\* be found with a custom dictionary, tailored to the site!
+
+And finally, elite-hackers.com's list has several of the usual stupid passwords, but has a couple that you wouldn't generally see, such as 'diablo', 'alpha', and, of course, [our favourite secret agent](http://en.wikipedia.org/wiki/Fox_Mulder)'s password, 'trustno1'.

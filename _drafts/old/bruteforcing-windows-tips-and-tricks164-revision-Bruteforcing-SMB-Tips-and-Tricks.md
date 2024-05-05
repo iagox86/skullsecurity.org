@@ -1,0 +1,172 @@
+---
+id: 172
+title: 'Bruteforcing SMB: Tips and Tricks'
+date: '2009-02-18T23:09:35-05:00'
+author: 'Ron Bowes'
+layout: revision
+guid: 'http://www.skullsecurity.org/blog/?p=172'
+permalink: '/?p=172'
+---
+
+Today, I decided I'd share some knowledge I've discovered about how to bruteforce a Windows password. Hopefully, some of you have thought about this and can give me even more advice. If you know anything, post it!
+
+Recently, I wrote a Nmap script for bruteforcing Windows passwords. Then, more recently, I re-wrote it. Over these two editions, I've learned a thing or two about doing it right. And, here you go!
+
+Not only do you get some great advice, I'm also going to show you an example of what NOT to do. Not too bad for a free blog, eh?
+
+Disclaimer: All these techniques were invented to me (although one of the ideas was stolen from Rainbow Crack, but I improved it :) ). They may very well be used in other projects, and I'm almost certain the obvious ones are.
+
+Oh, and if you don't know what bruteforcing is, it's a technique where the attacker guesses username/password combinations to gain access to a server.
+
+## Tip 1: Don't kill your connections
+
+Let's start with something easy, shall we? This one is pretty obvious, but it's worth mentioning. If you've read my other posts, which I'm sure you have, you'll know that the first three messages sent in SMB are:  
+<tt>SMB\_COM\_NEGOTIATE  
+SMB\_COM\_SESSION\_SETUP\_ANDX  
+SMB\_COM\_TREE\_CONNECT\_ANDX</tt>
+
+And the last two are:  
+<tt>SMB\_COM\_TREE\_DISCONNECT  
+SMB\_COM\_LOGOFF\_ANDX</tt>
+
+The magic happens in <tt>SMB\_COM\_SESSION\_SETUP\_ANDX</tt>. That's where the username and password are sent. If the username and password are wrong, what do you do? Hangup and call back? Nope! All you have to do is send <tt>SMB\_COM\_SESSION\_SETUP\_ANDX</tt> again. No fussing with starting a new TCP session and all the overhead of starting from scratch!
+
+Here's a picture (you heard that right, a picture!) of that happening:  
+![](/blogdata/bruteforce-1.png)
+
+Compare that to other unnamed bruteforce programs (mostly unnamed because this is one that somebody ran against \_me\_ last night (I expect it was malware of some kind), which do something like this:  
+![](/blogdata/bruteforce-2.png)
+
+That's only \_TWO\_ attempts! On my attack, in much less space, I tried EIGHT. Another noteworthy observation is that the second screenshot is using extended security negotiatinos, which is why you're seeing two Session Setup requests. And that brings us to...
+
+## Tip 2: If you want something done right...
+
+...do it yourself.
+
+And in this case, I mean the SMB protocol. Yes, I realize that implementing the while SMB protocol is a daunting task, but keep in mind that you only actually need the first two packets, and the first one doesn't even change. Not so bad, eh? There are at least three reasons you'll want to do this. One I'm going to talk about here, and the next two in Tips 3 and 4.
+
+This is simple and obvious, much like Tip 1, but it's important. Take another look at the screenshots in Tip 1; notice that each login packet for mine is 2 packets, and each login for theirs is 4 packets (not counting the other network nonsense). Since all these login packets are roughly the same size, that means half the network traffic. On a slower network or for a long test, that could be significant.
+
+The reason for the extra traffic is that Windows defaults to using extended security negotiations, or NTLMSSP. NTLMSSP is more modern, and is probably the "proper" way of connecting to Windows. However, all versions of Windows, at least up to Vista, still understand the old style, so why not take advantage?
+
+So, that's pretty obvious, and I'd even gamble that there's a way to do it with Windows' libraries, but what else can we do?
+
+## Tip 3: Who has accounts here? (part 1)
+
+This is probably the most confusing tip, but is also one of the most important ones. I'll do my best to explain it clearly, and to show some examples. Oh, and don't blame me for making this confusing, blame Microsoft -- Windows logins are funny, and this funniness is both a curse and a blessing.
+
+When you log into Windows, what happens when you enter an invalid username? What about an invalid password? Just access denied, right? And what if you enter the correct username and password? Access granted? If you answered "yes" to any of the above, you're wrong. If you answered "no", you're also wrong. The answer is, "it depends".
+
+The *normal* behaviour, for some definition of *normal*, is for Windows to deny access to invalid usernames and passwords. This is my Nmap debug output, from a Windows 2003 machine with the **guest** account **disabled**:**
+
+```
+smb-brute: Server's response to invalid usernames: FAIL
+smb-brute: Server's response to invalid passwords: FAIL
+```
+
+So the login failed on both attempts. Awesome, right?
+
+Here's the same scan, except that the **guest** account is **enabled**:
+
+```
+smb-brute: Server's response to invalid usernames: GUEST_ACCESS
+smb-brute: Server's response to invalid passwords: FAIL
+```
+
+What's going on here? Well, when the guest account is enabled, and you type an *invalid* username (and, obviously, invalid password), it logs you in as guest. If you type a *valid* username with an invalid password, it fails. This may appear annoying, and it can be, but it's more often a blessing in disguise. Why? Well, here's the next piece of the output:
+
+```
+smb-brute: Invalid username and password response are different, so identifying valid accounts is possible
+smb-brute: Checking which account names exist (based on what goes to the 'guest' account)
+smb-brute: Invalid password for 'root' -> 'GUEST_ACCESS' (invalid account)
+smb-brute: Invalid password for 'admin' -> 'GUEST_ACCESS' (invalid account)
+smb-brute: Invalid password for 'administrator' => 'FAIL' (may be valid)
+smb-brute: Invalid password for 'webadmin' -> 'GUEST_ACCESS' (invalid account)
+smb-brute: Invalid password for 'sysadmin' -> 'GUEST_ACCESS' (invalid account)
+smb-brute: Invalid password for 'netadmin' -> 'GUEST_ACCESS' (invalid account)
+smb-brute: Invalid password for 'guest' => 'SUCCESS' (likely valid)
+smb-brute: Invalid password for 'user' -> 'GUEST_ACCESS' (invalid account)
+smb-brute: Invalid password for 'web' => 'FAIL' (may be valid)
+smb-brute: Invalid password for 'test' => 'FAIL' (may be valid)
+```
+
+Because Windows is telling us something different for invalid usernames and invalid passwords, we can weed out which accounts actually exist! So, in that example, the 'web', 'test', and 'administrator' users returned FAIL. Since we already know that invalid usernames grant us GUEST\_ACCESS, and invalid passwords return FAIL, we can deduce that those three accounts exist while the rest (except, of course, for 'guest') don't. Suddenly, the 10 usernames in our dictionary becamse three, and the whole bruteforce is going to take 30% of the original time.
+
+Back on the topic of re-implementing the SMB protocol -- this isn't something you can do with the Windows libraries (at least, I assume you can't) -- you need granular control to actually read the error (or success) code the server gives you to determine the difference between, say, a successful login and a guest login.
+
+For completeness, I'd better say that this isn't the only trick with logging in. Windows XP, for example, defaults to giving guest access to every account, no matter which password is entered. Bruteforcing will completely fail in that case, but at least we always get guest access! Another little trick is that if the 'guest' account is in another state (expired, locked out, etc), all invalid usernames will show that status. So, if guest is locked out, invalid usernames will return LOCKED\_OUT instead of GUEST\_ACCESS.
+
+## Tip 4: Case? Who needs case?
+
+This is another very cool and useful idea trick. The idea was given to me by Brandon on the Nmap team, and filled in by Rainbow Crack. I improved on the idea and made it my own, though. At least, I think I did (I haven't checked how Rainbow Crack does this).
+
+As you know from [reading my blogs](/blog/?p=34), there are two (main) types of Windows passwords: Lanman and NTLM. Lanman is weak, boring, and case insensitive. NTLM is strong, boring, and case sensitive. When logging into Windows, you can use one, the other, or both, Windows doesn't care.
+
+Disclaimer: Vista no longer stores Lanman, so VIsta cares.
+
+Taking advantage of case sensitivity, smb-brute will start by using pure Lanman (unless it detects Vista or is overridden by the user). Once it finds a password, it flips to NTLM, where it tries the password again. If it fails, then the password has uppercase characters in it. The script will then flip to case discovery, where it'll try every combination of upper and lowercase until it finds the proper NTLM password. This takes 2<sup>length</sup> tries, at the worst case. So, a 14-character password will take 2<sup>14</sup> or 16,384 guesses at the worst case. That's pretty bad, but there are a few mitigating factors. The first one, of course, is that nobody with a 14-character password is going to be using a dictionary password. More likely, you're going to be cracking 8-character passwords or less, which is 2<sup>8</sup> or 256 checks at the worst case. Much better!
+
+Up to here, this idea is straight from Rainbow Crack. This is where I add a twist to it. Rainbow Crack has the advantage of running locally on the system, so 16,000 checks isn't actually unreasonable. smb-brute, however, how to run on the network, so it has to be as efficient as possible. Well, let's figure out how people use case in their passwords, shall we? From the [passwords stolen from MySpace](http://www.skullsecurity.org/wiki/index.php/Image:List-myspace.txt) a couple years back, here are a few quick statistics (these are for phished passwords that contain only letters):  
+4918 -- All lowercase  
+1623 -- All uppercase  
+59 -- One uppercase  
+6 -- Two uppercase  
+7 -- Three uppercase  
+1 -- Four uppercase  
+1 -- Five uppercase  
+0 -- Six uppercase  
+0 -- Seven uppercase  
+etc.
+
+Obviously, the statistics for >1 uppercase exclude strings that are entirely uppercase.
+
+From these statistics, the trend is pretty obvious (and, interestingly, this is exactly the trend I predicted and implemented before I ever looked at statistics :) ) -- most people use all lower, all upper, or a minimal number of uppercase characters. Another assumption that I haven't actually tested yet is that the uppercase characters tend to be closer to the front of the string, because a lot of people capitalize the first letter. So, with that in mind, I implemented an algorithm that would generate a list of passwords in that order. For example, the password "test" would have the following permutations, in this order:  
+'test'  
+'TEST'  
+'Test'  
+'tEst'  
+'teSt'  
+'tesT'  
+'TEst'  
+'TeSt'  
+'TesT'  
+'tESt'  
+'tEsT'  
+'teST'  
+'TESt'  
+'TEsT'  
+'TeST'  
+'tEST'
+
+The way I wrote this was by converting the case representation (upper/lower) to binary (1/0) (for example, '1000' represents 'Test' and '1011' represents 'TeST'). Then, I took all possible binary numbers between 0 and 2<sup>strlen - 1</sup> and sorted them by the number of ones they contain. So, the strings with a single capital (one '1') ended up at the top, and the strings with all caps (four '1's) ended up at the bottom, like this:  
+0000  
+1000  
+0100  
+0010  
+0001  
+1100  
+1010  
+1001  
+0110  
+0101  
+0011  
+1110  
+1101  
+1011  
+0111  
+1111
+
+The '1111' is moved to second place, since all caps is special (and breaks the pattern), these are converted back to letters, and the passwords are tested.
+
+```
+smb-brute: Determining password's case (mixcase:butterfly1)
+smb-brute: Result: mixcase:BuTTeRfLY1
+```
+
+Tip x: Who has accounts here? (part 2)
+
+Tip x: Passwords first, users can wait
+
+Tip x: The canary warned us!
+
+Tip x: What's your access level?
