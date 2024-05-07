@@ -83,7 +83,7 @@ Anyway, with that aside, a little about myself. My name is Ron Bowes, I'm
 <s>24</s> <s>25</s> <s>26</s> <s>27</s> 38 (wow, what a gap in updates) and
 have a Bachelors of Computer Science (honours) from the University of Manitoba.
 I have a bunch of expired certifications, I've worked at big companies (like
-Google), moved from Candada to the US, and have had a pretty cool life.
+Google), moved from Canada to the US, and have had a pretty cool life.
 
 These days, I do consulting for [Counter Hack](https://counterhack.com). I
 can't write as much as I used to, since most of the work I do is
