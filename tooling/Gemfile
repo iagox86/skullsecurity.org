@@ -2,3 +2,4 @@ source "https://rubygems.org"
 
 # gem 'mastodon-api', tag: 'master', require: 'mastodon'
 gem 'httparty'
+gem 'mastodon'
