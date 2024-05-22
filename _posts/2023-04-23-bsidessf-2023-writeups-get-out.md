@@ -34,8 +34,8 @@ My intention for the three parts of `getout` are:
 
 * Solving `getout1-warmup` requires understanding how the RPC protocol works,
   which, as I said, is very similar to UniRPC
-* In `getout2-gettoken`, I emulated [CVE-2023-28503](https://github.com/rbowes-r7/libneptune/blob/main/udadmin_authbypass_oscommand.rb) as best I could
-* In `getout3-apply`, I emulated [CVE-2023-28502](https://github.com/rbowes-r7/libneptune/blob/main/udadmin_stackoverflow_password.rb) but made it much, much harder to exploit
+* In `getout2-gettoken`, I emulated [CVE-2023-28503](https://github.com/iagox86/libneptune/blob/main/udadmin_authbypass_oscommand.rb) as best I could
+* In `getout3-apply`, I emulated [CVE-2023-28502](https://github.com/iagox86/libneptune/blob/main/udadmin_stackoverflow_password.rb) but made it much, much harder to exploit
 
 Let's take a look at each!
 

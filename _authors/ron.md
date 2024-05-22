@@ -15,7 +15,6 @@ mastodon:
 
 github:
   - iagox86
-  - rbowes-r7
 ---
 
 I sorta run things around SkullSecurity.
