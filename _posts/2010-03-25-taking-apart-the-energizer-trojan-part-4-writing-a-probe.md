@@ -19,30 +19,30 @@ Now that we know what we need to send and receive, and how it's encoded, let's g
 <h2>Sections</h2>
 This tutorial was getting far too long for a single page, so I broke it into four sections:
 <ul>
- <li><a href='/blog/?p=627'>Part 1: setup</a></li>
- <li><a href='/blog/?p=645'>Part 2: runtime analysis</a> (windbg)</li>
- <li><a href='/blog/?p=647'>Part 3: disassembling</a> (ida)</li>
- <li><strong><a href='/blog/?p=649'>Part 4: generating probes</a> (nmap)</strong></li>
+ <li><a href='/2010/taking-apart-the-energizer-trojan-part-1-setup'>Part 1: setup</a></li>
+ <li><a href='/2010/taking-apart-the-energizer-trojan-part-2-runtime-analysis'>Part 2: runtime analysis</a> (windbg)</li>
+ <li><a href='/2010/taking-apart-the-energizer-trojan-part-3-disassembling'>Part 3: disassembling</a> (ida)</li>
+ <li><strong><a href='/2010/taking-apart-the-energizer-trojan-part-4-writing-a-probe'>Part 4: generating probes</a> (nmap)</strong></li>
 </ul>
 
 <h2>Generating probes</h2>
 Recall that packets are encoded by XORing each byte with 0xE5, and decoded the same way. That's great for us -- a simple program can encode and decode packets. Let's write it!
 
 I chose to write this in C because it's one of my favourite languages and the code needed to XOR every byte is trivial:
-<font face="monospace">
-<font color="#a020f0">#include </font><font color="#ff00ff">&lt;stdio.h&gt;</font><br>
-<br>
-<font color="#2e8b57"><b>int</b></font>&nbsp;main(<font color="#2e8b57"><b>int</b></font>&nbsp;argc, <font color="#2e8b57"><b>char</b></font>&nbsp;*argv[])<br>
-{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>int</b></font>&nbsp;c;<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<font color="#a52a2a"><b>while</b></font>((c = getchar()) != <font color="#ff00ff">EOF</font>)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(<font color="#ff00ff">&quot;</font><font color="#6a5acd">%c</font><font color="#ff00ff">&quot;</font>, c ^ <font color="#ff00ff">0xE5</font>);<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<font color="#a52a2a"><b>return</b></font>&nbsp;<font color="#ff00ff">0</font>;<br>
-}<br>
-<br>
-</font>
+
+```c
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    int c;
+
+    while((c = getchar()) != EOF)
+        printf("%c", c ^ 0xE5);
+
+    return 0;
+}
+```
 
 That'll read characters from standard in, XOR them with 0xE5, then write them to standard out. Now we can compile it and run some test data through it (I called it the clever name, 'test'):
 <pre>ron@ankh:~$ vim test.c

@@ -26,10 +26,10 @@ Just be sure to take this for what it is. This is *not* intended to show any new
 <h2>Sections</h2>
 This tutorial was getting far too long for a single page, so I broke it into four sections:
 <ul>
- <li><strong><a href='/blog/?p=627'>Part 1: setup</a></strong></li>
- <li><a href='/blog/?p=645'>Part 2: runtime analysis</a> (windbg)</li>
- <li><a href='/blog/?p=647'>Part 3: disassembling</a> (ida)</li>
- <li><a href='/blog/?p=649'>Part 4: generating probes</a> (nmap)</li>
+ <li><strong><a href='/2010/taking-apart-the-energizer-trojan-part-1-setup'>Part 1: setup</a></strong></li>
+ <li><a href='/2010/taking-apart-the-energizer-trojan-part-2-runtime-analysis'>Part 2: runtime analysis</a> (windbg)</li>
+ <li><a href='/2010/taking-apart-the-energizer-trojan-part-3-disassembling'>Part 3: disassembling</a> (ida)</li>
+ <li><a href='/2010/taking-apart-the-energizer-trojan-part-4-writing-a-probe'>Part 4: generating probes</a> (nmap)</li>
 </ul>
 
 <h2>Step 0: You will need...</h2>
