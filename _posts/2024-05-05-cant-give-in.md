@@ -1,10 +1,12 @@
 ---
-title: "BSidesSF 2024 Writeups: Can't Give In (CGI exploitation)"
+title: 'BSidesSF 2024 Writeups: Can''t Give In (CGI exploitation)'
 author: ron
 layout: post
 categories:
 - bsidessf-2024
 - ctfs
+permalink: "/2024/bsidessf-2024-writeups-can-t-give-in-cgi-exploitation-"
+
 ---
 
 The premise of the three challenges [`cant-give-in`](https://github.com/BSidesSF/ctf-2024-release/tree/main/cant-give-in), [`cant-give-in-secure`](https://github.com/BSidesSF/ctf-2024-release/tree/main/cant-give-in-secure), and [`cant-give-in-securer`](https://github.com/BSidesSF/ctf-2024-release/tree/main/cant-give-in-securer) are to learn how to exploit and debug compiled code that's loaded as a CGI module. You might think that's unlikely, but a surprising number of enterprise applications (usually hardware stuff - firewalls, network "security" appliances, stuff like that) is powered by CGI scripts. You never know!

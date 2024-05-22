@@ -5,6 +5,8 @@ layout: post
 categories:
 - bsidessf-2024
 - ctfs
+permalink: "/2024/bsidessf-2024-writeups-turing-complete-reversing-exploitation-"
+
 ---
 
 This is a write-up for [`turing-complete`](https://github.com/BSidesSF/ctf-2024-release/tree/main/turing-complete), [`turing-incomplete`](https://github.com/BSidesSF/ctf-2024-release/tree/main/turing-incomplete), and [`turing-incomplete64`](https://github.com/BSidesSF/ctf-2024-release/tree/main/turing-incomplete64) from the BSides San Francisco 2024 CTF!

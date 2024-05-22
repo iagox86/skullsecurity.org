@@ -5,6 +5,8 @@ layout: post
 categories:
 - bsidessf-2024
 - ctfs
+permalink: "/2024/bsidessf-2024-writeups-safer-streets-web-reversing-"
+
 ---
 
 This is a write-up for [Safer Streets](https://github.com/BSidesSF/ctf-2024-release/tree/main/safer-streets). I apparently wrote this in more "note to self" style, not blog style, so enjoy!

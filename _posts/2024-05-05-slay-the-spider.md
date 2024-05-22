@@ -5,6 +5,8 @@ layout: post
 categories:
 - bsidessf-2024
 - ctfs
+permalink: "/2024/bsidessf-2024-writeups-slay-the-spider-a-hard-heap-overflow-"
+
 ---
 
 [Slay the Spider](https://github.com/BSidesSF/ctf-2024-release/tree/main/slay-the-spider) is a Minesweeper-like game where the user and computer try to uncover a spider. The challenge name and trappings are based on [Slay the Spire](https://store.steampowered.com/app/646570/Slay_the_Spire/), which is one of my favourite games.
