@@ -6,6 +6,7 @@ categories:
 - bsidessf-2024
 - ctfs
 permalink: "/2024/bsidessf-2024-writeups-can-t-give-in-cgi-exploitation-"
+date: '2024-05-05T12:59:43-07:00'
 
 ---
 

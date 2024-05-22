@@ -6,6 +6,7 @@ categories:
 - bsidessf-2024
 - ctfs
 permalink: "/2024/bsidessf-2024-writeups-safer-streets-web-reversing-"
+date: '2024-05-05T12:59:54-07:00'
 
 ---
 

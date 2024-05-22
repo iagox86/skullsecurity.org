@@ -6,6 +6,7 @@ categories:
 - bsidessf-2024
 - ctfs
 permalink: "/2024/bsidessf-2024-writeups-slay-the-spider-a-hard-heap-overflow-"
+date: '2024-05-05T12:59:56-07:00'
 
 ---
 
