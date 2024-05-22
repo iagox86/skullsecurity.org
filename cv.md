@@ -7,22 +7,38 @@ permalink: "/cv"
 
 ---
 
-In 2022, I started doing enough public work that I decided I'd start keeping track of it all in one place. Here you go!
+From 2022 - 2023, I worked at Rapid7 where I disclosed / analyzed a lot of vulns, and wrote about it publicly. I decided to start compiling all my writing in one place.
 
-I'm going to update this from time to time, on a best-effort basis. I probably also missed stuff.
+In 2023, I started at GreyNoise. I continued to write a decent amount, so I update this page on a best-effort basis. Let me know if you see something missing!
+
 
 # 2024
 
-## Vulnerabilities I Analyzed
+## Analyses / miscellaneous blogs
 
 * Ivanti Connect Secure (ICS) Command Injection - [analysis](https://www.greynoise.io/blog/ivanti-connect-secure-exploited-to-install-cryptominers)
+* CVE-2023-49103 - Owncloud - [analysis](https://www.labs.greynoise.io/grimoire/2023-11-29-owncloud-redux/)
+* CVE-2023-49105 - Owncloud - [analysis](https://www.labs.greynoise.io/grimoire/2023-12-05-owncloud-again-again/)
+* CVE-2022-41800 - F5 BIG-IP - [honeypot analysis](https://www.labs.greynoise.io/grimoire/2023-12-14-if-youre-going-to-spray-my-exploit/)
+* CVE-2022-1471 - SnakeYAML deserialization - [analysis](https://www.labs.greynoise.io/grimoire/2024-01-03-snakeyaml-deserialization/)
+* F5 BIG-IP wrap-up - [analysis](https://www.labs.greynoise.io/grimoire/2024-01-14-f5-rce-explained/)
+* CVE-2021-44529 - Ivanti ICS - [analysis](https://www.labs.greynoise.io/grimoire/2024-02-what-is-this-old-ivanti-exploit/)
+* CVE-2023-22527 - Confluence template injection - [analysis](https://www.labs.greynoise.io/grimoire/2024-03-confluence-where-are-they-now/)
+
+## Talks
+
+* 2024-05 [Finding Signals in the (Grey) Noise](https://docs.google.com/presentation/d/1jhmfUndwEK1wOrBH73RGhyJQxW21rr4MT3r1nDzW0E0/edit?usp=drive_link) @ NorthSec Montreal
+
+## Tools, projects, code releases, etc.
+
+* [BSides San Francisco CTF](https://github.com/BSidesSF/ctf-2024-release) - I was a co-lead and challenge author
 
 # 2023
 
 ## Vulnerabilities I Discovered
 
 * Multiple vulnerabilities in Rocket Software UniData and UniVerse - [analysis blog](https://www.rapid7.com/blog/post/2023/03/29/multiple-vulnerabilities-in-rocket-software-unirpc-server-fixed/)
-  * [Protocol implementation](https://github.com/rbowes-r7/libneptune)
+  * [Protocol implementation](https://github.com/iagox86/libneptune)
   * [Metasploit modules](https://github.com/rapid7/metasploit-framework/pull/17832) for CVE-2023-28502 and CVE-2023-28503
   * Vulnerabilities:
     * CVE-2023-28501: Pre-authentication heap buffer overflow in `unirpcd` service
@@ -35,14 +51,14 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
     * CVE-2023-28508: Post-authentication heap overflow in `udsub` service
     * CVE-2023-28509: Weak protocol encryption
 * Multiple vulnerabilities in Globalscape EFT - [analysis blog](https://www.rapid7.com/blog/post/2023/06/22/multiple-vulnerabilities-in-fortra-globalscape-eft-administration-server-fixed/)
-  * [Protocol implementation + proofs of concept](https://github.com/rbowes-r7/gestalt)
+  * [Protocol implementation + proofs of concept](https://github.com/iagox86/gestalt)
   * Vulnerabilities:
     * CVE-2023-2989 - Authentication bypass via out-of-bounds memory read ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11586/Is-EFT-susceptible-to-the-Authentication-Bypass-via-Outofbounds-Memory-Read-vulnerability))
     * CVE-2023-2990 - Denial of service due to recursive DeflateStream ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11588/Is-EFT-susceptible-to-the-Denial-of-service-via-recursive-Deflate-Stream-vulnerability))
     * CVE-2023-2991 - Remote hard drive serial number disclosure ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11589/Is-EFT-susceptible-to-the-Remotely-obtain-HDD-serial-number-vulnerability)) (not currently fixed)
     * Additional issue - Password leak due to insecure default configuration ([vendor advisory](https://kb.globalscape.com/Knowledgebase/11587/Is-EFT-susceptible-to-the-Password-Leak-Due-to-Insecure-Defaults-vulnerability))
 * CVE-2023-4528 - Deserialization JSCAPE MFT leading to RCE (part of an ongoing file transfer project) ([disclosure blog](https://www.rapid7.com/blog/post/2023/09/07/cve-2023-4528-java-deserialization-vulnerability-in-jscape-mft-fixed/) / [vendor advisory](https://www.jscape.com/blog/binary-management-service-patch-cve-2023-4528))
-* Multiple vulnerabilities in Titan MFT and Titan SFTP - [disclosure blog](https://www.rapid7.com/blog/post/2023/10/16/multiple-vulnerabilities-in-south-river-technologies-titan-mft-and-titan-sftp-fixed/) / [vendor advisory](https://helpdesk.southrivertech.com/portal/en/kb/articles/security-patch-for-issues-cve-2023-45685-through-cve-2023-45690) / [tooling](https://github.com/rbowes-r7/librhea)
+* Multiple vulnerabilities in Titan MFT and Titan SFTP - [disclosure blog](https://www.rapid7.com/blog/post/2023/10/16/multiple-vulnerabilities-in-south-river-technologies-titan-mft-and-titan-sftp-fixed/) / [vendor advisory](https://helpdesk.southrivertech.com/portal/en/kb/articles/security-patch-for-issues-cve-2023-45685-through-cve-2023-45690) / [tooling](https://github.com/iagox86/librhea)
   * CVE-2023-45685: Authenticated remote code execution via "zip slip"
   * CVE-2023-45686: Authenticated remote code execution via WebDAV path traversal
   * CVE-2023-45687: Session fixation on Remote Administration Server
@@ -73,6 +89,14 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
   * CVE-2023-49105 - auth bypass - [high-level write-up](https://www.greynoise.io/blog/cve-2023-49105-webdav-api-authentication-bypass-in-owncloud) / [technical write-up](https://www.labs.greynoise.io//grimoire/2023-12-05-owncloud-again-again/)
 * CVE-2022-1471 - SnakeYAML Deserialization - [technical
   write-up](https://www.labs.greynoise.io//grimoire/2024-01-03-snakeyaml-deserialization/)
+
+## Tools, projects, code releases, etc.
+
+* [BSides San Francisco CTF](https://github.com/BSidesSF/ctf-2023-release) - I was a co-lead and challenge author
+
+## Talks / presentations
+
+* 2023-05 [UniData UniRPC Vulnerabilities](https://docs.google.com/presentation/d/1O-Bphmo8q64O9NSt7vmYUQ8Zevez5f6MLhcimyBv36s/edit?usp=sharing) @ NorthSec Montreal
 
 # 2022
 
@@ -105,17 +129,23 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 * CVE-2022-40684 - Remote code execution in FortiOS due to header injection in proxied traffic - [AttackerKB analysis](https://attackerkb.com/topics/QWOxGIKkGx/cve-2022-40684/rapid7-analysis)
 * CVE-2022-28219 - Remote code execution in ManageEngine ADAudit Plus due to a combination of unsafe deserialization and XXE - [AttackerKB analysis](https://attackerkb.com/topics/Zx3qJlmRGY/cve-2022-28219/rapid7-analysis) / [Metasploit module](https://github.com/rapid7/metasploit-framework/pull/16758)
 * CVE-2022-29799 - "NimbusPwn" - what I'm calling a "horizontal privilege escalation" vulnerability, meaning you can escalate to the same privileges you have - [AttackerKB analysis](https://attackerkb.com/topics/cZEN5EWng1/cve-2022-29799/rapid7-analysis)
-* CVE-2022-3602 - 4-byte buffer overflow in OpenSSL's Punycode parser - [AttackerKB analysis](https://attackerkb.com/topics/GMp2yGvZCw/cve-2022-3602/rapid7-analysis) / [simple PoC](https://github.com/rbowes-r7/cve-2022-3602-and-cve-2022-3786-openssl-poc)
-* CVE-2022-3786 - Buffer overflow (with `.` characters) in OpenSSL's Punycode parser - [AttackerKB analysis](https://attackerkb.com/topics/CKTqMzGksY/cve-2022-3786/rapid7-analysis) / [simple PoC](https://github.com/rbowes-r7/cve-2022-3602-and-cve-2022-3786-openssl-poc)
+* CVE-2022-3602 - 4-byte buffer overflow in OpenSSL's Punycode parser - [AttackerKB analysis](https://attackerkb.com/topics/GMp2yGvZCw/cve-2022-3602/rapid7-analysis) / [simple PoC](https://github.com/iagox86/cve-2022-3602-and-cve-2022-3786-openssl-poc)
+* CVE-2022-3786 - Buffer overflow (with `.` characters) in OpenSSL's Punycode parser - [AttackerKB analysis](https://attackerkb.com/topics/CKTqMzGksY/cve-2022-3786/rapid7-analysis) / [simple PoC](https://github.com/iagox86/cve-2022-3602-and-cve-2022-3786-openssl-poc)
 * CVE-2022-22954 - Remote code execution due to template injection in VMWare Workspace ONE - [AttackerKB analysis](https://attackerkb.com/topics/BDXyTqY1ld/cve-2022-22954/rapid7-analysis)
 
 ## Tools, projects, code releases, etc.
 
 * [BSides San Francisco CTF](https://github.com/BSidesSF/ctf-2022-release) - I was a co-lead and challenge author
-* [refreshing-mcp-tool](https://github.com/rbowes-r7/refreshing-mcp-tool) - A tool for working with F5's internal database protocol (MCP or Master Control Program)
-* [refreshing-soap-exploit](https://github.com/rbowes-r7/refreshing-soap-exploit) - A tool for testing a SOAP-based CSRF vulnerability in F5 BIG-IP and BIG-IQ
+* [refreshing-mcp-tool](https://github.com/iagox86/refreshing-mcp-tool) - A tool for working with F5's internal database protocol (MCP or Master Control Program)
+* [refreshing-soap-exploit](https://github.com/iagox86/refreshing-soap-exploit) - A tool for testing a SOAP-based CSRF vulnerability in F5 BIG-IP and BIG-IQ
 * [Metasploit module](https://github.com/rapid7/metasploit-framework/pull/17272) for pulling data from F5's MCP socket
-* [doltool](https://github.com/rbowes-r7/doltool) - An implementation of the FlexLM licensing server's protocol
+* [doltool](https://github.com/iagox86/doltool) - An implementation of the FlexLM licensing server's protocol
+
+## Talks / presentations
+
+* 2022-12 [F5 BIG-IP Vulnerabilities](https://docs.google.com/presentation/d/1CeWI7IIIVJEmrtPkFPnUIUHns2S7gZnchmlTo3ozhEA/edit?usp=share_link) @ Hushcon Seattle
+* 2022-08 [From Vuln to CTF](https://docs.google.com/presentation/d/1-z8PFYhQGkuqjSN7Io_uxZYmGG95EZmx1fRden8UsW8/edit?usp=share_link) @ BSides Las Vegas
+* 2022-02 [HHC Shellcode Primre](https://docs.google.com/presentation/d/1Fpohp1kyzwmF--kvnfp2NR-E5R-B3OAHFLFBukj3UW4/edit?usp=share_link) @ Montrehack - largely a walkthrough of a challenge from Holiday Hack Challenge
 
 # Pre-2022 work
 *I'm not including stuff from [my blog](https://www.skullsecurity.org), you can see everything there!*
@@ -174,10 +204,6 @@ I'm going to update this from time to time, on a best-effort basis. I probably a
 
 *I've saved basically every talk I ever gave! A bunch of these weren't public, and now they are. The older ones look soooo bad. But, enjoy!*
 
-* 2023-05 [UniData UniRPC Vulnerabilities](https://docs.google.com/presentation/d/1O-Bphmo8q64O9NSt7vmYUQ8Zevez5f6MLhcimyBv36s/edit?usp=sharing) @ NorthSec Montreal
-* 2022-12 [F5 BIG-IP Vulnerabilities](https://docs.google.com/presentation/d/1CeWI7IIIVJEmrtPkFPnUIUHns2S7gZnchmlTo3ozhEA/edit?usp=share_link) @ Hushcon Seattle
-* 2022-08 [From Vuln to CTF](https://docs.google.com/presentation/d/1-z8PFYhQGkuqjSN7Io_uxZYmGG95EZmx1fRden8UsW8/edit?usp=share_link) @ BSides Las Vegas
-* 2022-02 [HHC Shellcode Primre](https://docs.google.com/presentation/d/1Fpohp1kyzwmF--kvnfp2NR-E5R-B3OAHFLFBukj3UW4/edit?usp=share_link) @ Montrehack - largely a walkthrough of a challenge from Holiday Hack Challenge
 * 2020-10 [Reverse Engineering](https://docs.google.com/presentation/d/1CBozYzUZ0Hc-YE3FnIjpPH2djVT54xNXoCojKhpD6zE/edit?usp=share_link) @ DCA10 - I have no memory of writing or giving this talk, or what DCA10 is!
 * 2020-06 [Crypto: You're Doing it Wrong](https://docs.google.com/presentation/d/1C1r4WeCzihfiTzzG9SV9BhD3E4OtNgJv5kzPQwPswng/edit?usp=share_link) @ PuPPy (Puget Sound Python group) - I wrote this, but due to the SPD protests/riots in Seattle, the event was cancelled
 * 2018-11 [WebExec: Finding an 0-day in a Pentest](https://docs.google.com/presentation/d/1A8Ii78ApI-YH7Jqtw42c5wQ4K8G5soVpWigrpKg-toc/edit?usp=share_link) @ The Long Con
