@@ -24,6 +24,7 @@ In 2023, I started at GreyNoise. I continued to write a decent amount, so I upda
 * F5 BIG-IP wrap-up - [analysis](https://www.labs.greynoise.io/grimoire/2024-01-14-f5-rce-explained/)
 * CVE-2021-44529 - Ivanti ICS - [analysis](https://www.labs.greynoise.io/grimoire/2024-02-what-is-this-old-ivanti-exploit/)
 * CVE-2023-22527 - Confluence template injection - [analysis](https://www.labs.greynoise.io/grimoire/2024-03-confluence-where-are-they-now/)
+* CVE-2024-24919 - Check Point Quantum path traversal - [honeypot analysis](https://www.greynoise.io/blog/whats-going-on-with-checkpoint-cve-2024-24919)
 
 ## Talks
 
