@@ -17,8 +17,6 @@ In 2023, I started at GreyNoise. I continued to write a decent amount, so I upda
 ## Analyses / miscellaneous blogs
 
 * Ivanti Connect Secure (ICS) Command Injection - [analysis](https://www.greynoise.io/blog/ivanti-connect-secure-exploited-to-install-cryptominers)
-* CVE-2023-49103 - Owncloud - [analysis](https://www.labs.greynoise.io/grimoire/2023-11-29-owncloud-redux/)
-* CVE-2023-49105 - Owncloud - [analysis](https://www.labs.greynoise.io/grimoire/2023-12-05-owncloud-again-again/)
 * CVE-2022-41800 - F5 BIG-IP - [honeypot analysis](https://www.labs.greynoise.io/grimoire/2023-12-14-if-youre-going-to-spray-my-exploit/)
 * CVE-2022-1471 - SnakeYAML deserialization - [analysis](https://www.labs.greynoise.io/grimoire/2024-01-03-snakeyaml-deserialization/)
 * F5 BIG-IP wrap-up - [analysis](https://www.labs.greynoise.io/grimoire/2024-01-14-f5-rce-explained/)
