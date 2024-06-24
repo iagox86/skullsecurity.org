@@ -24,7 +24,7 @@ In 2023, I started at GreyNoise. I continued to write a decent amount, so I upda
 * CVE-2023-22527 - Confluence template injection - [analysis](https://www.labs.greynoise.io/grimoire/2024-03-confluence-where-are-they-now/)
 * CVE-2024-24919 - Check Point Quantum path traversal - [honeypot analysis](https://www.greynoise.io/blog/whats-going-on-with-checkpoint-cve-2024-24919)
 * CVE-2024-28995 - SolarSinds Serv-U path traversal - [honeypot analysis](https://www.labs.greynoise.io/grimoire/2024-06-solarwinds-serv-u/)
-  * Media coverage: [SC Media](https://www.scmagazine.com/brief/attacks-exploiting-solarwinds-serv-u-bug-underway) | [Security Week](https://www.securityweek.com/recent-solarwinds-serv-u-vulnerability-exploited-in-the-wild/) | [The Hacker News](https://thehackernews.com/2024/06/solarwinds-serv-u-vulnerability-under.html)
+  * Media coverage: [SC Media](https://www.scmagazine.com/brief/attacks-exploiting-solarwinds-serv-u-bug-underway) / [Security Week](https://www.securityweek.com/recent-solarwinds-serv-u-vulnerability-exploited-in-the-wild/) / [The Hacker News](https://thehackernews.com/2024/06/solarwinds-serv-u-vulnerability-under.html)
 
 
 ## Talks
