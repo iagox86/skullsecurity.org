@@ -20,6 +20,7 @@ excerpt_separator: '<!--more-->'
 
 include:
   - '_pages/'
+  - '_wiki/'
 
 exclude:
   - 'hooks/'
@@ -49,6 +50,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 feed:
   path: /feed
