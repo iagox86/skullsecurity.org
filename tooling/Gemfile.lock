@@ -4,6 +4,7 @@ GEM
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
+    mastodon (0.3.1)
     mini_mime (1.1.2)
     multi_xml (0.6.0)
 
@@ -12,6 +13,7 @@ PLATFORMS
 
 DEPENDENCIES
   httparty
+  mastodon
 
 BUNDLED WITH
    2.3.26

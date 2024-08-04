@@ -1,0 +1,177 @@
+---
+title: 'Wiki: Adventure 1, Session 1'
+author: ron
+layout: wiki
+permalink: "/wiki/Adventure_1,_Session_1"
+date: '2024-08-04T15:51:38-04:00'
+---
+
+## Day 1 (Saturday, January 6, 1990) {#day_1_saturday_january_6_1990}
+
+-   No events happen this day, it was simply an introduction to the game
+-   [Number One](Number_One "wikilink") goes shopping at the local Target
+-   [C. Dundee](C._Dundee "wikilink") goes for coffee with the local cops, asks for any news
+-   [Fastjack](Fastjack "wikilink") loads up Warcraft (which must be an advance alpha copy, since the game didn\'t come out till 1994)
+-   [David the Lawyer](David_the_Lawyer "wikilink") drives to Seattle to play some Raquetball
+-   [David the Undertaker](David_the_Undertaker "wikilink") has meetings with various clients, no one special
+
+## Day 2 (Sunday, January 7, 1990) {#day_2_sunday_january_7_1990}
+
+-   Characters are woken up by a ruckus. *C. Dundee* and *Number One* go to investigate
+-   Veronica Chee pushes her way through the crowd
+    -   She looks terrible \-- bloodshot eyes, knotted hair
+    -   She is clearly showing symptoms of paranoia, and she yells, among other things, \"Don\'t listen to their lies! They killed my husband! Stop them before it\'s too late!\"
+    -   George Burroughs (priest) and Kris make it to the front to try and calm things down
+    -   Cops (Mary and George Jacobs) also make it to the front, try and grab Veronica
+    -   She runs, is around the corner before anybody can react
+    -   Cops and *C. Dundee* give chase, but she gets to her car
+    -   By the time the police get to their car, she\'s gone
+-   *C. Dundee* remembers Sam Chee
+    -   Seattle doctors had ruled a drug overdose, released the body
+    -   Died on December 29, 1989, body released on January 4, 1990
+    -   *David the Undertaker* had held the funeral on Friday, January 5, 1990, then buried the body in a shallow grave near the church
+-   Kris explains that some necessary foundation repair is happening, and they can\'t let anybody in the church until it\'s safe
+-   *C. Dundee* asks why they didn\'t tell anybody beforehand
+-   Kris laughs and says that they had actually told some people who were supposed to spread the word, but they\'d forgotten
+    -   Several people in the crowd (that the characters recognize from the neighbourhood) nod, looking embarassed
+-   Crowd Disperses
+-   *C. Dundee* invites the cops to grab coffee with him
+-   *Number One* decides to use his archaeology skill to look around the church, see if there\'s anything noteworthy
+-   Doesn\'t find anything near the church, but does find some loose earth nearby
+    -   (*David the Undertaker* had buried a body in that spot (coincidentally, Sam Chee)
+    -   Starts poking around, moving earth
+    -   Uncovers a hand, unnoticed by DtE
+    -   *C. Dundee* notices what *Number One* is doing, tries to signal him to stop (*C. Dundee* knows that *David the Undertaker* is lazy, buries bodies in shallow graves)
+        -   *Number One* doesn\'t notice, continues digging
+    -   *C. Dundee* excuses himself, runs over to *David the Undertaker*\'s house/office, tells him what\'s happening
+    -   *David the Undertaker* runs over to *Number One*, tells him to stop
+    -   *Number One* puts a marker in the ground and leaves, intending to come back later (haha)
+-   *David the Undertaker* goes back to his office to check the foundation of his building, notices that there isn\'t even a foundation, it\'s built straight on the ground
+    -   Curses his father (who built the office, and who taught him how to dig a shallow grave) for his cheapness
+-   *C. Dundee* is called by one of his contacts (\"Mr. Johnson\"), who asks to meet him
+    -   *C. Dundee* meets the contact behind *David the Undertaker*\'s funeral home
+    -   *C. Dundee* offered \$5000 bounty on Veronica Chee, she has a warrant for supplying drugs
+    -   *C. Dundee* accepts
+-   Calls other players to go to Veronica\'s house
+    -   Try front door, it\'s locked
+    -   Go around back, door is swinging open
+    -   *Number One* checks his study, finds a desk, bookshelf, papers, etc.
+        -   Books were mostly fiction, no real theme
+        -   Desk had a lot of papers, nothing noteworthy
+        -   Top drawer on desk held stationary, pens, and similar
+        -   Other two drawers are locked
+        -   Find a briefcase, locked, with a bit of a smell coming from it, they take
+    -   *C. Dundee* and *David the Undertaker* investigate the rooms
+        -   First bedroom has two beds, messy, toys, etc., looks like it belongs to two younger kids
+        -   Some clothes and stuff are missing, looks like they were hurridly grabbed
+        -   Second room looks like a guest room, has an empty dresser, made bed, etc.
+        -   Third room is master bedroom, bed is unmade, floor is piled with clothes and junk, pillow has makeup stains on it
+        -   Dresser and Closet also missing a lot of clothes, as if they were grabbed quickly
+        -   A quick search turns up a small key
+    -   Returns to desk, unlocks the drawers
+        -   One contains invoices from Sam Chee\'s plumbing trade (\"Go With the Flow Plumbing\")
+    -   *Number One* goes into kitchen, sees there there are a lot of dirty dishes, even sitting on the table
+        -   Checks the fridge, finds normal food for the most part
+            -   Checks expiry dates \-- a lot of it is recently expired
+    -   *C. Dundee* checks bathroom cabinet, finds a syringe and several different types of medication that he doesn\'t recognize
+        -   Takes them
+-   Party goes back to *David the Undertaker*\'s office
+    -   Open the briefcase
+    -   Rotting balogne sandwich, apple
+    -   (was obviously used by Sam Chee as a lunchbox)
+-   *David the Lawyer* calls AT&T, gets the phone records for Veronica Chee
+    -   She had been called by Dr. Gary Stromme, who *David the Undertaker* knows was the doctor who performed the autopsy of her husband
+    -   She had also called Dr. Stromme a few times
+    -   Many calls from her to local police stations, most of them very short
+-   *Number One* goes to investigate the church
+    -   Finds a weird lock on the door
+    -   Calls *Fastjack*, who doesn\'t recognize it
+-   *Number One* returns to where he found that body buries
+    -   Digs it up, recognizes it but doesn\'t remember the name (it\'s Sam Chee)
+    -   Notices that it was a recent burial, no clothing, no valuables, and an autopsy had been performed
+    -   Attemps to re-bury the body, but not so well
+-   *Number One* checks the side of the church, finds windows open
+    -   Tries to climb into one, fails
+    -   Calls *David the Undertaker* and *C. Dundee* to help him
+    -   *David the Undertaker* and *C. Dundee* show up, smoking cigars (for some reason\...)
+    -   *C. Dundee* tries to climb into window, fails (wall is slippery from the rain)
+    -   *David the Undertaker* tries, succeeds
+    -   They hear a shout, cops are coming toward them
+        -   Too dark for the cops to see what\'s happening
+    -   *C. Dundee* walks towards cops
+        -   Trips on the ground that *Number One* had unearthed
+        -   Meets the cops, explains that he was looking for any clues about Veronica, invites the police for coffee
+        -   They accept, go down to the diner
+-   *Number One* and *David the Undertaker* search the church, find nothing remarkable
+    -   When leaving the church, *David the Undertaker* notices that *Number One* is carrying his archaeology tools, asks him why
+    -   *Number One* explains that he had found a body and dug it up
+    -   *Number One* and *David the Undertaker* go to the site, find it\'s badly buried, wants to rebury it
+    -   Realizes that he could take this opportunity to look at Sam\'s body again
+        -   Takes it back to his office
+        -   Opens up the cuts (*Number One* and *C. Dundee* are present, neither become ill)
+        -   Finds the organs all bagged up and inserted in the chest cavity (standard procedure for autopsies)
+        -   Finds that there was cocaine present in the blood stream
+        -   Checks the hair, finds that he hadn\'t used cocaine in at least the last few months
+        -   Reburies it
+-   The characters turn in for the night
+
+## Day 3 (Monday, January 8, 1990) {#day_3_monday_january_8_1990}
+
+-   Characters all go to work at their respective jobs, except for *C. Dundee* who sleeps in
+-   *Number One* brings picture of the lock to a 1-hour photo to be developed
+    -   Once it\'s developed, he brings it around to people in the electronics/engineering departments
+    -   One recognizes the picture as a prototype for a new lock made by a company in Texas, \"Lock, Stock, and Fully Bonded\"
+    -   *Number One* calls that company and asks about the lock
+        -   It\'s a new model, worth about \$5000
+        -   Only a few have been shipped, one was ordered by George Burroughs in Seattle
+        -   Shipped to the church, paid in cash
+-   *C. Dundee* stakes out Chee\'s parents\' house (the Michaels)
+    -   Rummages through their trash, finds the 3Ks (Koolaide, Kraft Dinner, and Ketchup)
+    -   Watches the house for the day
+    -   Sees an older couple leave, get into their Volkswagon
+    -   Return an hour later with groceries
+    -   Lucky Charms and other kids stuff, as well as prunes and other old-people stuff
+    -   House is quiet for the rest of the day, although the curtains remain drawn
+    -   After dark, *C. Dundee* leaves
+-   *David the Undertaker* goes to the doctor to get a copy of the autopsy report
+    -   Finds that cocaine had been present in the bloodstream, although in fairly low amounts
+    -   Found that the heart had a yellowish hint to it
+    -   Found a couple of stange chemicals in the bloodstream, organic but otherwise unknown
+    -   Found that the strange circumstances had been swept under the rug
+        -   Likely for reasons of laziness, not for malice
+    -   Photocopies the records
+-   When *David the Lawyer* arrives home, there\'s a message waiting for him
+    -   Dr. Gary Stromme had been trying to get in touch, wants to meet them
+    -   When they meet him, he seems nervous
+    -   He noticed that they\'d been trying to find information about Sam Chee, and wants to talk to them
+    -   Says that he was in charge of the autopsy, found a lot of strange results
+    -   It was a Saturday, and the others wanted to go home, so they made Dr. Stromme cut the investigation short
+        -   A common event, Stromme was forced to fill out a false report and return the body to the morgue until the report was accepted
+    -   Says he interviewed Veronica, she was sure that everybody was out to get her
+    -   Players ask why he seems nervous
+        -   Was well aware that something fishy was going on, but is risking his job and pension by even pursuing this
+        -   Also, Veronica seems so sure that something\'s happening, what if it is?
+    -   Dr. Stromme asks them to report back anything else they find
+    -   Players ask him about the drugs they found in Chee\'s bathrooms
+        -   They\'re diabetes medication
+-   *C. Dundee*, *Number One*, and *David the Undertaker* go to Veronica\'s parents\' house
+    -   First idea:
+        -   *Number One* waits in the car as a getaway driver, even though he has no driving skill
+        -   *C. Dundee* goes to the door, even though he has no charisma
+        -   *David the Undertaker* watches back door, even though he\'s never made a spot check
+    -   After realizing foolishness, *David the Undertaker* goes to the door
+    -   Door opens with chain lock on, Mrs. Michaels is at the door
+    -   *David the Undertaker* asks the mother where he could find Veronica
+    -   Mrs. Michaels says that she left, they don\'t know where she went
+    -   *David the Undertaker* says that he\'s here to help her and desperately needs to find her (rolls 01 on his persuade check)
+    -   Mrs. Michaels lets him in, knocks on the basement door, says that somebody is here to help
+    -   Veronica opens the door, she still looks awful
+    -   *David the Undertaker* asks her questions about what happened
+        -   She still seems paranoid, everybody is out to get her, etc.
+        -   She still seems paranoid, everybody is out to get her, etc.
+        -   Says that she suspects Kris, although doesn\'t have a good reason
+        -   *David the Undertaker* gives her his card, in case she needs anything
+-   Meanwhile, *Fastjack* goes to the neighbourhood\'s phone junction box
+    -   Installs a bug on the wires for Kris and George Burroughs
+-   When *C. Dundee* gets home, he discovers that the bounty for Veronica Chee has been raised to \$20,000, with no reason given
+-   Finally, the characters all go home for the night
