@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Storm.dll_Functions"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Storm.dll_Functions"
 ---
 
 This is a list of all Storm.dll functions that I\'ve found. Where possible, I\'ve tried to give them their official name (which can be gleaned from the Macintosh Storm.dll file). The vast majority of these were found by me, but I did find a couple on websites, most notably the non-class SFile functions.

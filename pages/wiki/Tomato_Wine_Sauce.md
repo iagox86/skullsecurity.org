@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Tomato_Wine_Sauce"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Tomato_Wine_Sauce"
 ---
 
 I had wine sauce at a restaurant and liked it, so I took a stab at making it. It wasn\'t quite the same, but still good!

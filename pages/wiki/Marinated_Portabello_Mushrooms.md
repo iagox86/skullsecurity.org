@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Marinated_Portabello_Mushrooms"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Marinated_Portabello_Mushrooms"
 ---
 
 These are absolutely my favourite!

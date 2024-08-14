@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Eggless_Benedict"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Eggless_Benedict"
 ---
 
 From [This forum post by VegeTexan](http://www.veganrepresent.com/forums/showthread.php?p=396347&postcount=10)

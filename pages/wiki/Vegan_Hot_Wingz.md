@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Vegan_Hot_Wingz"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Vegan_Hot_Wingz"
 ---
 
 From [Vegan Dad](http://vegandad.blogspot.com/2009/08/ultimate-vegan-hot-wingz.html):

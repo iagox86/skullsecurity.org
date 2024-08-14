@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Startup_Scripts"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Startup_Scripts"
 ---
 
 ## Startup Scripts {#startup_scripts}

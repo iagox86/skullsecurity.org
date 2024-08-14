@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Cream_of_Soup"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Cream_of_Soup"
 ---
 
 I got a bundle of asparagus from Fresh Option, and needed something to do with it. So, as usual, I looked up vegan recipes on the Internet. After a bit of searching, I found this [Cream of Asparagus Soup](http://www.recipezaar.com/Cream-of-Asparagus-Soup-vegan-18803) recipe. It was excellent! The best part was, I finally learned how to spell \"Asparagus\"!

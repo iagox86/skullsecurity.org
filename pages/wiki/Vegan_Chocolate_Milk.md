@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Vegan_Chocolate_Milk"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Vegan_Chocolate_Milk"
 ---
 
 This was just an idea of mine to get a slightly more creamy chocolate \"milk\" that didn\'t have so much of a soy milk taste to it. Obviously I used it with soy milk, but in theory it should go with any other sort of milk you choose. Pretty quick to make assuming you have the ingredients, and I think it tastes awesome.\

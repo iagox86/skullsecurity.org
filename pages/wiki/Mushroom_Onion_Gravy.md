@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Mushroom_Onion_Gravy"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Mushroom_Onion_Gravy"
 ---
 
 This is a recipe from La Dolce Vegan that I have adapted, I think it turned out pretty well! Not too salty, nice onion flavour (There, but not overpowering), and mushrooms!\

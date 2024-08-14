@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Vegetable_Stew"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Vegetable_Stew"
 ---
 
 This is the first vegan recipe I ever made! It\'s from Terry Pratchett\'s \"Nanny Ogg\'s Cookbook\".

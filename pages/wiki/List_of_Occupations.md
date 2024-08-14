@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/List_of_Occupations"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/List_of_Occupations"
 ---
 
 List of available occupations. Some are from the main rule book, some are from the 1920s Investigator\'s Handbook, and some I made up.

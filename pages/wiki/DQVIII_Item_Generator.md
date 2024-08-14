@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/DQVIII_Item_Generator"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/DQVIII_Item_Generator"
 ---
 
 ## Dragon Quest 8 Item Generator {#dragon_quest_8_item_generator}

@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Miscellaneous_useful_'nippits"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Miscellaneous_useful_'nippits"
 ---
 
 I\'m not sure what\'s going to end up here, but I\'ll know it when I see it. Be prepared!

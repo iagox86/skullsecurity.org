@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Vegan_Breakfast_Tacos"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Vegan_Breakfast_Tacos"
 ---
 
 Found this [here](http://smarterfitter.com/blog/2009/07/06/vegan-breakfast-tacos/), and love it! I made a few little modifications

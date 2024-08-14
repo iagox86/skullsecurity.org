@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Key_Generation_in_C"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Key_Generation_in_C"
 ---
 
 ## Warden_Keys.h

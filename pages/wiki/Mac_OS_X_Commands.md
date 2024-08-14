@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Mac_OS_X_Commands"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Mac_OS_X_Commands"
 ---
 
 ## Passwords

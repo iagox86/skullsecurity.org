@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Muhammara"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Muhammara"
 ---
 
 This is a Mediterranean dip that\'s not unlike hummous (except that the only ingredient they share is garlic). It\'s a dip based on red peppers, pomegranate syrup, and walnuts. And it\'s surprisingly good! I like to eat it with tortilla chips or on pita bread.

@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Mushroom_Onion_Cream_Stew"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Mushroom_Onion_Cream_Stew"
 ---
 
 So, this started out as a mushroom soup that I ended up freeforming into a cream stew. Turned out quite well, I think.\

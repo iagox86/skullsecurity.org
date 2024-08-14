@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Assembly_Guide"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Assembly_Guide"
 ---
 
 Please choose a tutorial page:

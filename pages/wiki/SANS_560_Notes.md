@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/SANS_560_Notes"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/SANS_560_Notes"
 ---
 
 **560.1 Sans 560: Network Penetration and Ethical Hacking**

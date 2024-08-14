@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/SCBSNickSpoofer"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/SCBSNickSpoofer"
 ---
 
 ## SCBackstab.com NickSpoofer {#scbackstab.com_nickspoofer}

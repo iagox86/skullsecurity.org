@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Vegan_Breading"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Vegan_Breading"
 ---
 
 I don\'t know if I\'d classify this as a recipe per se, but whatever! This could likely be used for anything you had a desire to bread and bake/fry though I\'ve only used it so far for the TVP nuggets I\'ve been making. You will need the following:\

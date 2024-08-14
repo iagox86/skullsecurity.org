@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Tnt-treasure"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Tnt-treasure"
 ---
 
 ## T&T Treasure {#tt_treasure}

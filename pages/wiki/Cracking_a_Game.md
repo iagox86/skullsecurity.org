@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Cracking_a_Game"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Cracking_a_Game"
 ---
 
 Please choose a tutorial page:
