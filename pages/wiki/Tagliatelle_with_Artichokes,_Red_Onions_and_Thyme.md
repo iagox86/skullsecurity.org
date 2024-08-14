@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Tagliatelle_with_Artichokes,_Red_Onions_and_Thyme"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Tagliatelle_with_Artichokes,_Red_Onions_and_Thyme"
 ---
 
 From [Vegalicious](http://www.vegalicious.org/2009/07/22/tagliatelle-with-artichokes-red-onions-and-thyme/) \-- I haven\'t tried it yet, but it sounds amazing!

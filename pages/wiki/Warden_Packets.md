@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Warden_Packets"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Warden_Packets"
 ---
 
 This is about how to encrypt/decrypt the Warden packets, and what they mean.

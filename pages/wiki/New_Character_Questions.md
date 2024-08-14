@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/New_Character_Questions"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/New_Character_Questions"
 ---
 
 ## 20+ Questions (by Ron) {#questions_by_ron}

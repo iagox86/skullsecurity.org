@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Character_Creation"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Character_Creation"
 ---
 
 These are the steps to creating a character in my campaign. Note that this is completely different from the official rules. I don\'t like them much.

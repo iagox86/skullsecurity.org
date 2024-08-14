@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Pandemic"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Pandemic"
 ---
 
 ## January 3, 2011 (game 1) {#january_3_2011_game_1}

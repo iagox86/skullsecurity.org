@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Starcraft_Warden"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Starcraft_Warden"
 ---
 
 On this page, I\'m going to give an overview of some rudimentary research I did on the Warden module for Starcraft. I have only looked at it in the context of Starcraft, and no other game client, so I make no guarantees.

@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Asparagus_with_Almond_Mushroom_Sauce"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Asparagus_with_Almond_Mushroom_Sauce"
 ---
 
 -   1 Package frozen asparagus

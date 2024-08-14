@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/SRP"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/SRP"
 ---
 
 The Battle.net SRP is a variation the standard [SRP](http://srp.stanford.edu/ndss.html) protocol, with a few minor changes. There are several important packets I\'ll go over, and then I\'ll discuss each variable and how we come up with it, including a sample implementation in Java. As far as I know, me, Maddox, and TheMinistered are the first (and only) to reverse this publicly, so enjoy!

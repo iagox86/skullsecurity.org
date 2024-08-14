@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Warden_Modules"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Warden_Modules"
 ---
 
 Warden modules are received in a series of 0x01 packets, and processed in a variety of different steps.

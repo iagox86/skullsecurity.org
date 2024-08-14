@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/References_(Hacking)"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/References_(Hacking)"
 ---
 
 -   [Protocol cheat sheet](http://www.sans.org/resources/tcpip.pdf?ref=3871)

@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Dnscat"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Dnscat"
 ---
 
 ## dnscat is deprecated! You should try [dnscat2](https://github.com/iagox86/dnscat2) instead!

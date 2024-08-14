@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Adventure_1,_Session_2"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Adventure_1,_Session_2"
 ---
 
 I waited way too long to write this, so it\'s probably going to be very incomplete, but it should hit upon the highpoints

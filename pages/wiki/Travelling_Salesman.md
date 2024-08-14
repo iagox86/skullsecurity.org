@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Travelling_Salesman"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Travelling_Salesman"
 ---
 
 There\'s a great dish at a local vegan restaurant (The Mondragon) called a \"starving courier\". Today, for dinner, I wanted to have something different and thought I\'d give it a try. I mixed what I understand about starving couriers with a recipe I found online for [Spanish Rice Bean Dip](http://thepassionatemind.blogspot.com/2007/08/recipe-for-monday-spanish-rice-bean-dip.html). And it turned out good!

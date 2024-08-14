@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Adventure_1,_Session_1"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Adventure_1,_Session_1"
 ---
 
 ## Day 1 (Saturday, January 6, 1990) {#day_1_saturday_january_6_1990}

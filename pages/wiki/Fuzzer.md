@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Fuzzer"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Fuzzer"
 ---
 
 This is a page for a \"fuzzer\" I\'m considering writing. It doesn\'t have a name yet.

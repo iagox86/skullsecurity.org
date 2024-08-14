@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Vegan_Grilled_Portabellos"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Vegan_Grilled_Portabellos"
 ---
 
 I was inspired by [Vegan Dad\'s recipe\[/url](http://vegandad.blogspot.com/2009/07/grilled-portabello-and-onion-sandwich.html) for grilled portabello and mushroom sandwiches. His are great, but here\'s what I like:

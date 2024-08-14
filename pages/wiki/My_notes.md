@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/My_notes"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/My_notes"
 ---
 
 These are the notes I made while taking apart the module stuff. Most of it is probably nonsensical, and a lot of it is outdated or inaccurate now, or even just plain insane. But if you\'ve worked on it yourself, or are planning on taking my work further, you might find some valuable information, particularly on the data structures used.

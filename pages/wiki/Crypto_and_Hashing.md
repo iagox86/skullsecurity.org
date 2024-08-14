@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Crypto_and_Hashing"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Crypto_and_Hashing"
 ---
 
 This page is about the various cryptographic and hashing functions used by Warden.

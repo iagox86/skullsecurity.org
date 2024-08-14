@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Pumpkin_Pie"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Pumpkin_Pie"
 ---
 
 Today\'s Canadian Thanksgiving, and I\'ve spent the last week making pumpkin pies to get this recipe just right for my family. And also because I like pie. So, enjoy!

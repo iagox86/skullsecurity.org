@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Tools"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Tools"
 ---
 
 Please choose a tutorial page:

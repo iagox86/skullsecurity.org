@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Onion_Dip"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Onion_Dip"
 ---
 
 Last night my friend came over and wanted some chip dip. Unfortunately, I was out of the Lipton mix that I normally use, so I searched for a recipe and found this one. It actually turned out quite well!

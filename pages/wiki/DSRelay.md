@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/DSRelay"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/DSRelay"
 ---
 
 ## Dead (Damn?) Simple Relay {#dead_damn_simple_relay}

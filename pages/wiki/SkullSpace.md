@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/SkullSpace"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/SkullSpace"
 ---
 
 ## Ron\'s Thoughts {#rons_thoughts}

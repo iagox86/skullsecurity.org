@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Borscht"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Borscht"
 ---
 
 This recipe is called \"chunky polish borscht\" in my book, although I modified it a bit. It\'s just luck you can\'t have copyright on a recipe! I like this one because it\'s really thick and tasty, I find borscht is often way too thin. Anyways\...

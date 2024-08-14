@@ -4,6 +4,8 @@ author: ron
 layout: wiki
 permalink: "/wiki/Lockdown"
 date: '2024-08-04T15:51:38-04:00'
+redirect_from:
+- "/wiki/index.php/Lockdown"
 ---
 
 Those of you who know me know that I use Linux as my primary operating system. As a result, I am unable to connect to Battle.net with any clients. That is why, for the purpose of cross-platform compatibility, I\'m posting source code that emulates Battle.net\'s lockdown system.
