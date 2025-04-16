@@ -14,7 +14,7 @@ comments_id: '109638373630443371'
 
 <s>Last week</s>A few weeks ago, SANS hosted a private event at the Smithsonian's Air and Space Museum as part of SANS Hackfest. An evening in the Air and Space Museum just for us! And to sweeten the deal, they set up a scavenger hunt called "Hackers of Gravity" to work on while we were there!
 
-We worked in small teams (I teamed up with <a href='https://twitter.com/ericgershman'>Eric</a>, who's also writing this blog with me). All they told us in advance was to bring a phone, so every part of this was solved with our phones and Google.
+We worked in small teams (I teamed up with Sabine, who's also writing this blog with me). All they told us in advance was to bring a phone, so every part of this was solved with our phones and Google.
 
 Each level began with an image, typically with a cipher embedded in it. After decoding the cipher, the solution and the image itself were used together to track down a related artifact.
 
@@ -39,7 +39,7 @@ Based on the character set, we immediately recognized it as Base64. We found an 
 ￼￼
 We recognized that as Base32 - Base64 will never have four "====" signs at the end, and Base32 typically only contains uppercase characters and numbers. (Quick plug: I'm currently working on <a href='https://github.com/iagox86/dnscat2/issues/71'>Base32 support</a> for dnscat2, which is another reason I quickly recognized it!)
 
-Anyway, the Base32 version decoded to <tt>spirit_of_wicker_seats</tt>, and Eric recognized "Spirit" as a possible clue and searched for "Spirit of St Louis Wicker Seats", which revealed the following quote from the <a href='https://en.wikipedia.org/wiki/Spirit_of_St._Louis'>Wikipedia article</a> on the Spirit of St. Louis: "The stiff wicker seat in the cockpit was also purposely uncomfortable".
+Anyway, the Base32 version decoded to <tt>spirit_of_wicker_seats</tt>, and Sabine recognized "Spirit" as a possible clue and searched for "Spirit of St Louis Wicker Seats", which revealed the following quote from the <a href='https://en.wikipedia.org/wiki/Spirit_of_St._Louis'>Wikipedia article</a> on the Spirit of St. Louis: "The stiff wicker seat in the cockpit was also purposely uncomfortable".
 
 <img src='/blogdata/hackers-of-gravity-07.png' width='600' height='auto'/>
 
@@ -93,7 +93,7 @@ We found pictures of <a href='http://airandspace.si.edu/collections/artifact.cfm
 
 Once we got to the artifact, we noticed that we hadn't broken the code yet. Looking carefully at the image, we saw the text at the bottom, <tt>nbdi_tjy_qpjou_tfwfo_uxp</tt>.
 
-As an avid cryptogrammer, I recognized <tt>tfwfo</tt> as likely being "never". Since 'e' is one character before 'f', it seemed likely that it was a single shift ('b'->'a', 'c'->'b', etc). I mentally shifted the first couple letters of the sentence, and it looked right, so I did the entire string while Eric wrote it down: <tt>mach_six_point_seven_two</tt>.
+As an avid cryptogrammer, I recognized <tt>tfwfo</tt> as likely being "never". Since 'e' is one character before 'f', it seemed likely that it was a single shift ('b'->'a', 'c'->'b', etc). I mentally shifted the first couple letters of the sentence, and it looked right, so I did the entire string while Sabine wrote it down: <tt>mach_six_point_seven_two</tt>.
 
 The funny thing is, the word was "seven", not "never", but the "e"s still matched!
 
@@ -105,7 +105,7 @@ While researching some physics based penetration testing, you find this interest
 <img src='/blogdata/hackers-of-gravity-17.png' width='600' height='auto' />
 </blockquote>
 
-The diagram reminded Eric of an engine he saw on an earlier visit, we found the artifact on the other side of the museum: 
+The diagram reminded Sabine of an engine she saw on an earlier visit, we found the artifact on the other side of the museum: 
 
 <img src='/blogdata/hackers-of-gravity-06.png' width='600' height='auto' />
 

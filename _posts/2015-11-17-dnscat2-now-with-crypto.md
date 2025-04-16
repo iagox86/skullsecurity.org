@@ -132,5 +132,5 @@ So, in alphabetical order so nobody can claim I play favourites, I want to give 
 <ul>
   <li><a href='https://twitter.com/alexwebr'>Alex Weber</a>, who notably convinced me to use a proper key exchange protocol instead of just a static key (and who also wrote the <a href='https://github.com/alexwebr/salsa20'>Salsa20 implementation I used</a></li>
   <li><a href='https://twitter.com/bmenrigh'>Brandon Enright</a>, who give me a ton of handy crypto advice</li>
-  <li><a href='https://twitter.com/ericgershman'>Eric Gershman</a>, who convinced me to work on encryption in the first place, and who listened to my constant complaining about how much I hate implementing crypto</li>
+  <li>Sabine, who convinced me to work on encryption in the first place, and who listened to my constant complaining about how much I hate implementing crypto</li>
 </ul>
