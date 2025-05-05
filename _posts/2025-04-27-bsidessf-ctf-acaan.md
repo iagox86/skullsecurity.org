@@ -7,6 +7,7 @@ categories:
 - ctfs
 permalink: "/2025/bsidessf-2025-accan-and-drago-daction-pwn-your-own-memory"
 date: '2025-04-27T15:59:10-07:00'
+comments_id: '114456979202880249'
 
 ---
 

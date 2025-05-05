@@ -7,6 +7,7 @@ categories:
 - ctfs
 permalink: "/2025/bsidessf-2025-bug-me-hard-reversing-challenge-"
 date: '2025-04-27T15:59:05-07:00'
+comments_id: '114456979575886780'
 
 ---
 
