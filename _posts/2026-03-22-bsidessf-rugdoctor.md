@@ -8,6 +8,9 @@ categories:
 - ctfs
 - pwn
 - JIT
+permalink: "/2026/bsidessf-2026-rugdoctor-a-broken-jit-compiler-pwn-challenge"
+date: '2026-03-30T13:55:49-07:00'
+
 ---
 
 This is a write-up for `rugdoctor`, which is a JIT compiler with a 16-bit

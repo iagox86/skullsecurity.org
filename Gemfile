@@ -34,3 +34,5 @@ gem "csv", "~> 3.3"
 gem "base64", "~> 0.3.0"
 
 gem "bigdecimal", "~> 4.0"
+
+gem "mastodon", "~> 0.3.1"

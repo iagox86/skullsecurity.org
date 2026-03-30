@@ -7,6 +7,9 @@ categories:
 - bsidessf
 - ctfs
 - misc
+permalink: "/2026/bsidessf-2026-miscellaneous-challenges-if-it-leads-gitfab-jengacrypt-"
+date: '2026-03-30T13:55:38-07:00'
+
 ---
 
 This will be a write-up for the three shorter / more miscellaneous challenges

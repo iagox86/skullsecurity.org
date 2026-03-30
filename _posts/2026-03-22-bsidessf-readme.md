@@ -7,6 +7,9 @@ categories:
 - bsidessf
 - ctfs
 - pwn
+permalink: "/2026/bsidessf-2026-read-write-call-me-progressive-pwn-challenges"
+date: '2026-03-30T13:55:46-07:00'
+
 ---
 
 This is a write-up for three "pwn" challenges - `readwritecallme`,

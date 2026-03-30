@@ -11,10 +11,57 @@ From 2022 - 2023, I worked at Rapid7 where I disclosed / analyzed a lot of vulns
 
 In 2023, I started at GreyNoise. I continued to write a decent amount, so I update this page on a best-effort basis. Let me know if you see something missing!
 
+# 2026
+
+## BSidesSF CTF blogs
+
+* [Rug Doctor](https://www.skullsecurity.org/bsidessf-2026/bsidessf/ctfs/pwn/jit/2026/03/22/bsidessf-rugdoctor.html) - a JIT compiler with a weird issue
+* [Name Me](https://www.skullsecurity.org/bsidessf-2026/bsidessf/ctfs/pwn/dns/2026/03/22/bsidessf-nameme.html) - a DNS server that requires interesting exploitation
+* [Readme](https://www.skullsecurity.org/bsidessf-2026/bsidessf/ctfs/pwn/2026/03/22/bsidessf-readme.html) - A series of read/write-to-memory training challenges
+* [Misc](https://www.skullsecurity.org/bsidessf-2026/bsidessf/ctfs/misc/2026/03/22/bsidessf-misc.html) - A few other random challenges
+
+## Tools, projects, code releases, etc
+
+* [BSidesSF CTF 2026](https://github.com/bsidessf/ctf-2026-release)
+
+# 2025
+
+In 2024, I switched to working at GreyNoise, where my focus became internal tooling and writing detection rules, rather than public-facing work; as such, other than a few talks and some code releases, I don't have as much public-facing work!
+
+## Research
+
+* Suricata URL decoding quirks / bypasses - [write-up](https://www.labs.greynoise.io/grimoire/2025-06-05-suricata-url-decoding/)
+
+## BSidesSF CTF blogs
+
+* [goto-zero](https://www.skullsecurity.org/2024/goto-zero-a-fake-ctf-challenge-to-show-off-something) - a primer on solving exploitation challenges
+* [bug-me](https://www.skullsecurity.org/2025/bsidessf-2025-bug-me-hard-reversing-challenge-) - a fiendishly hard CTF challenge
+* [acaan](https://www.skullsecurity.org/2025/bsidessf-2025-accan-and-drago-daction-pwn-your-own-memory) - an exploit challenge intended for teaching
+* [101 challenges](https://www.skullsecurity.org/2025/bsidessf-2025-101-challenges) - easier miscellaneous challenges 
+* [Misc](https://www.skullsecurity.org/2025/bsidessf-2025-miscellaneous-challenges) - harder miscellaneous challenges
+
+## Talks
+
+* 2025-01 ["Hacking an RPC Server"](https://docs.google.com/presentation/d/1POwfHxvBnEly0GRfEX7YJ0JP2S8CXToNtWDJmYaAF_0/edit?slide=id.g1123c1cc239_0_56#slide=id.g1123c1cc239_0_56) (about UniRPC vulnerabilities)
+* 2025-05-15 [Abusing HTTP to Bypass Suricata](https://docs.google.com/presentation/d/1uT30XkkbTEbGOtJqJWNfoOhIGwnIER7Td6LIic_im74/edit?slide=id.g2f0dbb539e3_0_1#slide=id.g2f0dbb539e3_0_1) (workshop) @ NorthSec Montreal
+* 2025-08-23 [Why Improv is Cool](https://docs.google.com/presentation/d/1TvQIBm1tK5Gj6OigYqMcrMQsEkV-C3m6uLcrT_DRaMQ/edit?slide=id.gc6f980f91_0_0#slide=id.gc6f980f91_0_0) @ Mike's PowerPoint Party
+* 2025-11 [Abusing HTTP Quirs to Evade Detection](https://docs.google.com/presentation/d/1wbPFKaevS4xzlgbZkzr5_eX5FJct67gEosvYVnjSy_E/edit) @ SuriCon Montreal
+
+## Tools, projects, code releases, etc
+
+* ["Surigame"](https://github.com/iagox86/surigame) - a Suricata training tool
+* ["Linjector"](https://github.com/iagox86/linjector) - a Linux code-injection demo tool
+* [BSidesSF CTF 2025](https://github.com/bsidessf/ctf-2025-release)
+
+---
 
 # 2024
 
-## Analyses / miscellaneous blogs
+## Research
+
+* Linux Process Injection fundamentals - [extended write-up](https://www.labs.greynoise.io/grimoire/2025-01-28-process-injection/)
+
+## Analyses / miscellaneous blogs (n-day)
 
 * Ivanti Connect Secure (ICS) Command Injection - [analysis](https://www.greynoise.io/blog/ivanti-connect-secure-exploited-to-install-cryptominers)
 * CVE-2022-41800 - F5 BIG-IP - [honeypot analysis](https://www.labs.greynoise.io/grimoire/2023-12-14-if-youre-going-to-spray-my-exploit/)
@@ -25,7 +72,7 @@ In 2023, I started at GreyNoise. I continued to write a decent amount, so I upda
 * CVE-2024-24919 - Check Point Quantum path traversal - [honeypot analysis](https://www.greynoise.io/blog/whats-going-on-with-checkpoint-cve-2024-24919)
 * CVE-2024-28995 - SolarSinds Serv-U path traversal - [honeypot analysis](https://www.labs.greynoise.io/grimoire/2024-06-solarwinds-serv-u/)
   * Media coverage: [SC Media](https://www.scmagazine.com/brief/attacks-exploiting-solarwinds-serv-u-bug-underway) / [Security Week](https://www.securityweek.com/recent-solarwinds-serv-u-vulnerability-exploited-in-the-wild/) / [The Hacker News](https://thehackernews.com/2024/06/solarwinds-serv-u-vulnerability-under.html)
-
+* CVE-2021-32030 - ASUS Auth Bypass via NULL byte injection - [analysis](https://www.labs.greynoise.io/grimoire/2024-11-20-null-problem/)
 
 ## Talks
 

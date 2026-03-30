@@ -8,6 +8,9 @@ categories:
 - ctfs
 - pwn
 - dns
+permalink: "/2026/bsidessf-2026-nameme-a-dns-based-pwn-challenge"
+date: '2026-03-30T13:55:43-07:00'
+
 ---
 
 This is a challenge I've been considering making forever. It's possible I've
