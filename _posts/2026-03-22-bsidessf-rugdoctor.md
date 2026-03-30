@@ -10,6 +10,7 @@ categories:
 - JIT
 permalink: "/2026/bsidessf-2026-rugdoctor-a-broken-jit-compiler-pwn-challenge"
 date: '2026-03-30T13:55:49-07:00'
+comments_id: '116320139547790525'
 
 ---
 

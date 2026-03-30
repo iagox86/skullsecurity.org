@@ -9,6 +9,7 @@ categories:
 - misc
 permalink: "/2026/bsidessf-2026-miscellaneous-challenges-if-it-leads-gitfab-jengacrypt-"
 date: '2026-03-30T13:55:38-07:00'
+comments_id: '116320131610624709'
 
 ---
 

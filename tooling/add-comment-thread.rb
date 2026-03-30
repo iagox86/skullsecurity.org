@@ -3,6 +3,7 @@ require 'mastodon'
 require 'yaml'
 require 'pp'
 require 'httparty'
+require 'json'
 
 BASE_URL = "https://www.skullsecurity.org"
 
@@ -63,9 +64,13 @@ metadata.delete('comments_id')
 CONFIG = YAML::load_file(File.join(ENV['HOME'], '.skullsecurity.yaml'))
 
 # Generate the status
-STATUS = "New #security #blog post on #SkullSecurity by #{ CONFIG['author'] }: #{ metadata['title'] }, filed under #{ metadata['categories'].map { |s| "\##{s}" }.join(', ') }\n\n" +
-  "#{BASE_URL}#{ metadata['permalink'] }\n\n" +
-  "(Replies here will show up on the blog post)"
+STATUS = "New #security #blog post on #SkullSecurity by #{ CONFIG['author'] }: #{ metadata['title'] }" +
+  "\n\n" +
+  "#{BASE_URL}#{ metadata['permalink'] }" +
+  "\n\n" +
+  "(Replies here will show up on the blog post)" +
+  "\n\n" +
+  metadata['categories'].map { |s| "\##{ s.gsub(/-/, '') }" }.join(' ')
 
 puts "Here's what the post will look like:"
 puts

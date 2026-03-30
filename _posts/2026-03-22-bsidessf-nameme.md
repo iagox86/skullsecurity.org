@@ -10,6 +10,7 @@ categories:
 - dns
 permalink: "/2026/bsidessf-2026-nameme-a-dns-based-pwn-challenge"
 date: '2026-03-30T13:55:43-07:00'
+comments_id: '116320138666495743'
 
 ---
 

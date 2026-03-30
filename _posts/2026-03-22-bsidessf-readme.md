@@ -9,6 +9,7 @@ categories:
 - pwn
 permalink: "/2026/bsidessf-2026-read-write-call-me-progressive-pwn-challenges"
 date: '2026-03-30T13:55:46-07:00'
+comments_id: '116320139193824438'
 
 ---
 
