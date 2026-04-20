@@ -24,6 +24,11 @@ In 2023, I started at GreyNoise. I continued to write a decent amount, so I upda
 
 * [BSidesSF CTF 2026](https://github.com/bsidessf/ctf-2026-release)
 
+## Talks
+
+* Developing Secure Suricata Rules @ ThursDef (via Recon InfoSec) - no slides
+* [coming up!] Adventures in Process Injection (How I Accidentally Built a Debugger - AGAIN) @ NorthSec Monteral (May/2026)
+
 # 2025
 
 In 2024, I switched to working at GreyNoise, where my focus became internal tooling and writing detection rules, rather than public-facing work; as such, other than a few talks and some code releases, I don't have as much public-facing work!
@@ -45,7 +50,7 @@ In 2024, I switched to working at GreyNoise, where my focus became internal tool
 * 2025-01 ["Hacking an RPC Server"](https://docs.google.com/presentation/d/1POwfHxvBnEly0GRfEX7YJ0JP2S8CXToNtWDJmYaAF_0/edit?slide=id.g1123c1cc239_0_56#slide=id.g1123c1cc239_0_56) (about UniRPC vulnerabilities)
 * 2025-05-15 [Abusing HTTP to Bypass Suricata](https://docs.google.com/presentation/d/1uT30XkkbTEbGOtJqJWNfoOhIGwnIER7Td6LIic_im74/edit?slide=id.g2f0dbb539e3_0_1#slide=id.g2f0dbb539e3_0_1) (workshop) @ NorthSec Montreal
 * 2025-08-23 [Why Improv is Cool](https://docs.google.com/presentation/d/1TvQIBm1tK5Gj6OigYqMcrMQsEkV-C3m6uLcrT_DRaMQ/edit?slide=id.gc6f980f91_0_0#slide=id.gc6f980f91_0_0) @ Mike's PowerPoint Party
-* 2025-11 [Abusing HTTP Quirs to Evade Detection](https://docs.google.com/presentation/d/1wbPFKaevS4xzlgbZkzr5_eX5FJct67gEosvYVnjSy_E/edit) @ SuriCon Montreal
+* 2025-11 [Abusing HTTP Quirks to Evade Detection](https://docs.google.com/presentation/d/1wbPFKaevS4xzlgbZkzr5_eX5FJct67gEosvYVnjSy_E/edit) @ SuriCon Montreal
 
 ## Tools, projects, code releases, etc
 
