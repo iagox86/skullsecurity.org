@@ -13,21 +13,22 @@ In 2023, I started at GreyNoise. I continued to write a decent amount, so I upda
 
 # 2026
 
+## Tools, projects, code releases, etc
+
+* [BSidesSF CTF 2026](https://github.com/bsidessf/ctf-2026-release)
+* ["Surigame"](https://github.com/iagox86/surigame) - A platform to teach Suricata rule development and bypasses
+
+## Talks
+
+* Developing Secure Suricata Rules @ ThursDef (via Recon InfoSec) - no slides
+* [coming up!] Adventures in Process Injection (How I Accidentally Built a Debugger - AGAIN) @ NorthSec Monteral (May/2026)
+
 ## BSidesSF CTF blogs
 
 * [Rug Doctor](https://www.skullsecurity.org/bsidessf-2026/bsidessf/ctfs/pwn/jit/2026/03/22/bsidessf-rugdoctor.html) - a JIT compiler with a weird issue
 * [Name Me](https://www.skullsecurity.org/bsidessf-2026/bsidessf/ctfs/pwn/dns/2026/03/22/bsidessf-nameme.html) - a DNS server that requires interesting exploitation
 * [Readme](https://www.skullsecurity.org/bsidessf-2026/bsidessf/ctfs/pwn/2026/03/22/bsidessf-readme.html) - A series of read/write-to-memory training challenges
 * [Misc](https://www.skullsecurity.org/bsidessf-2026/bsidessf/ctfs/misc/2026/03/22/bsidessf-misc.html) - A few other random challenges
-
-## Tools, projects, code releases, etc
-
-* [BSidesSF CTF 2026](https://github.com/bsidessf/ctf-2026-release)
-
-## Talks
-
-* Developing Secure Suricata Rules @ ThursDef (via Recon InfoSec) - no slides
-* [coming up!] Adventures in Process Injection (How I Accidentally Built a Debugger - AGAIN) @ NorthSec Monteral (May/2026)
 
 # 2025
 
