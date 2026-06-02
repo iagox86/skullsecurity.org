@@ -11,6 +11,8 @@ From 2022 - 2023, I worked at Rapid7 where I disclosed / analyzed a lot of vulns
 
 In 2023, I started at GreyNoise. I continued to write a decent amount, so I update this page on a best-effort basis. Let me know if you see something missing!
 
+In June/2026, I started at Censys. I don't know what the future of publications will hold, stay tuned!
+
 # 2026
 
 ## Tools, projects, code releases, etc
@@ -21,7 +23,7 @@ In 2023, I started at GreyNoise. I continued to write a decent amount, so I upda
 ## Talks
 
 * Developing Secure Suricata Rules @ ThursDef (via Recon InfoSec) - no slides
-* [coming up!] Adventures in Process Injection (How I Accidentally Built a Debugger - AGAIN) @ NorthSec Monteral (May/2026)
+* 2026-05-15 [Adventures in Process Injection (How I Accidentally Built a Debugger - AGAIN)](https://docs.google.com/presentation/d/1Y_pb_MwCyP07abosskxOY1bBOygE58cn5VBsIicEAF4/edit) @ NorthSec Monteral (May/2026)
 
 ## BSidesSF CTF blogs
 
