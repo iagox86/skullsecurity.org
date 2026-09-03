@@ -15,6 +15,11 @@ In June/2026, I started at Censys. I don't know what the future of publications 
 
 # 2026
 
+## Analyses, advisories, and other publications
+
+* CVE-2026-55040 / CVE-2026-63520 - Microsoft SharePoint Server authentication bypass and RCE ([advisory](https://censys.com/advisory/cve-2026-55040-cve-2026-63520/))
+* CVE-2026-77550 / CVE-2026-77549 / and other CVEs - Ubiquiti UniFi OS and related products, 22 vulnerabilities including CRLF injection auth bypass ([advisory](https://censys.com/advisory/cve-2026-77550-cve-2026-77549-cve-2026-77550/))
+
 ## Tools, projects, code releases, etc
 
 * [BSidesSF CTF 2026](https://github.com/bsidessf/ctf-2026-release)
